@@ -17,7 +17,7 @@ z-index:9999;
 }
 
 .logo{
-width: 450px;px;
+width: 200px;px;
 animation: zoom 2s ease;
 }
 
@@ -72,16 +72,18 @@ color:white;
 font-size:16px;
 cursor:pointer;
 }
------------------------------------------------------------------------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* Contact us page CSS */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Poppins', sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(to bottom,#e8f1ef,#ffffff);
+background:linear-gradient(120deg,#e6f2ef,#ffffff);
+min-height:100vh;
 }
 
 /* HEADER */
@@ -89,7 +91,7 @@ background:linear-gradient(to bottom,#e8f1ef,#ffffff);
 header{
 display:flex;
 justify-content:center;
-padding:20px;
+padding:25px;
 }
 
 .logo{
@@ -104,99 +106,138 @@ width:60px;
 
 /* CONTACT */
 
-.contact-section{
+.contact{
+padding:60px 10%;
 text-align:center;
-padding:50px 10%;
 }
 
-.contact-section h1{
-font-size:40px;
+.title{
+font-size:42px;
 color:#1b4d3e;
 margin-bottom:10px;
 }
 
-.contact-section p{
-color:#666;
-margin-bottom:40px;
+.subtitle{
+color:#777;
+margin-bottom:50px;
 }
 
-/* GRID */
+/* LAYOUT */
 
-.container{
+.contact-wrapper{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 }
 
-/* FORM */
+/* FORM BOX */
 
-.contact-form{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.form-box{
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+animation:fadeUp 1s ease;
 }
 
-.contact-form input,
-.contact-form textarea{
+/* INPUT */
+
+.input-group{
+position:relative;
+margin-bottom:25px;
+}
+
+.input-group input,
+.input-group textarea{
+
 width:100%;
 padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ddd;
-}
-
-.contact-form textarea{
-height:120px;
-resize:none;
-}
-
-.contact-form button{
-background:#1b4d3e;
-color:white;
 border:none;
-padding:12px 20px;
-border-radius:8px;
-cursor:pointer;
+border-bottom:2px solid #ccc;
+outline:none;
+background:transparent;
+}
+
+.input-group label{
+position:absolute;
+left:0;
+top:12px;
+color:#777;
 transition:.3s;
 }
 
-.contact-form button:hover{
-background:#f4a261;
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label{
+
+top:-10px;
+font-size:12px;
+color:#1b4d3e;
 }
 
-/* CONTACT CARDS */
+/* BUTTON */
 
-.contact-info{
+.btn{
+background:linear-gradient(45deg,#1b4d3e,#2e8b57);
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* INFO BOX */
+
+.info-box{
 display:flex;
 flex-direction:column;
 gap:20px;
 }
 
-.card{
+.info-card{
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 transition:.3s;
+animation:fadeUp 1.2s ease;
 }
 
-.card:hover{
-transform:translateY(-5px);
+.info-card:hover{
+transform:translateY(-8px);
 }
 
-.card h3{
-color:#1b4d3e;
-margin-bottom:5px;
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.container{
+.contact-wrapper{
 grid-template-columns:1fr;
 }
 
 }
------------------------------------------------------------------------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
