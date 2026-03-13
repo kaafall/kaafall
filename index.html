@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#00a99d" />
+  <title>Travlla – Travels &amp; Tour Bookings</title>
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ========================================================
+       NAVIGATION
+  ======================================================== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+        </div>
+        <span class="logo-text">Trav<span>lla</span></span>
+      </a>
+
+      <!-- Menu -->
+      <ul class="nav-menu">
+        <li><a href="#home"     class="active">Home</a></li>
+        <li><a href="#about">Trips</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#tours">Destination</a></li>
+        <li><a href="#news">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <span class="icon-btn"><i class="fas fa-search"></i></span>
+        <span class="icon-btn"><i class="fas fa-heart"></i></span>
+        <span class="icon-btn"><i class="fas fa-shopping-cart"></i></span>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Book Now</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       HERO
+  ======================================================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content animate-fadeup">
+        <p class="hero-subtitle">Explore the World</p>
+        <h1 class="hero-title">Mountains</h1>
+
+        <!-- Search Box -->
+        <div class="hero-search">
+          <div class="search-field">
+            <label>Explore</label>
+            <input type="text" placeholder="Choose Destination" />
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <label>Date</label>
+            <input type="date" />
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <label>Travel</label>
+            <select>
+              <option>Solo Trip</option>
+              <option>Couple</option>
+              <option>Family</option>
+              <option>Group</option>
+            </select>
+          </div>
+          <button class="search-btn">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       EASY STEPS
+  ======================================================== -->
+  <section class="steps-section" id="about">
+    <div class="container">
+      <div class="steps-grid">
+
+        <!-- Left Info -->
+        <div class="steps-info" data-aos>
+          <p class="tag" style="color:var(--primary);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Easy Step For Booking</p>
+          <h2>Easy Step For <span>Booking</span></h2>
+          <p>Discover the world's most breathtaking destinations with our simple 3-step booking process. Choose your dream destination, pick your dates, and let us handle the rest.</p>
+          <a href="#packages" class="btn btn-primary">Explore Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Step Cards -->
+        <div class="steps-cards" data-aos>
+          <div class="step-card pink">
+            <div class="step-icon">🗺️</div>
+            <h4>Choose Destination</h4>
+            <p>Pick from hundreds of stunning destinations worldwide.</p>
+            <span class="step-num">01</span>
+          </div>
+          <div class="step-card teal">
+            <div class="step-icon">📅</div>
+            <h4>Check Availability</h4>
+            <p>Select your ideal dates and check real-time availability.</p>
+            <span class="step-num">02</span>
+          </div>
+          <div class="step-card dark">
+            <div class="step-icon">🎒</div>
+            <h4>Ready for Traveling</h4>
+            <p>Get everything ready and enjoy your adventure!</p>
+            <span class="step-num">03</span>
+          </div>
+          <div class="step-card gold">
+            <div class="step-icon">⛺</div>
+            <h4>Enjoy the Trip</h4>
+            <p>Make unforgettable memories on your dream trip.</p>
+            <span class="step-num">04</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TRENDING DESTINATIONS
+  ======================================================== -->
+  <section class="trending-section" id="destinations">
+    <div class="container">
+      <div class="trending-grid">
+
+        <!-- Image Side -->
+        <div class="trending-image-wrap" data-aos>
+          <div class="trending-main-img">
+            <img
+              src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80"
+              alt="Machu Picchu – Trending Destination"
+            />
+          </div>
+          <div class="trending-badge">
+            <div class="badge-icon">🏔️</div>
+            <div class="badge-text">
+              <span>Popular Destination</span>
+              <strong>Machu Picchu</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Side -->
+        <div class="trending-info" data-aos>
+          <p class="tag">Trending Destination</p>
+          <h2>Trending <span style="color:var(--primary)">Destination</span></h2>
+          <p>Explore the world's most sought-after destinations loved by thousands of travelers. From ancient ruins to tropical paradises, find your perfect getaway.</p>
+
+          <div class="destination-stats">
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="stat-text"><span>Locations</span><strong>250+ Destinations</strong></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon orange"><i class="fas fa-hotel"></i></div>
+              <div class="stat-text"><span>Hotels</span><strong>500+ Hotels</strong></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon pink"><i class="fas fa-users"></i></div>
+              <div class="stat-text"><span>Visitors</span><strong>76K+ Visitors</strong></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon purple"><i class="fas fa-star"></i></div>
+              <div class="stat-text"><span>Reviews</span><strong>4.9 Star Rating</strong></div>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <button class="tab-btn active">All</button>
+            <button class="tab-btn">Asia</button>
+            <button class="tab-btn">Europe</button>
+            <button class="tab-btn">America</button>
+          </div>
+
+          <div class="gallery-mini">
+            <div class="gallery-mini-img">
+              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=300&q=70" alt="London" />
+            </div>
+            <div class="gallery-mini-img">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=70" alt="Mountains" />
+            </div>
+            <div class="gallery-mini-img">
+              <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=300&q=70" alt="Beach" />
+            </div>
+          </div>
+
+          <div class="slider-dots" style="margin-top:20px;">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PACKAGES — FREE FOR TRAVEL
+  ======================================================== -->
+  <section class="packages-section" id="packages">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="tag" style="color:#fff;background:rgba(255,255,255,0.15);padding:4px 14px;border-radius:50px;">Our Packages</span>
+        <h2 style="color:#fff;margin-top:12px;">Free For Travel The World</h2>
+        <p style="color:rgba(255,255,255,0.75);">Choose from our carefully curated travel packages designed to give you the best experience at the most affordable prices.</p>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- Package 1 -->
+        <div class="package-card" data-aos>
+          <div class="package-card-img">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=75" alt="Budget Travel" />
+            <span class="pkg-label">Popular</span>
+          </div>
+          <div class="package-card-body">
+            <h4>Budget Travel Package</h4>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check-circle"></i> 5 Days / 4 Nights</li>
+              <li><i class="fas fa-check-circle"></i> Hotel Accommodation</li>
+              <li><i class="fas fa-check-circle"></i> Airport Transfer</li>
+              <li><i class="fas fa-check-circle"></i> Guided City Tour</li>
+            </ul>
+          </div>
+          <div class="package-card-footer">
+            <div class="pkg-price">$109 <span>/ Person</span></div>
+            <button class="pkg-btn">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="package-card" data-aos>
+          <div class="package-card-img">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=75" alt="Mid-Range Travel" />
+            <span class="pkg-label" style="background:var(--primary);">Best Value</span>
+          </div>
+          <div class="package-card-body">
+            <h4>Mid-Range Travel Package</h4>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check-circle"></i> 7 Days / 6 Nights</li>
+              <li><i class="fas fa-check-circle"></i> 4-Star Hotel Stay</li>
+              <li><i class="fas fa-check-circle"></i> Daily Breakfast</li>
+              <li><i class="fas fa-check-circle"></i> Private Tour Guide</li>
+            </ul>
+          </div>
+          <div class="package-card-footer">
+            <div class="pkg-price">$79 <span>/ Person</span></div>
+            <button class="pkg-btn">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="package-card" data-aos>
+          <div class="package-card-img">
+            <img src="https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=600&q=75" alt="Luxury Travel" />
+            <span class="pkg-label" style="background:#7c3aed;">Luxury</span>
+          </div>
+          <div class="package-card-body">
+            <h4>Luxury Travel Package</h4>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check-circle"></i> 10 Days / 9 Nights</li>
+              <li><i class="fas fa-check-circle"></i> 5-Star Resort</li>
+              <li><i class="fas fa-check-circle"></i> All Meals Included</li>
+              <li><i class="fas fa-check-circle"></i> VIP Experience</li>
+            </ul>
+          </div>
+          <div class="package-card-footer">
+            <div class="pkg-price">$90 <span>/ Person</span></div>
+            <button class="pkg-btn">Book Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       GALLERY
+  ======================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="tag">Our Gallery</span>
+        <h2>Best Memorable Gallery!</h2>
+        <p>Relive the most stunning moments from travels around the world captured by our community.</p>
+      </div>
+
+      <div class="gallery-masonry">
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=75" alt="Travel" />
+          <div class="gallery-overlay"><span>Adventure Awaits</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=500&q=75" alt="Hiking" />
+          <div class="gallery-overlay"><span>Mountain Trails</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=500&q=75" alt="Traveler" />
+          <div class="gallery-overlay"><span>Happy Travelers</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=500&q=75" alt="Sunset" />
+          <div class="gallery-overlay"><span>Golden Sunsets</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=75" alt="Lake" />
+          <div class="gallery-overlay"><span>Serene Lakes</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=500&q=75" alt="Camera" />
+          <div class="gallery-overlay"><span>Capture Moments</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=75" alt="Tropical" />
+          <div class="gallery-overlay"><span>Tropical Bliss</span></div>
+        </div>
+        <div class="gallery-item" data-aos>
+          <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=500&q=75" alt="Beach" />
+          <div class="gallery-overlay"><span>Beach Paradise</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-cta" data-aos>
+        <h2 class="banner-text">Explore The Most <span>Beautiful</span></h2>
+        <h2 class="banner-text">PLACE IN THE WORLD</h2>
+        <a href="#tours" class="btn btn-primary" style="margin-top:24px;">Explore Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       POPULAR TOURS
+  ======================================================== -->
+  <section class="tours-section" id="tours">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="tag">Explore Popular</span>
+        <h2>Explore Popular <span style="color:var(--primary)">Tours!</span></h2>
+        <p>Hand-picked tours for every type of traveler — from solo adventurers to family vacationers.</p>
+      </div>
+
+      <div class="tours-grid">
+
+        <div class="tour-card" data-aos>
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=70" alt="Dubai" />
+            <span class="tour-badge">Featured</span>
+          </div>
+          <div class="tour-body">
+            <h4>The Grand Dubai City Tour</h4>
+            <div class="tour-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
+              <span><i class="fas fa-clock"></i> 5 Days</span>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="tour-footer">
+              <div class="tour-price">$299 <span>/ Per</span></div>
+              <button class="pkg-btn">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos>
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=70" alt="Paris" />
+            <span class="tour-badge" style="background:var(--secondary);">Hot</span>
+          </div>
+          <div class="tour-body">
+            <h4>Paris Romantic Getaway</h4>
+            <div class="tour-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+              <span><i class="fas fa-clock"></i> 7 Days</span>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="tour-footer">
+              <div class="tour-price">$499 <span>/ Per</span></div>
+              <button class="pkg-btn">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos>
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=70" alt="Bali" />
+          </div>
+          <div class="tour-body">
+            <h4>Bali Island Adventure</h4>
+            <div class="tour-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</span>
+              <span><i class="fas fa-clock"></i> 6 Days</span>
+            </div>
+            <div class="stars">★★★★☆</div>
+            <div class="tour-footer">
+              <div class="tour-price">$349 <span>/ Per</span></div>
+              <button class="pkg-btn">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos>
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=70" alt="Tokyo" />
+          </div>
+          <div class="tour-body">
+            <h4>Tokyo Cultural Experience</h4>
+            <div class="tour-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Tokyo, Japan</span>
+              <span><i class="fas fa-clock"></i> 8 Days</span>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="tour-footer">
+              <div class="tour-price">$599 <span>/ Per</span></div>
+              <button class="pkg-btn">Book</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:40px;" data-aos>
+        <a href="#" class="btn btn-outline">View All Tours <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TOUR GUIDES
+  ======================================================== -->
+  <section class="guides-section" id="guides">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="tag">Our Team</span>
+        <h2>Meet With Tour Guide</h2>
+        <p>Our certified expert guides bring destinations to life with passion, knowledge, and warmth.</p>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-aos>
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=70" alt="Emma Rose" />
+            <div class="guide-socials">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <h4>Emma Rose</h4>
+          <p>Lead Tour Guide</p>
+          <div class="rating">★★★★★ <span style="color:var(--gray);font-size:12px;">(4.9)</span></div>
+        </div>
+
+        <div class="guide-card" data-aos>
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70" alt="Carlos M." />
+            <div class="guide-socials">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <h4>Carlos M.</h4>
+          <p>Adventure Specialist</p>
+          <div class="rating">★★★★★ <span style="color:var(--gray);font-size:12px;">(4.8)</span></div>
+        </div>
+
+        <div class="guide-card" data-aos>
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=70" alt="Sophia Chen" />
+            <div class="guide-socials">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <h4>Sophia Chen</h4>
+          <p>Cultural Expert</p>
+          <div class="rating">★★★★★ <span style="color:var(--gray);font-size:12px;">(4.9)</span></div>
+        </div>
+
+        <div class="guide-card" data-aos>
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=70" alt="James K." />
+            <div class="guide-socials">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <h4>James K.</h4>
+          <p>Wildlife Guide</p>
+          <div class="rating">★★★★☆ <span style="color:var(--gray);font-size:12px;">(4.7)</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CTA + CONTACT
+  ======================================================== -->
+  <section class="cta-contact-section" id="contact">
+    <div class="container">
+      <div class="cta-contact-grid">
+
+        <!-- CTA Left -->
+        <div class="cta-text" data-aos>
+          <p class="greeting">Hi there!</p>
+          <h2>What can't fo<br />be for you today?</h2>
+          <p style="color:rgba(255,255,255,0.75);margin-top:16px;font-size:15px;line-height:1.7;">Whether you're planning a solo adventure, romantic escape, or family vacation, we're here to make every journey unforgettable. Tell us your dream destination.</p>
+          <div style="margin-top:28px;">
+            <a href="tel:+1234567890" class="btn btn-white"><i class="fas fa-phone"></i> +1 234 567 8900</a>
+          </div>
+        </div>
+
+        <!-- Contact Form Right -->
+        <div data-aos>
+          <div class="contact-form-box">
+            <h3>Search &amp; Get in Touch With Us!</h3>
+            <p>Fill out the form and our team will get back to you within 24 hours.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your full name" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required />
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" />
+              </div>
+              <div class="form-group">
+                <label>Your Message</label>
+                <textarea placeholder="Tell us about your travel plans…"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                Send Message <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       LATEST NEWS
+  ======================================================== -->
+  <section class="news-section" id="news">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="tag">Travel Blog</span>
+        <h2>Explore Latest News</h2>
+        <p>Stay updated with the latest travel tips, destination guides, and adventure stories from around the globe.</p>
+      </div>
+
+      <div class="news-grid">
+
+        <div class="news-card" data-aos>
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=70" alt="News 1" />
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span><i class="fas fa-user"></i> Admin</span>
+              <span><i class="fas fa-calendar"></i> Mar 12, 2026</span>
+              <span><i class="fas fa-tag"></i> Travel Tips</span>
+            </div>
+            <h4>Top 10 Hidden Gems You Must Visit in 2026</h4>
+            <p>Discover off-the-beaten-path destinations that offer authentic experiences away from the usual tourist crowds…</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card" data-aos>
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=600&q=70" alt="News 2" />
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span><i class="fas fa-user"></i> Sarah</span>
+              <span><i class="fas fa-calendar"></i> Mar 10, 2026</span>
+              <span><i class="fas fa-tag"></i> Adventure</span>
+            </div>
+            <h4>How to Pack Smart for a Month-Long Backpacking Trip</h4>
+            <p>A complete guide to packing efficiently for extended travel without sacrificing comfort or style…</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card" data-aos>
+          <div class="news-img">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=70" alt="News 3" />
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span><i class="fas fa-user"></i> James</span>
+              <span><i class="fas fa-calendar"></i> Mar 08, 2026</span>
+              <span><i class="fas fa-tag"></i> Budget Travel</span>
+            </div>
+            <h4>Budget Travel Hacks: See the World for Less</h4>
+            <p>Smart strategies for stretching your travel budget without compromising on experiences or quality…</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:40px;" data-aos>
+        <div class="slider-dots" style="justify-content:center;margin-bottom:0;">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       STATS BAR
+  ======================================================== -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-block">
+          <div class="icon">🌍</div>
+          <div class="num"><span data-target="3600" data-suffix="+">0+</span></div>
+          <p>Happy Travelers</p>
+        </div>
+        <div class="stat-block">
+          <div class="icon">✈️</div>
+          <div class="num"><span data-target="76134" data-suffix="+">0+</span></div>
+          <p>Tours Booked</p>
+        </div>
+        <div class="stat-block">
+          <div class="icon">⭐</div>
+          <div class="num"><span data-target="2.5" data-suffix="K">0K</span></div>
+          <p>5-Star Reviews</p>
+        </div>
+        <div class="stat-block">
+          <div class="icon">🏆</div>
+          <div class="num"><span data-target="25" data-suffix="+">0+</span></div>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       NEWSLETTER
+  ======================================================== -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h2>Subscribe Now!</h2>
+          <p>Get the best travel deals and destination guides straight to your inbox.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email address…" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <span class="logo-text">Trav<span style="color:var(--secondary)">lla</span></span>
+          <p>Your trusted travel partner for unforgettable experiences around the globe. Explore, discover, and create memories that last a lifetime.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Travel Guides</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> News &amp; Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Destination -->
+        <div class="footer-col">
+          <h5>Our Destination</h5>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Paris, France</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Bali, Indonesia</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Tokyo, Japan</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> New York, USA</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Dubai, UAE</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Travel Lane, Adventure City, AC 45678</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+1 234 567 8900<br />+1 987 654 3210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>hello@travlla.com<br />support@travlla.com</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2026 <span>Travlla</span>. All Rights Reserved. Made with ❤️ for Travelers</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top -->
+  <button class="scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
