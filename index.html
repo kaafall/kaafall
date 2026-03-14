@@ -1,789 +1,980 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#00a99d" />
-  <title>Travlla – Travels &amp; Tour Bookings</title>
-
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈</text></svg>" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>DevBhoomi Travels | Compare & Book Uttarakhand Tour Packages</title>
+  <link rel="icon" href="logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="/style.css"/>
   <script src="/main.js" defer></script>
 </head>
 <body>
 
-  <!-- ========================================================
-       NAVIGATION
-  ======================================================== -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-
-      <!-- Logo -->
-      <a href="#" class="logo">
-        <div class="logo-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-          </svg>
-        </div>
-        <span class="logo-text">Trav<span>lla</span></span>
-      </a>
-
-      <!-- Menu -->
-      <ul class="nav-menu">
-        <li><a href="#home"     class="active">Home</a></li>
-        <li><a href="#about">Trips</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#tours">Destination</a></li>
-        <li><a href="#news">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <!-- Actions -->
-      <div class="nav-actions">
-        <span class="icon-btn"><i class="fas fa-search"></i></span>
-        <span class="icon-btn"><i class="fas fa-heart"></i></span>
-        <span class="icon-btn"><i class="fas fa-shopping-cart"></i></span>
-        <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Book Now</a>
-      </div>
-
-      <!-- Mobile toggle -->
-      <div class="nav-toggle" id="navToggle">
-        <span></span><span></span><span></span>
-      </div>
-
+<!-- ══════════════════════════════
+     SPLASH LOADER
+══════════════════════════════ -->
+<div class="splash" id="splash">
+  <div class="splash-bg"></div>
+  <div class="splash-rings">
+    <span class="sr sr1"></span>
+    <span class="sr sr2"></span>
+    <span class="sr sr3"></span>
+  </div>
+  <div class="splash-body">
+    <div class="splash-logo-wrap">
+      <img src="logo.png" alt="DevBhoomi" class="splash-logo" id="splashLogo"/>
+      <div class="splash-glow"></div>
     </div>
-  </nav>
+    <h1 class="splash-brand">DevBhoomi <span>Travels</span></h1>
+    <p class="splash-tag">Uttarakhand · Land of Gods</p>
+    <div class="splash-dots">
+      <i></i><i></i><i></i>
+    </div>
+  </div>
+</div>
 
-  <!-- ========================================================
-       HERO
-  ======================================================== -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content animate-fadeup">
-        <p class="hero-subtitle">Explore the World</p>
-        <h1 class="hero-title">Mountains</h1>
+<!-- ══════════════════════════════
+     TOP BAR
+══════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a>
+      <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    <div class="topbar-right">
+      <a href="#" class="tb-agent"><i class="fas fa-user-tie"></i> Travel Agent? Join Us</a>
+      <a href="#" class="tb-login"><i class="fas fa-user"></i> Log in / Sign up</a>
+    </div>
+  </div>
+</div>
 
-        <!-- Search Box -->
-        <div class="hero-search">
-          <div class="search-field">
-            <label>Explore</label>
-            <input type="text" placeholder="Choose Destination" />
+<!-- ══════════════════════════════
+     NAVBAR
+══════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="DevBhoomi" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">DevBhoomi</span>
+        <span class="nl-sub">Travels</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li class="has-mega">
+        <a href="#">India Tours <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <h6>Popular India Destinations</h6>
+            <div class="mega-grid">
+              <a href="#">Uttarakhand</a><a href="#">Kedarnath</a><a href="#">Rishikesh</a>
+              <a href="#">Haridwar</a><a href="#">Mussoorie</a><a href="#">Auli</a>
+              <a href="#">Valley of Flowers</a><a href="#">Jim Corbett</a><a href="#">Char Dham</a>
+              <a href="#">Nainital</a><a href="#">Chopta</a><a href="#">Tungnath</a>
+            </div>
           </div>
-          <div class="search-divider"></div>
-          <div class="search-field">
-            <label>Date</label>
-            <input type="date" />
+        </div>
+      </li>
+      <li class="has-mega">
+        <a href="#">International Tours <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <h6>Top International Destinations</h6>
+            <div class="mega-grid">
+              <a href="#">Bali</a><a href="#">Singapore</a><a href="#">Dubai</a>
+              <a href="#">Thailand</a><a href="#">Maldives</a><a href="#">Vietnam</a>
+              <a href="#">Switzerland</a><a href="#">Europe</a><a href="#">Kenya</a>
+              <a href="#">Sri Lanka</a><a href="#">Bhutan</a><a href="#">Nepal</a>
+            </div>
           </div>
-          <div class="search-divider"></div>
-          <div class="search-field">
-            <label>Travel</label>
+        </div>
+      </li>
+      <li><a href="#">Honeymoon</a></li>
+      <li><a href="#">Weekend Trips</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919876543210" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 98765 43210</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero" id="hero">
+  <!-- Slideshow -->
+  <div class="hero-slides" id="heroSlides">
+    <div class="hslide active" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=90')"></div>
+    <div class="hslide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=90')"></div>
+    <div class="hslide" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=90')"></div>
+    <div class="hslide" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=90')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Compare &amp; Book Tour Packages</h1>
+    <p>Plan trips across Uttarakhand &amp; 50+ countries</p>
+
+    <!-- Search Box -->
+    <div class="hero-search">
+      <div class="hs-tabs">
+        <button class="hst active" data-tab="dest">Destination</button>
+        <button class="hst" data-tab="dur">Duration</button>
+        <button class="hst" data-tab="budget">Budget</button>
+      </div>
+      <div class="hs-body">
+        <div class="hs-panel active" id="tab-dest">
+          <div class="hs-field hs-field-big">
+            <label><i class="fas fa-map-marker-alt"></i> Where do you want to go?</label>
             <select>
-              <option>Solo Trip</option>
-              <option>Couple</option>
-              <option>Family</option>
-              <option>Group</option>
+              <option value="">Please select a destination from the list</option>
+              <optgroup label="Uttarakhand">
+                <option>Rishikesh & Haridwar</option>
+                <option>Kedarnath & Badrinath</option>
+                <option>Mussoorie & Dehradun</option>
+                <option>Auli – Ski Resort</option>
+                <option>Valley of Flowers</option>
+                <option>Jim Corbett National Park</option>
+                <option>Chopta & Tungnath</option>
+                <option>Char Dham Yatra</option>
+                <option>Nainital</option>
+              </optgroup>
+              <optgroup label="International">
+                <option>Bali, Indonesia</option>
+                <option>Singapore</option>
+                <option>Dubai, UAE</option>
+                <option>Maldives</option>
+                <option>Thailand</option>
+              </optgroup>
             </select>
           </div>
-          <button class="search-btn">
-            <i class="fas fa-search"></i> Search
-          </button>
+          <div class="hs-field">
+            <label><i class="fas fa-moon"></i> Trip Duration</label>
+            <select>
+              <option>0 – 3 Nights</option>
+              <option>4 – 5 Nights</option>
+              <option>6 – 7 Nights</option>
+              <option>8 – 9 Nights</option>
+              <option>10+ Nights</option>
+            </select>
+          </div>
+          <div class="hs-field">
+            <label><i class="fas fa-users"></i> Travelers</label>
+            <select>
+              <option>1 Person</option>
+              <option>2 Persons</option>
+              <option>3–5 Persons</option>
+              <option>6–10 Persons</option>
+              <option>Group 10+</option>
+            </select>
+          </div>
+          <button class="hs-btn">Search <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ========================================================
-       EASY STEPS
-  ======================================================== -->
-  <section class="steps-section" id="about">
-    <div class="container">
-      <div class="steps-grid">
-
-        <!-- Left Info -->
-        <div class="steps-info" data-aos>
-          <p class="tag" style="color:var(--primary);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Easy Step For Booking</p>
-          <h2>Easy Step For <span>Booking</span></h2>
-          <p>Discover the world's most breathtaking destinations with our simple 3-step booking process. Choose your dream destination, pick your dates, and let us handle the rest.</p>
-          <a href="#packages" class="btn btn-primary">Explore Now <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Step Cards -->
-        <div class="steps-cards" data-aos>
-          <div class="step-card pink">
-            <div class="step-icon">🗺️</div>
-            <h4>Choose Destination</h4>
-            <p>Pick from hundreds of stunning destinations worldwide.</p>
-            <span class="step-num">01</span>
-          </div>
-          <div class="step-card teal">
-            <div class="step-icon">📅</div>
-            <h4>Check Availability</h4>
-            <p>Select your ideal dates and check real-time availability.</p>
-            <span class="step-num">02</span>
-          </div>
-          <div class="step-card dark">
-            <div class="step-icon">🎒</div>
-            <h4>Ready for Traveling</h4>
-            <p>Get everything ready and enjoy your adventure!</p>
-            <span class="step-num">03</span>
-          </div>
-          <div class="step-card gold">
-            <div class="step-icon">⛺</div>
-            <h4>Enjoy the Trip</h4>
-            <p>Make unforgettable memories on your dream trip.</p>
-            <span class="step-num">04</span>
-          </div>
-        </div>
-
+    <!-- Trust badges -->
+    <div class="hero-trust">
+      <div class="trust-item">
+        <i class="fas fa-medal"></i>
+        <div><strong>India's Largest</strong><span>Tour Package Marketplace</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       TRENDING DESTINATIONS
-  ======================================================== -->
-  <section class="trending-section" id="destinations">
-    <div class="container">
-      <div class="trending-grid">
-
-        <!-- Image Side -->
-        <div class="trending-image-wrap" data-aos>
-          <div class="trending-main-img">
-            <img
-              src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80"
-              alt="Machu Picchu – Trending Destination"
-            />
-          </div>
-          <div class="trending-badge">
-            <div class="badge-icon">🏔️</div>
-            <div class="badge-text">
-              <span>Popular Destination</span>
-              <strong>Machu Picchu</strong>
-            </div>
-          </div>
-        </div>
-
-        <!-- Info Side -->
-        <div class="trending-info" data-aos>
-          <p class="tag">Trending Destination</p>
-          <h2>Trending <span style="color:var(--primary)">Destination</span></h2>
-          <p>Explore the world's most sought-after destinations loved by thousands of travelers. From ancient ruins to tropical paradises, find your perfect getaway.</p>
-
-          <div class="destination-stats">
-            <div class="stat-item">
-              <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div class="stat-text"><span>Locations</span><strong>250+ Destinations</strong></div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-icon orange"><i class="fas fa-hotel"></i></div>
-              <div class="stat-text"><span>Hotels</span><strong>500+ Hotels</strong></div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-icon pink"><i class="fas fa-users"></i></div>
-              <div class="stat-text"><span>Visitors</span><strong>76K+ Visitors</strong></div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-icon purple"><i class="fas fa-star"></i></div>
-              <div class="stat-text"><span>Reviews</span><strong>4.9 Star Rating</strong></div>
-            </div>
-          </div>
-
-          <div class="tabs">
-            <button class="tab-btn active">All</button>
-            <button class="tab-btn">Asia</button>
-            <button class="tab-btn">Europe</button>
-            <button class="tab-btn">America</button>
-          </div>
-
-          <div class="gallery-mini">
-            <div class="gallery-mini-img">
-              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=300&q=70" alt="London" />
-            </div>
-            <div class="gallery-mini-img">
-              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=70" alt="Mountains" />
-            </div>
-            <div class="gallery-mini-img">
-              <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=300&q=70" alt="Beach" />
-            </div>
-          </div>
-
-          <div class="slider-dots" style="margin-top:20px;">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-
+      <div class="trust-div"></div>
+      <div class="trust-item">
+        <i class="fas fa-balance-scale"></i>
+        <div><strong>Compare Quotes</strong><span>from upto 3 agents &amp; save 30%</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       PACKAGES — FREE FOR TRAVEL
-  ======================================================== -->
-  <section class="packages-section" id="packages">
-    <div class="container">
-      <div class="section-header" data-aos>
-        <span class="tag" style="color:#fff;background:rgba(255,255,255,0.15);padding:4px 14px;border-radius:50px;">Our Packages</span>
-        <h2 style="color:#fff;margin-top:12px;">Free For Travel The World</h2>
-        <p style="color:rgba(255,255,255,0.75);">Choose from our carefully curated travel packages designed to give you the best experience at the most affordable prices.</p>
+      <div class="trust-div"></div>
+      <div class="trust-item">
+        <i class="fas fa-star"></i>
+        <div><strong>Top Rated Agents</strong><span>Rated 4.4 over 1,00,000+ trips</span></div>
       </div>
-
-      <div class="packages-grid">
-
-        <!-- Package 1 -->
-        <div class="package-card" data-aos>
-          <div class="package-card-img">
-            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=75" alt="Budget Travel" />
-            <span class="pkg-label">Popular</span>
-          </div>
-          <div class="package-card-body">
-            <h4>Budget Travel Package</h4>
-            <ul class="pkg-features">
-              <li><i class="fas fa-check-circle"></i> 5 Days / 4 Nights</li>
-              <li><i class="fas fa-check-circle"></i> Hotel Accommodation</li>
-              <li><i class="fas fa-check-circle"></i> Airport Transfer</li>
-              <li><i class="fas fa-check-circle"></i> Guided City Tour</li>
-            </ul>
-          </div>
-          <div class="package-card-footer">
-            <div class="pkg-price">$109 <span>/ Person</span></div>
-            <button class="pkg-btn">Book Now</button>
-          </div>
-        </div>
-
-        <!-- Package 2 -->
-        <div class="package-card" data-aos>
-          <div class="package-card-img">
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=75" alt="Mid-Range Travel" />
-            <span class="pkg-label" style="background:var(--primary);">Best Value</span>
-          </div>
-          <div class="package-card-body">
-            <h4>Mid-Range Travel Package</h4>
-            <ul class="pkg-features">
-              <li><i class="fas fa-check-circle"></i> 7 Days / 6 Nights</li>
-              <li><i class="fas fa-check-circle"></i> 4-Star Hotel Stay</li>
-              <li><i class="fas fa-check-circle"></i> Daily Breakfast</li>
-              <li><i class="fas fa-check-circle"></i> Private Tour Guide</li>
-            </ul>
-          </div>
-          <div class="package-card-footer">
-            <div class="pkg-price">$79 <span>/ Person</span></div>
-            <button class="pkg-btn">Book Now</button>
-          </div>
-        </div>
-
-        <!-- Package 3 -->
-        <div class="package-card" data-aos>
-          <div class="package-card-img">
-            <img src="https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=600&q=75" alt="Luxury Travel" />
-            <span class="pkg-label" style="background:#7c3aed;">Luxury</span>
-          </div>
-          <div class="package-card-body">
-            <h4>Luxury Travel Package</h4>
-            <ul class="pkg-features">
-              <li><i class="fas fa-check-circle"></i> 10 Days / 9 Nights</li>
-              <li><i class="fas fa-check-circle"></i> 5-Star Resort</li>
-              <li><i class="fas fa-check-circle"></i> All Meals Included</li>
-              <li><i class="fas fa-check-circle"></i> VIP Experience</li>
-            </ul>
-          </div>
-          <div class="package-card-footer">
-            <div class="pkg-price">$90 <span>/ Person</span></div>
-            <button class="pkg-btn">Book Now</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       GALLERY
-  ======================================================== -->
-  <section class="gallery-section" id="gallery">
-    <div class="container">
-      <div class="section-header" data-aos>
-        <span class="tag">Our Gallery</span>
-        <h2>Best Memorable Gallery!</h2>
-        <p>Relive the most stunning moments from travels around the world captured by our community.</p>
-      </div>
-
-      <div class="gallery-masonry">
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=75" alt="Travel" />
-          <div class="gallery-overlay"><span>Adventure Awaits</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=500&q=75" alt="Hiking" />
-          <div class="gallery-overlay"><span>Mountain Trails</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=500&q=75" alt="Traveler" />
-          <div class="gallery-overlay"><span>Happy Travelers</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=500&q=75" alt="Sunset" />
-          <div class="gallery-overlay"><span>Golden Sunsets</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=75" alt="Lake" />
-          <div class="gallery-overlay"><span>Serene Lakes</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=500&q=75" alt="Camera" />
-          <div class="gallery-overlay"><span>Capture Moments</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=75" alt="Tropical" />
-          <div class="gallery-overlay"><span>Tropical Bliss</span></div>
-        </div>
-        <div class="gallery-item" data-aos>
-          <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=500&q=75" alt="Beach" />
-          <div class="gallery-overlay"><span>Beach Paradise</span></div>
-        </div>
-      </div>
-
-      <div class="gallery-cta" data-aos>
-        <h2 class="banner-text">Explore The Most <span>Beautiful</span></h2>
-        <h2 class="banner-text">PLACE IN THE WORLD</h2>
-        <a href="#tours" class="btn btn-primary" style="margin-top:24px;">Explore Now <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       POPULAR TOURS
-  ======================================================== -->
-  <section class="tours-section" id="tours">
-    <div class="container">
-      <div class="section-header" data-aos>
-        <span class="tag">Explore Popular</span>
-        <h2>Explore Popular <span style="color:var(--primary)">Tours!</span></h2>
-        <p>Hand-picked tours for every type of traveler — from solo adventurers to family vacationers.</p>
-      </div>
-
-      <div class="tours-grid">
-
-        <div class="tour-card" data-aos>
-          <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=70" alt="Dubai" />
-            <span class="tour-badge">Featured</span>
-          </div>
-          <div class="tour-body">
-            <h4>The Grand Dubai City Tour</h4>
-            <div class="tour-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
-              <span><i class="fas fa-clock"></i> 5 Days</span>
-            </div>
-            <div class="stars">★★★★★</div>
-            <div class="tour-footer">
-              <div class="tour-price">$299 <span>/ Per</span></div>
-              <button class="pkg-btn">Book</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tour-card" data-aos>
-          <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=70" alt="Paris" />
-            <span class="tour-badge" style="background:var(--secondary);">Hot</span>
-          </div>
-          <div class="tour-body">
-            <h4>Paris Romantic Getaway</h4>
-            <div class="tour-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
-              <span><i class="fas fa-clock"></i> 7 Days</span>
-            </div>
-            <div class="stars">★★★★★</div>
-            <div class="tour-footer">
-              <div class="tour-price">$499 <span>/ Per</span></div>
-              <button class="pkg-btn">Book</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tour-card" data-aos>
-          <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=70" alt="Bali" />
-          </div>
-          <div class="tour-body">
-            <h4>Bali Island Adventure</h4>
-            <div class="tour-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</span>
-              <span><i class="fas fa-clock"></i> 6 Days</span>
-            </div>
-            <div class="stars">★★★★☆</div>
-            <div class="tour-footer">
-              <div class="tour-price">$349 <span>/ Per</span></div>
-              <button class="pkg-btn">Book</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tour-card" data-aos>
-          <div class="tour-img">
-            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=70" alt="Tokyo" />
-          </div>
-          <div class="tour-body">
-            <h4>Tokyo Cultural Experience</h4>
-            <div class="tour-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Tokyo, Japan</span>
-              <span><i class="fas fa-clock"></i> 8 Days</span>
-            </div>
-            <div class="stars">★★★★★</div>
-            <div class="tour-footer">
-              <div class="tour-price">$599 <span>/ Per</span></div>
-              <button class="pkg-btn">Book</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:40px;" data-aos>
-        <a href="#" class="btn btn-outline">View All Tours <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       TOUR GUIDES
-  ======================================================== -->
-  <section class="guides-section" id="guides">
-    <div class="container">
-      <div class="section-header" data-aos>
-        <span class="tag">Our Team</span>
-        <h2>Meet With Tour Guide</h2>
-        <p>Our certified expert guides bring destinations to life with passion, knowledge, and warmth.</p>
-      </div>
-
-      <div class="guides-grid">
-
-        <div class="guide-card" data-aos>
-          <div class="guide-img">
-            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=70" alt="Emma Rose" />
-            <div class="guide-socials">
-              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <h4>Emma Rose</h4>
-          <p>Lead Tour Guide</p>
-          <div class="rating">★★★★★ <span style="color:var(--gray);font-size:12px;">(4.9)</span></div>
-        </div>
-
-        <div class="guide-card" data-aos>
-          <div class="guide-img">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70" alt="Carlos M." />
-            <div class="guide-socials">
-              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <h4>Carlos M.</h4>
-          <p>Adventure Specialist</p>
-          <div class="rating">★★★★★ <span style="color:var(--gray);font-size:12px;">(4.8)</span></div>
-        </div>
-
-        <div class="guide-card" data-aos>
-          <div class="guide-img">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=70" alt="Sophia Chen" />
-            <div class="guide-socials">
-              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <h4>Sophia Chen</h4>
-          <p>Cultural Expert</p>
-          <div class="rating">★★★★★ <span style="color:var(--gray);font-size:12px;">(4.9)</span></div>
-        </div>
-
-        <div class="guide-card" data-aos>
-          <div class="guide-img">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=70" alt="James K." />
-            <div class="guide-socials">
-              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <h4>James K.</h4>
-          <p>Wildlife Guide</p>
-          <div class="rating">★★★★☆ <span style="color:var(--gray);font-size:12px;">(4.7)</span></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       CTA + CONTACT
-  ======================================================== -->
-  <section class="cta-contact-section" id="contact">
-    <div class="container">
-      <div class="cta-contact-grid">
-
-        <!-- CTA Left -->
-        <div class="cta-text" data-aos>
-          <p class="greeting">Hi there!</p>
-          <h2>What can't fo<br />be for you today?</h2>
-          <p style="color:rgba(255,255,255,0.75);margin-top:16px;font-size:15px;line-height:1.7;">Whether you're planning a solo adventure, romantic escape, or family vacation, we're here to make every journey unforgettable. Tell us your dream destination.</p>
-          <div style="margin-top:28px;">
-            <a href="tel:+1234567890" class="btn btn-white"><i class="fas fa-phone"></i> +1 234 567 8900</a>
-          </div>
-        </div>
-
-        <!-- Contact Form Right -->
-        <div data-aos>
-          <div class="contact-form-box">
-            <h3>Search &amp; Get in Touch With Us!</h3>
-            <p>Fill out the form and our team will get back to you within 24 hours.</p>
-            <form class="contact-form">
-              <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" placeholder="Enter your full name" required />
-              </div>
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="Enter your email" required />
-              </div>
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="Enter your phone number" />
-              </div>
-              <div class="form-group">
-                <label>Your Message</label>
-                <textarea placeholder="Tell us about your travel plans…"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-                Send Message <i class="fas fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       LATEST NEWS
-  ======================================================== -->
-  <section class="news-section" id="news">
-    <div class="container">
-      <div class="section-header" data-aos>
-        <span class="tag">Travel Blog</span>
-        <h2>Explore Latest News</h2>
-        <p>Stay updated with the latest travel tips, destination guides, and adventure stories from around the globe.</p>
-      </div>
-
-      <div class="news-grid">
-
-        <div class="news-card" data-aos>
-          <div class="news-img">
-            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=70" alt="News 1" />
-          </div>
-          <div class="news-body">
-            <div class="news-meta">
-              <span><i class="fas fa-user"></i> Admin</span>
-              <span><i class="fas fa-calendar"></i> Mar 12, 2026</span>
-              <span><i class="fas fa-tag"></i> Travel Tips</span>
-            </div>
-            <h4>Top 10 Hidden Gems You Must Visit in 2026</h4>
-            <p>Discover off-the-beaten-path destinations that offer authentic experiences away from the usual tourist crowds…</p>
-            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="news-card" data-aos>
-          <div class="news-img">
-            <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=600&q=70" alt="News 2" />
-          </div>
-          <div class="news-body">
-            <div class="news-meta">
-              <span><i class="fas fa-user"></i> Sarah</span>
-              <span><i class="fas fa-calendar"></i> Mar 10, 2026</span>
-              <span><i class="fas fa-tag"></i> Adventure</span>
-            </div>
-            <h4>How to Pack Smart for a Month-Long Backpacking Trip</h4>
-            <p>A complete guide to packing efficiently for extended travel without sacrificing comfort or style…</p>
-            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="news-card" data-aos>
-          <div class="news-img">
-            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=70" alt="News 3" />
-          </div>
-          <div class="news-body">
-            <div class="news-meta">
-              <span><i class="fas fa-user"></i> James</span>
-              <span><i class="fas fa-calendar"></i> Mar 08, 2026</span>
-              <span><i class="fas fa-tag"></i> Budget Travel</span>
-            </div>
-            <h4>Budget Travel Hacks: See the World for Less</h4>
-            <p>Smart strategies for stretching your travel budget without compromising on experiences or quality…</p>
-            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:40px;" data-aos>
-        <div class="slider-dots" style="justify-content:center;margin-bottom:0;">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       STATS BAR
-  ======================================================== -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-block">
-          <div class="icon">🌍</div>
-          <div class="num"><span data-target="3600" data-suffix="+">0+</span></div>
-          <p>Happy Travelers</p>
-        </div>
-        <div class="stat-block">
-          <div class="icon">✈️</div>
-          <div class="num"><span data-target="76134" data-suffix="+">0+</span></div>
-          <p>Tours Booked</p>
-        </div>
-        <div class="stat-block">
-          <div class="icon">⭐</div>
-          <div class="num"><span data-target="2.5" data-suffix="K">0K</span></div>
-          <p>5-Star Reviews</p>
-        </div>
-        <div class="stat-block">
-          <div class="icon">🏆</div>
-          <div class="num"><span data-target="25" data-suffix="+">0+</span></div>
-          <p>Years Experience</p>
-        </div>
+      <div class="trust-div"></div>
+      <div class="trust-item">
+        <i class="fas fa-shield-alt"></i>
+        <div><strong>Pay via DevBhoomi</strong><span>for money safe guarantee</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ========================================================
-       NEWSLETTER
-  ======================================================== -->
-  <section class="newsletter-section">
-    <div class="container">
-      <div class="newsletter-inner">
-        <div class="newsletter-text">
-          <h2>Subscribe Now!</h2>
-          <p>Get the best travel deals and destination guides straight to your inbox.</p>
-        </div>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input type="email" placeholder="Enter your email address…" required />
-          <button type="submit">Subscribe</button>
-        </form>
+  <!-- Slide indicators -->
+  <div class="slide-dots" id="slideDots">
+    <span class="sdot active"></span>
+    <span class="sdot"></span>
+    <span class="sdot"></span>
+    <span class="sdot"></span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     INTERNATIONAL TRIPS
+══════════════════════════════ -->
+<section class="section-block" id="international">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>International trips you can take</h2>
+    </div>
+    <div class="region-tabs" id="intTabs">
+      <button class="rtab active" data-group="int-0">South Asia</button>
+      <button class="rtab" data-group="int-1">South-East Asia</button>
+      <button class="rtab" data-group="int-2">West Asia</button>
+      <button class="rtab" data-group="int-3">Africa</button>
+      <button class="rtab" data-group="int-4">Europe</button>
+      <button class="rtab" data-group="int-5">Others</button>
+    </div>
+
+    <!-- South Asia -->
+    <div class="dest-cards-wrap active" id="int-0">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1587295431973-160d0d94add1?w=300&q=70" alt="India"/></div>
+          <div class="dc-info"><h4>India</h4><p>Packages from <strong>₹7,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1540563891656-9f3a280c9f1f?w=300&q=70" alt="Sri Lanka"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Sri Lanka</h4><p>Packages from <strong>₹12,000</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=300&q=70" alt="Bhutan"/></div>
+          <div class="dc-info"><h4>Bhutan</h4><p>Packages from <strong>₹16,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1526712318848-5f2c5b9ec9be?w=300&q=70" alt="Nepal"/></div>
+          <div class="dc-info"><h4>Nepal</h4><p>Packages from <strong>₹4,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=300&q=70" alt="Maldives"/><span class="dc-rating">5.0</span></div>
+          <div class="dc-info"><h4>Maldives</h4><p>Packages from <strong>₹39,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=300&q=70" alt="Bali"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Bali</h4><p>Packages from <strong>₹15,600</strong></p></div>
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- ========================================================
-       FOOTER
-  ======================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+    <!-- South-East Asia -->
+    <div class="dest-cards-wrap" id="int-1">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=300&q=70" alt="Singapore"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Singapore</h4><p>Packages from <strong>₹28,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=300&q=70" alt="Thailand"/></div>
+          <div class="dc-info"><h4>Thailand</h4><p>Packages from <strong>₹13,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=300&q=70" alt="Vietnam"/></div>
+          <div class="dc-info"><h4>Vietnam</h4><p>Packages from <strong>₹17,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=300&q=70" alt="Malaysia"/></div>
+          <div class="dc-info"><h4>Malaysia</h4><p>Packages from <strong>₹17,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1540126034813-121bf29033d2?w=300&q=70" alt="Cambodia"/></div>
+          <div class="dc-info"><h4>Cambodia</h4><p>Packages from <strong>₹4,300</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=300&q=70" alt="Bali"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Bali</h4><p>Packages from <strong>₹15,600</strong></p></div>
+        </a>
+      </div>
+    </div>
 
-        <!-- Brand -->
-        <div class="footer-brand">
-          <span class="logo-text">Trav<span style="color:var(--secondary)">lla</span></span>
-          <p>Your trusted travel partner for unforgettable experiences around the globe. Explore, discover, and create memories that last a lifetime.</p>
-          <div class="footer-socials">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
+    <!-- West Asia -->
+    <div class="dest-cards-wrap" id="int-2">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=300&q=70" alt="Dubai"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Dubai</h4><p>Packages from <strong>₹16,750</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1520466809213-7b9a56adcd45?w=300&q=70" alt="Turkey"/></div>
+          <div class="dc-info"><h4>Turkey</h4><p>Packages from <strong>₹38,400</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=300&q=70" alt="Georgia"/></div>
+          <div class="dc-info"><h4>Georgia</h4><p>Packages from <strong>₹41,000</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=300&q=70" alt="Oman"/></div>
+          <div class="dc-info"><h4>Oman</h4><p>Packages from <strong>₹19,850</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Africa -->
+    <div class="dest-cards-wrap" id="int-3">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=300&q=70" alt="Kenya"/></div>
+          <div class="dc-info"><h4>Kenya</h4><p>Packages from <strong>₹58,700</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=300&q=70" alt="Tanzania"/></div>
+          <div class="dc-info"><h4>Tanzania</h4><p>Packages from <strong>₹45,400</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=300&q=70" alt="Mauritius"/><span class="dc-rating">4.2</span></div>
+          <div class="dc-info"><h4>Mauritius</h4><p>Packages from <strong>₹28,400</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=300&q=70" alt="Egypt"/></div>
+          <div class="dc-info"><h4>Egypt</h4><p>Packages from <strong>₹36,600</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Europe -->
+    <div class="dest-cards-wrap" id="int-4">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=300&q=70" alt="France"/></div>
+          <div class="dc-info"><h4>France</h4><p>Packages from <strong>₹28,450</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=300&q=70" alt="Italy"/></div>
+          <div class="dc-info"><h4>Italy</h4><p>Packages from <strong>₹40,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=300&q=70" alt="Switzerland"/></div>
+          <div class="dc-info"><h4>Switzerland</h4><p>Packages from <strong>₹58,000</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=300&q=70" alt="Greece"/></div>
+          <div class="dc-info"><h4>Greece</h4><p>Packages from <strong>₹58,900</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=300&q=70" alt="London"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>London</h4><p>Packages from <strong>₹54,400</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?w=300&q=70" alt="Spain"/></div>
+          <div class="dc-info"><h4>Spain</h4><p>Packages from <strong>₹62,400</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Others -->
+    <div class="dest-cards-wrap" id="int-5">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=70" alt="Australia"/></div>
+          <div class="dc-info"><h4>Australia</h4><p>Packages from <strong>₹78,000</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=300&q=70" alt="New Zealand"/></div>
+          <div class="dc-info"><h4>New Zealand</h4><p>Packages from <strong>₹72,700</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=300&q=70" alt="Japan"/></div>
+          <div class="dc-info"><h4>Japan</h4><p>Packages from <strong>₹80,700</strong></p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     TOP UTTARAKHAND DESTINATIONS
+══════════════════════════════ -->
+<section class="section-block section-gray" id="india">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Top destinations in Uttarakhand</h2>
+    </div>
+    <div class="region-tabs" id="indiaTabs">
+      <button class="rtab active" data-group="ind-0">Char Dham</button>
+      <button class="rtab" data-group="ind-1">Adventure</button>
+      <button class="rtab" data-group="ind-2">Hill Stations</button>
+      <button class="rtab" data-group="ind-3">Wildlife</button>
+      <button class="rtab" data-group="ind-4">Trekking</button>
+    </div>
+
+    <div class="dest-cards-wrap active" id="ind-0">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=70" alt="Kedarnath"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Kedarnath</h4><p>Packages from <strong>₹10,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1523895665936-7bfe172b757d?w=300&q=70" alt="Char Dham"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Char Dham Yatra</h4><p>Packages from <strong>₹15,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1562109285-bd89ed36be47?w=300&q=70" alt="Haridwar"/><span class="dc-rating">4.7</span></div>
+          <div class="dc-info"><h4>Haridwar</h4><p>Packages from <strong>₹4,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&q=70" alt="Badrinath"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Badrinath</h4><p>Packages from <strong>₹9,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&q=70" alt="Gangotri"/></div>
+          <div class="dc-info"><h4>Gangotri</h4><p>Packages from <strong>₹8,600</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=300&q=70" alt="Yamunotri"/></div>
+          <div class="dc-info"><h4>Yamunotri</h4><p>Packages from <strong>₹7,800</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="dest-cards-wrap" id="ind-1">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1562109285-bd89ed36be47?w=300&q=70" alt="Rishikesh"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Rishikesh</h4><p>Packages from <strong>₹5,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&q=70" alt="Auli"/><span class="dc-rating">4.7</span></div>
+          <div class="dc-info"><h4>Auli Skiing</h4><p>Packages from <strong>₹9,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=300&q=70" alt="Camping"/></div>
+          <div class="dc-info"><h4>Camping Trips</h4><p>Packages from <strong>₹3,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=70" alt="Trekking"/></div>
+          <div class="dc-info"><h4>Himalayan Treks</h4><p>Packages from <strong>₹6,500</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="dest-cards-wrap" id="ind-2">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1477587458883-47145ed31459?w=300&q=70" alt="Mussoorie"/><span class="dc-rating">4.6</span></div>
+          <div class="dc-info"><h4>Mussoorie</h4><p>Packages from <strong>₹4,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=300&q=70" alt="Nainital"/><span class="dc-rating">4.4</span></div>
+          <div class="dc-info"><h4>Nainital</h4><p>Packages from <strong>₹4,000</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=70" alt="Lansdowne"/></div>
+          <div class="dc-info"><h4>Lansdowne</h4><p>Packages from <strong>₹3,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=300&q=70" alt="Chakrata"/></div>
+          <div class="dc-info"><h4>Chakrata</h4><p>Packages from <strong>₹4,200</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="dest-cards-wrap" id="ind-3">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=300&q=70" alt="Jim Corbett"/><span class="dc-rating">4.6</span></div>
+          <div class="dc-info"><h4>Jim Corbett</h4><p>Packages from <strong>₹6,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=300&q=70" alt="Rajaji"/></div>
+          <div class="dc-info"><h4>Rajaji National Park</h4><p>Packages from <strong>₹5,400</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="dest-cards-wrap" id="ind-4">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&q=70" alt="Valley of Flowers"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Valley of Flowers</h4><p>Packages from <strong>₹8,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=70" alt="Chopta"/><span class="dc-rating">4.7</span></div>
+          <div class="dc-info"><h4>Chopta & Tungnath</h4><p>Packages from <strong>₹5,600</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&q=70" alt="Roopkund"/></div>
+          <div class="dc-info"><h4>Roopkund Trek</h4><p>Packages from <strong>₹9,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&q=70" alt="Kedarkantha"/></div>
+          <div class="dc-info"><h4>Kedarkantha Trek</h4><p>Packages from <strong>₹7,800</strong></p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     POPULAR PACKAGES
+══════════════════════════════ -->
+<section class="section-block" id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Most popular tour packages by verified agents</h2>
+    </div>
+    <div class="region-tabs" id="pkgTabs">
+      <button class="rtab active" data-group="pkg-india">Uttarakhand</button>
+      <button class="rtab" data-group="pkg-intl">International</button>
+    </div>
+
+    <div class="pkg-grid active" id="pkg-india">
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Char Dham"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">9 Nights / 10 Days</div>
+          <h3><a href="#">Deluxe Chardham Package for 9 Nights 10 Days</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Barkot(2N) → Uttarkashi(2N) → Guptkashi(2N) → Kedarnath(1N) → Auli(2N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Uttra Holidays</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.3 <span>(11 reviews)</span></div>
           </div>
         </div>
-
-        <!-- Explore -->
-        <div class="footer-col">
-          <h5>Explore</h5>
-          <ul>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Destinations</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Travel Guides</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> News &amp; Blog</a></li>
-          </ul>
-        </div>
-
-        <!-- Our Destination -->
-        <div class="footer-col">
-          <h5>Our Destination</h5>
-          <ul>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Paris, France</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Bali, Indonesia</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Tokyo, Japan</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> New York, USA</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Dubai, UAE</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-col">
-          <h5>Contact Us</h5>
-          <div class="footer-contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>123 Travel Lane, Adventure City, AC 45678</span>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹20,900</span>
+            <span class="pkg-price">₹18,999<em>/person</em></span>
           </div>
-          <div class="footer-contact-item">
-            <i class="fas fa-phone"></i>
-            <span>+1 234 567 8900<br />+1 987 654 3210</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>hello@travlla.com<br />support@travlla.com</span>
-          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
         </div>
-
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p>© 2026 <span>Travlla</span>. All Rights Reserved. Made with ❤️ for Travelers</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1562109285-bd89ed36be47?w=600&q=80" alt="Rishikesh"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">3 Nights / 4 Days</div>
+          <h3><a href="#">Adventure & Spiritual Rishikesh Haridwar Package</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Haridwar(1N) → Rishikesh(2N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">DevBhoomi Holidays</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.7 <span>(89 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹9,999</span>
+            <span class="pkg-price">₹8,499<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Auli"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">5 Nights / 6 Days</div>
+          <h3><a href="#">Himalayan Snow Escape – Auli, Joshimath & Chopta</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Auli(3N) → Joshimath(1N) → Chopta(1N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Peak Himalaya Tours</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.6 <span>(44 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹14,900</span>
+            <span class="pkg-price">₹12,499<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Valley of Flowers"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">5 Nights / 6 Days</div>
+          <h3><a href="#">Valley of Flowers & Hemkund Sahib Trek Package</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Rishikesh(1N) → Joshimath(1N) → Ghangaria(2N) → Govindghat(1N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Himalaya Trek & Tour</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.8 <span>(62 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹10,500</span>
+            <span class="pkg-price">₹8,999<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=600&q=80" alt="Jim Corbett"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">3 Nights / 4 Days</div>
+          <h3><a href="#">Jim Corbett Wildlife Safari Package</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Ramnagar(1N) → Corbett(2N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Wildlife India Tours</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.5 <span>(38 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹8,200</span>
+            <span class="pkg-price">₹6,999<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Chopta"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">2 Nights / 3 Days</div>
+          <h3><a href="#">Chopta Tungnath – Mini Switzerland of India</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Ukhimath(1N) → Chopta(1N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Garhwal Adventures</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.4 <span>(27 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹6,500</span>
+            <span class="pkg-price">₹5,499<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Scroll To Top -->
-  <button class="scroll-top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+    <div class="pkg-grid" id="pkg-intl">
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">5 Nights / 6 Days</div>
+          <h3><a href="#">Bali Honeymoon Package with Seminyak & Ubud</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Seminyak(2N) → Ubud(2N) → Nusa Dua(1N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Bali Dream Travels</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.9 <span>(168 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹17,500</span>
+            <span class="pkg-price">₹15,600<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
 
-  <!-- Main JS -->
-  <script src="js/main.js"></script>
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Singapore"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">4 Nights / 5 Days</div>
+          <h3><a href="#">Singapore Tour with Universal Studios & Gardens by the Bay</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Singapore(4N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Holiday Matrix</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.7 <span>(200 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹30,000</span>
+            <span class="pkg-price">₹28,500<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
 
+      <div class="pkg-card" data-reveal>
+        <a href="#" class="pkg-img-link">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai"/>
+        </a>
+        <div class="pkg-body">
+          <div class="pkg-duration-badge">5 Nights / 6 Days</div>
+          <h3><a href="#">Dazzling Dubai Package with Return Airfare</a></h3>
+          <p class="pkg-route"><i class="fas fa-map-pin"></i> Dubai(5N)</p>
+          <div class="pkg-agent">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=60" alt="Agent" class="agent-img"/>
+            <span class="agent-name">Freezemytrip</span>
+            <div class="pkg-rating"><i class="fas fa-star"></i> 4.4 <span>(17 reviews)</span></div>
+          </div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price-wrap">
+            <span class="pkg-orig">₹83,900</span>
+            <span class="pkg-price">₹67,500<em>/person</em></span>
+          </div>
+          <a href="#contact" class="pkg-cta">Get Offers <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     HONEYMOON PACKAGES
+══════════════════════════════ -->
+<section class="section-block section-gray" id="honeymoon">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Book your honeymoon package</h2>
+    </div>
+    <div class="region-tabs">
+      <button class="rtab active" data-group="hon-0">International Honeymoon</button>
+      <button class="rtab" data-group="hon-1">Domestic Honeymoon</button>
+    </div>
+
+    <div class="dest-cards-wrap active" id="hon-0">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=300&q=70" alt="Maldives"/><span class="dc-rating">5.0</span></div>
+          <div class="dc-info"><h4>Maldives</h4><p>Packages from <strong>₹39,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=300&q=70" alt="Bali"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Bali</h4><p>Packages from <strong>₹15,600</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=300&q=70" alt="Dubai"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Dubai</h4><p>Packages from <strong>₹16,750</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=300&q=70" alt="Singapore"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Singapore</h4><p>Packages from <strong>₹28,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=300&q=70" alt="Vietnam"/></div>
+          <div class="dc-info"><h4>Vietnam</h4><p>Packages from <strong>₹17,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=300&q=70" alt="Thailand"/></div>
+          <div class="dc-info"><h4>Thailand</h4><p>Packages from <strong>₹13,500</strong></p></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="dest-cards-wrap" id="hon-1">
+      <div class="dest-cards-row">
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=70" alt="Kedarnath"/><span class="dc-rating">4.9</span></div>
+          <div class="dc-info"><h4>Kedarnath</h4><p>Packages from <strong>₹10,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&q=70" alt="Auli"/><span class="dc-rating">4.7</span></div>
+          <div class="dc-info"><h4>Auli</h4><p>Packages from <strong>₹9,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1562109285-bd89ed36be47?w=300&q=70" alt="Rishikesh"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Rishikesh</h4><p>Packages from <strong>₹5,500</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1477587458883-47145ed31459?w=300&q=70" alt="Mussoorie"/></div>
+          <div class="dc-info"><h4>Mussoorie</h4><p>Packages from <strong>₹4,800</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&q=70" alt="Valley of Flowers"/><span class="dc-rating">4.8</span></div>
+          <div class="dc-info"><h4>Valley of Flowers</h4><p>Packages from <strong>₹8,200</strong></p></div>
+        </a>
+        <a href="#" class="dest-card">
+          <div class="dc-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=300&q=70" alt="Nainital"/></div>
+          <div class="dc-info"><h4>Nainital</h4><p>Packages from <strong>₹4,000</strong></p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     WHY DEVBHOOMI
+══════════════════════════════ -->
+<section class="section-block why-section">
+  <div class="wrap">
+    <div class="sec-head"><h2>Why Book with DevBhoomi Travels?</h2></div>
+    <div class="why-grid">
+      <div class="why-card" data-reveal>
+        <div class="why-icon"><i class="fas fa-balance-scale"></i></div>
+        <h4>Compare & Save</h4>
+        <p>Get quotes from up to 3 verified local agents and save up to 30% on your trip cost.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <div class="why-icon"><i class="fas fa-star"></i></div>
+        <h4>Top Rated Agents</h4>
+        <p>Only verified agents with 4.4+ ratings across 1,00,000+ successfully completed trips.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Secure Payments</h4>
+        <p>Pay through DevBhoomi for complete money-back guarantee and 100% secure transactions.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <h4>24/7 Support</h4>
+        <p>Our travel experts are available round the clock to assist you before and during your trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     CONTACT / ENQUIRY
+══════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-left" data-reveal>
+      <h2>Plan Your Uttarakhand Trip</h2>
+      <p>Share your travel details and get personalized quotes from our verified agents within 2 hours.</p>
+      <div class="contact-details">
+        <div class="cd-item"><i class="fas fa-phone-alt"></i><div><span>Call / WhatsApp</span><strong>+91 98765 43210</strong></div></div>
+        <div class="cd-item"><i class="fas fa-envelope"></i><div><span>Email</span><strong>hello@devbhoomi.in</strong></div></div>
+        <div class="cd-item"><i class="fas fa-map-marker-alt"></i><div><span>Office</span><strong>Rishikesh, Uttarakhand 249201</strong></div></div>
+      </div>
+    </div>
+    <div class="contact-form-wrap" data-reveal>
+      <form class="contact-form" id="contactForm">
+        <h3>Get Free Quotes</h3>
+        <div class="cf-row">
+          <div class="cf-field"><label>Full Name</label><input type="text" placeholder="Your name" required/></div>
+          <div class="cf-field"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX" required/></div>
+        </div>
+        <div class="cf-field"><label>Destination</label>
+          <select>
+            <option value="">Select destination…</option>
+            <option>Char Dham Yatra</option><option>Kedarnath</option><option>Rishikesh & Haridwar</option>
+            <option>Auli Skiing</option><option>Valley of Flowers</option><option>Jim Corbett</option>
+            <option>Chopta & Tungnath</option><option>Custom Plan</option>
+          </select>
+        </div>
+        <div class="cf-row">
+          <div class="cf-field"><label>Travel Date</label><input type="date"/></div>
+          <div class="cf-field"><label>Travelers</label>
+            <select><option>1 Person</option><option>2 Persons</option><option>3–5</option><option>6–10</option><option>10+</option></select>
+          </div>
+        </div>
+        <div class="cf-field"><label>Message</label><textarea placeholder="Budget, special requirements…"></textarea></div>
+        <button type="submit" class="cf-submit"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="wrap footer-grid">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <img src="logo.png" alt="DevBhoomi" class="ft-logo-img"/>
+          <div><span class="ftl-main">DevBhoomi</span><span class="ftl-sub">Travels</span></div>
+        </div>
+        <p>India's trusted Uttarakhand travel marketplace. Compare quotes from verified agents and book the best trip at the best price.</p>
+        <div class="ft-socials">
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="ft-col">
+        <h5>Uttarakhand</h5>
+        <ul>
+          <li><a href="#">Kedarnath</a></li>
+          <li><a href="#">Rishikesh & Haridwar</a></li>
+          <li><a href="#">Char Dham Yatra</a></li>
+          <li><a href="#">Auli Ski Resort</a></li>
+          <li><a href="#">Valley of Flowers</a></li>
+          <li><a href="#">Jim Corbett</a></li>
+          <li><a href="#">Chopta & Tungnath</a></li>
+          <li><a href="#">Mussoorie & Nainital</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>International</h5>
+        <ul>
+          <li><a href="#">Bali, Indonesia</a></li>
+          <li><a href="#">Singapore</a></li>
+          <li><a href="#">Dubai, UAE</a></li>
+          <li><a href="#">Maldives</a></li>
+          <li><a href="#">Thailand</a></li>
+          <li><a href="#">Vietnam</a></li>
+          <li><a href="#">Switzerland</a></li>
+          <li><a href="#">Europe</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">All Packages</a></li>
+          <li><a href="#">Honeymoon Packages</a></li>
+          <li><a href="#">Weekend Getaways</a></li>
+          <li><a href="#">Travel Blog</a></li>
+          <li><a href="#">Travel Agent Login</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <ul class="ft-contact">
+          <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+          <li><i class="fab fa-whatsapp"></i> WhatsApp Us</li>
+          <li><i class="fas fa-envelope"></i> hello@devbhoomi.in</li>
+          <li><i class="fas fa-map-marker-alt"></i> Rishikesh, Uttarakhand 249201</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="wrap footer-bar-inner">
+      <p>© 2025 DevBhoomi Travels Pvt. Ltd. – All Rights Reserved</p>
+      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919876543210" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="js/main.js"></script>
 </body>
 </html>
