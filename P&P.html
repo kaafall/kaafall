@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Kaafall Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-dark:  #1b4332;
+      --green-mid:   #2d6a4f;
+      --green-light: #40916c;
+      --green-pale:  #d8f3dc;
+      --green-soft:  #f0faf2;
+      --white:       #ffffff;
+      --text-main:   #1a2e22;
+      --text-body:   #3d5a47;
+      --text-muted:  #6b8f76;
+      --border:      #c7e4ce;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+      z-index: 999;
+      transition: width .1s linear;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 12px rgba(27,67,50,.06);
+      animation: slideDown .5s ease both;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-64px); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: var(--green-dark);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+
+    .logo-tag {
+      font-size: .62rem;
+      color: var(--text-muted);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .back-link {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--green-mid);
+      text-decoration: none;
+      display: flex; align-items: center; gap: .4rem;
+      padding: .45rem 1.1rem;
+      border: 1.5px solid var(--green-mid);
+      border-radius: 2rem;
+      transition: background .25s, color .25s;
+    }
+    .back-link:hover { background: var(--green-mid); color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      padding: 5rem 5% 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp .7s .2s ease both;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-chip {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      color: #d8f3dc;
+      font-size: .7rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: .35rem 1.1rem;
+      border-radius: 2rem;
+      margin-bottom: 1.4rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      position: relative;
+      margin-bottom: .8rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--green-pale); }
+
+    .hero-sub {
+      font-size: .92rem;
+      color: rgba(255,255,255,.65);
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 5% 6rem;
+    }
+
+    /* ── BLOCK ── */
+    .block {
+      display: grid;
+      grid-template-columns: 3px 1fr;
+      gap: 0 1.6rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .block.show { opacity: 1; transform: translateY(0); }
+
+    .block-bar {
+      background: linear-gradient(180deg, var(--green-mid), var(--green-pale));
+      border-radius: 3px;
+      width: 3px;
+      min-height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .6s .2s ease;
+    }
+
+    .block.show .block-bar { transform: scaleY(1); }
+
+    .block-num {
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: .45rem;
+    }
+
+    .block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: .8rem;
+    }
+
+    .block p {
+      font-size: .95rem;
+      color: var(--text-body);
+      line-height: 1.85;
+    }
+
+    /* ── SEPARATOR ── */
+    .sep {
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+      margin-bottom: 3rem;
+    }
+
+    /* ── CONTACT STRIP ── */
+    .contact-strip {
+      background: var(--green-soft);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s, transform .6s;
+    }
+
+    .contact-strip.show { opacity: 1; transform: translateY(0); }
+
+    .contact-strip h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      margin-bottom: .5rem;
+    }
+
+    .contact-strip p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .contact-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-btns a {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--green-dark);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 2rem;
+      padding: .55rem 1.3rem;
+      text-decoration: none;
+      transition: all .25s;
+    }
+
+    .contact-btns a:hover {
+      background: var(--green-dark);
+      color: #fff;
+      border-color: var(--green-dark);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,.45);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: .78rem;
+      letter-spacing: .06em;
+    }
+
+    footer strong { color: var(--green-pale); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .back-link span { display: none; }
+      .hero { padding: 3.5rem 1.2rem 3rem; }
+      main { padding: 2.5rem 1.2rem 4rem; }
+      .block { gap: 0 1.1rem; }
+      .contact-strip { padding: 1.8rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="progress" id="progress"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <a class="logo" href="https://kaafall.vercel.app/">
+        <div class="logo-name">kaafall</div>
+        <div class="logo-tag">Travels</div>
+      </div>
+    </a>
+    <a class="back-link" href="https://kaafall.vercel.app/">
+      ← <span>Back to Home</span>
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-chip">Legal Document</div>
+    <h1>Privacy <em>&amp; Policy</em></h1>
+    <p class="hero-sub">Effective March 16, 2026 &nbsp;·&nbsp; Your privacy matters to us.</p>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+
+    <div class="block">
+      <div class="block-bar"></div>
+      <div class="block-inner">
+        <div class="block-num">01 — Information We Collect</div>
+        <h2>What Information We Collect</h2>
+        <p>When you use Kaafall Travels, we collect personal information you provide directly — such as your name, phone number, email address, and travel preferences — during registration, booking inquiries, or contact form submissions. We also automatically collect certain usage data including your IP address, browser type, pages visited, and device information to improve our platform's performance and user experience.</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+
+    <div class="block">
+      <div class="block-bar"></div>
+      <div class="block-inner">
+        <div class="block-num">02 — How We Use It</div>
+        <h2>How We Use Your Information</h2>
+        <p>Your information is used solely to provide, improve, and personalise our travel services. This includes connecting you with verified travel agents, processing booking inquiries, sending trip-related updates, and offering customer support. We may also use your data to send promotional offers or newsletters — you can opt out at any time. We do not sell, rent, or trade your personal data to any third party for their independent marketing purposes.</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+
+    <div class="block">
+      <div class="block-bar"></div>
+      <div class="block-inner">
+        <div class="block-num">03 — Data Sharing</div>
+        <h2>Data Sharing & Third Parties</h2>
+        <p>We share your information only with verified travel agents listed on our platform, strictly for the purpose of fulfilling your booking or inquiry. We may also share data with trusted third-party service providers who assist us in operating our website — such as payment gateways, analytics tools, and communication services — under strict confidentiality agreements. In certain circumstances, we may disclose your data if required by law or government authority.</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+
+    <div class="block">
+      <div class="block-bar"></div>
+      <div class="block-inner">
+        <div class="block-num">04 — Your Rights</div>
+        <h2>Your Rights & Data Security</h2>
+        <p>You have the right to access, update, or request deletion of your personal data at any time by contacting us at uk.kaafall@gmail.com. We implement industry-standard security measures including encrypted data storage and secure HTTPS connections to protect your information. While we take every precaution, no method of transmission over the internet is 100% secure. By using our platform, you consent to this Privacy Policy, which may be updated periodically — continued use constitutes acceptance of any changes.</p>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-strip" id="contact-strip">
+      <h3>Questions about your privacy?</h3>
+      <p>Reach out to us — we're happy to help you understand how your data is used.</p>
+      <div class="contact-btns">
+        <a href="tel:+919810966202">📞 +91 98109 66202</a>
+        <a href="mailto:uk.kaafall@gmail.com">✉️ uk.kaafall@gmail.com</a>
+        <a href="https://wa.me/919810966202">💬 WhatsApp</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 <strong>Kaafall Travels Pvt. Ltd.</strong> · All Rights Reserved · Made with ❤️ in Uttarakhand
+  </footer>
+
+  <script>
+    // Scroll progress
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (window.scrollY / total * 100) + '%';
+    });
+
+    // Animate on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.block, .contact-strip').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
