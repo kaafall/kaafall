@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Kaafall Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      --green-dark:  #1b4332;
+      --green-mid:   #2d6a4f;
+      --green-light: #40916c;
+      --green-pale:  #d8f3dc;
+      --green-soft:  #f0faf2;
+      --white:       #ffffff;
+      --text-dark:   #1a2e22;
+      --text-body:   #3d5a47;
+      --text-muted:  #6b8f76;
+      --border:      #c7e4ce;
+      --radius:      14px;
+      --transition:  all .3s ease;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    /* ── PROGRESS BAR ── */
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+      z-index: 999;
+      transition: width .1s linear;
+    }
+
+    /* ════════ HERO ════════ */
+    .hero {
+      position: relative;
+      height: 280px;
+      background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?w=1600&q=85');
+      background-size: cover;
+      background-position: center 55%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
+        rgba(11,30,20,.82) 0%,
+        rgba(27,67,50,.66) 55%,
+        rgba(11,30,20,.80) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1.5rem;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero-chip {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.28);
+      color: var(--green-pale);
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: .3rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: .7rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: .4rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--green-pale); }
+
+    .hero p {
+      font-size: .88rem;
+      color: rgba(255,255,255,.65);
+    }
+
+    /* ════════ MAIN ════════ */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 5% 5rem;
+    }
+
+    /* ════════ CONTACT INFO CARDS ════════ */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 4rem;
+    }
+
+    .info-card {
+      background: var(--green-soft);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s ease, box-shadow .3s, border-color .3s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .info-card.visible { opacity: 1; transform: translateY(0); }
+
+    .info-card:hover {
+      border-color: var(--green-light);
+      box-shadow: 0 8px 28px rgba(27,67,50,.12);
+      transform: translateY(-4px) !important;
+    }
+
+    .info-icon {
+      font-size: 1.8rem;
+      margin-bottom: .7rem;
+    }
+
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: .35rem;
+    }
+
+    .info-card p {
+      font-size: .85rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    .info-card span {
+      display: inline-block;
+      margin-top: .6rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--green-mid);
+    }
+
+    /* ════════ FORM + MAP SECTION ════════ */
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* ── FORM ── */
+    .form-wrap {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .form-wrap.visible { opacity: 1; transform: translateY(0); }
+
+    .section-label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      background: var(--green-soft);
+      border: 1px solid var(--border);
+      display: inline-block;
+      padding: .28rem .85rem;
+      border-radius: 2rem;
+      margin-bottom: .8rem;
+    }
+
+    .form-wrap h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: .5rem;
+    }
+
+    .form-wrap > p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text-body);
+      margin-bottom: .4rem;
+      letter-spacing: .02em;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: .7rem 1rem;
+      outline: none;
+      transition: var(--transition);
+      appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--green-light);
+      box-shadow: 0 0 0 3px rgba(64,145,108,.12);
+    }
+
+    input::placeholder,
+    textarea::placeholder { color: #a8c4b0; }
+
+    textarea { resize: vertical; min-height: 110px; }
+
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b8f76' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--green-dark);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .92rem;
+      font-weight: 600;
+      padding: .85rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: .4rem;
+      letter-spacing: .03em;
+    }
+
+    .btn-submit:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(27,67,50,.22);
+    }
+
+    /* Success message */
+    .success-msg {
+      display: none;
+      background: var(--green-soft);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      color: var(--green-dark);
+      font-size: .92rem;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+
+    /* ── RIGHT SIDE ── */
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s .15s ease, transform .65s .15s ease;
+    }
+
+    .right-side.visible { opacity: 1; transform: translateY(0); }
+
+    /* Map placeholder */
+    .map-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      height: 220px;
+      background: var(--green-soft);
+      position: relative;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: saturate(.85);
+    }
+
+    /* Hours card */
+    .hours-card {
+      background: var(--green-soft);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .hours-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .84rem;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-body);
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+
+    .hours-row .time {
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    .dot-open  { width: 7px; height: 7px; background: #40916c; border-radius: 50%; display: inline-block; margin-right: .4rem; }
+    .dot-close { width: 7px; height: 7px; background: #e07070; border-radius: 50%; display: inline-block; margin-right: .4rem; }
+
+    /* Social links */
+    .social-row {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      flex: 1;
+      min-width: 80px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: .7rem .5rem;
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: var(--green-dark);
+      color: #fff;
+      border-color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .social-btn div { font-size: 1.2rem; margin-bottom: .2rem; }
+
+    /* ════════ ANIMATIONS ════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ════════ RESPONSIVE ════════ */
+    @media (max-width: 760px) {
+      .info-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .contact-section { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .hero { height: 210px; }
+      main { padding: 2.5rem 4% 4rem; }
+    }
+
+    @media (max-width: 480px) {
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .info-grid .info-card:last-child { grid-column: span 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-chip">📍 Get In Touch</div>
+      <h1>Contact <em>Us</em></h1>
+      <p>We're just a call or message away — always happy to help.</p>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- INFO CARDS -->
+    <div class="info-grid">
+      <a class="info-card" href="tel:+919810966202">
+        <div class="info-icon">📞</div>
+        <h3>Call Us</h3>
+        <p>Mon–Sat, 9 AM – 7 PM<br/>Sun, 10 AM – 5 PM</p>
+        <span>+91 98109 66202</span>
+      </a>
+      <a class="info-card" href="mailto:uk.kaafall@gmail.com">
+        <div class="info-icon">✉️</div>
+        <h3>Email Us</h3>
+        <p>We reply within<br/>2 business hours</p>
+        <span>uk.kaafall@gmail.com</span>
+      </a>
+      <a class="info-card" href="https://wa.me/919810966202" target="_blank">
+        <div class="info-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>Quick queries &amp;<br/>instant support</p>
+        <span>Chat Now →</span>
+      </a>
+    </div>
+
+    <!-- FORM + RIGHT SIDE -->
+    <div class="contact-section">
+
+      <!-- FORM -->
+      <div class="form-wrap" id="formWrap">
+        <div class="section-label">Send a Message</div>
+        <h2>Plan Your Perfect Trip</h2>
+        <p>Fill in your details and our team will get back to you within 2 hours.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Rahul Sharma" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="rahul@example.com" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <select id="destination">
+              <option value="" disabled selected>Select destination…</option>
+              <option>Char Dham Yatra</option>
+              <option>Kedarnath</option>
+              <option>Rishikesh &amp; Haridwar</option>
+              <option>Auli Skiing</option>
+              <option>Valley of Flowers</option>
+              <option>Jim Corbett</option>
+              <option>Chopta &amp; Tungnath</option>
+              <option>Mussoorie &amp; Dehradun</option>
+              <option>Custom Plan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="travelers">No. of Travelers</label>
+            <select id="travelers">
+              <option value="" disabled selected>Select…</option>
+              <option>1 Person</option>
+              <option>2 Persons</option>
+              <option>3 – 5 Persons</option>
+              <option>6 – 10 Persons</option>
+              <option>Group 10+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Travel Date</label>
+          <input type="date" id="date" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Tell us about your trip — budget, preferences, special requests…"></textarea>
+        </div>
+
+        <button class="btn-submit" id="submitBtn" type="button">Send Enquiry →</button>
+        <div class="success-msg" id="successMsg">✅ Thank you! We'll get back to you within 2 hours.</div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="right-side" id="rightSide">
+
+        <!-- MAP -->
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.95105108765!2d78.26744233671875!3d30.316495000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d0f95a5af099%3A0x6a3e81de4744ef71!2sUttarakhand!5e0!3m2!1sen!2sin!4v1710500000000!5m2!1sen!2sin"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Uttarakhand Map">
+          </iframe>
+        </div>
+
+        <!-- OFFICE HOURS -->
+        <div class="hours-card">
+          <h4>🕐 Office Hours</h4>
+          <div class="hours-row">
+            <span><span class="dot-open"></span>Mon – Fri</span>
+            <span class="time">9:00 AM – 7:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span><span class="dot-open"></span>Saturday</span>
+            <span class="time">9:00 AM – 6:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span><span class="dot-open"></span>Sunday</span>
+            <span class="time">10:00 AM – 5:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span><span class="dot-close"></span>Public Holidays</span>
+            <span class="time">Closed</span>
+          </div>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="social-row">
+          <a class="social-btn" href="#">
+            <div>📘</div>Facebook
+          </a>
+          <a class="social-btn" href="#">
+            <div>📸</div>Instagram
+          </a>
+          <a class="social-btn" href="#">
+            <div>▶️</div>YouTube
+          </a>
+          <a class="social-btn" href="https://wa.me/919810966202" target="_blank">
+            <div>💬</div>WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Scroll progress
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (window.scrollY / total * 100) + '%';
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.info-card, .form-wrap, .right-side').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+      observer.observe(el);
+    });
+
+    // Trigger info cards immediately on load
+    setTimeout(() => {
+      document.querySelectorAll('.info-card').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 100);
+      });
+    }, 300);
+
+    // Form submit
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const name  = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const dest  = document.getElementById('destination').value;
+
+      if (!name || !phone || !dest) {
+        [name ? null : 'name', phone ? null : 'phone', dest ? null : 'destination']
+          .filter(Boolean)
+          .forEach(id => {
+            const el = document.getElementById(id);
+            el.style.borderColor = '#e07070';
+            el.style.boxShadow = '0 0 0 3px rgba(224,112,112,.12)';
+            setTimeout(() => {
+              el.style.borderColor = '';
+              el.style.boxShadow = '';
+            }, 1800);
+          });
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+        // Reset fields
+        ['name','phone','email','destination','travelers','date','message']
+          .forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+          });
+      }, 1200);
+    });
+  </script>
+
+</body>
+</html>
