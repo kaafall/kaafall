@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Kaafall Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/asstes/css/style.css"/>
+  <script src="/asstes/js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    :root {
+      --green-dark:  #1b4332;
+      --green-mid:   #2d6a4f;
+      --green-light: #40916c;
+      --green-pale:  #d8f3dc;
+      --green-soft:  #f0faf2;
+      --white:       #ffffff;
+      --text-dark:   #1a2e22;
+      --text-body:   #3d5a47;
+      --text-muted:  #6b8f76;
+      --border:      #c7e4ce;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; object-fit: cover; }
+    a   { text-decoration: none; }
+
+    /* ── PROGRESS ── */
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+      z-index: 999;
+      transition: width .1s linear;
+    }
+
+    /* ════════ HERO ════════ */
+    .hero {
+      position: relative;
+      height: 280px;
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85');
+      background-size: cover;
+      background-position: center 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
+        rgba(11,30,20,.80) 0%,
+        rgba(27,67,50,.65) 60%,
+        rgba(11,30,20,.78) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1.5rem;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero-chip {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.28);
+      color: var(--green-pale);
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: .3rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: .7rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: .4rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--green-pale); }
+
+    .hero p {
+      font-size: .88rem;
+      color: rgba(255,255,255,.65);
+    }
+
+    /* ════════ MAIN ════════ */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 5% 5rem;
+    }
+
+    /* ════════ INTRO ════════ */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4.5rem;
+    }
+
+    .intro-img {
+      border-radius: 18px;
+      overflow: hidden;
+      height: 320px;
+      box-shadow: 0 16px 48px rgba(27,67,50,.16);
+    }
+
+    .intro-text .section-label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      background: var(--green-soft);
+      border: 1px solid var(--border);
+      display: inline-block;
+      padding: .28rem .85rem;
+      border-radius: 2rem;
+      margin-bottom: .8rem;
+    }
+
+    .intro-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text p {
+      font-size: .95rem;
+      color: var(--text-body);
+      margin-bottom: .8rem;
+    }
+
+    /* ════════ STATS ════════ */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      background: var(--green-soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 4.5rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .stat-item.visible { opacity: 1; transform: translateY(0); }
+
+    .stat-item strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+
+    .stat-item span {
+      font-size: .8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: var(--border);
+      margin: auto;
+    }
+
+    /* ════════ VALUES ════════ */
+    .values-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem 1.3rem;
+      text-align: center;
+      transition: all .3s ease;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease, box-shadow .3s, border-color .3s;
+    }
+
+    .value-card.visible { opacity: 1; transform: translateY(0); }
+
+    .value-card:hover {
+      border-color: var(--green-light);
+      box-shadow: 0 8px 28px rgba(27,67,50,.12);
+      transform: translateY(-4px) !important;
+    }
+
+    .value-icon {
+      font-size: 1.8rem;
+      margin-bottom: .7rem;
+    }
+
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: .4rem;
+    }
+
+    .value-card p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ════════ TEAM ════════ */
+    .team-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.4rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .team-card {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .team-card.visible { opacity: 1; transform: translateY(0); }
+
+    .team-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto .8rem;
+      border: 3px solid var(--green-pale);
+      box-shadow: 0 4px 16px rgba(27,67,50,.12);
+    }
+
+    .team-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .98rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: .2rem;
+    }
+
+    .team-card span {
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+
+    /* ════════ CTA ════════ */
+    .cta {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .cta.visible { opacity: 1; transform: translateY(0); }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .6rem;
+      position: relative;
+    }
+
+    .cta p {
+      font-size: .92rem;
+      color: rgba(255,255,255,.65);
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--green-dark);
+      font-size: .88rem;
+      font-weight: 600;
+      padding: .65rem 1.6rem;
+      border-radius: 2rem;
+      transition: all .25s;
+    }
+
+    .btn-white:hover {
+      background: var(--green-pale);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 600;
+      padding: .65rem 1.6rem;
+      border-radius: 2rem;
+      border: 1.5px solid rgba(255,255,255,.45);
+      transition: all .25s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.12);
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ════════ ANIMATIONS ════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ════════ RESPONSIVE ════════ */
+    @media (max-width: 700px) {
+      .intro { grid-template-columns: 1fr; gap: 1.8rem; }
+      .intro-img { height: 220px; }
+      .stats { grid-template-columns: 1fr 1fr; gap: .8rem; }
+      .stat-divider { display: none; }
+      .hero { height: 210px; }
+      main { padding: 2.5rem 4% 4rem; }
+      .cta { padding: 2.2rem 1.4rem; }
+    }
+
+    @media (max-width: 420px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-chip">🏔️ Who We Are</div>
+      <h1>About <em>Kaafall</em></h1>
+      <p>Born in the mountains. Built for the traveler.</p>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- INTRO -->
+    <div class="intro reveal-section">
+      <div class="intro-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85" alt="Kedarnath" />
+      </div>
+      <div class="intro-text">
+        <div class="section-label">Our Story</div>
+        <h2>Uttarakhand's Most Trusted Travel Marketplace</h2>
+        <p>Kaafall Travels was born from a simple belief — every traveler deserves honest advice, fair pricing and a journey that feels personal. We are a team of mountain lovers from Uttarakhand who got tired of overpriced, impersonal tour packages.</p>
+        <p>So we built a platform where you can compare quotes from up to 3 verified local agents, read real reviews and book the trip you actually want — at a price that makes sense.</p>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-item">
+        <strong>10K+</strong>
+        <span>Happy Travelers</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <strong>150+</strong>
+        <span>Destinations</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <strong>50+</strong>
+        <span>Verified Agents</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <strong>4.7★</strong>
+        <span>Avg Rating</span>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <h2 class="values-title">Why Travelers Choose Us</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Verified Agents</h3>
+        <p>Every agent is background-checked, rated and reviewed by real travelers.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💰</div>
+        <h3>Best Price</h3>
+        <p>Compare up to 3 quotes and save up to 30% on your total trip cost.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
+        <h3>Secure Payments</h3>
+        <p>100% secure transactions with a money-back guarantee on every booking.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📞</div>
+        <h3>24/7 Support</h3>
+        <p>Our travel experts are always a call or WhatsApp away — before and during your trip.</p>
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <h2 class="team-title">The People Behind Kaafall</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Rahul Sharma" />
+        <h4>Nikita rawat</h4>
+        <span>Founder & CEO</span>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80" alt="Priya Negi" />
+        <h4>Priya Negi</h4>
+        <span>Head of Operations</span>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt="Amit Rawat" />
+        <h4>Amit Rawat</h4>
+        <span>Lead Travel Expert</span>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80" alt="Sneha Bisht" />
+        <h4>Sneha Bisht</h4>
+        <span>Customer Experience</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Ready to Explore Devbhoomi?</h2>
+      <p>Talk to our team and get a personalised itinerary within 2 hours.</p>
+      <div class="cta-btns">
+        <a href="tel:+919810966202" class="btn-white">📞 Call Us Now</a>
+        <a href="https://wa.me/919810966202" class="btn-outline">💬 WhatsApp Us</a>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Scroll progress
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (window.scrollY / total * 100) + '%';
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.stat-item, .value-card, .team-card, .cta').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 0.1 + 's';
+      observer.observe(el);
+    });
+  </script>
+
+  <!-- WhatsApp Float -->
+<a href="https://wa.me/919810966202" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
