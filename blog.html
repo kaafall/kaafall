@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Blog – Kaafall Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/asstes/css/blog.css"/>
+  <link rel="stylesheet" href="/asstes/css/style.css"/>
+  <script src="/asstes/js/blog.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/index.html" class="nav-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">kaafall</span>
+        <span class="nl-sub">presents</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">About us</a></li>
+      <li><a href="/packages.html">Packages</a></li>
+      <li><a href="/packages.html">Char Dham</a></li>
+      <li><a href="#">Weekend Trips</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-chip">📖 Kaafall Travel Blog</span>
+      <h1>Stories from <em>Devbhoomi</em></h1>
+      <p class="hero-sub">Travel guides, temple tales, trek diaries and hidden gems of Uttarakhand</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- SEARCH + FILTER -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search blogs — Kedarnath, trek, Mussoorie…" />
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="char-dham">Char Dham</button>
+        <button class="filter-btn" data-cat="trek">Trekking</button>
+        <button class="filter-btn" data-cat="temple">Temples</button>
+        <button class="filter-btn" data-cat="hill">Hill Stations</button>
+        <button class="filter-btn" data-cat="tips">Travel Tips</button>
+      </div>
+    </div>
+
+    <!-- FEATURED POST -->
+    <div class="featured reveal" data-cat="char-dham">
+      <div class="featured-img">
+        <img src="https://images.unsplash.com/photo-1523895665936-7bfe172b757d?w=1000&q=85" alt="Char Dham Yatra" loading="lazy" />
+        <div class="featured-badge">⭐ Featured</div>
+      </div>
+      <div class="featured-body">
+        <div class="post-meta">
+          <span class="post-cat char-dham">Char Dham</span>
+          <span class="post-date">🗓️ March 10, 2026</span>
+          <span class="post-read">⏱️ 8 min read</span>
+        </div>
+        <h2 class="featured-title">Complete Char Dham Yatra Guide 2026 — Everything You Need to Know</h2>
+        <p class="featured-desc">From registration to route planning, best time to visit, what to carry and how to prepare — the ultimate guide to Uttarakhand's holiest pilgrimage circuit covering Yamunotri, Gangotri, Kedarnath and Badrinath.</p>
+        <div class="post-footer">
+          <div class="author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=70" alt="Author" />
+            <span>Rahul Sharma</span>
+          </div>
+          <a href="#" class="btn-read">Read More →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOG GRID -->
+    <div class="blog-grid" id="blogGrid">
+
+      <!-- POST 1 -->
+      <article class="post-card reveal" data-cat="trek">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Kedarkantha Trek" loading="lazy" />
+          <span class="post-cat-badge trek">Trekking</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Feb 28, 2026</span>
+            <span class="post-read">⏱️ 6 min read</span>
+          </div>
+          <h3 class="post-title">Kedarkantha Trek — A Beginner's Winter Wonderland</h3>
+          <p class="post-excerpt">Snow-covered meadows, dense pine forests and a summit sunrise that will stay with you forever — here's why Kedarkantha is the best beginner trek in India.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=70" alt="Author" />
+              <span>Priya Negi</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="post-card reveal" data-cat="temple">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Kedarnath Temple" loading="lazy" />
+          <span class="post-cat-badge temple">Temples</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Feb 18, 2026</span>
+            <span class="post-read">⏱️ 5 min read</span>
+          </div>
+          <h3 class="post-title">Kedarnath Temple — History, Mythology & Visiting Guide</h3>
+          <p class="post-excerpt">At 3,583 metres, Kedarnath is not just a destination — it is a spiritual transformation. Discover the legend, the architecture and everything you need to plan your visit.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=70" alt="Author" />
+              <span>Amit Rawat</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="post-card reveal" data-cat="hill">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1477587458883-47145ed31459?w=600&q=80" alt="Mussoorie" loading="lazy" />
+          <span class="post-cat-badge hill">Hill Stations</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Feb 10, 2026</span>
+            <span class="post-read">⏱️ 4 min read</span>
+          </div>
+          <h3 class="post-title">Mussoorie in 3 Days — The Perfect Itinerary for Families</h3>
+          <p class="post-excerpt">Mall Road, Kempty Falls, Lal Tibba, Camel's Back Road — plan the perfect 3-day Mussoorie trip with our detailed day-by-day itinerary for families and couples.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&q=70" alt="Author" />
+              <span>Sneha Bisht</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 4 -->
+      <article class="post-card reveal" data-cat="tips">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80" alt="Travel Tips" loading="lazy" />
+          <span class="post-cat-badge tips">Travel Tips</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Jan 30, 2026</span>
+            <span class="post-read">⏱️ 7 min read</span>
+          </div>
+          <h3 class="post-title">10 Things to Know Before Visiting Uttarakhand in Monsoon</h3>
+          <p class="post-excerpt">Landslides, road closures, leeches and hidden beauty — everything you must know before planning a trip to Uttarakhand during the monsoon season from July to September.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=70" alt="Author" />
+              <span>Rahul Sharma</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 5 -->
+      <article class="post-card reveal" data-cat="trek">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Tungnath Trek" loading="lazy" />
+          <span class="post-cat-badge trek">Trekking</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Jan 20, 2026</span>
+            <span class="post-read">⏱️ 5 min read</span>
+          </div>
+          <h3 class="post-title">Tungnath & Chandrashila — World's Highest Shiva Temple Trek</h3>
+          <p class="post-excerpt">A 4 km trek from Chopta takes you to the world's highest Shiva temple at 3,680m. Here's our complete guide with tips, routes and the best season to go.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=70" alt="Author" />
+              <span>Priya Negi</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 6 -->
+      <article class="post-card reveal" data-cat="temple">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Valley of Flowers" loading="lazy" />
+          <span class="post-cat-badge temple">Temples</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Jan 8, 2026</span>
+            <span class="post-read">⏱️ 4 min read</span>
+          </div>
+          <h3 class="post-title">Maa Dhari Devi — The Guardian Goddess of Uttarakhand</h3>
+          <p class="post-excerpt">Perched on the banks of Alaknanda, the temple of Maa Dhari Devi holds a powerful legend — discover the mythology, history and how to visit this sacred shrine.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=70" alt="Author" />
+              <span>Amit Rawat</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 7 -->
+      <article class="post-card reveal" data-cat="char-dham">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Badrinath" loading="lazy" />
+          <span class="post-cat-badge char-dham">Char Dham</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Dec 22, 2025</span>
+            <span class="post-read">⏱️ 6 min read</span>
+          </div>
+          <h3 class="post-title">Badrinath Dham — Opening Date, Route & Darshan Tips 2026</h3>
+          <p class="post-excerpt">Lord Vishnu's abode in the Himalayas — everything about Badrinath temple opening dates, how to reach, best time to visit and must-know darshan tips for 2026.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&q=70" alt="Author" />
+              <span>Sneha Bisht</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 8 -->
+      <article class="post-card reveal" data-cat="tips">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=600&q=80" alt="Travel Packing" loading="lazy" />
+          <span class="post-cat-badge tips">Travel Tips</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Dec 10, 2025</span>
+            <span class="post-read">⏱️ 5 min read</span>
+          </div>
+          <h3 class="post-title">Ultimate Packing List for a Himalayan Pilgrimage or Trek</h3>
+          <p class="post-excerpt">Clothes, medicines, permits, shoes, snacks — our comprehensive packing checklist for anyone heading to the high-altitude temples and trails of Uttarakhand.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=70" alt="Author" />
+              <span>Rahul Sharma</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 9 -->
+      <article class="post-card reveal" data-cat="hill">
+        <div class="post-img">
+          <img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=600&q=80" alt="Dhanaulti" loading="lazy" />
+          <span class="post-cat-badge hill">Hill Stations</span>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-date">🗓️ Nov 25, 2025</span>
+            <span class="post-read">⏱️ 4 min read</span>
+          </div>
+          <h3 class="post-title">Dhanaulti — Uttarakhand's Best Kept Secret Hill Station</h3>
+          <p class="post-excerpt">Just 24 km from Mussoorie, Dhanaulti is quieter, greener and more peaceful — cedar forests, eco-parks and snow views without the crowd. Here's why you should go.</p>
+          <div class="post-footer">
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=70" alt="Author" />
+              <span>Priya Negi</span>
+            </div>
+            <a href="#" class="btn-read">Read →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- NO RESULTS -->
+    <div class="no-results" id="noResults">
+      <p>🔍 No blogs found. Try a different keyword or category.</p>
+    </div>
+
+    <!-- NEWSLETTER STRIP -->
+    <div class="newsletter reveal">
+      <div class="newsletter-inner">
+        <h2>Get Uttarakhand Travel Stories in Your Inbox</h2>
+        <p>New blogs, seasonal guides and exclusive travel tips — delivered free every week.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" />
+          <button type="button">Subscribe →</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="blog-script.js"></script>
+  <!-- WhatsApp Float -->
+<a href="https://wa.me/919810966202" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>
