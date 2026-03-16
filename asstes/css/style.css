@@ -75,7 +75,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .splash-dots i:nth-child(3) { background: rgba(255,255,255,.35); animation-delay: .4s; }
 @keyframes sDot { 0%,100%{transform:translateY(0);opacity:.5} 50%{transform:translateY(-12px);opacity:1} }
 
-/* ── TOPBAR ── */
+/* ── TOPBAR ──
 .topbar { background: #1a1a2e; padding: 7px 0; }
 .topbar-inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
 .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
@@ -85,7 +85,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .tb-agent { background: rgba(26,158,92,.2); border: 1px solid rgba(26,158,92,.4); padding: 4px 12px; border-radius: 50px; color: rgba(255,255,255,.85) !important; }
 .tb-agent:hover { background: var(--green) !important; color: #fff !important; }
 .tb-login { background: rgba(255,255,255,.08); padding: 4px 12px; border-radius: 50px; }
-.tb-login:hover { background: rgba(255,255,255,.18) !important; }
+.tb-login:hover { background: rgba(255,255,255,.18) !important; } */
 
 /* ── NAVBAR ── */
 .navbar { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 900; transition: box-shadow var(--t); }
