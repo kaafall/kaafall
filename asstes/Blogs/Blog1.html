@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kedarnath Yatra 2025: Complete Guide – kaafall Travels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="/asstes/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2a7a50;
+      --green-dark: #1f5c3c;
+      --green-light:#3a9e68;
+      --green-pale: #e8f5ee;
+      --green-tint: #f2faf6;
+      --white:      #ffffff;
+      --off-white:  #f8faf9;
+      --text:       #1a2e22;
+      --text-body:  #3d5247;
+      --muted:      #7a9589;
+      --border:     #d4e6da;
+      --border-lt:  #eaf3ee;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text-body);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      width: 0%; z-index: 9999;
+      transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
+    }
+
+    
+
+    /* ── HERO ── */
+    .post-hero {
+      position: relative;
+      height: 500px;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 5% 52px;
+      overflow: hidden;
+    }
+    .post-hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85') center/cover no-repeat;
+      filter: brightness(0.35);
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    .post-hero:hover .post-hero-bg { transform: scale(1.0); }
+    .post-hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+    }
+    .post-hero-content { position: relative; z-index: 1; max-width: 820px; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); margin-bottom: 14px;
+    }
+    .breadcrumb a { color: #7ee8a2; text-decoration: none; }
+
+    .post-cats { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    .cat-pill {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--green); color: white;
+      padding: 4px 13px; border-radius: 20px; font-weight: 500;
+    }
+
+    .post-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 700; line-height: 1.2;
+      color: #ffffff; margin-bottom: 18px;
+    }
+    .post-hero h1 em { color: #7ee8a2; font-style: italic; }
+
+    .post-byline {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+      font-size: 0.82rem; color: rgba(255,255,255,0.8);
+    }
+    .author-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      object-fit: cover; border: 2px solid #7ee8a2;
+    }
+    .byline-dot { color: rgba(255,255,255,0.35); }
+    .read-time {
+      background: rgba(42,122,80,0.75); color: #c8f7da;
+      font-size: 0.72rem; padding: 3px 10px; border-radius: 20px;
+    }
+
+    /* ── LAYOUT ── */
+    .article-wrap {
+      max-width: 1160px; margin: 0 auto;
+      padding: 56px 5% 80px;
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── ARTICLE BODY ── */
+    article.post-body { max-width: 720px; }
+
+    .post-body .lead {
+      font-size: 1.1rem; font-weight: 400;
+      color: var(--text); line-height: 1.75;
+      border-left: 4px solid var(--green);
+      padding: 18px 22px; margin-bottom: 36px;
+      font-style: italic;
+      background: var(--green-tint);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      font-weight: 700; color: var(--green-dark);
+      margin: 44px 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem; font-weight: 600;
+      color: var(--green); margin: 28px 0 10px;
+    }
+
+    .post-body p { margin-bottom: 22px; }
+    .post-body strong { color: var(--text); font-weight: 600; }
+    .post-body a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+    .post-body a:hover { color: var(--green-dark); }
+
+    .post-body ul, .post-body ol { padding-left: 22px; margin-bottom: 22px; }
+    .post-body li { margin-bottom: 8px; }
+
+    .post-body figure {
+      margin: 36px 0;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(42,122,80,0.08);
+    }
+    .post-body figure img { width: 100%; display: block; object-fit: cover; max-height: 420px; }
+    .post-body figcaption {
+      background: var(--green-tint);
+      font-size: 0.78rem; color: var(--muted);
+      padding: 10px 16px; font-style: italic;
+      border-top: 1px solid var(--border);
+    }
+
+    .post-body .wide-img {
+      margin: 36px -30px;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(42,122,80,0.08);
+    }
+    .post-body .wide-img img { width: 100%; display: block; max-height: 360px; object-fit: cover; }
+
+    .post-body blockquote {
+      margin: 36px 0;
+      padding: 22px 26px;
+      background: var(--green-pale);
+      border-left: 4px solid var(--green);
+      border-radius: 0 10px 10px 0;
+    }
+    .post-body blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem; font-style: italic;
+      color: var(--green-dark); margin-bottom: 8px;
+    }
+    .post-body blockquote cite { font-size: 0.8rem; color: var(--muted); font-style: normal; }
+
+    .info-box {
+      background: var(--green-tint);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 22px; margin: 32px 0;
+    }
+    .info-box .info-title {
+      font-size: 0.71rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--green-dark); margin-bottom: 12px; font-weight: 600;
+    }
+    .info-box ul { padding-left: 18px; }
+    .info-box li { font-size: 0.91rem; margin-bottom: 7px; }
+
+    /* TAGS + SHARE */
+    .post-footer {
+      margin-top: 48px; padding-top: 28px;
+      border-top: 2px solid var(--border);
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 16px;
+    }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ptag {
+      background: var(--white); border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.76rem;
+      padding: 5px 13px; border-radius: 20px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .ptag:hover { border-color: var(--green); color: var(--green); background: var(--green-tint); }
+
+    .share-row { display: flex; align-items: center; gap: 10px; }
+    .share-row span { font-size: 0.78rem; color: var(--muted); }
+    .share-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--white); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.88rem; transition: all 0.2s;
+      text-decoration: none; color: var(--text-body);
+    }
+    .share-btn:hover { background: var(--green); border-color: var(--green); color: white; }
+
+    /* AUTHOR CARD */
+    .author-card {
+      margin-top: 44px;
+      background: var(--green-tint);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 26px;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .author-card img {
+      width: 68px; height: 68px; border-radius: 50%;
+      object-fit: cover; border: 3px solid var(--green); flex-shrink: 0;
+    }
+    .author-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--green-dark); margin-bottom: 3px; }
+    .author-card .role { font-size: 0.74rem; color: var(--green); margin-bottom: 8px; font-weight: 500; }
+    .author-card p { font-size: 0.87rem; color: var(--text-body); margin: 0; line-height: 1.6; }
+
+    /* RELATED */
+    .related { margin-top: 60px; }
+    .section-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; font-weight: 600; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--green-dark); margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .rel-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .rel-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(42,122,80,0.13); }
+    .rel-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .rel-card .rel-body { padding: 14px 16px 18px; }
+    .rel-card .rel-cat { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; font-weight: 600; }
+    .rel-card h4 { font-family: 'Playfair Display', serif; font-size: 0.93rem; line-height: 1.35; color: var(--text); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px;
+      box-shadow: 0 2px 12px rgba(42,122,80,0.05);
+    }
+    .sidebar-widget.green-top { border-top: 3px solid var(--green); }
+    .wtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem; color: var(--green-dark);
+      margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border); font-weight: 700;
+    }
+
+    .toc-list { list-style: none; padding: 0; }
+    .toc-list li { border-bottom: 1px solid var(--border-lt); }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 0; font-size: 0.84rem; color: var(--text-body);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .toc-list a::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--border); flex-shrink: 0; transition: background 0.2s;
+    }
+    .toc-list a:hover, .toc-list a.active { color: var(--green); }
+    .toc-list a:hover::before, .toc-list a.active::before { background: var(--green); }
+
+    .trip-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.84rem; padding: 9px 0;
+      border-bottom: 1px solid var(--border-lt);
+    }
+    .trip-row:last-of-type { border-bottom: none; }
+    .trip-row .lbl { color: var(--muted); font-size: 0.79rem; }
+    .trip-row .val { color: var(--text); font-weight: 500; font-size: 0.84rem; text-align: right; }
+    .book-btn {
+      display: block; width: 100%;
+      background: var(--green); color: white;
+      text-align: center; font-size: 0.88rem; font-weight: 600;
+      padding: 13px; border-radius: 8px; text-decoration: none;
+      margin-top: 18px; transition: background 0.2s;
+    }
+    .book-btn:hover { background: var(--green-dark); }
+
+    .nl-input {
+      width: 100%; background: var(--off-white);
+      border: 1px solid var(--border); outline: none;
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: 0.87rem; padding: 10px 14px;
+      border-radius: 7px; margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+    .nl-input:focus { border-color: var(--green); }
+    .nl-input::placeholder { color: var(--muted); }
+    .nl-btn {
+      width: 100%; background: var(--green-pale);
+      border: 1px solid var(--green); color: var(--green-dark);
+      font-family: 'DM Sans', sans-serif; font-size: 0.87rem;
+      font-weight: 600; padding: 11px; border-radius: 7px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .nl-btn:hover { background: var(--green); color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark); color: rgba(255,255,255,0.75);
+      border-top: 3px solid var(--green);
+      padding: 36px 5%; text-align: center; font-size: 0.82rem;
+    }
+    footer a { color: #7ee8a2; text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .article-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .related-grid { grid-template-columns: repeat(2,1fr); }
+      .post-body .wide-img { margin: 36px 0; }
+    }
+    @media (max-width: 640px) {
+      .post-hero { height: auto; min-height: 360px; padding: 90px 5% 36px; }
+      nav ul, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+        background: white; z-index: 99;
+        padding: 20px 5%; overflow-y: auto; gap: 0;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      }
+      .mobile-menu a {
+        display: block; padding: 15px 0;
+        border-bottom: 1px solid var(--border);
+        color: var(--text); text-decoration: none;
+        font-size: 1rem; transition: color 0.2s;
+      }
+      .mobile-menu a:hover { color: var(--green); }
+      .mobile-menu .m-cta {
+        margin-top: 20px; display: block; text-align: center;
+        background: var(--green); color: white;
+        padding: 14px; border-radius: 8px; font-weight: 600;
+      }
+      .sidebar { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; }
+      .post-footer { flex-direction: column; align-items: flex-start; }
+      .article-wrap { padding: 32px 5% 60px; }
+    }
+    @media (max-width: 400px) {
+      body { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/index.html" class="nav-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">kaafall</span>
+        <span class="nl-sub">presents</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/aboutus.html">About us</a></li>
+      <li><a href="/packages.html">Packages</a></li>
+      <li><a href="/packages.html">Char Dham</a></li>
+      <li><a href="/packages.html">Weekend Trips</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contactus.html">Contact us</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="post-hero">
+  <div class="post-hero-bg"></div>
+  <div class="post-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> ›
+      <a href="blog.html">Blog</a> ›
+      <span>Pilgrimage</span>
+    </div>
+    <div class="post-cats">
+      <span class="cat-pill">Pilgrimage</span>
+      <span class="cat-pill">Trekking</span>
+    </div>
+    <h1>Kedarnath Yatra 2025:<br><em>Complete Guide</em> for First-Timers</h1>
+    <div class="post-byline">
+      <img class="author-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=70" alt="Riya Sharma"/>
+      <strong style="color:#fff">Riya Sharma</strong>
+      <span class="byline-dot">·</span>
+      <span>15 March 2025</span>
+      <span class="byline-dot">·</span>
+      <span>Updated: 10 May 2025</span>
+      <span class="byline-dot">·</span>
+      <span class="read-time">⏱ 9 min read</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE LAYOUT -->
+<div class="article-wrap">
+
+  <article class="post-body">
+
+    <p class="lead">
+      Kedarnath is not just a trek — it is a journey inward. Nestled at 3,583 metres in the Garhwal Himalayas, the ancient Shiva temple draws hundreds of thousands of pilgrims every year. If you're planning your first visit in 2025, this guide covers everything from the best time to visit to what to pack.
+    </p>
+
+    <h2 id="when">When to Visit Kedarnath</h2>
+    <p>The Kedarnath temple opens every year in late April or early May (on Akshaya Tritiya) and closes on Bhai Dooj in November, before the Himalayan winter sets in. The doors for 2025 are expected to open on <strong>2 May 2025</strong>.</p>
+    <p>The best time to visit is either <strong>May–June</strong> (before the monsoon) or <strong>September–October</strong> (after monsoon, crisp weather, fewer crowds). Avoid July–August if possible — the route can be dangerous due to landslides.</p>
+
+    <div class="info-box">
+      <div class="info-title">✦ Best Months at a Glance</div>
+      <ul>
+        <li><strong>May–June:</strong> Flowers in bloom, snow on peaks, moderate crowds</li>
+        <li><strong>July–August:</strong> Monsoon season — landslide risk, avoid if possible</li>
+        <li><strong>September–October:</strong> Clear skies, best views, ideal for trekkers</li>
+        <li><strong>November:</strong> Temple closing ceremony — very special atmosphere</li>
+      </ul>
+    </div>
+
+    <h2 id="route">The Trek Route: Gaurikund to Kedarnath</h2>
+    <p>The main trekking route starts from <strong>Gaurikund</strong> (1,982m) and covers approximately 16–18 km to reach the temple. The trek typically takes 6–8 hours going up and 4–5 hours coming down.</p>
+
+    <figure>
+      <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&q=80" alt="Trekkers on the Kedarnath trail"/>
+      <figcaption>The Kedarnath trail — rocky, steep in sections, but breathtakingly beautiful at every turn</figcaption>
+    </figure>
+
+    <h3>Key Checkpoints on the Route</h3>
+    <ul>
+      <li><strong>Gaurikund (1,982m):</strong> Starting point with a natural hot spring</li>
+      <li><strong>Jungle Chatti (2,650m):</strong> First major rest stop, tea and snacks available</li>
+      <li><strong>Bheembali (3,111m):</strong> Midway point, GMVN canteen and medical post</li>
+      <li><strong>Lincholi (3,175m):</strong> Helipad point, great views of surrounding peaks</li>
+      <li><strong>Kedarnath Base Camp (3,583m):</strong> Final stretch to the temple</li>
+    </ul>
+
+    <blockquote>
+      <p>"The moment the temple comes into view — that gold shikhar against a white sky — nothing prepares you for it. You just stop walking."</p>
+      <cite>— A pilgrim from Lucknow, October 2024</cite>
+    </blockquote>
+
+    <h2 id="howtoreach">How to Reach Gaurikund</h2>
+    <p>Most travellers fly into <strong>Jolly Grant Airport, Dehradun</strong>, or take an overnight train to <strong>Haridwar or Rishikesh</strong>. From there, it is a 7–9 hour drive to Gaurikund via Rudraprayag and Sonprayag.</p>
+
+    <div class="wide-img">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80" alt="Himalayan landscape"/>
+    </div>
+
+    <p>The last motorable road ends at <strong>Sonprayag</strong>. From there, shared jeeps run to Gaurikund (approximately ₹40 per person). Private vehicles are not allowed beyond Sonprayag.</p>
+
+    <h2 id="stay">Where to Stay</h2>
+    <p>Accommodation options exist at multiple points along the route and at the top. Book well in advance, especially during peak season.</p>
+    <ul>
+      <li><strong>Gaurikund:</strong> Budget guesthouses, GMVN Tourist Rest House</li>
+      <li><strong>Bheembali:</strong> GMVN tented accommodation</li>
+      <li><strong>Kedarnath:</strong> GMVN Bhavan, Dorms by Devasthanam Board, private dharamshalas</li>
+    </ul>
+    <p>Staying a night at Kedarnath itself is highly recommended — the early morning 4 AM puja with mountains glowing in first light is an experience you will carry for life.</p>
+
+    <h2 id="packing">What to Pack</h2>
+    <div class="info-box">
+      <div class="info-title">🎒 Essential Packing List</div>
+      <ul>
+        <li>Warm layers — temperature drops to 0°C at night even in summer</li>
+        <li>Waterproof jacket and trekking shoes with ankle support</li>
+        <li>Trekking poles (rentable at Gaurikund for ₹100–150)</li>
+        <li>Sunscreen SPF 50+, sunglasses, lip balm</li>
+        <li>Personal medicines and a basic first-aid kit</li>
+        <li>Reusable water bottle — stay hydrated above 3,000m</li>
+        <li>Headlamp with extra batteries (for early morning puja)</li>
+        <li>Aadhaar card or ID proof — mandatory for registration</li>
+      </ul>
+    </div>
+
+    <h2 id="tips">Practical Tips for First-Timers</h2>
+    <p>Altitude sickness is real. Spend at least one night at Rishikesh or Haridwar before heading up, and another night at Gaurikund to acclimatise. Ascend slowly — do not push yourself to finish in one rushed go.</p>
+    <p>Register online on the official <strong>Devasthanam Board portal</strong> before travelling. Registration is free but mandatory. Biometric registration is also done at Sonprayag.</p>
+    <p>Mobile connectivity disappears after Sonprayag. Download offline maps (Maps.me or Google Maps offline area) before you begin. BSNL has the best coverage on the trail.</p>
+    <p>Pony, palki (palanquin) and helicopter services are available for those who cannot trek. Helicopter tickets must be booked well in advance — they sell out weeks before peak season.</p>
+
+    <!-- TAGS + SHARE -->
+    <div class="post-footer">
+      <div class="post-tags">
+        <a href="#" class="ptag">Kedarnath</a>
+        <a href="#" class="ptag">Char Dham</a>
+        <a href="#" class="ptag">Trekking</a>
+        <a href="#" class="ptag">Pilgrimage</a>
+        <a href="#" class="ptag">Uttarakhand</a>
+        <a href="#" class="ptag">Travel Guide</a>
+      </div>
+      <div class="share-row">
+        <span>Share:</span>
+        <a class="share-btn" href="#" title="WhatsApp">💬</a>
+        <a class="share-btn" href="#" title="X">𝕏</a>
+        <a class="share-btn" href="#" title="Facebook">f</a>
+        <a class="share-btn" href="#" onclick="copyLink(event)" title="Copy link">🔗</a>
+      </div>
+    </div>
+
+    <!-- AUTHOR -->
+    <div class="author-card">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=70" alt="Riya Sharma"/>
+      <div>
+        <h4>Riya Sharma</h4>
+        <div class="role">Travel Writer & Himalayan Trek Guide</div>
+        <p>Riya has completed the Char Dham Yatra four times and has trekked to Valley of Flowers, Roopkund and Kedarkantha. She writes about Uttarakhand's spiritual and adventure side for kaafall Travels.</p>
+      </div>
+    </div>
+
+    <!-- RELATED -->
+    <div class="related">
+      <div class="section-label">More to Read</div>
+      <div class="section-title">Related Articles</div>
+      <div class="related-grid">
+        <a class="rel-card" href="#">
+          <img src="https://images.unsplash.com/photo-1523895665936-7bfe172b757d?w=500&q=75" alt="Char Dham"/>
+          <div class="rel-body">
+            <div class="rel-cat">Pilgrimage</div>
+            <h4>Char Dham Yatra on a Budget: 2025 Cost Breakdown</h4>
+          </div>
+        </a>
+        <a class="rel-card" href="#">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=75" alt="Auli"/>
+          <div class="rel-body">
+            <div class="rel-cat">Hill Stations</div>
+            <h4>Auli in Winter: India's Best Ski Resort Explained</h4>
+          </div>
+        </a>
+        <a class="rel-card" href="#">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&q=75" alt="Valley of Flowers"/>
+          <div class="rel-body">
+            <div class="rel-cat">Trekking</div>
+            <h4>Valley of Flowers: Month-by-Month Blooming Guide</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget green-top">
+      <div class="wtitle">In This Article</div>
+      <ul class="toc-list">
+        <li><a href="#when" class="toc-link">When to Visit</a></li>
+        <li><a href="#route" class="toc-link">The Trek Route</a></li>
+        <li><a href="#howtoreach" class="toc-link">How to Reach</a></li>
+        <li><a href="#stay" class="toc-link">Where to Stay</a></li>
+        <li><a href="#packing" class="toc-link">What to Pack</a></li>
+        <li><a href="#tips" class="toc-link">Practical Tips</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-widget green-top">
+      <div class="wtitle">Trip Snapshot</div>
+      <div class="trip-row"><span class="lbl">Distance</span><span class="val">16–18 km one way</span></div>
+      <div class="trip-row"><span class="lbl">Altitude</span><span class="val">3,583m / 11,755 ft</span></div>
+      <div class="trip-row"><span class="lbl">Duration</span><span class="val">2–3 days</span></div>
+      <div class="trip-row"><span class="lbl">Difficulty</span><span class="val">Moderate</span></div>
+      <div class="trip-row"><span class="lbl">Best Season</span><span class="val">May–Jun, Sep–Oct</span></div>
+      <div class="trip-row"><span class="lbl">Nearest Airport</span><span class="val">Dehradun (250 km)</span></div>
+      <a class="book-btn" href="contactus.html">Book Kedarnath Package →</a>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="wtitle">📬 Travel Updates</div>
+      <p style="font-size:0.84rem;color:var(--muted);margin-bottom:14px;">Get trek guides & Uttarakhand travel tips — free.</p>
+      <input class="nl-input" type="text" placeholder="Your name"/>
+      <input class="nl-input" type="email" placeholder="Email address"/>
+      <button class="nl-btn">Subscribe Free →</button>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <a href="index.html">Kaafall Travels Pvt. Ltd.</a> · All Rights Reserved</p>
+  <p style="margin-top:6px;">Made with ♥ in Uttarakhand</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+  });
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  const headings = document.querySelectorAll('article h2[id]');
+  const tocLinks = document.querySelectorAll('.toc-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    headings.forEach(h => { if (window.scrollY >= h.offsetTop - 100) current = h.id; });
+    tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  });
+
+  function copyLink(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = e.target;
+      btn.textContent = '✓';
+      setTimeout(() => btn.textContent = '🔗', 1500);
+    });
+  }
+</script>
+</body>
+</html>
