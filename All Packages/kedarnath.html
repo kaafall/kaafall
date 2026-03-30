@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kedarnath Trip – Trekhievers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* =====================================================
+       KEDARNATH BOOKING PAGE – CSS
+       Theme: Green & White (matching Trekhievers)
+    ===================================================== */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #1a5c2e;
+      --green-mid:    #2d8a4e;
+      --green-light:  #4caf78;
+      --green-pale:   #e8f5ee;
+      --white:        #ffffff;
+      --off-white:    #f7faf8;
+      --text-dark:    #1a2e22;
+      --text-mid:     #3d5a47;
+      --text-light:   #6b8f78;
+      --gold:         #c9973a;
+      --gold-light:   #f5e4c0;
+      --shadow:       0 8px 32px rgba(26,92,46,0.12);
+      --shadow-hover: 0 16px 48px rgba(26,92,46,0.22);
+      --radius:       16px;
+      --radius-sm:    10px;
+      --transition:   0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--off-white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(160deg, rgba(26,92,46,0.92) 0%, rgba(45,138,78,0.80) 50%, rgba(26,92,46,0.95) 100%),
+        url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80') center/cover no-repeat;
+      padding: 6rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,151,58,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-particles {
+      position: absolute; inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.4rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-content h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: var(--white);
+      line-height: 1.0;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.3);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-content h1 span {
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.88);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 1rem 0 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tags span {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .scroll-indicator span {
+      display: block;
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+      margin: 0 auto;
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50%       { opacity: 0.3; transform: scaleY(0.5); }
+    }
+
+    /* ─── BUTTONS ───────────────────────────────────── */
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, #e0a84a 100%);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.85rem 2.4rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      box-shadow: 0 6px 24px rgba(201,151,58,0.35);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(201,151,58,0.5);
+    }
+    .pulse { animation: pulseAnim 2.5s ease-in-out infinite; }
+    @keyframes pulseAnim {
+      0%, 100% { box-shadow: 0 6px 24px rgba(201,151,58,0.35); }
+      50%       { box-shadow: 0 6px 40px rgba(201,151,58,0.70); }
+    }
+
+    /* ─── CONTAINER ─────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ─── SECTION TITLE ─────────────────────────────── */
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+    .section-title h2 span { color: var(--green-mid); }
+    .section-title p { color: var(--text-light); font-size: 1rem; }
+
+    /* ─── BOOKING FORM ──────────────────────────────── */
+    .booking-section {
+      padding: 5rem 0;
+      background: var(--white);
+      position: relative;
+    }
+    .booking-section::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-dark), var(--green-light), var(--gold));
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem;
+      border: 1px solid rgba(26,92,46,0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group.full-width { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #d4e8db;
+      border-radius: var(--radius-sm);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--off-white);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green-mid);
+      box-shadow: 0 0 0 4px rgba(45,138,78,0.12);
+      background: var(--white);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .radio-group { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .radio-label input[type="radio"] { accent-color: var(--green-mid); width: 16px; height: 16px; }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px dashed var(--green-pale);
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .form-success {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      background: var(--green-pale);
+      border: 2px solid var(--green-light);
+      border-radius: var(--radius-sm);
+      color: var(--green-dark);
+      font-weight: 600;
+      text-align: center;
+    }
+    .hidden { display: none; }
+
+    /* ─── PACKAGE ───────────────────────────────────── */
+    .package-section {
+      padding: 5rem 0;
+      background: var(--green-pale);
+    }
+
+    .package-card {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: white;
+      box-shadow: var(--shadow-hover);
+      position: relative;
+      overflow: hidden;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .package-card::before {
+      content: '🕉️';
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.05;
+      top: -1rem;
+      right: -1rem;
+      pointer-events: none;
+    }
+
+    .package-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .package-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .package-duration {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .package-duration span {
+      background: rgba(255,255,255,0.15);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .package-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .highlight {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.7rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* ─── ITINERARY ─────────────────────────────────── */
+    .itinerary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .day-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 16px rgba(26,92,46,0.08);
+      border-left: 4px solid var(--green-mid);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .day-card:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow);
+    }
+
+    .day-num {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.4rem 0.85rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .day-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.25rem;
+    }
+    .day-content p { font-size: 0.9rem; color: var(--text-light); }
+
+    /* ─── ADD-ONS ───────────────────────────────────── */
+    .addons-section {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .addon-card {
+      background: var(--off-white);
+      border: 2px solid #d4e8db;
+      border-radius: var(--radius);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .addon-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--green-mid);
+      background: var(--white);
+    }
+
+    .addon-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .addon-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+    .addon-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      color: var(--green-mid);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .addon-price span { font-size: 0.8rem; color: var(--text-light); font-family: 'Nunito', sans-serif; }
+    .addon-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+
+    .payment-note {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--gold-light);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .payment-note span { font-size: 1.5rem; flex-shrink: 0; }
+    .payment-note p { font-size: 0.95rem; color: var(--text-dark); line-height: 1.6; }
+
+    /* ─── DATES ─────────────────────────────────────── */
+    .dates-section {
+      padding: 5rem 0;
+      background: var(--green-pale);
+    }
+
+    .dates-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .dates-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .dates-header {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color: white;
+      padding: 1.25rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .day-tag {
+      background: rgba(255,255,255,0.2);
+      font-size: 0.78rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .months-list { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .month-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px dashed #d4e8db;
+    }
+    .month-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .month-name { font-weight: 700; color: var(--green-dark); font-size: 0.95rem; }
+    .month-dates { color: var(--text-mid); font-size: 0.9rem; }
+
+    /* ─── POLICY ─────────────────────────────────────── */
+    .policy-section {
+      padding: 5rem 0 6rem;
+      background: var(--white);
+    }
+
+    .policy-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .policy-card {
+      background: var(--off-white);
+      border: 2px solid #d4e8db;
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .policy-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-mid);
+    }
+    .policy-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .policy-card p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────── */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 768px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full-width { grid-column: 1; }
+      .dates-grid { grid-template-columns: 1fr; }
+      .form-footer { flex-direction: column; align-items: stretch; text-align: center; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .package-duration { flex-direction: row; }
+      .addons-grid { grid-template-columns: 1fr 1fr; }
+      .payment-note { flex-direction: column; text-align: center; }
+      .form-card { padding: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .addons-grid { grid-template-columns: 1fr; }
+      .hero-tags { gap: 0.5rem; }
+      .hero-tags span { font-size: 0.8rem; padding: 0.35rem 0.75rem; }
+      .day-card { flex-direction: column; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content fade-in-up">
+      <span class="badge">🕉️ Char Dham Yatra</span>
+      <h1>Kedarnath<br><span>Yatra 2025</span></h1>
+      <p class="hero-sub">4 Days · 3 Nights · Ganga Aarti · Maa Dhari Devi · Kedarnath Darshan</p>
+      <div class="hero-tags">
+        <span>🌊 Ganga Aarti</span>
+        <span>🙏 Maa Dhari Devi</span>
+        <span>⛰️ Kedarnath</span>
+      </div>
+      <a href="#booking" class="btn-primary pulse">Book Your Seat</a>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="section-title fade-in-up">
+        <h2>Book Your <span>Sacred Journey</span></h2>
+        <p>Fill in your details and we'll get back to you within 24 hours</p>
+      </div>
+      <div class="form-card fade-in-up">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="name" placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Departure City *</label>
+            <select id="city">
+              <option value="">Select City</option>
+              <option value="delhi">Delhi</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="pune">Pune</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Departure Date *</label>
+            <select id="date">
+              <option value="">Select Date</option>
+              <optgroup label="April (Delhi – Friday)">
+                <option>April 24</option>
+              </optgroup>
+              <optgroup label="May (Delhi – Friday)">
+                <option>May 1</option><option>May 8</option>
+                <option>May 15</option><option>May 22</option><option>May 29</option>
+              </optgroup>
+              <optgroup label="June (Delhi – Friday)">
+                <option>June 5</option><option>June 12</option><option>June 19</option>
+              </optgroup>
+              <optgroup label="October (Delhi – Friday)">
+                <option>October 2</option><option>October 16</option>
+                <option>October 23</option><option>October 30</option>
+              </optgroup>
+              <optgroup label="November (Delhi – Friday)">
+                <option>November 6</option>
+              </optgroup>
+              <optgroup label="April (Mumbai/Pune – Thursday)">
+                <option>April 23</option><option>April 30</option>
+              </optgroup>
+              <optgroup label="May (Mumbai/Pune – Thursday)">
+                <option>May 7</option><option>May 14</option>
+                <option>May 21</option><option>May 28</option>
+              </optgroup>
+              <optgroup label="June (Mumbai/Pune – Thursday)">
+                <option>June 4</option><option>June 11</option><option>June 18</option>
+              </optgroup>
+              <optgroup label="October (Mumbai/Pune – Thursday)">
+                <option>October 1</option><option>October 15</option>
+                <option>October 22</option><option>October 29</option>
+              </optgroup>
+              <optgroup label="November (Mumbai/Pune – Thursday)">
+                <option>November 5</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Number of Persons *</label>
+            <input type="number" id="persons" placeholder="e.g. 2" min="1" max="20" />
+          </div>
+          <div class="form-group full-width">
+            <label>Sharing Preference</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="sharing" value="triple"/> Triple Sharing (₹1,500/person)</label>
+              <label class="radio-label"><input type="radio" name="sharing" value="dual"/> Dual Sharing (₹3,000/person)</label>
+            </div>
+          </div>
+          <div class="form-group full-width">
+            <label>Message / Special Requirements</label>
+            <textarea id="message" rows="3" placeholder="Any special requirements or questions..."></textarea>
+          </div>
+        </div>
+        <div class="form-footer">
+          <p class="note">💡 Pay 60% to block your seat, remaining 15 days before departure</p>
+          <button class="btn-primary" onclick="submitForm()">🙏 Request Booking</button>
+        </div>
+        <div id="form-success" class="form-success hidden">
+          ✅ Thank you! We'll contact you within 24 hours to confirm your booking.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE SECTION -->
+  <section class="package-section" id="package">
+    <div class="container">
+      <div class="section-title fade-in-up">
+        <h2>Our <span>Package</span></h2>
+        <p>Everything you need for a divine journey</p>
+      </div>
+      <div class="package-card fade-in-up">
+        <div class="package-badge">Best Value</div>
+        <h3>Kedarnath Yatra</h3>
+        <div class="package-duration">
+          <span>🗓️ 4 Days</span>
+          <span>🌙 3 Nights</span>
+        </div>
+        <div class="package-highlights">
+          <div class="highlight">🌊 Ganga Aarti at Haridwar</div>
+          <div class="highlight">🙏 Maa Dhari Devi Darshan</div>
+          <div class="highlight">⛰️ Kedarnath Temple Darshan</div>
+        </div>
+      </div>
+
+      <!-- ITINERARY -->
+      <div class="section-title fade-in-up" style="margin-top:3rem">
+        <h2>Brief <span>Itinerary</span></h2>
+      </div>
+      <div class="itinerary fade-in-up">
+        <div class="day-card">
+          <div class="day-num">Day 01</div>
+          <div class="day-content">
+            <h4>Delhi to Sonprayag</h4>
+            <p>Journey begins via Haridwar / Rishikesh</p>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-num">Day 02</div>
+          <div class="day-content">
+            <h4>Haridwar / Rishikesh to Sonprayag</h4>
+            <p>Devprayag Sightseeing en route · Stay in Sonprayag / Guptkashi</p>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-num">Day 03</div>
+          <div class="day-content">
+            <h4>Kedarnath Trek</h4>
+            <p>Trek to the sacred temple · Overnight stay in Kedarnath</p>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-num">Day 04</div>
+          <div class="day-content">
+            <h4>Kedarnath Darshan</h4>
+            <p>Divine blessings at Kedarnath · Stay in Sonprayag / Guptkashi</p>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-num">Day 05</div>
+          <div class="day-content">
+            <h4>Drive to Badrinath</h4>
+            <p>Scenic drive through the Himalayas · Stay in Badrinath</p>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-num">Day 06</div>
+          <div class="day-content">
+            <h4>Badrinath Darshan</h4>
+            <p>Visit Mana Village · Drop at Haridwar / Rishikesh</p>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-num">Day 07</div>
+          <div class="day-content">
+            <h4>Arrive in Delhi</h4>
+            <p>Return home with divine blessings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="addons-section" id="addons">
+    <div class="container">
+      <div class="section-title fade-in-up">
+        <h2>Add-ons <span>Per Person</span></h2>
+        <p>Enhance your journey with these optional extras</p>
+      </div>
+      <div class="addons-grid fade-in-up">
+        <div class="addon-card">
+          <div class="addon-icon">🏨</div>
+          <h4>Triple Sharing</h4>
+          <div class="addon-price">₹1,500<span>/person</span></div>
+          <p>Except Kedarnath stay</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🛏️</div>
+          <h4>Dual Sharing</h4>
+          <div class="addon-price">₹3,000<span>/person</span></div>
+          <p>Except Kedarnath stay</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🚤</div>
+          <h4>Rishikesh Day Stay</h4>
+          <div class="addon-price">₹4,000<span>/person</span></div>
+          <p>Dinner & Breakfast + 16 km White Water River Rafting + Delhi drop by Semi Sleeper Volvo Bus</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🚁</div>
+          <h4>Helicopter Booking</h4>
+          <div class="addon-price">₹10,000<span>/person</span></div>
+          <p>Two-way advance booking, subject to availability</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🐴</div>
+          <h4>Horse / Porter</h4>
+          <div class="addon-price">₹1,200–3,000<span>/person</span></div>
+          <p>One-way assistance on trek</p>
+        </div>
+      </div>
+      <div class="payment-note fade-in-up">
+        <span>💳</span>
+        <p><strong>Payment Policy:</strong> Pay <strong>60%</strong> to block your seat and the remaining amount <strong>15 days before</strong> the event.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTURE DATES -->
+  <section class="dates-section" id="dates">
+    <div class="container">
+      <div class="section-title fade-in-up">
+        <h2>Departure <span>Dates</span></h2>
+      </div>
+      <div class="dates-grid fade-in-up">
+        <div class="dates-card">
+          <div class="dates-header">🏙️ Delhi Dates <span class="day-tag">Every Friday</span></div>
+          <div class="months-list">
+            <div class="month-row"><span class="month-name">April</span><span class="month-dates">24</span></div>
+            <div class="month-row"><span class="month-name">May</span><span class="month-dates">1, 8, 15, 22, 29</span></div>
+            <div class="month-row"><span class="month-name">June</span><span class="month-dates">5, 12, 19</span></div>
+            <div class="month-row"><span class="month-name">October</span><span class="month-dates">2, 16, 23, 30</span></div>
+            <div class="month-row"><span class="month-name">November</span><span class="month-dates">6</span></div>
+          </div>
+        </div>
+        <div class="dates-card">
+          <div class="dates-header">🏙️ Mumbai / Pune Dates <span class="day-tag">Every Thursday</span></div>
+          <div class="months-list">
+            <div class="month-row"><span class="month-name">April</span><span class="month-dates">23, 30</span></div>
+            <div class="month-row"><span class="month-name">May</span><span class="month-dates">7, 14, 21, 28</span></div>
+            <div class="month-row"><span class="month-name">June</span><span class="month-dates">4, 11, 18</span></div>
+            <div class="month-row"><span class="month-name">October</span><span class="month-dates">1, 15, 22, 29</span></div>
+            <div class="month-row"><span class="month-name">November</span><span class="month-dates">5</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICY -->
+  <section class="policy-section" id="policy">
+    <div class="container">
+      <div class="section-title fade-in-up">
+        <h2>Trekhievers <span>Policy</span></h2>
+      </div>
+      <div class="policy-cards fade-in-up">
+        <div class="policy-card">
+          <div class="policy-icon">📋</div>
+          <p>A complete schedule of the trek will be shared with registered participants <strong>12 hours prior</strong> on WhatsApp.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-icon">🔄</div>
+          <p>Organizers have the right to <strong>modify or change</strong> the schedule in case of any unavoidable circumstance.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-icon">🌤️</div>
+          <p>The tour is <strong>weather-based</strong>. There may be last-minute cancellations if weather conditions deteriorate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ─── SCROLL REVEAL ─────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    // ─── HERO PARTICLES ────────────────────────────────
+    function createParticles() {
+      const container = document.getElementById('particles');
+      if (!container) return;
+      const symbols = ['🌿', '❄️', '✨', '🕉️', '🌸'];
+      const count = window.innerWidth < 600 ? 8 : 16;
+
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.style.cssText = `
+          position: absolute;
+          font-size: ${Math.random() * 14 + 10}px;
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          opacity: 0;
+          animation: floatParticle ${Math.random() * 8 + 6}s ease-in-out ${Math.random() * 5}s infinite;
+          pointer-events: none;
+          user-select: none;
+        `;
+        p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        container.appendChild(p);
+      }
+
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes floatParticle {
+          0%   { opacity: 0;   transform: translateY(0)     rotate(0deg); }
+          20%  { opacity: 0.5; }
+          80%  { opacity: 0.5; }
+          100% { opacity: 0;   transform: translateY(-80px) rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    createParticles();
+
+    // ─── FORM SUBMISSION ────────────────────────────────
+    function submitForm() {
+      const name    = document.getElementById('name').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      const city    = document.getElementById('city').value;
+      const date    = document.getElementById('date').value;
+      const persons = document.getElementById('persons').value.trim();
+
+      if (!name || !phone || !city || !date || !persons) {
+        showShakeError();
+        alert('Please fill in all required fields (Name, Phone, City, Date, Persons).');
+        return;
+      }
+
+      if (!/^[\+]?[\d\s\-]{7,15}$/.test(phone)) {
+        alert('Please enter a valid phone number.');
+        return;
+      }
+
+      const successEl = document.getElementById('form-success');
+      successEl.classList.remove('hidden');
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      setTimeout(() => {
+        successEl.classList.add('hidden');
+        document.getElementById('name').value    = '';
+        document.getElementById('phone').value   = '';
+        document.getElementById('email').value   = '';
+        document.getElementById('city').value    = '';
+        document.getElementById('date').value    = '';
+        document.getElementById('persons').value = '';
+        document.getElementById('message').value = '';
+        document.querySelectorAll('input[name="sharing"]').forEach(r => r.checked = false);
+      }, 6000);
+    }
+
+    function showShakeError() {
+      const card = document.querySelector('.form-card');
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes shake {
+          0%,100% { transform: translateX(0); }
+          20%      { transform: translateX(-8px); }
+          40%      { transform: translateX(8px); }
+          60%      { transform: translateX(-5px); }
+          80%      { transform: translateX(5px); }
+        }
+      `;
+      document.head.appendChild(style);
+      card.style.animation = 'shake 0.4s ease';
+      setTimeout(() => card.style.animation = '', 500);
+    }
+
+    // ─── SMOOTH SCROLL ─────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ─── DAY CARD STAGGER ──────────────────────────────
+    const dayObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll('.day-card');
+          cards.forEach((card, i) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-20px)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateX(0)';
+            }, i * 100);
+          });
+          dayObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const itinerary = document.querySelector('.itinerary');
+    if (itinerary) dayObserver.observe(itinerary);
+
+    // ─── ADDON CARD STAGGER ─────────────────────────────
+    const addonObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll('.addon-card');
+          cards.forEach((card, i) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, i * 120);
+          });
+          addonObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const addonsGrid = document.querySelector('.addons-grid');
+    if (addonsGrid) addonObserver.observe(addonsGrid);
+  </script>
+</body>
+</html>
