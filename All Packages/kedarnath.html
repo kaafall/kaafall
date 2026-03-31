@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kedarnath Trip – Trekhievers</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/asstes/css/style.css"/>
+  <script src="/asstes/js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <style>
-    /* =====================================================
-       KEDARNATH BOOKING PAGE – CSS
-       Theme: Green & White (matching Trekhievers)
-    ===================================================== */
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -33,51 +31,34 @@
     }
 
     html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--off-white);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
-
-    /* ─── HERO ─────────────────────────────────────── */
+    /* ─── HERO ───────────────────────── */
     .hero {
       position: relative;
-      min-height: 55vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       background:
-        linear-gradient(160deg, rgba(26,92,46,0.92) 0%, rgba(45,138,78,0.80) 50%, rgba(26,92,46,0.95) 100%),
+        linear-gradient(160deg, rgba(26,92,46,0.93) 0%, rgba(45,138,78,0.82) 50%, rgba(26,92,46,0.96) 100%),
         url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80') center/cover no-repeat;
-      padding: 3rem 1.5rem 2.5rem;
+      padding: 6rem 1.5rem 4rem;
       overflow: hidden;
     }
-
     .hero-overlay {
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201,151,58,0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,151,58,0.13) 0%, transparent 60%);
       pointer-events: none;
     }
-
-    .hero-particles {
-      position: absolute; inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
+    .hero-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .hero-content { position: relative; z-index: 2; max-width: 700px; }
 
     .badge {
       display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.28);
       color: var(--gold-light);
       font-size: 0.85rem;
       font-weight: 700;
@@ -85,510 +66,336 @@
       text-transform: uppercase;
       padding: 0.4rem 1.2rem;
       border-radius: 50px;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.4rem;
       backdrop-filter: blur(8px);
     }
-
     .hero-content h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-size: clamp(3rem, 8vw, 6rem);
       color: var(--white);
-      line-height: 1.1;
+      line-height: 1.0;
       text-shadow: 0 4px 24px rgba(0,0,0,0.3);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
     }
-
-    .hero-content h1 span {
-      color: var(--gold-light);
-      display: block;
-    }
-
+    .hero-content h1 span { color: var(--gold-light); }
     .hero-sub {
       color: rgba(255,255,255,0.88);
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       font-weight: 400;
-      margin: 0.6rem 0 1rem;
+      margin: 1rem 0 1.5rem;
       letter-spacing: 0.5px;
     }
-
     .hero-tags {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.75rem;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      margin-bottom: 2rem;
     }
-
     .hero-tags span {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: white;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white; padding: 0.25rem 0.75rem;
+      border-radius: 50px; font-size: 0.77rem; font-weight: 600;
       backdrop-filter: blur(6px);
     }
 
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-    }
-    .scroll-indicator span {
-      display: block;
-      width: 2px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
-      margin: 0 auto;
-      animation: scrollPulse 1.8s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 1; transform: scaleY(1); }
-      50%       { opacity: 0.3; transform: scaleY(0.5); }
-    }
-
-    /* ─── BUTTONS ───────────────────────────────────── */
+    /* ─── BUTTONS ────────────────────── */
     .btn-primary {
       display: inline-block;
       background: linear-gradient(135deg, var(--gold) 0%, #e0a84a 100%);
-      color: #fff;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 0.85rem 2.4rem;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      letter-spacing: 0.5px;
+      color: #fff; font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem; font-weight: 700;
+      padding: 0.65rem 1.9rem; border-radius: 50px; border: none;
+      cursor: pointer; text-decoration: none; letter-spacing: 0.5px;
       box-shadow: 0 6px 24px rgba(201,151,58,0.35);
       transition: transform var(--transition), box-shadow var(--transition);
     }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(201,151,58,0.5);
-    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,151,58,0.5); }
     .pulse { animation: pulseAnim 2.5s ease-in-out infinite; }
     @keyframes pulseAnim {
-      0%, 100% { box-shadow: 0 6px 24px rgba(201,151,58,0.35); }
-      50%       { box-shadow: 0 6px 40px rgba(201,151,58,0.70); }
+      0%,100% { box-shadow: 0 6px 24px rgba(201,151,58,0.35); }
+      50%      { box-shadow: 0 6px 40px rgba(201,151,58,0.70); }
     }
 
-    /* ─── CONTAINER ─────────────────────────────────── */
+    /* ─── LAYOUT ─────────────────────── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* ─── SECTION TITLE ─────────────────────────────── */
-    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title { text-align: center; margin-bottom: 2.5rem; }
     .section-title h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--green-dark);
-      margin-bottom: 0.5rem;
+      font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+      color: var(--green-dark); margin-bottom: 0.4rem;
     }
     .section-title h2 span { color: var(--green-mid); }
-    .section-title p { color: var(--text-light); font-size: 1rem; }
+    .section-title p { color: var(--text-light); font-size: 0.93rem; }
 
-    /* ─── BOOKING FORM ──────────────────────────────── */
-    .booking-section {
-      padding: 5rem 0;
-      background: var(--white);
-      position: relative;
+    /* ─── PRICE CARDS ────────────────── */
+    .price-section {
+      padding: 4rem 0 3rem; background: var(--white); position: relative;
     }
-    .booking-section::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 4px;
+    .price-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
       background: linear-gradient(90deg, var(--green-dark), var(--green-light), var(--gold));
     }
 
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .price-card {
+      background: var(--white); border: 2px solid #d4e8db;
+      border-radius: var(--radius); padding: 2rem 1.5rem;
+      text-align: center; position: relative;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      overflow: hidden;
+    }
+    .price-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+      transform: scaleX(0); transition: transform var(--transition);
+    }
+    .price-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--green-mid); }
+    .price-card:hover::after { transform: scaleX(1); }
+
+    .price-card.featured {
+      border-color: var(--green-mid);
+      background: linear-gradient(155deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      color: white; transform: scale(1.04); box-shadow: var(--shadow-hover); z-index: 1;
+    }
+    .price-card.featured:hover { transform: scale(1.04) translateY(-8px); }
+    .price-card.featured::after { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+
+    .price-card-badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.22rem 0.85rem; border-radius: 50px; margin-bottom: 0.85rem;
+    }
+    .price-card:not(.featured) .price-card-badge { background: var(--green-pale); color: var(--green-dark); }
+    .price-card.featured .price-card-badge { background: var(--gold); color: white; }
+
+    .price-card-icon { font-size: 2.2rem; margin-bottom: 0.55rem; }
+
+    .price-card h3 {
+      font-family: 'Cinzel', serif; font-size: 1.05rem;
+      margin-bottom: 0.25rem; color: var(--green-dark);
+    }
+    .price-card.featured h3 { color: white; }
+
+    .subtitle { font-size: 0.8rem; color: var(--text-light); margin-bottom: 1.1rem; }
+    .price-card.featured .subtitle { color: rgba(255,255,255,0.72); }
+
+    .price-amount {
+      font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700;
+      color: var(--green-dark); line-height: 1; margin-bottom: 0.2rem;
+    }
+    .price-card.featured .price-amount { color: var(--gold-light); }
+
+    .price-per { font-size: 0.77rem; color: var(--text-light); margin-bottom: 1.2rem; }
+    .price-card.featured .price-per { color: rgba(255,255,255,0.62); }
+
+    .price-divider { height: 1px; background: #d4e8db; margin: 1.1rem 0; }
+    .price-card.featured .price-divider { background: rgba(255,255,255,0.18); }
+
+    .price-features {
+      list-style: none; display: flex; flex-direction: column;
+      gap: 0.55rem; margin-bottom: 1.6rem; text-align: left;
+    }
+    .price-features li {
+      font-size: 0.85rem; color: var(--text-mid);
+      display: flex; align-items: flex-start; gap: 0.45rem; line-height: 1.4;
+    }
+    .price-card.featured .price-features li { color: rgba(255,255,255,0.86); }
+    .price-features li::before { content: '✓'; color: var(--green-mid); font-weight: 800; font-size: 0.82rem; flex-shrink: 0; margin-top: 0.06rem; }
+    .price-card.featured .price-features li::before { color: var(--gold-light); }
+
+    .btn-outline {
+      display: inline-block; border: 2px solid var(--green-mid);
+      color: var(--green-mid); background: transparent;
+      font-family: 'Nunito', sans-serif; font-size: 0.86rem; font-weight: 700;
+      padding: 0.58rem 1.5rem; border-radius: 50px; cursor: pointer;
+      text-decoration: none; transition: background var(--transition), color var(--transition); width: 100%;
+    }
+    .btn-outline:hover { background: var(--green-mid); color: white; }
+    .price-card.featured .btn-outline { border-color: var(--gold-light); color: var(--gold-light); }
+    .price-card.featured .btn-outline:hover { background: var(--gold); border-color: var(--gold); color: white; }
+
+    .price-note { text-align: center; margin-top: 1.6rem; font-size: 0.86rem; color: var(--text-light); font-style: italic; }
+    .price-note strong { color: var(--green-dark); }
+
+    /* ─── BOOKING FORM ───────────────── */
+    .booking-section { padding: 4.5rem 0; background: var(--green-pale); }
+
     .form-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 2.5rem;
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 2.5rem;
       border: 1px solid rgba(26,92,46,0.08);
     }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
     .form-group.full-width { grid-column: 1 / -1; }
-
-    .form-group label {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--green-dark);
-      letter-spacing: 0.3px;
+    .form-group label { font-size: 0.84rem; font-weight: 700; color: var(--green-dark); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.7rem 1rem; border: 2px solid #d4e8db;
+      border-radius: var(--radius-sm); font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem; color: var(--text-dark); background: var(--off-white);
+      transition: border-color var(--transition), box-shadow var(--transition); outline: none;
     }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 2px solid #d4e8db;
-      border-radius: var(--radius-sm);
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      background: var(--off-white);
-      transition: border-color var(--transition), box-shadow var(--transition);
-      outline: none;
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--green-mid); box-shadow: 0 0 0 4px rgba(45,138,78,0.12); background: var(--white);
     }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--green-mid);
-      box-shadow: 0 0 0 4px rgba(45,138,78,0.12);
-      background: var(--white);
-    }
-
     .form-group textarea { resize: vertical; min-height: 80px; }
-
-    .radio-group { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .radio-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-      color: var(--text-mid);
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .radio-label input[type="radio"] { accent-color: var(--green-mid); width: 16px; height: 16px; }
-
+    .radio-group { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    .radio-label { display: flex; align-items: center; gap: 0.45rem; font-size: 0.91rem; color: var(--text-mid); cursor: pointer; font-weight: 600; }
+    .radio-label input[type="radio"] { accent-color: var(--green-mid); width: 15px; height: 15px; }
     .form-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 2px dashed var(--green-pale);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem;
+      padding-top: 1.4rem; border-top: 2px dashed #c8e6d0;
     }
-
-    .note {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      font-style: italic;
-    }
-
+    .note { font-size: 0.86rem; color: var(--text-light); font-style: italic; }
     .form-success {
-      margin-top: 1.5rem;
-      padding: 1rem 1.5rem;
-      background: var(--green-pale);
-      border: 2px solid var(--green-light);
-      border-radius: var(--radius-sm);
-      color: var(--green-dark);
-      font-weight: 600;
-      text-align: center;
+      margin-top: 1.4rem; padding: 1rem 1.4rem;
+      background: var(--green-pale); border: 2px solid var(--green-light);
+      border-radius: var(--radius-sm); color: var(--green-dark); font-weight: 600; text-align: center;
     }
     .hidden { display: none; }
 
-    /* ─── PACKAGE ───────────────────────────────────── */
-    .package-section {
-      padding: 5rem 0;
-      background: var(--green-pale);
-    }
-
+    /* ─── PACKAGE ────────────────────── */
+    .package-section { padding: 4.5rem 0; background: var(--white); }
     .package-card {
       background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
-      border-radius: var(--radius);
-      padding: 3rem 2rem;
-      text-align: center;
-      color: white;
-      box-shadow: var(--shadow-hover);
-      position: relative;
-      overflow: hidden;
-      max-width: 600px;
-      margin: 0 auto;
+      border-radius: var(--radius); padding: 2.4rem 2rem; text-align: center;
+      color: white; box-shadow: var(--shadow-hover); position: relative;
+      overflow: hidden; max-width: 580px; margin: 0 auto;
     }
-    .package-card::before {
-      content: '🕉️';
-      position: absolute;
-      font-size: 10rem;
-      opacity: 0.05;
-      top: -1rem;
-      right: -1rem;
-      pointer-events: none;
-    }
+    .package-card::before { content: '🕉️'; position: absolute; font-size: 9rem; opacity: 0.05; top: -0.8rem; right: -0.8rem; pointer-events: none; }
+    .package-badge { display: inline-block; background: var(--gold); color: white; font-size: 0.73rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 0.26rem 0.95rem; border-radius: 50px; margin-bottom: 0.85rem; }
+    .package-card h3 { font-family: 'Cinzel', serif; font-size: 1.75rem; margin-bottom: 0.85rem; }
+    .package-duration { display: flex; gap: 1.1rem; justify-content: center; margin-bottom: 1.2rem; }
+    .package-duration span { background: rgba(255,255,255,0.15); padding: 0.32rem 1rem; border-radius: 50px; font-size: 0.88rem; font-weight: 600; }
+    .package-highlights { display: flex; flex-direction: column; gap: 0.6rem; }
+    .highlight { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 0.62rem 1.4rem; border-radius: var(--radius-sm); font-size: 0.93rem; font-weight: 600; }
 
-    .package-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: white;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 0.3rem 1rem;
-      border-radius: 50px;
-      margin-bottom: 1rem;
-    }
-
-    .package-card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .package-duration {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .package-duration span {
-      background: rgba(255,255,255,0.15);
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .package-highlights {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .highlight {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 0.7rem 1.5rem;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    /* ─── ITINERARY ─────────────────────────────────── */
-    .itinerary {
-      display: grid;
-      gap: 1rem;
-    }
-
+    /* ─── ITINERARY ──────────────────── */
+    .itinerary { display: grid; gap: 0.8rem; }
     .day-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      background: var(--white);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 4px 16px rgba(26,92,46,0.08);
+      display: flex; align-items: flex-start; gap: 1.1rem;
+      background: var(--white); border-radius: var(--radius-sm);
+      padding: 1.05rem 1.3rem; box-shadow: 0 4px 14px rgba(26,92,46,0.08);
       border-left: 4px solid var(--green-mid);
       transition: transform var(--transition), box-shadow var(--transition);
     }
-    .day-card:hover {
-      transform: translateX(6px);
-      box-shadow: var(--shadow);
-    }
+    .day-card:hover { transform: translateX(5px); box-shadow: var(--shadow); }
+    .day-num { background: linear-gradient(135deg, var(--green-dark), var(--green-mid)); color: white; font-family: 'Cinzel', serif; font-size: 0.73rem; font-weight: 700; padding: 0.32rem 0.78rem; border-radius: 50px; white-space: nowrap; flex-shrink: 0; align-self: center; }
+    .day-content h4 { font-size: 0.92rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.18rem; }
+    .day-content p { font-size: 0.83rem; color: var(--text-light); }
 
-    .day-num {
-      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-      color: white;
-      font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 0.4rem 0.85rem;
-      border-radius: 50px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      align-self: center;
-    }
+    /* ─── ADD-ONS ────────────────────── */
+    .addons-section { padding: 4.5rem 0; background: var(--green-pale); }
+    .addons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 1.2rem; margin-bottom: 1.8rem; }
+    .addon-card { background: var(--white); border: 2px solid #d4e8db; border-radius: var(--radius); padding: 1.4rem 1.1rem; text-align: center; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
+    .addon-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--green-mid); }
+    .addon-icon { font-size: 1.9rem; margin-bottom: 0.55rem; }
+    .addon-card h4 { font-size: 0.92rem; font-weight: 800; color: var(--green-dark); margin-bottom: 0.4rem; }
+    .addon-price { font-family: 'Cinzel', serif; font-size: 1.25rem; color: var(--green-mid); font-weight: 700; margin-bottom: 0.35rem; }
+    .addon-price span { font-size: 0.76rem; color: var(--text-light); font-family: 'Nunito', sans-serif; }
+    .addon-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.5; }
+    .payment-note { display: flex; align-items: center; gap: 1rem; background: var(--gold-light); border: 2px solid var(--gold); border-radius: var(--radius-sm); padding: 1.05rem 1.35rem; max-width: 620px; margin: 0 auto; }
+    .payment-note span { font-size: 1.35rem; flex-shrink: 0; }
+    .payment-note p { font-size: 0.9rem; color: var(--text-dark); line-height: 1.6; }
 
-    .day-content h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--green-dark);
-      margin-bottom: 0.25rem;
-    }
-    .day-content p { font-size: 0.9rem; color: var(--text-light); }
-
-    /* ─── ADD-ONS ───────────────────────────────────── */
-    .addons-section {
-      padding: 5rem 0;
-      background: var(--white);
-    }
-
-    .addons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .addon-card {
-      background: var(--off-white);
-      border: 2px solid #d4e8db;
-      border-radius: var(--radius);
-      padding: 1.75rem 1.25rem;
-      text-align: center;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-    .addon-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--green-mid);
-      background: var(--white);
-    }
-
-    .addon-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
-    .addon-card h4 {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--green-dark);
-      margin-bottom: 0.5rem;
-    }
-    .addon-price {
-      font-family: 'Cinzel', serif;
-      font-size: 1.4rem;
-      color: var(--green-mid);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .addon-price span { font-size: 0.8rem; color: var(--text-light); font-family: 'Nunito', sans-serif; }
-    .addon-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
-
-    .payment-note {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--gold-light);
-      border: 2px solid var(--gold);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem 1.5rem;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .payment-note span { font-size: 1.5rem; flex-shrink: 0; }
-    .payment-note p { font-size: 0.95rem; color: var(--text-dark); line-height: 1.6; }
-
-    /* ─── DATES ─────────────────────────────────────── */
-    .dates-section {
-      padding: 5rem 0;
-      background: var(--green-pale);
-    }
-
-    .dates-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .dates-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .dates-header {
-      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-      color: white;
-      padding: 1.25rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .day-tag {
-      background: rgba(255,255,255,0.2);
-      font-size: 0.78rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 50px;
-      font-weight: 600;
-    }
-
-    .months-list { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .month-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px dashed #d4e8db;
-    }
+    /* ─── DATES ──────────────────────── */
+    .dates-section { padding: 4.5rem 0; background: var(--white); }
+    .dates-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .dates-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .dates-header { background: linear-gradient(135deg, var(--green-dark), var(--green-mid)); color: white; padding: 1.05rem 1.35rem; font-size: 0.92rem; font-weight: 700; display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+    .day-tag { background: rgba(255,255,255,0.2); font-size: 0.73rem; padding: 0.2rem 0.68rem; border-radius: 50px; font-weight: 600; }
+    .months-list { padding: 1.05rem 1.35rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .month-row { display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.52rem; border-bottom: 1px dashed #d4e8db; }
     .month-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .month-name { font-weight: 700; color: var(--green-dark); font-size: 0.95rem; }
-    .month-dates { color: var(--text-mid); font-size: 0.9rem; }
+    .month-name { font-weight: 700; color: var(--green-dark); font-size: 0.9rem; }
+    .month-dates { color: var(--text-mid); font-size: 0.86rem; }
 
-    /* ─── POLICY ─────────────────────────────────────── */
-    .policy-section {
-      padding: 5rem 0 6rem;
-      background: var(--white);
-    }
+    /* ─── POLICY ─────────────────────── */
+    .policy-section { padding: 4.5rem 0 5.5rem; background: var(--green-pale); }
+    .policy-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.2rem; }
+    .policy-card { background: var(--white); border: 2px solid #d4e8db; border-radius: var(--radius); padding: 1.65rem 1.35rem; text-align: center; transition: transform var(--transition), border-color var(--transition); }
+    .policy-card:hover { transform: translateY(-4px); border-color: var(--green-mid); }
+    .policy-icon { font-size: 2.1rem; margin-bottom: 0.8rem; }
+    .policy-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
 
-    .policy-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+    /* ─── ANIMATION ──────────────────── */
+    .fade-in-up { opacity: 0; transform: translateY(26px); transition: opacity 0.62s ease, transform 0.62s ease; }
+    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
-    .policy-card {
-      background: var(--off-white);
-      border: 2px solid #d4e8db;
-      border-radius: var(--radius);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: transform var(--transition), border-color var(--transition);
+    /* ─── RESPONSIVE ─────────────────── */
+    @media (max-width: 900px) {
+      .price-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .price-card.featured { transform: scale(1); }
+      .price-card.featured:hover { transform: translateY(-8px); }
     }
-    .policy-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--green-mid);
-    }
-    .policy-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .policy-card p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; }
-
-    /* ─── ANIMATIONS ─────────────────────────────────── */
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-in-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 768px) {
       .form-grid { grid-template-columns: 1fr; }
       .form-group.full-width { grid-column: 1; }
       .dates-grid { grid-template-columns: 1fr; }
       .form-footer { flex-direction: column; align-items: stretch; text-align: center; }
-      .hero-content h1 { font-size: 2.8rem; }
-      .package-duration { flex-direction: row; }
       .addons-grid { grid-template-columns: 1fr 1fr; }
       .payment-note { flex-direction: column; text-align: center; }
-      .form-card { padding: 1.5rem; }
+      .form-card { padding: 1.4rem; }
     }
-
     @media (max-width: 480px) {
       .addons-grid { grid-template-columns: 1fr; }
-      .hero-tags { gap: 0.5rem; }
-      .hero-tags span { font-size: 0.8rem; padding: 0.35rem 0.75rem; }
-      .day-card { flex-direction: column; gap: 0.75rem; }
+      .hero-tags span { font-size: 0.72rem; padding: 0.22rem 0.6rem; }
+      .day-card { flex-direction: column; gap: 0.6rem; }
+      .price-grid { max-width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/index.html" class="nav-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">kafall</span>
+        <span class="nl-sub">presents</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/aboutus.html">About us</a></li>
+      <li><a href="/packages.html">Packages</a></li>
+      <li><a href="/packages.html">Char Dham</a></li>
+      <li><a href="/packages.html">Weekend Trips</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contactus.html">Contact us</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <!-- ══ HERO ══════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-particles" id="particles"></div>
     <div class="hero-content fade-in-up">
-      <span class="badge">🕉️ Char Dham Yatra</span>
-      <h1>Kedarnath<br><span>Yatra 2025</span></h1>
-      <p class="hero-sub">4 Days · 3 Nights · Ganga Aarti · Maa Dhari Devi · Kedarnath Darshan</p>
+      <span class="badge">🕉️ Char Dham Yatra 2025</span>
+      <h1>Kedarnath Yatra <span>4D / 3N</span></h1>
+      <p class="hero-sub">Ganga Aarti · Maa Dhari Devi Darshan · Kedarnath Temple</p>
       <div class="hero-tags">
         <span>🌊 Ganga Aarti</span>
         <span>🙏 Maa Dhari Devi</span>
@@ -596,15 +403,89 @@
       </div>
       <a href="#booking" class="btn-primary pulse">Book Your Seat</a>
     </div>
-    <div class="scroll-indicator"><span></span></div>
   </section>
 
-  <!-- BOOKING FORM -->
+  <!-- ══ PRICE CARDS ════════════════════════════════ -->
+  <section class="price-section" id="pricing">
+    <div class="container">
+      <div class="section-title fade-in-up">
+        <h2>Choose Your <span>Package</span></h2>
+        <p>Transparent pricing · No hidden charges</p>
+      </div>
+      <div class="price-grid">
+
+        <div class="price-card">
+          <div class="price-card-badge">Basic</div>
+          <div class="price-card-icon">🎒</div>
+          <h3>Budget Plan</h3>
+          <p class="subtitle">Triple sharing · Best for solo travellers</p>
+          <div class="price-amount">₹8,500</div>
+          <div class="price-per">per person (Triple Sharing)</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Delhi / Mumbai / Pune pickup</li>
+            <li>Triple sharing rooms</li>
+            <li>Ganga Aarti at Haridwar</li>
+            <li>Maa Dhari Devi Darshan</li>
+            <li>Kedarnath Trek & Darshan</li>
+            <li>All meals as per itinerary</li>
+            <li>4 Days · 3 Nights</li>
+          </ul>
+          <a href="#booking" class="btn-outline">Book Now</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-card-badge">⭐ Most Popular</div>
+          <div class="price-card-icon">🏔️</div>
+          <h3>Standard Plan</h3>
+          <p class="subtitle">Dual sharing · Best for couples & friends</p>
+          <div class="price-amount">₹10,000</div>
+          <div class="price-per">per person (Dual Sharing)</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Delhi / Mumbai / Pune pickup</li>
+            <li>Dual sharing rooms</li>
+            <li>Ganga Aarti at Haridwar</li>
+            <li>Maa Dhari Devi Darshan</li>
+            <li>Kedarnath Trek & Darshan</li>
+            <li>All meals as per itinerary</li>
+            <li>4 Days · 3 Nights</li>
+            <li>Priority seat confirmation</li>
+          </ul>
+          <a href="#booking" class="btn-outline">Book Now</a>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-badge">Premium</div>
+          <div class="price-card-icon">🚁</div>
+          <h3>Premium Plan</h3>
+          <p class="subtitle">Helicopter + Rishikesh stay included</p>
+          <div class="price-amount">₹24,000</div>
+          <div class="price-per">per person (All inclusive)</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Everything in Standard</li>
+            <li>Two-way Helicopter booking</li>
+            <li>Extra Rishikesh day stay</li>
+            <li>16 km White Water Rafting</li>
+            <li>Dinner & Breakfast Rishikesh</li>
+            <li>Delhi drop – Semi Sleeper Volvo</li>
+            <li>Dual sharing rooms</li>
+          </ul>
+          <a href="#booking" class="btn-outline">Book Now</a>
+        </div>
+
+      </div>
+      <p class="price-note fade-in-up">💳 Pay <strong>60%</strong> to block your seat · Remaining due <strong>15 days before</strong> departure</p>
+    </div>
+  </section>
+
+  <!-- ══ BOOKING FORM ═══════════════════════════════ -->
   <section class="booking-section" id="booking">
     <div class="container">
       <div class="section-title fade-in-up">
         <h2>Book Your <span>Sacred Journey</span></h2>
-        <p>Fill in your details and we'll get back to you within 24 hours</p>
+        <p>Fill in your details and we'll contact you within 24 hours</p>
       </div>
       <div class="form-card fade-in-up">
         <div class="form-grid">
@@ -634,40 +515,16 @@
             <label>Departure Date *</label>
             <select id="date">
               <option value="">Select Date</option>
-              <optgroup label="April (Delhi – Friday)">
-                <option>April 24</option>
-              </optgroup>
-              <optgroup label="May (Delhi – Friday)">
-                <option>May 1</option><option>May 8</option>
-                <option>May 15</option><option>May 22</option><option>May 29</option>
-              </optgroup>
-              <optgroup label="June (Delhi – Friday)">
-                <option>June 5</option><option>June 12</option><option>June 19</option>
-              </optgroup>
-              <optgroup label="October (Delhi – Friday)">
-                <option>October 2</option><option>October 16</option>
-                <option>October 23</option><option>October 30</option>
-              </optgroup>
-              <optgroup label="November (Delhi – Friday)">
-                <option>November 6</option>
-              </optgroup>
-              <optgroup label="April (Mumbai/Pune – Thursday)">
-                <option>April 23</option><option>April 30</option>
-              </optgroup>
-              <optgroup label="May (Mumbai/Pune – Thursday)">
-                <option>May 7</option><option>May 14</option>
-                <option>May 21</option><option>May 28</option>
-              </optgroup>
-              <optgroup label="June (Mumbai/Pune – Thursday)">
-                <option>June 4</option><option>June 11</option><option>June 18</option>
-              </optgroup>
-              <optgroup label="October (Mumbai/Pune – Thursday)">
-                <option>October 1</option><option>October 15</option>
-                <option>October 22</option><option>October 29</option>
-              </optgroup>
-              <optgroup label="November (Mumbai/Pune – Thursday)">
-                <option>November 5</option>
-              </optgroup>
+              <optgroup label="April (Delhi – Friday)"><option>April 24</option></optgroup>
+              <optgroup label="May (Delhi – Friday)"><option>May 1</option><option>May 8</option><option>May 15</option><option>May 22</option><option>May 29</option></optgroup>
+              <optgroup label="June (Delhi – Friday)"><option>June 5</option><option>June 12</option><option>June 19</option></optgroup>
+              <optgroup label="October (Delhi – Friday)"><option>October 2</option><option>October 16</option><option>October 23</option><option>October 30</option></optgroup>
+              <optgroup label="November (Delhi – Friday)"><option>November 6</option></optgroup>
+              <optgroup label="April (Mumbai/Pune – Thursday)"><option>April 23</option><option>April 30</option></optgroup>
+              <optgroup label="May (Mumbai/Pune – Thursday)"><option>May 7</option><option>May 14</option><option>May 21</option><option>May 28</option></optgroup>
+              <optgroup label="June (Mumbai/Pune – Thursday)"><option>June 4</option><option>June 11</option><option>June 18</option></optgroup>
+              <optgroup label="October (Mumbai/Pune – Thursday)"><option>October 1</option><option>October 15</option><option>October 22</option><option>October 29</option></optgroup>
+              <optgroup label="November (Mumbai/Pune – Thursday)"><option>November 5</option></optgroup>
             </select>
           </div>
           <div class="form-group">
@@ -687,17 +544,15 @@
           </div>
         </div>
         <div class="form-footer">
-          <p class="note">💡 Pay 60% to block your seat, remaining 15 days before departure</p>
+          <p class="note">💡 Pay 60% to block your seat · Remaining 15 days before departure</p>
           <button class="btn-primary" onclick="submitForm()">🙏 Request Booking</button>
         </div>
-        <div id="form-success" class="form-success hidden">
-          ✅ Thank you! We'll contact you within 24 hours to confirm your booking.
-        </div>
+        <div id="form-success" class="form-success hidden">✅ Thank you! We'll contact you within 24 hours to confirm your booking.</div>
       </div>
     </div>
   </section>
 
-  <!-- PACKAGE SECTION -->
+  <!-- ══ PACKAGE ════════════════════════════════════ -->
   <section class="package-section" id="package">
     <div class="container">
       <div class="section-title fade-in-up">
@@ -718,65 +573,22 @@
         </div>
       </div>
 
-      <!-- ITINERARY -->
       <div class="section-title fade-in-up" style="margin-top:3rem">
         <h2>Brief <span>Itinerary</span></h2>
       </div>
       <div class="itinerary fade-in-up">
-        <div class="day-card">
-          <div class="day-num">Day 01</div>
-          <div class="day-content">
-            <h4>Delhi to Sonprayag</h4>
-            <p>Journey begins via Haridwar / Rishikesh</p>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-num">Day 02</div>
-          <div class="day-content">
-            <h4>Haridwar / Rishikesh to Sonprayag</h4>
-            <p>Devprayag Sightseeing en route · Stay in Sonprayag / Guptkashi</p>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-num">Day 03</div>
-          <div class="day-content">
-            <h4>Kedarnath Trek</h4>
-            <p>Trek to the sacred temple · Overnight stay in Kedarnath</p>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-num">Day 04</div>
-          <div class="day-content">
-            <h4>Kedarnath Darshan</h4>
-            <p>Divine blessings at Kedarnath · Stay in Sonprayag / Guptkashi</p>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-num">Day 05</div>
-          <div class="day-content">
-            <h4>Drive to Badrinath</h4>
-            <p>Scenic drive through the Himalayas · Stay in Badrinath</p>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-num">Day 06</div>
-          <div class="day-content">
-            <h4>Badrinath Darshan</h4>
-            <p>Visit Mana Village · Drop at Haridwar / Rishikesh</p>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-num">Day 07</div>
-          <div class="day-content">
-            <h4>Arrive in Delhi</h4>
-            <p>Return home with divine blessings</p>
-          </div>
-        </div>
+        <div class="day-card"><div class="day-num">Day 01</div><div class="day-content"><h4>Delhi to Sonprayag</h4><p>Journey begins via Haridwar / Rishikesh</p></div></div>
+        <div class="day-card"><div class="day-num">Day 02</div><div class="day-content"><h4>Haridwar / Rishikesh to Sonprayag</h4><p>Devprayag Sightseeing en route · Stay in Sonprayag / Guptkashi</p></div></div>
+        <div class="day-card"><div class="day-num">Day 03</div><div class="day-content"><h4>Kedarnath Trek</h4><p>Trek to the sacred temple · Overnight stay in Kedarnath</p></div></div>
+        <div class="day-card"><div class="day-num">Day 04</div><div class="day-content"><h4>Kedarnath Darshan</h4><p>Divine blessings at Kedarnath · Stay in Sonprayag / Guptkashi</p></div></div>
+        <div class="day-card"><div class="day-num">Day 05</div><div class="day-content"><h4>Drive to Badrinath</h4><p>Scenic drive through the Himalayas · Stay in Badrinath</p></div></div>
+        <div class="day-card"><div class="day-num">Day 06</div><div class="day-content"><h4>Badrinath Darshan</h4><p>Visit Mana Village · Drop at Haridwar / Rishikesh</p></div></div>
+        <div class="day-card"><div class="day-num">Day 07</div><div class="day-content"><h4>Arrive in Delhi</h4><p>Return home with divine blessings</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ADD-ONS -->
+  <!-- ══ ADD-ONS ════════════════════════════════════ -->
   <section class="addons-section" id="addons">
     <div class="container">
       <div class="section-title fade-in-up">
@@ -784,36 +596,11 @@
         <p>Enhance your journey with these optional extras</p>
       </div>
       <div class="addons-grid fade-in-up">
-        <div class="addon-card">
-          <div class="addon-icon">🏨</div>
-          <h4>Triple Sharing</h4>
-          <div class="addon-price">₹1,500<span>/person</span></div>
-          <p>Except Kedarnath stay</p>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon">🛏️</div>
-          <h4>Dual Sharing</h4>
-          <div class="addon-price">₹3,000<span>/person</span></div>
-          <p>Except Kedarnath stay</p>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon">🚤</div>
-          <h4>Rishikesh Day Stay</h4>
-          <div class="addon-price">₹4,000<span>/person</span></div>
-          <p>Dinner & Breakfast + 16 km White Water River Rafting + Delhi drop by Semi Sleeper Volvo Bus</p>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon">🚁</div>
-          <h4>Helicopter Booking</h4>
-          <div class="addon-price">₹10,000<span>/person</span></div>
-          <p>Two-way advance booking, subject to availability</p>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon">🐴</div>
-          <h4>Horse / Porter</h4>
-          <div class="addon-price">₹1,200–3,000<span>/person</span></div>
-          <p>One-way assistance on trek</p>
-        </div>
+        <div class="addon-card"><div class="addon-icon">🏨</div><h4>Triple Sharing</h4><div class="addon-price">₹1,500<span>/person</span></div><p>Except Kedarnath stay</p></div>
+        <div class="addon-card"><div class="addon-icon">🛏️</div><h4>Dual Sharing</h4><div class="addon-price">₹3,000<span>/person</span></div><p>Except Kedarnath stay</p></div>
+        <div class="addon-card"><div class="addon-icon">🚤</div><h4>Rishikesh Day Stay</h4><div class="addon-price">₹4,000<span>/person</span></div><p>Dinner & Breakfast + 16 km White Water Rafting + Delhi drop by Semi Sleeper Volvo Bus</p></div>
+        <div class="addon-card"><div class="addon-icon">🚁</div><h4>Helicopter Booking</h4><div class="addon-price">₹10,000<span>/person</span></div><p>Two-way advance booking, subject to availability</p></div>
+        <div class="addon-card"><div class="addon-icon">🐴</div><h4>Horse / Porter</h4><div class="addon-price">₹1,200–3,000<span>/person</span></div><p>One-way assistance on trek</p></div>
       </div>
       <div class="payment-note fade-in-up">
         <span>💳</span>
@@ -822,7 +609,7 @@
     </div>
   </section>
 
-  <!-- DEPARTURE DATES -->
+  <!-- ══ DATES ══════════════════════════════════════ -->
   <section class="dates-section" id="dates">
     <div class="container">
       <div class="section-title fade-in-up">
@@ -853,188 +640,132 @@
     </div>
   </section>
 
-  <!-- POLICY -->
+  <!-- ══ POLICY ═════════════════════════════════════ -->
   <section class="policy-section" id="policy">
     <div class="container">
       <div class="section-title fade-in-up">
         <h2>Trekhievers <span>Policy</span></h2>
       </div>
       <div class="policy-cards fade-in-up">
-        <div class="policy-card">
-          <div class="policy-icon">📋</div>
-          <p>A complete schedule of the trek will be shared with registered participants <strong>12 hours prior</strong> on WhatsApp.</p>
-        </div>
-        <div class="policy-card">
-          <div class="policy-icon">🔄</div>
-          <p>Organizers have the right to <strong>modify or change</strong> the schedule in case of any unavoidable circumstance.</p>
-        </div>
-        <div class="policy-card">
-          <div class="policy-icon">🌤️</div>
-          <p>The tour is <strong>weather-based</strong>. There may be last-minute cancellations if weather conditions deteriorate.</p>
-        </div>
+        <div class="policy-card"><div class="policy-icon">📋</div><p>A complete schedule of the trek will be shared with registered participants <strong>12 hours prior</strong> on WhatsApp.</p></div>
+        <div class="policy-card"><div class="policy-icon">🔄</div><p>Organizers have the right to <strong>modify or change</strong> the schedule in case of any unavoidable circumstance.</p></div>
+        <div class="policy-card"><div class="policy-icon">🌤️</div><p>The tour is <strong>weather-based</strong>. There may be last-minute cancellations if weather conditions deteriorate.</p></div>
       </div>
     </div>
   </section>
 
+  <a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
   <script>
-    // ─── SCROLL REVEAL ─────────────────────────────────
+    // SCROLL REVEAL
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, i * 100);
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
-
+    }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-    // ─── HERO PARTICLES ────────────────────────────────
-    function createParticles() {
+    // PARTICLES
+    (function() {
       const container = document.getElementById('particles');
       if (!container) return;
-      const symbols = ['🌿', '❄️', '✨', '🕉️', '🌸'];
-      const count = window.innerWidth < 600 ? 8 : 16;
-
+      const symbols = ['🌿','✨','🕉️','🌸','❄️'];
+      const count = window.innerWidth < 600 ? 6 : 12;
       for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
-        p.style.cssText = `
-          position: absolute;
-          font-size: ${Math.random() * 14 + 10}px;
-          left: ${Math.random() * 100}%;
-          top: ${Math.random() * 100}%;
-          opacity: 0;
-          animation: floatParticle ${Math.random() * 8 + 6}s ease-in-out ${Math.random() * 5}s infinite;
-          pointer-events: none;
-          user-select: none;
-        `;
+        p.style.cssText = `position:absolute;font-size:${Math.random()*11+8}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:0;animation:floatP ${Math.random()*8+6}s ease-in-out ${Math.random()*5}s infinite;pointer-events:none;user-select:none;`;
         p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
         container.appendChild(p);
       }
+      const s = document.createElement('style');
+      s.textContent = `@keyframes floatP{0%{opacity:0;transform:translateY(0) rotate(0deg)}20%{opacity:0.4}80%{opacity:0.4}100%{opacity:0;transform:translateY(-65px) rotate(360deg)}}`;
+      document.head.appendChild(s);
+    })();
 
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes floatParticle {
-          0%   { opacity: 0;   transform: translateY(0)     rotate(0deg); }
-          20%  { opacity: 0.5; }
-          80%  { opacity: 0.5; }
-          100% { opacity: 0;   transform: translateY(-80px) rotate(360deg); }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-
-    createParticles();
-
-    // ─── FORM SUBMISSION ────────────────────────────────
+    // FORM SUBMIT
     function submitForm() {
-      const name    = document.getElementById('name').value.trim();
-      const phone   = document.getElementById('phone').value.trim();
-      const city    = document.getElementById('city').value;
-      const date    = document.getElementById('date').value;
-      const persons = document.getElementById('persons').value.trim();
-
-      if (!name || !phone || !city || !date || !persons) {
-        showShakeError();
-        alert('Please fill in all required fields (Name, Phone, City, Date, Persons).');
-        return;
+      const v = id => document.getElementById(id).value.trim();
+      if (!v('name') || !v('phone') || !document.getElementById('city').value || !document.getElementById('date').value || !v('persons')) {
+        shakeForm(); alert('Please fill in all required fields (Name, Phone, City, Date, Persons).'); return;
       }
-
-      if (!/^[\+]?[\d\s\-]{7,15}$/.test(phone)) {
-        alert('Please enter a valid phone number.');
-        return;
-      }
-
-      const successEl = document.getElementById('form-success');
-      successEl.classList.remove('hidden');
-      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
+      if (!/^[\+]?[\d\s\-]{7,15}$/.test(v('phone'))) { alert('Please enter a valid phone number.'); return; }
+      const el = document.getElementById('form-success');
+      el.classList.remove('hidden');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setTimeout(() => {
-        successEl.classList.add('hidden');
-        document.getElementById('name').value    = '';
-        document.getElementById('phone').value   = '';
-        document.getElementById('email').value   = '';
-        document.getElementById('city').value    = '';
-        document.getElementById('date').value    = '';
-        document.getElementById('persons').value = '';
-        document.getElementById('message').value = '';
+        el.classList.add('hidden');
+        ['name','phone','email','city','date','persons','message'].forEach(id => document.getElementById(id).value = '');
         document.querySelectorAll('input[name="sharing"]').forEach(r => r.checked = false);
       }, 6000);
     }
 
-    function showShakeError() {
+    function shakeForm() {
       const card = document.querySelector('.form-card');
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes shake {
-          0%,100% { transform: translateX(0); }
-          20%      { transform: translateX(-8px); }
-          40%      { transform: translateX(8px); }
-          60%      { transform: translateX(-5px); }
-          80%      { transform: translateX(5px); }
-        }
-      `;
-      document.head.appendChild(style);
+      const s = document.createElement('style');
+      s.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}`;
+      document.head.appendChild(s);
       card.style.animation = 'shake 0.4s ease';
       setTimeout(() => card.style.animation = '', 500);
     }
 
-    // ─── SMOOTH SCROLL ─────────────────────────────────
+    // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', e => {
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        const t = document.querySelector(link.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
 
-    // ─── DAY CARD STAGGER ──────────────────────────────
-    const dayObserver = new IntersectionObserver((entries) => {
+    // STAGGER – Day Cards
+    const dayObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const cards = entry.target.querySelectorAll('.day-card');
-          cards.forEach((card, i) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateX(-20px)';
-            setTimeout(() => {
-              card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-              card.style.opacity = '1';
-              card.style.transform = 'translateX(0)';
-            }, i * 100);
-          });
-          dayObserver.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.day-card').forEach((c, i) => {
+          c.style.opacity='0'; c.style.transform='translateX(-18px)';
+          setTimeout(() => { c.style.transition='opacity 0.48s ease,transform 0.48s ease'; c.style.opacity='1'; c.style.transform='translateX(0)'; }, i*85);
+        });
+        dayObs.unobserve(entry.target);
       });
     }, { threshold: 0.1 });
+    const itin = document.querySelector('.itinerary');
+    if (itin) dayObs.observe(itin);
 
-    const itinerary = document.querySelector('.itinerary');
-    if (itinerary) dayObserver.observe(itinerary);
-
-    // ─── ADDON CARD STAGGER ─────────────────────────────
-    const addonObserver = new IntersectionObserver((entries) => {
+    // STAGGER – Addon Cards
+    const addObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const cards = entry.target.querySelectorAll('.addon-card');
-          cards.forEach((card, i) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-              card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, i * 120);
-          });
-          addonObserver.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.addon-card').forEach((c, i) => {
+          c.style.opacity='0'; c.style.transform='translateY(18px)';
+          setTimeout(() => { c.style.transition='opacity 0.48s ease,transform 0.48s ease'; c.style.opacity='1'; c.style.transform='translateY(0)'; }, i*100);
+        });
+        addObs.unobserve(entry.target);
       });
     }, { threshold: 0.1 });
+    const addGrid = document.querySelector('.addons-grid');
+    if (addGrid) addObs.observe(addGrid);
 
-    const addonsGrid = document.querySelector('.addons-grid');
-    if (addonsGrid) addonObserver.observe(addonsGrid);
+    // STAGGER – Price Cards
+    const priceObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.price-card').forEach((c, i) => {
+          c.style.opacity='0'; c.style.transform='translateY(28px)';
+          setTimeout(() => {
+            c.style.transition='opacity 0.55s ease,transform 0.55s ease';
+            c.style.opacity='1';
+            c.style.transform = c.classList.contains('featured') ? 'scale(1.04) translateY(0)' : 'translateY(0)';
+          }, i*140);
+        });
+        priceObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    const pGrid = document.querySelector('.price-grid');
+    if (pGrid) priceObs.observe(pGrid);
   </script>
 </body>
 </html>
