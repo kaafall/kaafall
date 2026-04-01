@@ -36,7 +36,7 @@
     /* ─── HERO ───────────────────────── */
     .hero {
       position: relative;
-      min-height: 36vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -44,7 +44,7 @@
       background:
         linear-gradient(160deg, rgba(26,92,46,0.93) 0%, rgba(45,138,78,0.82) 50%, rgba(26,92,46,0.96) 100%),
         url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80') center/cover no-repeat;
-      padding: 2.2rem 1.5rem 2rem;
+      padding: 6rem 1.5rem 4rem;
       overflow: hidden;
     }
     .hero-overlay {
@@ -60,26 +60,37 @@
       background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.28);
       color: var(--gold-light);
-      font-size: 0.74rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; padding: 0.28rem 0.95rem;
-      border-radius: 50px; margin-bottom: 0.55rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.4rem;
       backdrop-filter: blur(8px);
     }
     .hero-content h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.4rem, 3.8vw, 2.3rem);
-      color: var(--white); line-height: 1.15;
-      text-shadow: 0 3px 18px rgba(0,0,0,0.3);
-      margin-bottom: 0.25rem;
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: var(--white);
+      line-height: 1.0;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.3);
+      margin-bottom: 0.4rem;
     }
     .hero-content h1 span { color: var(--gold-light); }
     .hero-sub {
-      color: rgba(255,255,255,0.82); font-size: 0.84rem;
-      margin: 0.35rem 0 0.75rem; letter-spacing: 0.3px;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 1rem 0 1.5rem;
+      letter-spacing: 0.5px;
     }
     .hero-tags {
-      display: flex; gap: 0.4rem; justify-content: center;
-      flex-wrap: wrap; margin-bottom: 0.9rem;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
     .hero-tags span {
       background: rgba(255,255,255,0.12);

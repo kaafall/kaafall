@@ -165,3 +165,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+(function () {
+    const track = document.getElementById('tTrack');
+    const slides = track.querySelectorAll('.t-slide');
+    const dotsContainer = document.getElementById('tDots');
+    const btnPrev = document.getElementById('tPrev');
+    const btnNext = document.getElementById('tNext');
+    let current = 0;
+    const total = slides.length;
+ 
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 't-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+ 
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.t-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+ 
+    btnPrev.addEventListener('click', () => goTo(current - 1));
+    btnNext.addEventListener('click', () => goTo(current + 1));
+ 
+    // Auto-play every 5s
+    let autoplay = setInterval(() => goTo(current + 1), 5000);
+    [btnPrev, btnNext].forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearInterval(autoplay);
+        autoplay = setInterval(() => goTo(current + 1), 5000);
+      });
+    });
+ 
+    // Touch/swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+  })();
