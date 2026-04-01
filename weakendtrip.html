@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekend Trips – Kaafall Travels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="/asstes/css/style.css" rel="stylesheet">
+  <script src="/asstes/js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    :root {
+      --green-dark:   #1a3c2e;
+      --green-mid:    #2d6a4f;
+      --green-light:  #40916c;
+      --green-pale:   #d8f3dc;
+      --gold:         #c9a84c;
+      --gold-light:   #f0d080;
+      --cream:        #faf7f2;
+      --text-dark:    #1c1c1c;
+      --text-mid:     #4a4a4a;
+      --text-light:   #7a7a7a;
+      --white:        #ffffff;
+      --shadow-sm:    0 2px 12px rgba(26,60,46,0.10);
+      --shadow-md:    0 8px 32px rgba(26,60,46,0.15);
+      --shadow-lg:    0 16px 48px rgba(26,60,46,0.20);
+      --radius:       16px;
+      --radius-sm:    10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+   
+    /* ── BANNER ── */
+    .banner {
+      background: linear-gradient(120deg, var(--green-dark) 0%, var(--green-mid) 60%, #1b4332 100%);
+      padding: 48px 32px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .banner-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,168,76,0.18);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .banner h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .banner p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto 22px;
+      line-height: 1.6;
+    }
+    .banner-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .banner-stat { text-align: center; }
+    .banner-stat strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .banner-stat span {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid rgba(26,60,46,0.08);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+      box-shadow: var(--shadow-sm);
+    }
+    .filter-btn {
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(26,60,46,0.18);
+      background: transparent;
+      color: var(--text-mid);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.22s;
+    }
+    .filter-btn:hover { border-color: var(--green-light); color: var(--green-mid); }
+    .filter-btn.active {
+      background: var(--green-mid);
+      border-color: var(--green-mid);
+      color: var(--white);
+    }
+
+    /* ── SECTION ── */
+    .section-header {
+      text-align: center;
+      padding: 52px 20px 10px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .section-header .label {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green-mid);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      color: var(--green-dark);
+      line-height: 1.25;
+    }
+    .section-header p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      padding: 32px 32px 60px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+      animation: fadeUp 0.5s ease both;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.012);
+      box-shadow: var(--shadow-lg);
+    }
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.10s; }
+    .card:nth-child(3) { animation-delay: 0.15s; }
+    .card:nth-child(4) { animation-delay: 0.20s; }
+    .card:nth-child(5) { animation-delay: 0.25s; }
+    .card:nth-child(6) { animation-delay: 0.30s; }
+    .card:nth-child(7) { animation-delay: 0.35s; }
+    .card:nth-child(8) { animation-delay: 0.40s; }
+
+    .card-img-wrap {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card:hover .card-img-wrap img { transform: scale(1.08); }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--green-dark);
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .card-rating {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.95);
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .card-rating::before { content: '★'; color: var(--gold); font-size: 0.82rem; }
+
+    .card-body { padding: 20px 20px 18px; }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .card-meta span {
+      font-size: 0.76rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .card-meta .icon { font-size: 0.88rem; }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--green-dark);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .card-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .chip {
+      background: var(--green-pale);
+      color: var(--green-mid);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(26,60,46,0.08);
+      padding-top: 14px;
+    }
+    .card-price small {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+    .card-price strong {
+      font-size: 1.15rem;
+      color: var(--green-mid);
+      font-weight: 700;
+    }
+    .card-price span { font-size: 0.75rem; color: var(--text-light); }
+
+    .btn-book {
+      background: var(--green-mid);
+      color: var(--white);
+      border: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.22s, transform 0.18s;
+    }
+    .btn-book:hover { background: var(--green-dark); transform: scale(1.04); }
+
+    /* ── CONTENT SECTION ── */
+    .content-strip {
+      background: var(--green-dark);
+      padding: 56px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .content-strip-text { max-width: 460px; }
+    .content-strip-text .label {
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .content-strip-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .content-strip-text h2 em { color: var(--gold-light); font-style: italic; }
+    .content-strip-text p {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .content-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .content-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+    }
+    .content-points li::before {
+      content: '✓';
+      background: var(--green-light);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .content-strip-cta { display: flex; flex-direction: column; gap: 14px; }
+    .cta-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      min-width: 260px;
+      transition: background 0.25s;
+    }
+    .cta-card:hover { background: rgba(255,255,255,0.12); }
+    .cta-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .cta-card h4 { color: var(--gold-light); font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+    .cta-card p { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin-bottom: 12px; }
+    .cta-link {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 7px 18px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .cta-link:hover { background: var(--gold-light); }
+
+    /* ── WHY SECTION ── */
+    .why-section {
+      padding: 56px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(26,60,46,0.07);
+      transition: transform 0.28s, box-shadow 0.28s;
+    }
+    .why-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .why-icon { font-size: 2rem; margin-bottom: 12px; }
+    .why-card h4 { color: var(--green-dark); font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+    .why-card p { color: var(--text-light); font-size: 0.8rem; line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--white);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 520px;
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .modal-img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; }
+    .modal-body { padding: 24px; }
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .modal-sub { color: var(--text-light); font-size: 0.83rem; margin-bottom: 16px; }
+    .modal-desc { color: var(--text-mid); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px; }
+    .modal-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .modal-chip {
+      background: var(--green-pale);
+      color: var(--green-mid);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 12px;
+    }
+    .modal-price-row { display: flex; align-items: center; justify-content: space-between; }
+    .modal-price strong { font-size: 1.4rem; color: var(--green-mid); }
+    .modal-price span { font-size: 0.78rem; color: var(--text-light); }
+    .btn-enquire {
+      background: var(--green-mid);
+      color: var(--white);
+      border: none;
+      padding: 11px 28px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-enquire:hover { background: var(--green-dark); }
+    .modal-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: rgba(0,0,0,0.3);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-img-wrap { position: relative; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .banner { padding: 36px 20px 32px; }
+      .cards-grid { padding: 24px 16px 48px; gap: 20px; }
+      .filter-bar { padding: 12px 16px; gap: 8px; }
+      .content-strip { padding: 40px 20px; gap: 36px; }
+      .why-section { padding: 40px 16px; }
+      nav { padding: 0 18px; }
+    }
+    @media (max-width: 480px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .banner-stats { gap: 20px; }
+      .filter-btn { padding: 6px 13px; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/index.html" class="nav-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">kaafall</span>
+        <span class="nl-sub">presents</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/aboutus.html">About us</a></li>
+      <li><a href="/packages.html">Packages</a></li>
+      <li><a href="/packages.html">Char Dham</a></li>
+      <li><a href="/packages.html">Weekend Trips</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contactus.html">Contact us</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-tag">🏔️ Weekend Escapes</div>
+  <h1>Escape the Ordinary,<br><em>Feel Uttarakhand</em></h1>
+  <p>Short 2–3 day getaways crafted for those who crave the mountains. Leave Friday, return refreshed.</p>
+  <div class="banner-stats">
+    <div class="banner-stat"><strong>8+</strong><span>Destinations</span></div>
+    <div class="banner-stat"><strong>2–3</strong><span>Days Only</span></div>
+    <div class="banner-stat"><strong>4.7★</strong><span>Avg Rating</span></div>
+    <div class="banner-stat"><strong>₹3,999</strong><span>Starts From</span></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+  <button class="filter-btn" onclick="filterCards('adventure', this)">🧗 Adventure</button>
+  <button class="filter-btn" onclick="filterCards('spiritual', this)">🛕 Spiritual</button>
+  <button class="filter-btn" onclick="filterCards('nature', this)">🌿 Nature</button>
+  <button class="filter-btn" onclick="filterCards('hillstation', this)">🏔️ Hill Station</button>
+  <button class="filter-btn" onclick="filterCards('wildlife', this)">🐯 Wildlife</button>
+</div>
+
+<!-- SECTION HEADER -->
+<div class="section-header">
+  <span class="label">Weekend Getaways</span>
+  <h2>Pick Your Perfect Escape</h2>
+  <p>8 handpicked destinations — each a world of its own</p>
+</div>
+
+<!-- CARDS GRID -->
+<div class="cards-grid" id="cardsGrid">
+
+  <div class="card" data-cat="hillstation" onclick="openModal(0)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/mussoorie1.jfif" alt="Mussoorie" />
+      <span class="card-badge">Family Fav</span>
+      <span class="card-rating">4.8</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> Family & Couples</span>
+      </div>
+      <div class="card-title">Mussoorie — Queen of Hills</div>
+      <div class="card-desc">Mall Road walks, Kempty Falls, misty valleys and colonial charm — the perfect short escape from the plains.</div>
+      <div class="card-highlights">
+        <span class="chip">🚡 Cable Car</span>
+        <span class="chip">🌊 Kempty Falls</span>
+        <span class="chip">🛤️ Mall Road</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹7,500</small>
+          <strong>₹5,499</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="nature" onclick="openModal(1)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/Nanital1.jfif" alt="Nainital" />
+      <span class="card-badge">Bestseller</span>
+      <span class="card-rating">4.7</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> All Groups</span>
+      </div>
+      <div class="card-title">Nainital — Lake City Escape</div>
+      <div class="card-desc">Boat rides on Naini Lake, snow views from Snow View Point, and cozy cafes make this a perfect weekend.</div>
+      <div class="card-highlights">
+        <span class="chip">🚣 Boating</span>
+        <span class="chip">🔭 Snow View</span>
+        <span class="chip">🛍️ Mall Road</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹5,500</small>
+          <strong>₹4,299</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="adventure spiritual" onclick="openModal(2)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/Rishikesh1.jfif" alt="Rishikesh" />
+      <span class="card-badge">Adventure</span>
+      <span class="card-rating">4.9</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> Friends & Couples</span>
+      </div>
+      <div class="card-title">Rishikesh — Yoga & Rafting</div>
+      <div class="card-desc">From serene Ganga Aarti to wild river rapids — Rishikesh packs a lifetime of experiences into a weekend.</div>
+      <div class="card-highlights">
+        <span class="chip">🏄 Rafting</span>
+        <span class="chip">🧘 Yoga</span>
+        <span class="chip">🌉 Lakshman Jhula</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹8,999</small>
+          <strong>₹6,499</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="nature adventure" onclick="openModal(3)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/chopta1.jfif" alt="Chopta" />
+      <span class="card-badge">Hidden Gem</span>
+      <span class="card-rating">4.8</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> Trekkers</span>
+      </div>
+      <div class="card-title">Chopta — Mini Switzerland</div>
+      <div class="card-desc">Trek to Tungnath, the world's highest Shiva temple, surrounded by snow-capped peaks and rhododendron forests.</div>
+      <div class="card-highlights">
+        <span class="chip">🧗 Trek</span>
+        <span class="chip">🏕️ Camping</span>
+        <span class="chip">🌸 Rhododendrons</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹7,200</small>
+          <strong>₹5,499</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="hillstation nature" onclick="openModal(4)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/Munsyari1.jfif" alt="Munsyari" />
+      <span class="card-badge">Offbeat</span>
+      <span class="card-rating">4.9</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 3N / 4D</span>
+        <span><span class="icon">👥</span> Nature Lovers</span>
+      </div>
+      <div class="card-title">Munsyari — Himalayan Paradise</div>
+      <div class="card-desc">A remote mountain town offering jaw-dropping Panchachuli views, glaciers, and untouched alpine beauty.</div>
+      <div class="card-highlights">
+        <span class="chip">🏔️ Panchachuli</span>
+        <span class="chip">❄️ Glacier</span>
+        <span class="chip">🌄 Sunrise Views</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹11,200</small>
+          <strong>₹8,999</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="wildlife nature" onclick="openModal(5)">
+    <div class="card-img-wrap">
+      <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&q=80" alt="Jim Corbett" />
+      <span class="card-badge">Wildlife</span>
+      <span class="card-rating">4.6</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> All Groups</span>
+      </div>
+      <div class="card-title">Jim Corbett — Tiger Safari</div>
+      <div class="card-desc">India's oldest national park — spot tigers, elephants and leopards in their natural habitat on thrilling jeep safaris.</div>
+      <div class="card-highlights">
+        <span class="chip">🐯 Tiger</span>
+        <span class="chip">🚙 Jeep Safari</span>
+        <span class="chip">🦅 Bird Watch</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹8,200</small>
+          <strong>₹6,999</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="hillstation nature" onclick="openModal(6)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/Surkanda1.jpg" alt="Dhanaulti" />
+      <span class="card-badge">Serene</span>
+      <span class="card-rating">4.7</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> Couples & Family</span>
+      </div>
+      <div class="card-title">Dhanaulti — Forest Retreat</div>
+      <div class="card-desc">Deodar cedar forests, eco-parks, apple orchards and the perfect silence — a calm escape above Mussoorie.</div>
+      <div class="card-highlights">
+        <span class="chip">🌲 Eco Park</span>
+        <span class="chip">🍎 Apple Orchards</span>
+        <span class="chip">⛺ Camping</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹6,000</small>
+          <strong>₹4,499</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="spiritual adventure" onclick="openModal(7)">
+    <div class="card-img-wrap">
+      <img src="https://kaafall.vercel.app/images/kartikswami1.jpeg" alt="Kartik Swami" />
+      <span class="card-badge">Spiritual Trek</span>
+      <span class="card-rating">4.8</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span><span class="icon">🗓️</span> 2N / 3D</span>
+        <span><span class="icon">👥</span> Small Groups</span>
+      </div>
+      <div class="card-title">Kartik Swami — Sky Temple</div>
+      <div class="card-desc">The only temple of Lord Kartikeya in Uttarakhand — a short trek to divine 360° Himalayan panoramas.</div>
+      <div class="card-highlights">
+        <span class="chip">🛕 Temple</span>
+        <span class="chip">🧗 Short Trek</span>
+        <span class="chip">🏔️ 360° Views</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <small>₹5,999</small>
+          <strong>₹3,999</strong><span>/person</span>
+        </div>
+        <button class="btn-book">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONTENT STRIP -->
+<section class="content-strip">
+  <div class="content-strip-text">
+    <div class="label">Why Weekend Trips?</div>
+    <h2>You Don't Need<br><em>Two Weeks</em> to Recharge</h2>
+    <p>A 2–3 day escape into Uttarakhand's mountains can reset your mind, body and soul. Our weekend packages are carefully designed to maximize your experience without wasting a single hour.</p>
+    <ul class="content-points">
+      <li>Depart Friday evening, return Sunday night</li>
+      <li>All transport, stays & meals included</li>
+      <li>Small curated groups for personal experience</li>
+      <li>Expert local guides who know hidden gems</li>
+      <li>Flexible booking — reschedule anytime</li>
+    </ul>
+  </div>
+  <div class="content-strip-cta">
+    <div class="cta-card">
+      <div class="cta-icon">📞</div>
+      <h4>Call & Book Instantly</h4>
+      <p>Speak to our travel experts and get your trip booked in minutes.</p>
+      <a class="cta-link" href="tel:+919810966202">Call Now →</a>
+    </div>
+    <div class="cta-card">
+      <div class="cta-icon">💬</div>
+      <h4>WhatsApp Us</h4>
+      <p>Share your dates and we'll send you the best weekend plan.</p>
+      <a class="cta-link" href="https://wa.me/919810966202">WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SECTION -->
+<section class="why-section">
+  <span class="label" style="display:inline-block;background:var(--green-pale);color:var(--green-mid);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:10px;">Our Promise</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--green-dark);margin-bottom:4px;">Why Book with Kaafall?</h2>
+  <p style="color:var(--text-light);font-size:0.88rem;">Trusted by 10,000+ travelers across Uttarakhand</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <h4>Verified Agents Only</h4>
+      <p>All partners have 4.4+ ratings and are vetted through our quality process.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💸</div>
+      <h4>Best Price Guarantee</h4>
+      <p>Compare up to 3 local agents and save up to 30% on your trip cost.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <h4>Secure Payments</h4>
+      <p>100% money-back guarantee with fully secured payment options.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🕐</div>
+      <h4>24/7 Support</h4>
+      <p>Our experts are available round the clock before and during your trip.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved &nbsp;|&nbsp;
+    <a href="https://kaafall.vercel.app/P&P.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="https://kaafall.vercel.app/t&c.html">Terms & Conditions</a>
+  </p>
+  <p style="margin-top:6px;">Made with ❤️ in Uttarakhand</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-img-wrap">
+      <img class="modal-img" id="modalImg" src="" alt="" />
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-sub" id="modalSub"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-row" id="modalChips"></div>
+      <div class="modal-price-row">
+        <div class="modal-price">
+          <span id="modalOldPrice" style="text-decoration:line-through;color:var(--text-light);font-size:0.85rem;"></span><br>
+          <strong id="modalPrice"></strong>
+          <span>/person</span>
+        </div>
+        <a href="https://kaafall.vercel.app/contactus.html"><button class="btn-enquire">Send Enquiry →</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const destinations = [
+    {
+      img: 'https://kaafall.vercel.app/images/mussoorie1.jfif',
+      title: 'Mussoorie — Queen of Hills',
+      sub: '2 Nights / 3 Days · Hill Station · Family & Couples',
+      desc: 'Mussoorie, perched at 2,048m above sea level, is one of the most loved hill stations in India. Stroll along Mall Road with valley views, feel the cool mist of Kempty Falls, ride the cable car to Gun Hill for panoramic Himalayan views, and explore the historic Lal Tibba. Perfect for families and couples looking for a relaxed yet scenic mountain escape within driving distance of Delhi.',
+      chips: ['🚡 Cable Car', '🌊 Kempty Falls', '🛤️ Mall Road', '🏔️ Gun Hill', '🍽️ Meals Included'],
+      oldPrice: '₹7,500', price: '₹5,499'
+    },
+    {
+      img: 'https://kaafall.vercel.app/images/Nanital1.jfif',
+      title: 'Nainital — Lake City Escape',
+      sub: '2 Nights / 3 Days · Nature · All Groups',
+      desc: 'Nainital, nestled around the serene Naini Lake, offers a perfect blend of natural beauty and adventure. Enjoy boat rides on the lake, take the aerial ropeway to Snow View Point for Himalayan vistas, visit the famous Naina Devi Temple, and explore the bustling Mall Road lined with shops and cafes. A timeless hill station that never gets old.',
+      chips: ['🚣 Boating', '🔭 Snow View', '🛍️ Mall Road', '🛕 Naina Devi', '🏨 Hotel Stay'],
+      oldPrice: '₹5,500', price: '₹4,299'
+    },
+    {
+      img: 'https://kaafall.vercel.app/images/Rishikesh1.jfif',
+      title: 'Rishikesh — Yoga & Rafting',
+      sub: '2 Nights / 3 Days · Adventure + Spiritual · Friends',
+      desc: 'The world\'s yoga capital is also an adrenaline playground. Tackle Grade III-IV rapids on white-water rafting, bungee jump from the 83m Jumpin Heights, attend the magical Ganga Aarti at Triveni Ghat, meditate at the Beatles Ashram, and cross the iconic Lakshman Jhula. Rishikesh is the ultimate weekend mix of adventure and spirituality.',
+      chips: ['🏄 River Rafting', '🧘 Yoga Session', '🌉 Lakshman Jhula', '🔥 Ganga Aarti', '🏕️ Camp Stay'],
+      oldPrice: '₹8,999', price: '₹6,499'
+    },
+    {
+      img: 'https://kaafall.vercel.app/images/chopta1.jfif',
+      title: 'Chopta — Mini Switzerland of India',
+      sub: '2 Nights / 3 Days · Adventure + Spiritual · Trekkers',
+      desc: 'Called the \'Mini Switzerland of India\', Chopta is a hidden gem sitting at 2,680m. Trek through rhododendron forests to Tungnath — the world\'s highest Shiva temple at 3,680m — and continue to Chandrashila peak for a breathtaking 360° view of Nanda Devi, Trishul, Kedar Peak and Chaukhamba. Best visited with snow in winter or blooms in spring.',
+      chips: ['🧗 Tungnath Trek', '🏕️ Camping', '🌸 Rhododendrons', '⛰️ Chandrashila', '🍽️ Meals'],
+      oldPrice: '₹7,200', price: '₹5,499'
+    },
+    {
+      img: 'https://kaafall.vercel.app/images/Munsyari1.jfif',
+      title: 'Munsyari — Himalayan Paradise',
+      sub: '3 Nights / 4 Days · Offbeat Nature · Nature Lovers',
+      desc: 'Munsyari is a remote paradise at 2,200m with unobstructed views of the majestic Panchachuli peaks. Visit the Tribal Heritage Museum, trek to Khaliya Top for sunrise panoramas, explore Birthi Falls, and walk to Thamri Kund for a high-altitude lake experience. A place where the Himalayas feel close enough to touch.',
+      chips: ['🏔️ Panchachuli Views', '🌄 Khaliya Top', '💧 Birthi Falls', '🏞️ Alpine Meadows', '🏨 Stay Included'],
+      oldPrice: '₹11,200', price: '₹8,999'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&q=80',
+      title: 'Jim Corbett — Tiger Safari',
+      sub: '2 Nights / 3 Days · Wildlife · All Groups',
+      desc: 'Jim Corbett National Park, established in 1936, is India\'s oldest national park and a haven for wildlife. Embark on thrilling jeep safaris in the Dhikala, Bijrani and Jhirna zones, spot Royal Bengal Tigers, Asian elephants, leopards, crocodiles and over 600 species of birds. Stay at a jungle resort for the complete wilderness experience.',
+      chips: ['🐯 Tiger Spotting', '🚙 Jeep Safari', '🦅 Bird Watching', '🐘 Elephants', '🏕️ Jungle Resort'],
+      oldPrice: '₹8,200', price: '₹6,999'
+    },
+    {
+      img: 'https://kaafall.vercel.app/images/Surkanda1.jpg',
+      title: 'Dhanaulti — Forest Retreat',
+      sub: '2 Nights / 3 Days · Nature · Couples & Family',
+      desc: 'Dhanaulti, perched at 2,286m just above Mussoorie, is a quiet escape into dense deodar cedar forests. Visit the famous Eco Park with its pine and rhododendron gardens, explore apple and pear orchards, stop at the Surkanda Devi Temple for mountain blessings, and enjoy campfires under the stars. Perfect for those seeking silence over crowds.',
+      chips: ['🌲 Deodar Forests', '🍎 Apple Orchards', '🛕 Surkanda Devi', '⛺ Eco Park', '🔥 Campfire'],
+      oldPrice: '₹6,000', price: '₹4,499'
+    },
+    {
+      img: 'https://kaafall.vercel.app/images/kartikswami1.jpeg',
+      title: 'Kartik Swami — Sky Temple Trek',
+      sub: '2 Nights / 3 Days · Spiritual + Adventure · Small Groups',
+      desc: 'Perched at 3,048m, Kartik Swami Temple is the only temple dedicated to Lord Kartikeya in Uttarakhand. A short 3km trek through oak and rhododendron forests leads to the summit temple with a jaw-dropping 360° panorama of Kedarnath, Chaukhamba, Neelkanth and Trishul peaks. Spiritual, scenic and deeply rewarding.',
+      chips: ['🛕 Kartik Swami', '🧗 3km Trek', '🏔️ 360° Himalaya', '🌄 Sunrise View', '🚌 Transport'],
+      oldPrice: '₹5,999', price: '₹3,999'
+    }
+  ];
+
+  function openModal(i) {
+    const d = destinations[i];
+    document.getElementById('modalImg').src = d.img;
+    document.getElementById('modalTitle').textContent = d.title;
+    document.getElementById('modalSub').textContent = d.sub;
+    document.getElementById('modalDesc').textContent = d.desc;
+    document.getElementById('modalOldPrice').textContent = d.oldPrice;
+    document.getElementById('modalPrice').textContent = d.price;
+    const chips = document.getElementById('modalChips');
+    chips.innerHTML = d.chips.map(c => `<span class="modal-chip">${c}</span>`).join('');
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  function filterCards(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(card => {
+      const cats = card.dataset.cat || '';
+      card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+    });
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
