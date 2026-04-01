@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Char Dham Yatra 2025 | Kafall Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="/asstes/css/style.css" rel="stylesheet">
+  <script src="/asstes/js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    :root {
+      --green-dark: #1a5c2a;
+      --green-main: #2e7d32;
+      --green-mid: #388e3c;
+      --green-light: #4caf50;
+      --green-pale: #e8f5e9;
+      --green-ultra: #f1f8f1;
+      --gold: #f9a825;
+      --gold-light: #fff8e1;
+      --white: #ffffff;
+      --text-dark: #1b2a1e;
+      --text-mid: #3d5c41;
+      --text-light: #6a8a6e;
+      --border: #c8e6c9;
+      --shadow: rgba(30, 90, 40, 0.12);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .hero {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d3b17 0%, #1a5c2a 40%, #2e7d32 70%, #388e3c 100%);
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-mountains {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 100px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160'%3E%3Cpath fill='%23ffffff' fill-opacity='0.07' d='M0,160 L0,80 L120,40 L240,90 L360,20 L480,70 L600,10 L720,60 L840,30 L960,80 L1080,20 L1200,70 L1320,40 L1440,90 L1440,160 Z'/%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,160 L0,110 L180,60 L360,100 L540,50 L720,90 L900,40 L1080,80 L1260,50 L1440,100 L1440,160 Z'/%3E%3C/svg%3E") no-repeat bottom;
+      background-size: cover;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 44px 24px 56px;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      padding: 7px 18px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 14px;
+      backdrop-filter: blur(8px);
+      animation: fadeDown 0.8s ease both;
+    }
+    .hero-badge i { color: var(--gold); font-size: 0.85rem; }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900; color: #fff;
+      line-height: 1.1; margin-bottom: 20px;
+      animation: fadeUp 0.9s 0.15s ease both;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-subtitle {
+      font-size: 1.05rem; color: rgba(255,255,255,0.82);
+      max-width: 560px; line-height: 1.7;
+      margin-bottom: 24px;
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 0.9s 0.45s ease both;
+    }
+    .hero-stat { color: #fff; text-align: center; }
+    .hero-stat strong { display: block; font-size: 1.8rem; font-weight: 700; color: var(--gold); }
+    .hero-stat span { font-size: 0.82rem; opacity: 0.75; letter-spacing: 0.5px; }
+    .hero-scroll-hint {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(255,255,255,0.5); font-size: 0.72rem; letter-spacing: 1px;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll-hint i { font-size: 1.1rem; }
+
+    /* ─── SECTION HEADERS ─── */
+    .section-header {
+      text-align: center; margin-bottom: 48px;
+    }
+    .section-tag {
+      display: inline-block;
+      background: var(--green-pale); color: var(--green-dark);
+      padding: 5px 16px; border-radius: 50px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700; color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      color: var(--text-light); font-size: 1rem; max-width: 560px; margin: 0 auto;
+      line-height: 1.7;
+    }
+    .section-divider {
+      width: 60px; height: 3px; margin: 16px auto 0;
+      background: linear-gradient(90deg, var(--green-light), var(--gold));
+      border-radius: 2px;
+    }
+
+    /* ─── PILGRIM INFO BAR ─── */
+    .info-bar {
+      background: var(--green-dark);
+      padding: 14px 24px;
+    }
+    .info-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center;
+    }
+    .info-item {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.85); font-size: 0.82rem;
+    }
+    .info-item i { color: var(--gold); font-size: 0.9rem; }
+    .info-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.2); }
+
+    /* ─── PACKAGES SECTION ─── */
+    .packages-section { padding: 80px 24px; background: var(--green-ultra); }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* CHAR DHAM CARD */
+    .char-dham-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px var(--shadow);
+      margin-bottom: 40px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .char-dham-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(30,90,40,0.18);
+    }
+    .char-dham-card .featured-ribbon {
+      position: absolute; top: 20px; left: -1px;
+      background: linear-gradient(90deg, var(--gold), #ffca28);
+      color: #5d3a00; font-size: 0.72rem; font-weight: 700;
+      padding: 5px 16px 5px 12px;
+      border-radius: 0 20px 20px 0;
+      text-transform: uppercase; letter-spacing: 1px;
+      z-index: 3; box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    }
+    .char-dham-card-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .card-image-wrap {
+      position: relative; overflow: hidden; min-height: 320px;
+    }
+    .card-image-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .char-dham-card:hover .card-image-wrap img { transform: scale(1.06); }
+    .card-image-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, rgba(255,255,255,0.1));
+    }
+    .card-image-badge {
+      position: absolute; bottom: 16px; left: 16px;
+      background: rgba(26,92,42,0.9); color: #fff;
+      padding: 6px 14px; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 600; backdrop-filter: blur(4px);
+    }
+    .card-body { padding: 36px 36px 32px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .card-tag {
+      background: var(--green-pale); color: var(--green-dark);
+      padding: 3px 12px; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .card-rating { display: flex; align-items: center; gap: 5px; font-size: 0.82rem; }
+    .stars { color: var(--gold); }
+    .rating-val { font-weight: 600; color: var(--text-dark); }
+    .rating-count { color: var(--text-light); }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem; font-weight: 700; color: var(--green-dark);
+      margin-bottom: 6px; line-height: 1.25;
+    }
+    .card-route {
+      font-size: 0.82rem; color: var(--text-light);
+      display: flex; align-items: center; gap: 6px; margin-bottom: 18px;
+    }
+    .card-route i { color: var(--green-light); }
+    .card-dhams {
+      display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .dham-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--green-pale); border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 500;
+      color: var(--green-dark);
+    }
+    .dham-chip i { font-size: 0.7rem; color: var(--green-light); }
+    .card-features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px;
+    }
+    .feature-item {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.8rem; color: var(--text-mid);
+    }
+    .feature-item i { color: var(--green-light); font-size: 0.75rem; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .price-block {}
+    .price-orig { font-size: 0.82rem; color: var(--text-light); text-decoration: line-through; }
+    .price-now { font-size: 1.9rem; font-weight: 700; color: var(--green-dark); line-height: 1; }
+    .price-now span { font-size: 1rem; }
+    .price-per { font-size: 0.75rem; color: var(--text-light); }
+    .price-save { background: #e8f5e9; color: var(--green-dark); font-size: 0.72rem; font-weight: 600; padding: 2px 10px; border-radius: 50px; margin-top: 4px; display: inline-block; }
+    .btn-book {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+      color: #fff; font-size: 0.92rem; font-weight: 600;
+      padding: 13px 28px; border-radius: 12px; border: none; cursor: pointer;
+      text-decoration: none; transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46,125,50,0.35);
+    }
+    .btn-book:hover {
+      background: linear-gradient(135deg, var(--green-dark), #0d3b17);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46,125,50,0.45);
+    }
+    .btn-book i { font-size: 0.85rem; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 2px solid var(--green-main); color: var(--green-main);
+      background: transparent; font-size: 0.88rem; font-weight: 600;
+      padding: 11px 22px; border-radius: 12px; cursor: pointer;
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .btn-outline:hover { background: var(--green-pale); }
+
+    /* 2 DHAM & 1 DHAM CARDS GRID */
+    .dham-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 0; }
+
+    .dham-card {
+      background: var(--white); border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .dham-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(30,90,40,0.16);
+    }
+    .dham-card-img {
+      position: relative; height: 210px; overflow: hidden;
+    }
+    .dham-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .dham-card:hover .dham-card-img img { transform: scale(1.07); }
+    .dham-card-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,92,42,0.6) 0%, transparent 60%);
+    }
+    .dham-card-img-text {
+      position: absolute; bottom: 14px; left: 16px; right: 16px;
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    .dham-card-img-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.2;
+    }
+    .dham-nights-badge {
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff; font-size: 0.72rem; font-weight: 600;
+      padding: 4px 10px; border-radius: 20px;
+      white-space: nowrap;
+    }
+    .dham-card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .dham-card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 6px; }
+    .dham-tag { background: var(--green-pale); color: var(--green-dark); padding: 3px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 600; }
+    .dham-rating { display: flex; align-items: center; gap: 4px; font-size: 0.78rem; }
+    .dham-desc { font-size: 0.83rem; color: var(--text-light); line-height: 1.6; margin-bottom: 14px; }
+    .dham-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 16px; }
+    .dham-mini-chip {
+      background: var(--green-pale); color: var(--green-dark);
+      padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 500;
+      border: 1px solid var(--border);
+    }
+    .dham-features { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .dham-feat { display: flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--text-mid); }
+    .dham-feat i { color: var(--green-light); font-size: 0.7rem; }
+    .dham-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; flex-wrap: wrap; gap: 8px; }
+    .dham-price-orig { font-size: 0.75rem; color: var(--text-light); text-decoration: line-through; display: block; }
+    .dham-price-now { font-size: 1.4rem; font-weight: 700; color: var(--green-dark); line-height: 1; }
+    .dham-price-now small { font-size: 0.75rem; }
+    .btn-sm {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+      color: #fff; font-size: 0.82rem; font-weight: 600;
+      padding: 10px 20px; border-radius: 10px; border: none; cursor: pointer;
+      text-decoration: none; transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(46,125,50,0.3);
+    }
+    .btn-sm:hover {
+      background: linear-gradient(135deg, var(--green-dark), #0d3b17);
+      transform: translateY(-2px);
+    }
+
+    /* ─── 1 DHAM SINGLE CARDS ─── */
+    .one-dham-section { padding: 0 24px 80px; background: var(--green-ultra); }
+    .one-dham-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .one-dham-card {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border); box-shadow: 0 3px 16px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .one-dham-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(30,90,40,0.14); }
+    .one-dham-img { height: 170px; overflow: hidden; position: relative; }
+    .one-dham-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .one-dham-card:hover .one-dham-img img { transform: scale(1.08); }
+    .one-dham-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,92,42,0.55) 0%, transparent 55%);
+    }
+    .one-dham-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.3); color: #fff;
+      font-size: 0.68rem; font-weight: 600; padding: 3px 9px; border-radius: 20px;
+    }
+    .one-dham-body { padding: 18px; }
+    .one-dham-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 5px;
+    }
+    .one-dham-sub { font-size: 0.78rem; color: var(--text-light); margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+    .one-dham-sub i { color: var(--green-light); }
+    .one-dham-feats { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .one-dham-feat { font-size: 0.76rem; color: var(--text-mid); display: flex; align-items: center; gap: 6px; }
+    .one-dham-feat i { color: var(--green-light); font-size: 0.68rem; }
+    .one-dham-footer { display: flex; justify-content: space-between; align-items: center; }
+    .one-dham-price { }
+    .one-dham-price .orig { font-size: 0.72rem; color: var(--text-light); text-decoration: line-through; display: block; }
+    .one-dham-price .now { font-size: 1.2rem; font-weight: 700; color: var(--green-dark); }
+    .one-dham-price .now small { font-size: 0.7rem; }
+    .btn-xs {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--green-main); color: #fff;
+      font-size: 0.76rem; font-weight: 600; padding: 8px 14px;
+      border-radius: 8px; border: none; cursor: pointer; text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-xs:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    /* ─── WHY BOOK ─── */
+    .why-section { padding: 80px 24px; background: var(--white); }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .why-card {
+      text-align: center; padding: 32px 20px;
+      border-radius: 16px; border: 1px solid var(--border);
+      background: var(--white);
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .why-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--green-pale), transparent);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .why-card:hover::before { opacity: 1; }
+    .why-card:hover { transform: translateY(-4px); border-color: var(--green-light); box-shadow: 0 8px 30px var(--shadow); }
+    .why-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--green-pale); margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--green-main);
+      transition: all 0.3s ease;
+    }
+    .why-card:hover .why-icon { background: var(--green-main); color: #fff; }
+    .why-title { font-weight: 700; font-size: 1rem; color: var(--text-dark); margin-bottom: 8px; position: relative; }
+    .why-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; position: relative; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-section { padding: 80px 24px; background: var(--green-ultra); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: var(--white); border-radius: 16px; padding: 28px;
+      border: 1px solid var(--border); box-shadow: 0 3px 16px var(--shadow);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-quote {
+      font-size: 3rem; color: var(--green-pale); line-height: 1;
+      font-family: Georgia, serif; position: absolute; top: 16px; left: 22px;
+    }
+    .testimonial-text {
+      font-size: 0.88rem; color: var(--text-mid); line-height: 1.7;
+      margin-bottom: 20px; padding-top: 20px;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 0.95rem; flex-shrink: 0;
+    }
+    .author-name { font-weight: 600; font-size: 0.88rem; color: var(--text-dark); }
+    .author-meta { font-size: 0.75rem; color: var(--text-light); }
+    .testimonial-stars { color: var(--gold); font-size: 0.78rem; margin-bottom: 4px; }
+
+    /* ─── IMPORTANT INFO ─── */
+    .info-section { padding: 64px 24px; background: var(--white); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .info-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; color: var(--green-dark); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .info-block h3 i { color: var(--green-light); font-size: 1.1rem; }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .info-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--text-mid); line-height: 1.6;
+    }
+    .info-list li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green-light); flex-shrink: 0; margin-top: 7px;
+    }
+    .opening-dates {
+      background: var(--green-pale); border-radius: 16px; padding: 24px;
+      border: 1px solid var(--border);
+    }
+    .opening-dates h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; color: var(--green-dark); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .date-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .date-row:last-child { border-bottom: none; }
+    .date-temple { font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 8px; }
+    .date-temple i { color: var(--green-light); font-size: 0.8rem; }
+    .date-val { color: var(--green-main); font-weight: 500; }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-main) 100%);
+      padding: 60px 24px;
+      position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cta-inner {
+      max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 2;
+    }
+    .cta-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.4rem); color: #fff;
+      margin-bottom: 12px; font-weight: 700;
+    }
+    .cta-inner p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 32px; line-height: 1.6; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--green-dark);
+      font-weight: 700; font-size: 0.95rem;
+      padding: 14px 30px; border-radius: 12px; border: none; cursor: pointer;
+      text-decoration: none; transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #fff;
+      font-weight: 600; font-size: 0.95rem;
+      padding: 14px 30px; border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.5); cursor: pointer;
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar { padding: 24px; background: var(--green-dark); }
+    .trust-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; align-items: center;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.8); font-size: 0.82rem;
+    }
+    .trust-item i { color: var(--gold); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .char-dham-card-inner { grid-template-columns: 1fr; }
+      .card-image-wrap { min-height: 220px; }
+      .dham-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .one-dham-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .one-dham-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+      .card-body { padding: 22px; }
+      .card-features { grid-template-columns: 1fr; }
+      .card-dhams { gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+     <nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/index.html" class="nav-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">kafall</span>
+        <span class="nl-sub">presents</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/aboutus.html">About us</a></li>
+      <li><a href="/packages.html">Packages</a></li>
+      <li><a href="/packages.html">Char Dham</a></li>
+      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contactus.html">Contact us</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO BANNER ─── -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-mountains"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-om"></i>
+      CHAR DHAM YATRA 2025 — UTTARAKHAND
+    </div>
+    <h1 class="hero-title">
+      Sacred Journey to<br><span>Four Holy Dhams</span>
+    </h1>
+    <p class="hero-subtitle">
+      Experience the most divine pilgrimage of India — Yamunotri, Gangotri, Kedarnath & Badrinath. 
+      Verified agents, transparent pricing, and memories that last a lifetime.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>10,000+</strong>
+        <span>Happy Pilgrims</span>
+      </div>
+      <div class="hero-stat">
+        <strong>15+</strong>
+        <span>Years Experience</span>
+      </div>
+      <div class="hero-stat">
+        <strong>4.8★</strong>
+        <span>Average Rating</span>
+      </div>
+      <div class="hero-stat">
+        <strong>100%</strong>
+        <span>Safe Yatra</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>SCROLL</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ─── INFO BAR ─── -->
+<div class="info-bar">
+  <div class="info-bar-inner">
+    <div class="info-item"><i class="fas fa-calendar-alt"></i> Season Open: May 2025</div>
+    <div class="info-divider"></div>
+    <div class="info-item"><i class="fas fa-shield-alt"></i> 100% Verified Agents</div>
+    <div class="info-divider"></div>
+    <div class="info-item"><i class="fas fa-headset"></i> 24/7 Yatra Support</div>
+    <div class="info-divider"></div>
+    <div class="info-item"><i class="fas fa-tag"></i> Compare & Save up to 30%</div>
+    <div class="info-divider"></div>
+    <div class="info-item"><i class="fas fa-phone-alt"></i> +91 98109 66202</div>
+  </div>
+</div>
+
+<!-- ─── PACKAGES ─── -->
+<section class="packages-section">
+  <div class="container">
+
+    <!-- CHAR DHAM HEADER -->
+    <div class="section-header reveal">
+      <div class="section-tag">Most Popular</div>
+      <h2 class="section-title">Char Dham Yatra Package</h2>
+      <p class="section-desc">The complete sacred circuit — all four divine shrines in one unforgettable pilgrimage.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- CHAR DHAM BIG CARD -->
+    <div class="char-dham-card reveal">
+      <div class="featured-ribbon">⭐ Most Booked</div>
+      <div class="char-dham-card-inner">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=700&q=80" alt="Char Dham Yatra" />
+          <div class="card-image-overlay"></div>
+          <div class="card-image-badge">🏔️ 3200m – 3583m altitude</div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-meta">
+              <span class="card-tag">Char Dham</span>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-val">4.9</span>
+                <span class="rating-count">(312 reviews)</span>
+              </div>
+            </div>
+            <h3 class="card-title">Complete Char Dham Yatra — 12 Nights / 13 Days</h3>
+            <p class="card-route">
+              <i class="fas fa-map-marker-alt"></i>
+              Haridwar → Yamunotri → Gangotri → Kedarnath → Badrinath → Haridwar
+            </p>
+            <div class="card-dhams">
+              <span class="dham-chip"><i class="fas fa-circle"></i> Yamunotri</span>
+              <span class="dham-chip"><i class="fas fa-circle"></i> Gangotri</span>
+              <span class="dham-chip"><i class="fas fa-circle"></i> Kedarnath</span>
+              <span class="dham-chip"><i class="fas fa-circle"></i> Badrinath</span>
+            </div>
+            <div class="card-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> AC/Non-AC Transport</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Hotel + Guesthouse Stay</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Helicopter Option Available</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Daily Breakfast & Dinner</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Expert Pilgrim Guide</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Medical Kit on Tour</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Special Puja Arrangements</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Emergency Support 24/7</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-orig">₹42,000</div>
+              <div class="price-now"><span>₹</span>34,999</div>
+              <div class="price-per">per person (twin sharing)</div>
+              <div class="price-save">💰 Save ₹7,001 per person</div>
+            </div>
+            <div style="display:flex; gap:10px; flex-direction:column; align-items: flex-end;">
+              <a href="#contact" class="btn-book"><i class="fas fa-om"></i> Book Now</a>
+              <a href="#contact" class="btn-outline"><i class="fas fa-phone-alt"></i> Get Free Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 DHAM HEADER -->
+    <div class="section-header reveal" style="margin-top:60px;">
+      <div class="section-tag">Best Value</div>
+      <h2 class="section-title">Do Dham Yatra Packages</h2>
+      <p class="section-desc">Two sacred shrines, one divine experience — perfect for limited time pilgrims.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- 2 DHAM CARDS -->
+    <div class="dham-grid" style="margin-bottom:60px;">
+
+      <!-- Kedarnath + Badrinath -->
+      <div class="dham-card reveal">
+        <div class="dham-card-img">
+          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&q=80" alt="Kedarnath Badrinath"/>
+          <div class="dham-card-img-overlay"></div>
+          <div class="dham-card-img-text">
+            <div class="dham-card-img-title">Kedarnath & Badrinath</div>
+            <span class="dham-nights-badge">6N / 7D</span>
+          </div>
+        </div>
+        <div class="dham-card-body">
+          <div class="dham-card-meta">
+            <span class="dham-tag">Do Dham</span>
+            <div class="dham-rating">
+              <span style="color:var(--gold)">★★★★★</span>
+              <span style="font-weight:600;font-size:0.8rem;margin-left:3px;">4.8</span>
+              <span style="color:var(--text-light);font-size:0.75rem;">(178)</span>
+            </div>
+          </div>
+          <p class="dham-desc">The two most powerful Shiva-Vishnu dhams combined. Experience Kedarnath's raw Himalayan magnificence and Badrinath's divine aura in one seamless yatra.</p>
+          <div class="dham-chips">
+            <span class="dham-mini-chip">Kedarnath</span>
+            <span class="dham-mini-chip">Badrinath</span>
+            <span class="dham-mini-chip">Joshimath</span>
+          </div>
+          <div class="dham-features">
+            <div class="dham-feat"><i class="fas fa-check"></i> Haridwar → Kedarnath → Badrinath → Haridwar</div>
+            <div class="dham-feat"><i class="fas fa-check"></i> Helicopter option available</div>
+            <div class="dham-feat"><i class="fas fa-check"></i> All meals included</div>
+            <div class="dham-feat"><i class="fas fa-check"></i> Verified pilgrim guide</div>
+          </div>
+          <div class="dham-footer">
+            <div>
+              <span class="dham-price-orig">₹22,000</span>
+              <div class="dham-price-now">₹<strong>17,999</strong><small>/person</small></div>
+            </div>
+            <a href="#contact" class="btn-sm"><i class="fas fa-om"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yamunotri + Gangotri -->
+      <div class="dham-card reveal reveal-delay-1">
+        <div class="dham-card-img">
+          <img src="https://images.unsplash.com/photo-1622308644420-b20142dc993c?w=600&q=80" alt="Yamunotri Gangotri"/>
+          <div class="dham-card-img-overlay"></div>
+          <div class="dham-card-img-text">
+            <div class="dham-card-img-title">Yamunotri & Gangotri</div>
+            <span class="dham-nights-badge">5N / 6D</span>
+          </div>
+        </div>
+        <div class="dham-card-body">
+          <div class="dham-card-meta">
+            <span class="dham-tag">Do Dham</span>
+            <div class="dham-rating">
+              <span style="color:var(--gold)">★★★★★</span>
+              <span style="font-weight:600;font-size:0.8rem;margin-left:3px;">4.7</span>
+              <span style="color:var(--text-light);font-size:0.75rem;">(134)</span>
+            </div>
+          </div>
+          <p class="dham-desc">The divine origin of sacred Yamuna and Ganga rivers. Trek through lush forests to Yamunotri and witness the might of Bhagirathi at Gangotri Glacier.</p>
+          <div class="dham-chips">
+            <span class="dham-mini-chip">Yamunotri</span>
+            <span class="dham-mini-chip">Gangotri</span>
+            <span class="dham-mini-chip">Uttarkashi</span>
+          </div>
+          <div class="dham-features">
+            <div class="dham-feat"><i class="fas fa-check"></i> Haridwar → Yamunotri → Gangotri → Haridwar</div>
+            <div class="dham-feat"><i class="fas fa-check"></i> Trek & Doli/Palanquin available</div>
+            <div class="dham-feat"><i class="fas fa-check"></i> Breakfast & Dinner</div>
+            <div class="dham-feat"><i class="fas fa-check"></i> Experienced mountain guide</div>
+          </div>
+          <div class="dham-footer">
+            <div>
+              <span class="dham-price-orig">₹18,500</span>
+              <div class="dham-price-now">₹<strong>14,999</strong><small>/person</small></div>
+            </div>
+            <a href="#contact" class="btn-sm"><i class="fas fa-om"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 1 DHAM HEADER -->
+    <div class="section-header reveal">
+      <div class="section-tag">Flexible Pilgrimages</div>
+      <h2 class="section-title">Ek Dham Yatra Packages</h2>
+      <p class="section-desc">Short on time? Choose your one divine shrine and let Kafall handle the rest.</p>
+      <div class="section-divider"></div>
+    </div>
+
+  </div><!-- end container -->
+</section>
+
+<!-- ─── 1 DHAM CARDS ─── -->
+<section class="one-dham-section">
+  <div class="container">
+    <div class="one-dham-grid">
+
+      <!-- Kedarnath -->
+      <div class="one-dham-card reveal">
+        <div class="one-dham-img">
+          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=400&q=80" alt="Kedarnath"/>
+          <div class="one-dham-img-overlay"></div>
+          <span class="one-dham-badge">3N / 4D</span>
+        </div>
+        <div class="one-dham-body">
+          <div class="one-dham-name">Kedarnath Dham</div>
+          <div class="one-dham-sub"><i class="fas fa-map-marker-alt"></i> Rudraprayag, Uttarakhand · 3583m</div>
+          <div class="one-dham-feats">
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Helicopter + Trek options</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Sonprayag to shrine</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> All meals + accommodation</div>
+          </div>
+          <div class="one-dham-footer">
+            <div class="one-dham-price">
+              <span class="orig">₹10,500</span>
+              <span class="now">₹<strong>7,999</strong><small>/person</small></span>
+            </div>
+            <a href="#contact" class="btn-xs"><i class="fas fa-om"></i> Book</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badrinath -->
+      <div class="one-dham-card reveal reveal-delay-1">
+        <div class="one-dham-img">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Badrinath"/>
+          <div class="one-dham-img-overlay"></div>
+          <span class="one-dham-badge">3N / 4D</span>
+        </div>
+        <div class="one-dham-body">
+          <div class="one-dham-name">Badrinath Dham</div>
+          <div class="one-dham-sub"><i class="fas fa-map-marker-alt"></i> Chamoli, Uttarakhand · 3300m</div>
+          <div class="one-dham-feats">
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Mana Village visit included</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Tapt Kund darshan</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> All meals + stay</div>
+          </div>
+          <div class="one-dham-footer">
+            <div class="one-dham-price">
+              <span class="orig">₹10,000</span>
+              <span class="now">₹<strong>7,499</strong><small>/person</small></span>
+            </div>
+            <a href="#contact" class="btn-xs"><i class="fas fa-om"></i> Book</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yamunotri -->
+      <div class="one-dham-card reveal reveal-delay-2">
+        <div class="one-dham-img">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" alt="Yamunotri"/>
+          <div class="one-dham-img-overlay"></div>
+          <span class="one-dham-badge">2N / 3D</span>
+        </div>
+        <div class="one-dham-body">
+          <div class="one-dham-name">Yamunotri Dham</div>
+          <div class="one-dham-sub"><i class="fas fa-map-marker-alt"></i> Uttarkashi, Uttarakhand · 3291m</div>
+          <div class="one-dham-feats">
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> 6km trek from Janki Chatti</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Doli/Pony available</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Meals & guesthouse</div>
+          </div>
+          <div class="one-dham-footer">
+            <div class="one-dham-price">
+              <span class="orig">₹8,500</span>
+              <span class="now">₹<strong>6,299</strong><small>/person</small></span>
+            </div>
+            <a href="#contact" class="btn-xs"><i class="fas fa-om"></i> Book</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gangotri -->
+      <div class="one-dham-card reveal reveal-delay-3">
+        <div class="one-dham-img">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" alt="Gangotri"/>
+          <div class="one-dham-img-overlay"></div>
+          <span class="one-dham-badge">2N / 3D</span>
+        </div>
+        <div class="one-dham-body">
+          <div class="one-dham-name">Gangotri Dham</div>
+          <div class="one-dham-sub"><i class="fas fa-map-marker-alt"></i> Uttarkashi, Uttarakhand · 3048m</div>
+          <div class="one-dham-feats">
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Gangotri Glacier optional trek</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Ganga Aarti experience</div>
+            <div class="one-dham-feat"><i class="fas fa-check-circle"></i> Meals & accommodation</div>
+          </div>
+          <div class="one-dham-footer">
+            <div class="one-dham-price">
+              <span class="orig">₹8,000</span>
+              <span class="now">₹<strong>5,999</strong><small>/person</small></span>
+            </div>
+            <a href="#contact" class="btn-xs"><i class="fas fa-om"></i> Book</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY BOOK ─── -->
+<section class="why-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Why Kafall</div>
+      <h2 class="section-title">Your Yatra, Our Responsibility</h2>
+      <p class="section-desc">Thousands of pilgrims trust Kafall Travels every season. Here's why.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="why-title">Verified Agents Only</div>
+        <p class="why-desc">Every agent on our platform is background-checked, licensed, and rated by real pilgrims before listing.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon"><i class="fas fa-rupee-sign"></i></div>
+        <div class="why-title">Transparent Pricing</div>
+        <p class="why-desc">No hidden charges, no last-minute surprises. Compare up to 3 agent quotes and choose the best deal.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon"><i class="fas fa-heartbeat"></i></div>
+        <div class="why-title">Medical Support</div>
+        <p class="why-desc">Oxygen cylinders, first-aid kits, and coordination with local hospitals at every dham on your journey.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <div class="why-title">24/7 Yatra Helpline</div>
+        <p class="why-desc">Our support team is available round the clock before, during, and after your pilgrimage — always a call away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Pilgrim Stories</div>
+      <h2 class="section-title">What Our Yatris Say</h2>
+      <p class="section-desc">Real experiences from real pilgrims across the four holy dhams.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Char Dham yatra with Kafall was truly divine. Every detail was perfectly arranged — from transport to darshan timing. At Kedarnath, even the weather was on our side. Jai Bholenath!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RS</div>
+          <div>
+            <div class="author-name">Ramesh Sharma</div>
+            <div class="author-meta">Char Dham Yatra · Jaipur · May 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">My elderly parents did the Do Dham package (Kedarnath + Badrinath). The team arranged a helicopter for Kedarnath. No stress, no fatigue. They returned home with joy and blessings.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">PM</div>
+          <div>
+            <div class="author-name">Priya Mehta</div>
+            <div class="author-meta">Do Dham Yatra · Mumbai · June 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Saved ₹12,000 compared to other operators by comparing quotes on Kafall. The Gangotri-Yamunotri package was worth every penny. The agent was responsive and kept us informed at every step.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AK</div>
+          <div>
+            <div class="author-name">Anil Kumar</div>
+            <div class="author-meta">Do Dham Yatra · Delhi · May 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INFO & DATES ─── -->
+<section class="info-section">
+  <div class="container">
+    <div class="info-grid">
+      <div class="reveal">
+        <div class="info-block">
+          <h3><i class="fas fa-info-circle"></i> Important Yatra Information</h3>
+          <ul class="info-list">
+            <li>Registration on Devasthanam portal is mandatory for all four dhams before departure.</li>
+            <li>Carry a valid photo ID (Aadhaar/Passport) for all pilgrims at all times.</li>
+            <li>Medical fitness certificate recommended for seniors above 60 years of age.</li>
+            <li>Best season is May–June and September–October; July–August has heavy rainfall.</li>
+            <li>Carry warm woolens regardless of season — temperatures can drop significantly at night.</li>
+            <li>Helicopter services for Kedarnath get fully booked — book at least 2 months in advance.</li>
+            <li>Mobile network is limited beyond Gaurikund for Kedarnath and Joshimath for Badrinath.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="opening-dates">
+          <h3><i class="fas fa-calendar-check"></i> Temple Opening Dates 2025</h3>
+          <div class="date-row">
+            <span class="date-temple"><i class="fas fa-place-of-worship"></i> Yamunotri</span>
+            <span class="date-val">Akshaya Tritiya (May 2025)</span>
+          </div>
+          <div class="date-row">
+            <span class="date-temple"><i class="fas fa-place-of-worship"></i> Gangotri</span>
+            <span class="date-val">Akshaya Tritiya (May 2025)</span>
+          </div>
+          <div class="date-row">
+            <span class="date-temple"><i class="fas fa-place-of-worship"></i> Kedarnath</span>
+            <span class="date-val">Shivratri after Akshaya Tritiya</span>
+          </div>
+          <div class="date-row">
+            <span class="date-temple"><i class="fas fa-place-of-worship"></i> Badrinath</span>
+            <span class="date-val">May 15, 2025 (approx.)</span>
+          </div>
+          <div class="date-row">
+            <span class="date-temple"><i class="fas fa-door-closed"></i> Closing (all dhams)</span>
+            <span class="date-val">October – November 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-strip" id="contact">
+  <div class="cta-inner">
+    <h2>Ready for Your Char Dham Yatra?</h2>
+    <p>Get personalized quotes from our verified agents within 2 hours. No commitment required — compare and choose what fits you best.</p>
+    <div class="cta-buttons">
+      <a href="tel:+919810966202" class="btn-white"><i class="fas fa-phone-alt"></i> Call Now: +91 98109 66202</a>
+      <a href="https://wa.me/919810966202" class="btn-ghost"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+ <!-- Scroll Top -->
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ─── TRUST BAR ─── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><i class="fas fa-lock"></i> Secure Payments</div>
+    <div class="trust-item"><i class="fas fa-undo"></i> Money-back Guarantee</div>
+    <div class="trust-item"><i class="fas fa-star"></i> 4.8★ Rated Platform</div>
+    <div class="trust-item"><i class="fas fa-users"></i> 10,000+ Happy Pilgrims</div>
+    <div class="trust-item"><i class="fas fa-certificate"></i> Govt. Approved Agents</div>
+  </div>
+</div>
+
+<script>
+  // ─── SCROLL REVEAL ───
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── HERO COUNTER ANIMATION ───
+  function animateCount(el, target, suffix='') {
+    let start = 0;
+    const step = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
+      el.textContent = start + suffix;
+    }, 25);
+  }
+  const statEls = document.querySelectorAll('.hero-stat strong');
+  // simple one-shot on load
+  setTimeout(() => {
+    statEls.forEach(el => {
+      const txt = el.textContent;
+      if (txt.includes('10,000')) { el.textContent = '0'; animateCount(el, 10000, '+'); }
+      if (txt.includes('15')) { el.textContent = '0'; animateCount(el, 15, '+'); }
+    });
+  }, 600);
+</script>
+</body>
+</html>
