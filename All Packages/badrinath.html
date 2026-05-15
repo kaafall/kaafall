@@ -8,6 +8,10 @@
   <link href="/asstes/css/style.css" rel="stylesheet">
   <script src="/asstes/js/main.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- ✅ EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -101,6 +105,7 @@
       transition: transform var(--transition), box-shadow var(--transition);
     }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,151,58,0.5); }
+    .btn-primary:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
     .pulse { animation: pulseAnim 2.5s ease-in-out infinite; }
     @keyframes pulseAnim {
       0%,100% { box-shadow: 0 6px 24px rgba(201,151,58,0.35); }
@@ -251,6 +256,11 @@
       background: var(--green-pale); border: 2px solid var(--green-light);
       border-radius: var(--radius-sm); color: var(--green-dark); font-weight: 600; text-align: center;
     }
+    .form-error {
+      margin-top: 1.4rem; padding: 1rem 1.4rem;
+      background: #fff0f0; border: 2px solid #f5a0a0;
+      border-radius: var(--radius-sm); color: #8b0000; font-weight: 600; text-align: center;
+    }
     .hidden { display: none; }
 
     /* ─── PACKAGE ────────────────────── */
@@ -347,35 +357,30 @@
 <body>
 
   <nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <!-- Logo -->
-    <a href="/index.html" class="nav-logo">
-      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
-      <div class="nav-logo-text">
-        <span class="nl-main">kafall</span>
-        <span class="nl-sub">presents</span>
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+        <div class="nav-logo-text">
+          <span class="nl-main">kafall</span>
+          <span class="nl-sub">presents</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/aboutus.html">About us</a></li>
+        <li><a href="/packages.html">Packages</a></li>
+        <li><a href="/chardham.html">Char Dham</a></li>
+        <li><a href="/weakendtrip.html">Weekend Trips</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/contactus.html">Contact us</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </a>
-
-    <!-- Nav Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/aboutus.html">About us</a></li>
-      <li><a href="/packages.html">Packages</a></li>
-      <li><a href="/chardham.html">Char Dham</a></li>
-      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/contactus.html">Contact us</a></li>
-    </ul>
-
-    <!-- Nav Right -->
-    <div class="nav-right">
-      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- ══ HERO ══════════════════════════════════════ -->
   <section class="hero">
@@ -523,8 +528,8 @@
           <div class="form-group full-width">
             <label>Sharing Preference</label>
             <div class="radio-group">
-              <label class="radio-label"><input type="radio" name="sharing" value="triple"/> Triple Sharing (₹1,500/person)</label>
-              <label class="radio-label"><input type="radio" name="sharing" value="dual"/> Dual Sharing (₹3,000/person)</label>
+              <label class="radio-label"><input type="radio" name="sharing" value="Triple Sharing (₹1,500/person)"/> Triple Sharing (₹1,500/person)</label>
+              <label class="radio-label"><input type="radio" name="sharing" value="Dual Sharing (₹3,000/person)"/> Dual Sharing (₹3,000/person)</label>
             </div>
           </div>
           <div class="form-group full-width">
@@ -534,9 +539,10 @@
         </div>
         <div class="form-footer">
           <p class="note">💡 Pay 60% to block your seat · Remaining 15 days before departure</p>
-          <button class="btn-primary" onclick="submitForm()">🙏 Request Booking</button>
+          <button class="btn-primary" id="submitBtn" onclick="submitForm()">🙏 Request Booking</button>
         </div>
         <div id="form-success" class="form-success hidden">✅ Thank you! We'll contact you within 24 hours to confirm your booking.</div>
+        <div id="form-error" class="form-error hidden">❌ Something went wrong. Please try again or WhatsApp us directly.</div>
       </div>
     </div>
   </section>
@@ -644,15 +650,105 @@
   </section>
 
   <!-- Scroll Top -->
-<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script>
+    // ─────────────────────────────────────────────
+    // ✅ EMAILJS INIT  ← paste your Public Key here
+    // ─────────────────────────────────────────────
+    emailjs.init("grnKaM1-w7hPuLPqE");
+
+    // ─────────────────────────────────────────────
+    // BOOKING FORM SUBMIT
+    // ─────────────────────────────────────────────
+    function submitForm() {
+      const val     = id => document.getElementById(id).value.trim();
+      const sharing = document.querySelector('input[name="sharing"]:checked');
+      const btn     = document.getElementById('submitBtn');
+
+      // — Validation —
+      if (
+        !val('name') ||
+        !val('phone') ||
+        !document.getElementById('city').value ||
+        !document.getElementById('date').value ||
+        !val('persons')
+      ) {
+        shakeForm();
+        alert('Please fill in all required fields (Name, Phone, City, Date, Persons).');
+        return;
+      }
+      if (!/^[\+]?[\d\s\-]{7,15}$/.test(val('phone'))) {
+        alert('Please enter a valid phone number.');
+        return;
+      }
+
+      // — Loading state —
+      btn.textContent = '⏳ Sending…';
+      btn.disabled    = true;
+
+      // — Template variables (match these in your EmailJS template) —
+      const templateParams = {
+        from_name : val('name'),
+        phone     : val('phone'),
+        email     : val('email') || 'Not provided',
+        city      : document.getElementById('city').value,
+        date      : document.getElementById('date').value,
+        persons   : val('persons'),
+        sharing   : sharing ? sharing.value : 'Not selected',
+        message   : val('message') || 'None',
+      };
+
+      // ✅ Replace SERVICE_ID and TEMPLATE_ID with your own values
+      emailjs.send("service_10ujbpx", "template_re1sf7i", templateParams)
+        .then(() => {
+          // Success
+          showMsg('form-success');
+          resetForm();
+          btn.textContent = '🙏 Request Booking';
+          btn.disabled    = false;
+        })
+        .catch(err => {
+          console.error('EmailJS Error:', err);
+          showMsg('form-error');
+          btn.textContent = '🙏 Request Booking';
+          btn.disabled    = false;
+        });
+    }
+
+    function showMsg(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => el.classList.add('hidden'), 6000);
+    }
+
+    function resetForm() {
+      ['name','phone','email','persons','message'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('city').value = '';
+      document.getElementById('date').value = '';
+      document.querySelectorAll('input[name="sharing"]').forEach(r => r.checked = false);
+    }
+
+    function shakeForm() {
+      const card = document.querySelector('.form-card');
+      const s = document.createElement('style');
+      s.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}`;
+      document.head.appendChild(s);
+      card.style.animation = 'shake 0.4s ease';
+      setTimeout(() => card.style.animation = '', 500);
+    }
+
+    // ─────────────────────────────────────────────
     // SCROLL REVEAL
+    // ─────────────────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
@@ -663,7 +759,9 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
+    // ─────────────────────────────────────────────
     // PARTICLES
+    // ─────────────────────────────────────────────
     (function() {
       const container = document.getElementById('particles');
       if (!container) return;
@@ -680,33 +778,9 @@
       document.head.appendChild(s);
     })();
 
-    // FORM SUBMIT
-    function submitForm() {
-      const v = id => document.getElementById(id).value.trim();
-      if (!v('name') || !v('phone') || !document.getElementById('city').value || !document.getElementById('date').value || !v('persons')) {
-        shakeForm(); alert('Please fill in all required fields (Name, Phone, City, Date, Persons).'); return;
-      }
-      if (!/^[\+]?[\d\s\-]{7,15}$/.test(v('phone'))) { alert('Please enter a valid phone number.'); return; }
-      const el = document.getElementById('form-success');
-      el.classList.remove('hidden');
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => {
-        el.classList.add('hidden');
-        ['name','phone','email','city','date','persons','message'].forEach(id => document.getElementById(id).value = '');
-        document.querySelectorAll('input[name="sharing"]').forEach(r => r.checked = false);
-      }, 6000);
-    }
-
-    function shakeForm() {
-      const card = document.querySelector('.form-card');
-      const s = document.createElement('style');
-      s.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}`;
-      document.head.appendChild(s);
-      card.style.animation = 'shake 0.4s ease';
-      setTimeout(() => card.style.animation = '', 500);
-    }
-
+    // ─────────────────────────────────────────────
     // SMOOTH SCROLL
+    // ─────────────────────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', e => {
         const t = document.querySelector(link.getAttribute('href'));
@@ -714,7 +788,9 @@
       });
     });
 
+    // ─────────────────────────────────────────────
     // STAGGER – Day Cards
+    // ─────────────────────────────────────────────
     const dayObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -728,7 +804,9 @@
     const itin = document.querySelector('.itinerary');
     if (itin) dayObs.observe(itin);
 
+    // ─────────────────────────────────────────────
     // STAGGER – Addon Cards
+    // ─────────────────────────────────────────────
     const addObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -742,7 +820,9 @@
     const addGrid = document.querySelector('.addons-grid');
     if (addGrid) addObs.observe(addGrid);
 
+    // ─────────────────────────────────────────────
     // STAGGER – Price Cards
+    // ─────────────────────────────────────────────
     const priceObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
