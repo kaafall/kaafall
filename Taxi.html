@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi Service in Uttarakhand | Kafall Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --G1:#1A4B3A;
+  --G2:#2E7D57;
+  --G3:#4CAF7D;
+  --GL:#E8F5EE;
+  --OR:#E8622A;
+  --GD:#FFC107;
+  --OW:#F5F7F5;
+  --WH:#ffffff;
+  --CH:#1C2B22;
+  --MU:#5A7266;
+  --BD:rgba(26,75,58,0.13);
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--OW);color:var(--CH);overflow-x:hidden;}
+
+/* BANNER */
+.banner{
+  background:var(--G1);
+  padding:60px 24px 56px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.banner-ring{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(76,175,125,0.12);
+  animation:ringPulse 5s ease-in-out infinite;
+}
+.banner-ring:nth-child(1){width:300px;height:300px;top:-80px;left:-80px;animation-delay:0s;}
+.banner-ring:nth-child(2){width:420px;height:420px;top:-150px;right:-120px;animation-delay:1.5s;}
+.banner-ring:nth-child(3){width:200px;height:200px;bottom:-60px;left:30%;animation-delay:3s;}
+@keyframes ringPulse{
+  0%,100%{transform:scale(1);opacity:0.6;}
+  50%{transform:scale(1.07);opacity:1;}
+}
+
+.banner-inner{position:relative;z-index:2;}
+
+.banner-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(76,175,125,0.13);
+  border:1px solid rgba(76,175,125,0.3);
+  color:var(--G3);
+  font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
+  padding:6px 16px;border-radius:40px;margin-bottom:20px;
+  animation:fadeSlideDown 0.7s ease both;
+}
+.banner-pill span{width:6px;height:6px;background:var(--G3);border-radius:50%;display:inline-block;animation:blink 1.4s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+
+.banner h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,7vw,58px);
+  font-weight:900;
+  color:var(--WH);
+  line-height:1.12;
+  margin-bottom:16px;
+  animation:fadeSlideDown 0.75s ease 0.1s both;
+}
+.banner h1 em{color:var(--G3);font-style:normal;}
+
+.banner-sub{
+  color:rgba(255,255,255,0.55);
+  font-size:15px;font-weight:300;
+  max-width:460px;margin:0 auto 32px;line-height:1.65;
+  animation:fadeSlideDown 0.75s ease 0.2s both;
+}
+
+.banner-stats{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:0;
+  animation:fadeSlideDown 0.75s ease 0.32s both;
+}
+.bstat{
+  padding:0 28px;border-right:1px solid rgba(255,255,255,0.1);
+}
+.bstat:last-child{border-right:none;}
+.bstat strong{display:block;font-size:24px;font-weight:700;color:var(--G3);}
+.bstat span{font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.05em;}
+
+@keyframes fadeSlideDown{
+  from{opacity:0;transform:translateY(-20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* TICKER */
+.ticker{
+  background:var(--GL);
+  border-top:1px solid rgba(26,75,58,0.1);
+  border-bottom:1px solid rgba(26,75,58,0.1);
+  padding:11px 0;overflow:hidden;
+}
+.ticker-track{
+  display:flex;white-space:nowrap;
+  animation:tickerRun 26s linear infinite;
+}
+.ticker-item{
+  font-size:12px;font-weight:500;color:var(--G1);
+  padding:0 30px;
+  display:flex;align-items:center;gap:8px;
+}
+.ticker-dot{width:5px;height:5px;background:var(--G2);border-radius:50%;flex-shrink:0;}
+@keyframes tickerRun{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* GRADIENT BAR */
+.gbar{
+  height:3px;
+  background:linear-gradient(90deg,var(--G1),var(--G3),var(--OR),var(--G3),var(--G1));
+  background-size:300% 100%;
+  animation:gbarMove 5s linear infinite;
+}
+@keyframes gbarMove{
+  0%{background-position:0% center;}
+  100%{background-position:300% center;}
+}
+
+/* SECTIONS */
+.sec{padding:60px 20px;max-width:1020px;margin:0 auto;}
+.sec-label{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--G2);margin-bottom:8px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:var(--G1);margin-bottom:6px;}
+.sec-sub{color:var(--MU);font-size:14px;font-weight:300;margin-bottom:36px;}
+
+/* PRICING CARDS */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
+
+.pcard{
+  background:var(--WH);
+  border-radius:18px;
+  border:1.5px solid var(--BD);
+  overflow:hidden;
+  opacity:0;transform:translateY(36px);
+  transition:transform 0.28s ease,box-shadow 0.28s ease;
+}
+.pcard.in{animation:riseCard 0.55s ease forwards;}
+.pcard:hover{transform:translateY(-5px)!important;box-shadow:0 16px 40px rgba(26,75,58,0.13);}
+.pcard.hot{border-color:var(--G2);}
+
+@keyframes riseCard{
+  to{opacity:1;transform:translateY(0);}
+}
+
+.pcard-head{
+  background:var(--G1);
+  padding:26px 22px 22px;
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;
+}
+.pcard.hot .pcard-head{background:var(--G2);}
+.pcard.vip .pcard-head{background:var(--CH);}
+
+.hot-badge{
+  position:absolute;top:14px;right:14px;
+  background:var(--OR);color:var(--WH);
+  font-size:10px;font-weight:700;letter-spacing:0.07em;
+  padding:3px 11px;border-radius:30px;
+}
+
+.carsv{width:60px;height:36px;fill:none;margin-bottom:12px;}
+.pcard-cat{color:rgba(255,255,255,0.6);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px;}
+.pcard-name{color:var(--WH);font-size:18px;font-weight:600;}
+
+.pcard-body{padding:22px 22px 24px;}
+
+.price-wrap{display:flex;align-items:baseline;gap:5px;margin-bottom:5px;}
+.price-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--G1);}
+.pcard.hot .price-num{color:var(--G2);}
+.pcard.vip .price-num{color:var(--CH);}
+.price-per{font-size:13px;color:var(--MU);}
+
+.price-tag{
+  display:inline-block;
+  background:var(--GL);color:var(--G1);
+  font-size:11px;font-weight:600;
+  padding:3px 10px;border-radius:5px;
+  margin-bottom:18px;
+}
+.pcard.hot .price-tag{background:rgba(46,125,87,0.12);color:var(--G2);}
+.pcard.vip .price-tag{background:rgba(28,43,34,0.08);color:var(--CH);}
+
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px;}
+.feat-list li{font-size:13px;color:var(--MU);display:flex;align-items:center;gap:9px;}
+.feat-list li::before{
+  content:'';width:5px;height:5px;
+  background:var(--G3);border-radius:50%;flex-shrink:0;
+}
+
+.pbtn{
+  width:100%;padding:13px;
+  background:var(--G1);color:var(--WH);
+  border:none;border-radius:10px;
+  font-size:14px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:0.03em;
+  transition:background 0.2s,transform 0.15s;
+}
+.pbtn:hover{background:var(--G2);transform:scale(1.01);}
+.pcard.hot .pbtn{background:var(--G2);}
+.pcard.hot .pbtn:hover{background:var(--G1);}
+.pcard.vip .pbtn{background:var(--OR);}
+.pcard.vip .pbtn:hover{background:#c94e1f;}
+
+/* FORM */
+.form-sec{background:var(--G1);padding:60px 20px;position:relative;overflow:hidden;}
+.form-sec::before{
+  content:'';position:absolute;
+  width:500px;height:500px;border-radius:50%;
+  border:1px solid rgba(76,175,125,0.09);
+  top:-180px;right:-160px;
+  animation:ringPulse 7s ease-in-out infinite;
+}
+.form-sec::after{
+  content:'';position:absolute;
+  width:300px;height:300px;border-radius:50%;
+  border:1px solid rgba(76,175,125,0.07);
+  bottom:-100px;left:-80px;
+  animation:ringPulse 7s ease-in-out infinite 2s;
+}
+.form-inner{max-width:700px;margin:0 auto;position:relative;z-index:2;}
+.form-sec .sec-label{color:var(--G3);}
+.form-sec .sec-title{color:var(--WH);}
+.form-sec .sec-sub{color:rgba(255,255,255,0.45);}
+
+.bform{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.11);
+  border-radius:18px;
+  padding:30px 26px;
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+}
+.fg{display:flex;flex-direction:column;gap:6px;}
+.fg.full{grid-column:1/-1;}
+.fg label{font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase;}
+.fg input,.fg select{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.13);
+  border-radius:9px;
+  padding:12px 14px;
+  color:var(--WH);font-size:14px;
+  font-family:'DM Sans',sans-serif;
+  outline:none;
+  transition:border-color 0.2s,background 0.2s;
+  -webkit-appearance:none;
+}
+.fg input::placeholder{color:rgba(255,255,255,0.25);}
+.fg input:focus,.fg select:focus{
+  border-color:var(--G3);
+  background:rgba(255,255,255,0.1);
+}
+.fg select option{background:var(--G1);color:var(--WH);}
+
+.sbtn{
+  grid-column:1/-1;
+  padding:15px;
+  background:var(--OR);color:var(--WH);
+  border:none;border-radius:10px;
+  font-size:15px;font-weight:600;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:0.04em;
+  transition:background 0.2s,transform 0.15s;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+}
+.sbtn:hover{background:#c94e1f;transform:scale(1.01);}
+.sbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;}
+
+.ok-msg{
+  grid-column:1/-1;
+  background:rgba(76,175,125,0.15);
+  border:1px solid rgba(76,175,125,0.4);
+  border-radius:10px;padding:14px;
+  color:var(--G3);font-size:14px;text-align:center;
+  display:none;
+  animation:fadeSlideDown 0.4s ease;
+}
+
+/* PLACES */
+.places-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;}
+
+.plcard{
+  background:var(--WH);
+  border-radius:16px;
+  border:1.5px solid var(--BD);
+  overflow:hidden;
+  opacity:0;transform:translateY(30px);
+  transition:transform 0.28s ease,box-shadow 0.28s ease;
+}
+.plcard.in{animation:riseCard 0.55s ease forwards;}
+.plcard:hover{transform:translateY(-4px)!important;box-shadow:0 12px 32px rgba(26,75,58,0.12);}
+
+.plcard-img{
+  width:100%;height:170px;object-fit:cover;display:block;
+  transition:transform 0.4s ease;
+}
+.plcard:hover .plcard-img{transform:scale(1.04);}
+.plcard-imgwrap{overflow:hidden;height:170px;background:var(--GL);}
+
+.plcard-body{padding:18px 20px 20px;}
+
+.plcard-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--GL);color:var(--G1);
+  font-size:12px;font-weight:700;
+  margin-bottom:10px;
+}
+.plcard-name{font-size:17px;font-weight:600;color:var(--G1);margin-bottom:4px;}
+.plcard-dist{font-size:12px;color:var(--G2);font-weight:500;letter-spacing:0.04em;margin-bottom:10px;}
+.plcard-desc{font-size:13px;color:var(--MU);line-height:1.6;font-weight:300;}
+
+.plcard-foot{
+  margin-top:14px;padding-top:12px;
+  border-top:1px solid var(--BD);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+.foot-fare-label{font-size:11px;color:var(--MU);}
+.foot-fare-price{font-size:14px;font-weight:600;color:var(--G1);}
+.foot-btn{
+  background:var(--G1);color:var(--WH);
+  font-size:12px;font-weight:500;
+  padding:6px 14px;border-radius:7px;
+  cursor:pointer;border:none;
+  font-family:'DM Sans',sans-serif;
+  letter-spacing:0.03em;
+  transition:background 0.2s,transform 0.15s;
+}
+.foot-btn:hover{background:var(--G2);transform:scale(1.02);}
+
+/* DRIVER SECTION */
+.driver-sec{background:var(--GL);padding:60px 20px;}
+.driver-inner{max-width:1020px;margin:0 auto;}
+.driver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:36px;}
+
+.dcard{
+  background:var(--WH);
+  border-radius:18px;
+  border:1.5px solid var(--BD);
+  padding:28px 22px 24px;
+  text-align:center;
+  opacity:0;transform:translateY(32px);
+  transition:transform 0.28s ease,box-shadow 0.28s ease;
+  position:relative;overflow:hidden;
+}
+.dcard::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:4px;
+  background:var(--G2);
+}
+.dcard.in{animation:riseCard 0.55s ease forwards;}
+.dcard:hover{transform:translateY(-5px)!important;box-shadow:0 14px 36px rgba(26,75,58,0.12);}
+
+.dcard-avatar{
+  width:84px;height:84px;border-radius:50%;
+  object-fit:cover;object-position:center top;
+  border:3px solid var(--GL);
+  margin:0 auto 14px;
+  display:block;
+  transition:transform 0.3s ease;
+}
+.dcard:hover .dcard-avatar{transform:scale(1.05);}
+
+.dcard-name{font-size:17px;font-weight:600;color:var(--G1);margin-bottom:3px;}
+.dcard-age{font-size:12px;color:var(--MU);margin-bottom:12px;}
+
+.dcard-car{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--GL);color:var(--G1);
+  font-size:12px;font-weight:500;
+  padding:5px 13px;border-radius:30px;
+  margin-bottom:14px;
+}
+.dcard-car svg{width:14px;height:14px;fill:none;stroke:var(--G2);stroke-width:2;flex-shrink:0;}
+
+.dcard-stars{
+  display:flex;justify-content:center;align-items:center;gap:3px;
+  margin-bottom:10px;
+}
+.star{
+  width:14px;height:14px;
+  fill:var(--GD);
+}
+.dstar-score{font-size:13px;font-weight:600;color:var(--G1);margin-left:4px;}
+
+.dcard-trips{font-size:12px;color:var(--MU);margin-bottom:14px;}
+
+.dcard-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dtag{
+  font-size:11px;font-weight:500;color:var(--G2);
+  background:rgba(46,125,87,0.1);
+  padding:3px 10px;border-radius:20px;
+}
+
+.dcard-quote{
+  font-size:12px;color:var(--MU);
+  font-style:italic;font-weight:300;
+  line-height:1.55;
+  border-top:1px solid var(--BD);
+  padding-top:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:560px){
+  .bform{grid-template-columns:1fr;}
+  .bstat{padding:0 16px;}
+  .bstat strong{font-size:18px;}
+}
+@media(max-width:400px){
+  .bstat{padding:0 10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-ring"></div>
+  <div class="banner-ring"></div>
+  <div class="banner-ring"></div>
+  <div class="banner-inner">
+    <div class="banner-pill"><span></span>Kafall Travels — Dev Bhoomi</div>
+    <h1>Taxi Service in<br><em>Uttarakhand</em></h1>
+    <p class="banner-sub">Comfortable, verified cabs from Haridwar to Badrinath — we drive you safely across Dev Bhoomi.</p>
+    <div class="banner-stats">
+      <div class="bstat"><strong>150+</strong><span>Destinations</span></div>
+      <div class="bstat"><strong>24/7</strong><span>Available</span></div>
+      <div class="bstat"><strong>4.8</strong><span>Driver rating</span></div>
+      <div class="bstat"><strong>500+</strong><span>Trips done</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gbar"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><div class="ticker-dot"></div>Kedarnath Yatra cabs available</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Char Dham 2025 season open</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Group discounts on Traveller bookings</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>AC &amp; Non-AC vehicles available</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Free cancellation upto 24 hrs</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Hill-expert drivers only</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Kedarnath Yatra cabs available</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Char Dham 2025 season open</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Group discounts on Traveller bookings</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>AC &amp; Non-AC vehicles available</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Free cancellation upto 24 hrs</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Hill-expert drivers only</div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="sec">
+  <div class="sec-label">Transparent pricing</div>
+  <div class="sec-title">Choose your vehicle</div>
+  <div class="sec-sub">Per day rate — AC cab + driver + fuel, no hidden charges</div>
+
+  <div class="price-grid">
+
+    <!-- 5 seater -->
+    <div class="pcard" data-delay="0">
+      <div class="pcard-head">
+        <svg class="carsv" viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="14" width="56" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+          <path d="M10 14 L17 5 L43 5 L52 14" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+          <circle cx="14" cy="32" r="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+          <circle cx="46" cy="32" r="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+          <rect x="19" y="6" width="9" height="7" rx="1.5" fill="rgba(255,255,255,0.22)"/>
+          <rect x="30" y="6" width="11" height="7" rx="1.5" fill="rgba(255,255,255,0.22)"/>
+          <rect x="4" y="18" width="8" height="4" rx="1" fill="rgba(255,255,255,0.3)"/>
+          <rect x="48" y="18" width="8" height="4" rx="1" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+        <div class="pcard-cat">Sedan / Hatchback</div>
+        <div class="pcard-name">5 Seater</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-wrap">
+          <span class="price-num">&#8377;3,500</span>
+          <span class="price-per">/ day</span>
+        </div>
+        <div class="price-tag">Best for couples &amp; small families</div>
+        <ul class="feat-list">
+          <li>Swift Dzire / Etios / Zest</li>
+          <li>AC + music system</li>
+          <li>Driver &amp; fuel included</li>
+          <li>Upto 5 passengers</li>
+          <li>Nimble on hill routes</li>
+        </ul>
+        <button class="pbtn" onclick="scrollForm()">Book this vehicle</button>
+      </div>
+    </div>
+
+    <!-- 7 seater -->
+    <div class="pcard hot" data-delay="110">
+      <div class="pcard-head">
+        <span class="hot-badge">Popular</span>
+        <svg class="carsv" viewBox="0 0 68 36" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="13" width="64" height="19" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+          <path d="M8 13 L16 4 L52 4 L62 13" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+          <circle cx="15" cy="32" r="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+          <circle cx="53" cy="32" r="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+          <rect x="18" y="5" width="10" height="7" rx="1.5" fill="rgba(255,255,255,0.22)"/>
+          <rect x="30" y="5" width="10" height="7" rx="1.5" fill="rgba(255,255,255,0.22)"/>
+          <rect x="42" y="5" width="8" height="7" rx="1.5" fill="rgba(255,255,255,0.22)"/>
+          <rect x="4" y="17" width="9" height="4" rx="1" fill="rgba(255,255,255,0.3)"/>
+          <rect x="55" y="17" width="9" height="4" rx="1" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+        <div class="pcard-cat">SUV / MUV</div>
+        <div class="pcard-name">7 Seater</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-wrap">
+          <span class="price-num">&#8377;4,500</span>
+          <span class="price-per">/ day</span>
+        </div>
+        <div class="price-tag">Most booked for Char Dham trips</div>
+        <ul class="feat-list">
+          <li>Innova / Ertiga / Crysta</li>
+          <li>AC + generous luggage space</li>
+          <li>Driver &amp; fuel included</li>
+          <li>Upto 7 passengers</li>
+          <li>Stable on mountain passes</li>
+        </ul>
+        <button class="pbtn" onclick="scrollForm()">Book this vehicle</button>
+      </div>
+    </div>
+
+    <!-- 12 seater -->
+    <div class="pcard vip" data-delay="220">
+      <div class="pcard-head">
+        <svg class="carsv" viewBox="0 0 80 36" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="12" width="76" height="20" rx="4" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+          <path d="M6 12 L12 4 L68 4 L74 12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+          <circle cx="16" cy="32" r="3.5" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+          <circle cx="64" cy="32" r="3.5" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+          <rect x="14" y="5" width="9" height="6" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="25" y="5" width="9" height="6" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="36" y="5" width="9" height="6" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="47" y="5" width="9" height="6" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="58" y="5" width="8" height="6" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="4" y="16" width="9" height="4" rx="1" fill="rgba(255,255,255,0.28)"/>
+          <rect x="67" y="16" width="9" height="4" rx="1" fill="rgba(255,255,255,0.28)"/>
+        </svg>
+        <div class="pcard-cat">Tempo Traveller</div>
+        <div class="pcard-name">12 Seater</div>
+      </div>
+      <div class="pcard-body">
+        <div class="price-wrap">
+          <span class="price-num">&#8377;8,500</span>
+          <span class="price-per">/ day</span>
+        </div>
+        <div class="price-tag">Ideal for groups &amp; corporate trips</div>
+        <ul class="feat-list">
+          <li>Force / Tempo Traveller</li>
+          <li>Push-back seats + AC</li>
+          <li>Driver &amp; fuel included</li>
+          <li>Upto 12 passengers</li>
+          <li>Spacious for long routes</li>
+        </ul>
+        <button class="pbtn" onclick="scrollForm()">Book this vehicle</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="gbar"></div>
+
+<!-- BOOKING FORM -->
+<section class="form-sec" id="bookingSection">
+  <div class="form-inner">
+    <div class="sec-label">Quick enquiry</div>
+    <div class="sec-title">Book your cab now</div>
+    <div class="sec-sub" style="margin-bottom:26px;">We confirm within 2 hours and share the best quote.</div>
+    <form class="bform" onsubmit="handleForm(event)">
+      <div class="fg">
+        <label>Full name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+      <div class="fg">
+        <label>Phone number</label>
+        <input type="tel" placeholder="+91 98765 43210" required>
+      </div>
+      <div class="fg">
+        <label>Destination</label>
+        <input type="text" placeholder="e.g. Kedarnath, Nainital..." required>
+      </div>
+      <div class="fg">
+        <label>No. of days</label>
+        <input type="number" placeholder="e.g. 3" min="1" required>
+      </div>
+      <div class="fg full">
+        <label>Vehicle type</label>
+        <select required>
+          <option value="" disabled selected>Select vehicle</option>
+          <option>5 Seater — &#8377;3,500 / day</option>
+          <option>7 Seater — &#8377;4,500 / day</option>
+          <option>12 Seater Traveller — &#8377;8,500 / day</option>
+        </select>
+      </div>
+      <div class="ok-msg" id="okMsg">Your booking request is sent! We will call you within 2 hours.</div>
+      <button type="submit" class="sbtn">
+        Send Booking Request
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<div class="gbar"></div>
+
+<!-- PLACES -->
+<div class="sec">
+  <div class="sec-label">Explore Uttarakhand</div>
+  <div class="sec-title">Top destinations we cover</div>
+  <div class="sec-sub">From divine temples to snow-capped peaks — our cabs go everywhere</div>
+
+  <div class="places-grid">
+
+    <div class="plcard" data-delay="0">
+      <div class="plcard-imgwrap">
+        <img class="plcard-img" src="https://images.unsplash.com/photo-1593692906755-89e70f5e3f09?w=600&q=80" alt="Kedarnath temple" loading="lazy" onerror="this.parentElement.style.background='#1A4B3A';this.style.display='none'">
+      </div>
+      <div class="plcard-body">
+        <div class="plcard-num">01</div>
+        <div class="plcard-name">Kedarnath</div>
+        <div class="plcard-dist">242 km from Haridwar</div>
+        <div class="plcard-desc">One of the 12 Jyotirlingas at 3,583 m — a sacred yatra through dense forest, roaring rivers and snowy peaks. The most spiritual journey in the Himalayas.</div>
+        <div class="plcard-foot">
+          <div>
+            <div class="foot-fare-label">Cab from</div>
+            <div class="foot-fare-price">&#8377;3,500 / day</div>
+          </div>
+          <button class="foot-btn" onclick="scrollForm()">Book now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plcard" data-delay="80">
+      <div class="plcard-imgwrap">
+        <img class="plcard-img" src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=80" alt="Rishikesh Ganga" loading="lazy" onerror="this.parentElement.style.background='#1A4B3A';this.style.display='none'">
+      </div>
+      <div class="plcard-body">
+        <div class="plcard-num">02</div>
+        <div class="plcard-name">Rishikesh &amp; Haridwar</div>
+        <div class="plcard-dist">Gateway to Dev Bhoomi</div>
+        <div class="plcard-desc">The yoga capital of the world meets the holiest ghats on the Ganga. Perfect first stop — attend Ganga Aarti at dusk and feel the spiritual energy.</div>
+        <div class="plcard-foot">
+          <div>
+            <div class="foot-fare-label">Cab from</div>
+            <div class="foot-fare-price">&#8377;3,500 / day</div>
+          </div>
+          <button class="foot-btn" onclick="scrollForm()">Book now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plcard" data-delay="160">
+      <div class="plcard-imgwrap">
+        <img class="plcard-img" src="https://images.unsplash.com/photo-1606634271913-56b3a9f6ffda?w=600&q=80" alt="Auli ski resort snow" loading="lazy" onerror="this.parentElement.style.background='#1A4B3A';this.style.display='none'">
+      </div>
+      <div class="plcard-body">
+        <div class="plcard-num">03</div>
+        <div class="plcard-name">Auli</div>
+        <div class="plcard-dist">298 km from Haridwar</div>
+        <div class="plcard-desc">India's premier ski destination with panoramic views of Nanda Devi. A paradise blanketed in snow in winter, lush green meadows in summer.</div>
+        <div class="plcard-foot">
+          <div>
+            <div class="foot-fare-label">Cab from</div>
+            <div class="foot-fare-price">&#8377;4,500 / day</div>
+          </div>
+          <button class="foot-btn" onclick="scrollForm()">Book now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plcard" data-delay="0">
+      <div class="plcard-imgwrap">
+        <img class="plcard-img" src="https://images.unsplash.com/photo-1626016458615-d22e1ac1e4fa?w=600&q=80" alt="Nainital lake" loading="lazy" onerror="this.parentElement.style.background='#1A4B3A';this.style.display='none'">
+      </div>
+      <div class="plcard-body">
+        <div class="plcard-num">04</div>
+        <div class="plcard-name">Nainital</div>
+        <div class="plcard-dist">306 km from Delhi</div>
+        <div class="plcard-desc">The lake city of Uttarakhand — Naini Lake, Mall Road, Snow View Point. A timeless hill station perfect for families and couples all year round.</div>
+        <div class="plcard-foot">
+          <div>
+            <div class="foot-fare-label">Cab from</div>
+            <div class="foot-fare-price">&#8377;3,500 / day</div>
+          </div>
+          <button class="foot-btn" onclick="scrollForm()">Book now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plcard" data-delay="80">
+      <div class="plcard-imgwrap">
+        <img class="plcard-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Valley of Flowers" loading="lazy" onerror="this.parentElement.style.background='#1A4B3A';this.style.display='none'">
+      </div>
+      <div class="plcard-body">
+        <div class="plcard-num">05</div>
+        <div class="plcard-name">Valley of Flowers</div>
+        <div class="plcard-dist">300 km from Rishikesh</div>
+        <div class="plcard-desc">A UNESCO World Heritage Site — a high-altitude valley blooming with hundreds of rare Himalayan wildflowers from July to September. Breathtaking.</div>
+        <div class="plcard-foot">
+          <div>
+            <div class="foot-fare-label">Cab from</div>
+            <div class="foot-fare-price">&#8377;4,500 / day</div>
+          </div>
+          <button class="foot-btn" onclick="scrollForm()">Book now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plcard" data-delay="160">
+      <div class="plcard-imgwrap">
+        <img class="plcard-img" src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?w=600&q=80" alt="Jim Corbett National Park" loading="lazy" onerror="this.parentElement.style.background='#1A4B3A';this.style.display='none'">
+      </div>
+      <div class="plcard-body">
+        <div class="plcard-num">06</div>
+        <div class="plcard-name">Jim Corbett</div>
+        <div class="plcard-dist">260 km from Delhi</div>
+        <div class="plcard-desc">India's oldest national park — home to Bengal tigers, elephants, leopards and 600+ bird species. A thrilling jungle safari for the whole family.</div>
+        <div class="plcard-foot">
+          <div>
+            <div class="foot-fare-label">Cab from</div>
+            <div class="foot-fare-price">&#8377;3,500 / day</div>
+          </div>
+          <button class="foot-btn" onclick="scrollForm()">Book now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="gbar"></div>
+
+<!-- DRIVERS -->
+<section class="driver-sec">
+  <div class="driver-inner">
+    <div class="sec-label">Our drivers</div>
+    <div class="sec-title">Meet the people who drive you</div>
+    <div class="sec-sub">Verified, experienced, and trained for Himalayan roads — because your safety matters most</div>
+
+    <div class="driver-grid">
+
+      <div class="dcard" data-delay="0">
+        <img class="dcard-avatar"
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
+          alt="Ramesh Singh" loading="lazy"
+          onerror="this.src='https://ui-avatars.com/api/?name=Ramesh+Singh&background=1A4B3A&color=E8F5EE&size=84'">
+        <div class="dcard-name">Ramesh Singh</div>
+        <div class="dcard-age">38 yrs · 12 yrs experience</div>
+        <div class="dcard-car">
+          <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h14l4 4v4a2 2 0 01-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          Innova Crysta
+        </div>
+        <div class="dcard-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span class="dstar-score">4.9</span>
+        </div>
+        <div class="dcard-trips">620+ trips completed</div>
+        <div class="dcard-tags">
+          <span class="dtag">Char Dham</span>
+          <span class="dtag">Hindi / English</span>
+          <span class="dtag">First Aid</span>
+        </div>
+        <div class="dcard-quote">"Pahaad mera ghar hai — main apne yatriyon ko hamesha safe leke jaata hoon."</div>
+      </div>
+
+      <div class="dcard" data-delay="100">
+        <img class="dcard-avatar"
+          src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80"
+          alt="Mohan Rawat" loading="lazy"
+          onerror="this.src='https://ui-avatars.com/api/?name=Mohan+Rawat&background=2E7D57&color=E8F5EE&size=84'">
+        <div class="dcard-name">Mohan Rawat</div>
+        <div class="dcard-age">42 yrs · 16 yrs experience</div>
+        <div class="dcard-car">
+          <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h14l4 4v4a2 2 0 01-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          Tempo Traveller
+        </div>
+        <div class="dcard-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span class="dstar-score">4.8</span>
+        </div>
+        <div class="dcard-trips">890+ trips completed</div>
+        <div class="dcard-tags">
+          <span class="dtag">Group Tours</span>
+          <span class="dtag">Hindi</span>
+          <span class="dtag">Snow Roads</span>
+        </div>
+        <div class="dcard-quote">"Group ho ya family — meri gaadi mein sab log apna ghar samajhte hain."</div>
+      </div>
+
+      <div class="dcard" data-delay="200">
+        <img class="dcard-avatar"
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80"
+          alt="Deepak Negi" loading="lazy"
+          onerror="this.src='https://ui-avatars.com/api/?name=Deepak+Negi&background=1A4B3A&color=E8F5EE&size=84'">
+        <div class="dcard-name">Deepak Negi</div>
+        <div class="dcard-age">35 yrs · 9 yrs experience</div>
+        <div class="dcard-car">
+          <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h14l4 4v4a2 2 0 01-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          Swift Dzire
+        </div>
+        <div class="dcard-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span class="dstar-score">4.9</span>
+        </div>
+        <div class="dcard-trips">410+ trips completed</div>
+        <div class="dcard-tags">
+          <span class="dtag">Kedarnath</span>
+          <span class="dtag">Hindi / Garhwali</span>
+          <span class="dtag">Punctual</span>
+        </div>
+        <div class="dcard-quote">"Har yatra mein mera kaam hai — aapko haste hue destination tak pahunchana."</div>
+      </div>
+
+      <div class="dcard" data-delay="300">
+        <img class="dcard-avatar"
+          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+          alt="Suresh Bisht" loading="lazy"
+          onerror="this.src='https://ui-avatars.com/api/?name=Suresh+Bisht&background=2E7D57&color=E8F5EE&size=84'">
+        <div class="dcard-name">Suresh Bisht</div>
+        <div class="dcard-age">45 yrs · 18 yrs experience</div>
+        <div class="dcard-car">
+          <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h14l4 4v4a2 2 0 01-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          Innova / Ertiga
+        </div>
+        <div class="dcard-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span class="dstar-score">5.0</span>
+        </div>
+        <div class="dcard-trips">1200+ trips completed</div>
+        <div class="dcard-tags">
+          <span class="dtag">All Uttarakhand</span>
+          <span class="dtag">Senior Expert</span>
+          <span class="dtag">Night Driving</span>
+        </div>
+        <div class="dcard-quote">"18 saal mein maine Uttarakhand ka kona kona dekha hai — aapko koi raasta nahi batana padega."</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function scrollForm(){
+  document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'});
+}
+
+function handleForm(e){
+  e.preventDefault();
+  const msg=document.getElementById('okMsg');
+  msg.style.display='block';
+  e.target.querySelectorAll('input,select').forEach(el=>el.value='');
+  setTimeout(()=>{msg.style.display='none';},5000);
+}
+
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el=entry.target;
+      const d=parseInt(el.dataset.delay)||0;
+      setTimeout(()=>el.classList.add('in'),d);
+      io.unobserve(el);
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.pcard,.plcard,.dcard').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
