@@ -578,6 +578,1080 @@
     </div>
   </section>
 
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chopta SEO Content Section – Kafall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+ 
+  <style>
+    /* ── CSS Variables (match Kafall warm earthy/mountain palette) ── */
+    :root {
+      --saffron:    #E8832A;
+      --saffron-dk: #C96B18;
+      --saffron-lt: #FDF3E7;
+      --pine:       #2E5D3E;
+      --pine-lt:    #3D7A54;
+      --snow:       #F9F6F1;
+      --stone:      #8C7B6B;
+      --ink:        #1E1A17;
+      --cream:      #FDF8F2;
+      --gold:       #D4A853;
+      --mist:       #EEE8E0;
+      --radius:     14px;
+      --shadow-sm:  0 2px 12px rgba(30,26,23,.07);
+      --shadow-md:  0 6px 28px rgba(30,26,23,.12);
+      --shadow-lg:  0 16px 60px rgba(30,26,23,.16);
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-body:    'Outfit', sans-serif;
+    }
+ 
+    /* ── Reset (scoped to this section only) ── */
+    .chopta-seo * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    /* ── Root wrapper ── */
+    .chopta-seo {
+      font-family: var(--ff-body);
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+ 
+    /* ── Utility ── */
+    .chopta-seo .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .chopta-seo .pill {
+      display: inline-block;
+      background: var(--saffron-lt);
+      color: var(--saffron-dk);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .chopta-seo .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--ink);
+    }
+    .chopta-seo .section-title span { color: var(--saffron); }
+    .chopta-seo .section-sub {
+      font-size: .98rem;
+      color: var(--stone);
+      margin-top: 10px;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    .chopta-seo .divider {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--saffron), var(--gold));
+      border-radius: 4px;
+      margin: 18px 0 0;
+    }
+ 
+    /* ── Section spacing ── */
+    .chopta-seo section { padding: 72px 0; }
+    .chopta-seo section:nth-child(even) { background: var(--snow); }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO INTRO BANNER (compact)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .seo-intro-banner {
+      background: linear-gradient(135deg, var(--pine) 0%, #1a3d28 55%, #0f2a1a 100%);
+      padding: 56px 0 !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .seo-intro-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .seo-intro-banner .container { position: relative; z-index: 1; }
+    .seo-intro-banner .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .seo-intro-banner .intro-stat {
+      text-align: center;
+      padding: 24px 16px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(4px);
+      transition: transform .3s, background .3s;
+    }
+    .seo-intro-banner .intro-stat:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.1);
+    }
+    .seo-intro-banner .intro-stat .num {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .seo-intro-banner .intro-stat .lbl {
+      font-size: .8rem;
+      color: rgba(255,255,255,.7);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .seo-intro-banner .banner-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .seo-intro-banner .banner-title span { color: var(--gold); }
+    .seo-intro-banner .banner-desc {
+      color: rgba(255,255,255,.75);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-top: 14px;
+      max-width: 700px;
+    }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━
+       ABOUT CHOPTA SECTION
+    ━━━━━━━━━━━━━━━━━━━━━ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .about-text p {
+      font-size: .97rem;
+      color: #4a4038;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .about-text p strong { color: var(--pine); }
+    .altitude-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .alt-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 22px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--saffron);
+      transition: box-shadow .3s, transform .3s;
+    }
+    .alt-card:hover { box-shadow: var(--shadow-md); transform: translateX(4px); }
+    .alt-card .icon {
+      width: 48px; height: 48px;
+      background: var(--saffron-lt);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .alt-card .info h4 {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .alt-card .info span {
+      font-size: .82rem;
+      color: var(--stone);
+    }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       TREK DETAIL SECTION
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    .trek-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .trek-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .trek-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-6px); }
+    .trek-card-head {
+      padding: 28px 24px 20px;
+      background: linear-gradient(135deg, var(--pine) 0%, var(--pine-lt) 100%);
+    }
+    .trek-card-head .trek-num {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.2);
+      line-height: 1;
+    }
+    .trek-card-head h3 {
+      font-family: var(--ff-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 4px;
+    }
+    .trek-card-head .trek-badge {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(255,255,255,.15);
+      color: rgba(255,255,255,.9);
+    }
+    .trek-card-body { padding: 22px 24px; }
+    .trek-card-body p {
+      font-size: .9rem;
+      color: #5a5048;
+      line-height: 1.75;
+    }
+    .trek-meta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trek-meta-item {
+      font-size: .78rem;
+      color: var(--stone);
+      background: var(--mist);
+      padding: 4px 12px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       BEST TIME SECTION
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    .months-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .month-card {
+      padding: 22px 18px;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      border-top: 3px solid transparent;
+      transition: all .3s;
+      cursor: default;
+    }
+    .month-card.peak   { border-top-color: var(--saffron); }
+    .month-card.good   { border-top-color: var(--pine);    }
+    .month-card.snow   { border-top-color: #6EA8D0;        }
+    .month-card.closed { border-top-color: var(--stone);   }
+    .month-card:hover  { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .month-card .m-icon  { font-size: 2rem; margin-bottom: 8px; }
+    .month-card .m-name  { font-weight: 600; font-size: .95rem; color: var(--ink); }
+    .month-card .m-type  {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+      margin-top: 4px; font-weight: 600;
+    }
+    .month-card.peak   .m-type { color: var(--saffron); }
+    .month-card.good   .m-type { color: var(--pine);    }
+    .month-card.snow   .m-type { color: #5A8FAB;        }
+    .month-card.closed .m-type { color: var(--stone);   }
+    .month-card .m-desc { font-size: .8rem; color: var(--stone); margin-top: 6px; line-height: 1.5; }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HOW TO REACH SECTION
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .routes-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .route-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+      transition: box-shadow .3s;
+    }
+    .route-card:hover { box-shadow: var(--shadow-md); }
+    .route-card h4 {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .route-card h4 .r-icon {
+      width: 36px; height: 36px;
+      background: var(--saffron-lt);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .route-steps {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .route-step {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 18px;
+      position: relative;
+    }
+    .route-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 11px; top: 28px;
+      width: 2px;
+      height: calc(100% - 14px);
+      background: var(--mist);
+    }
+    .step-dot {
+      width: 24px; height: 24px;
+      background: var(--saffron-lt);
+      border: 2px solid var(--saffron);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-dot span { font-size: .65rem; font-weight: 700; color: var(--saffron-dk); }
+    .step-info .place { font-weight: 600; font-size: .9rem; color: var(--ink); }
+    .step-info .dist  { font-size: .78rem; color: var(--stone); margin-top: 2px; }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FAQ ACCORDION
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .faq-wrap {
+      max-width: 820px;
+      margin: 48px auto 0;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: box-shadow .3s;
+    }
+    .faq-item.open { box-shadow: var(--shadow-md); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+    }
+    .faq-q span {
+      font-size: .97rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .faq-arrow {
+      width: 28px; height: 28px;
+      background: var(--mist);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem;
+      color: var(--stone);
+      flex-shrink: 0;
+      transition: transform .35s, background .3s;
+    }
+    .faq-item.open .faq-arrow {
+      transform: rotate(180deg);
+      background: var(--saffron-lt);
+      color: var(--saffron-dk);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .4s ease;
+    }
+    .faq-a-inner {
+      padding: 0 24px 20px;
+      font-size: .9rem;
+      color: #5a5048;
+      line-height: 1.8;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       NEARBY ATTRACTIONS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .attract-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .attract-card {
+      padding: 26px 22px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: all .3s;
+      border-bottom: 3px solid transparent;
+    }
+    .attract-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-bottom-color: var(--saffron);
+    }
+    .attract-card .a-icon { font-size: 2rem; margin-bottom: 12px; }
+    .attract-card h4 {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .attract-card p {
+      font-size: .85rem;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-top: 8px;
+    }
+    .attract-card .a-dist {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--pine);
+      background: #EBF5EF;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       WHY BOOK WITH US
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .why-section {
+      background: linear-gradient(135deg, var(--saffron) 0%, var(--saffron-dk) 100%) !important;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 28px 20px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(6px);
+      transition: background .3s, transform .3s;
+    }
+    .why-card:hover { background: rgba(255,255,255,.2); transform: translateY(-4px); }
+    .why-card .w-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .why-card h4 { font-size: .95rem; font-weight: 700; color: #fff; }
+    .why-card p { font-size: .82rem; color: rgba(255,255,255,.8); margin-top: 6px; line-height: 1.6; }
+    .why-section .section-title { color: #fff !important; }
+    .why-section .section-sub   { color: rgba(255,255,255,.8) !important; }
+    .why-section .divider { background: rgba(255,255,255,.4) !important; }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SEO TEXT BLOCK (Hidden helper)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .seo-text-section { background: var(--mist) !important; }
+    .seo-text-section .seo-body {
+      columns: 2;
+      column-gap: 48px;
+      margin-top: 36px;
+    }
+    .seo-text-section .seo-body p {
+      font-size: .92rem;
+      color: #5a5048;
+      line-height: 1.85;
+      margin-bottom: 16px;
+      break-inside: avoid;
+    }
+    .seo-text-section .seo-body h3 {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+ 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    @media (max-width: 900px) {
+      .seo-intro-banner .intro-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid    { grid-template-columns: 1fr; gap: 32px; }
+      .trek-cards    { grid-template-columns: 1fr; }
+      .months-grid   { grid-template-columns: 1fr 1fr; }
+      .routes-wrap   { grid-template-columns: 1fr; }
+      .attract-grid  { grid-template-columns: 1fr 1fr; }
+      .why-grid      { grid-template-columns: 1fr 1fr; }
+      .seo-text-section .seo-body { columns: 1; }
+    }
+    @media (max-width: 560px) {
+      .chopta-seo section { padding: 48px 0; }
+      .seo-intro-banner .intro-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .months-grid  { grid-template-columns: 1fr 1fr; }
+      .attract-grid { grid-template-columns: 1fr; }
+      .why-grid     { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+ 
+<body>
+<!-- ══════════════════════════════════════════════════════════════════════
+     CHOPTA SEO CONTENT SECTION
+     Paste this entire <div class="chopta-seo"> block into your Chopta.html
+     just below the booking form / existing package section.
+══════════════════════════════════════════════════════════════════════ -->
+<div class="chopta-seo">
+ 
+  <!-- 1. COMPACT INTRO BANNER with key stats -->
+  <section class="seo-intro-banner">
+    <div class="container">
+      <p class="pill">Mini Switzerland of Uttarakhand</p>
+      <h2 class="banner-title">Chopta — <span>Heaven on Earth</span><br>in the Himalayas</h2>
+      <p class="banner-desc">
+        Nestled at 2,680 m in the Rudraprayag district of Uttarakhand, Chopta is the base camp for
+        the sacred <strong style="color:var(--gold)">Tungnath Temple</strong> trek and the thrilling
+        <strong style="color:var(--gold)">Chandrashila Summit</strong> trek. With 360° views of
+        Nanda Devi, Trishul, Kedarnath, and Chaukhamba, this is a destination that stays with you forever.
+      </p>
+      <div class="intro-grid">
+        <div class="intro-stat"><span class="num">2,680m</span><span class="lbl">Chopta Altitude</span></div>
+        <div class="intro-stat"><span class="num">3,680m</span><span class="lbl">Tungnath Altitude</span></div>
+        <div class="intro-stat"><span class="num">4,000m</span><span class="lbl">Chandrashila Peak</span></div>
+        <div class="intro-stat"><span class="num">4D/3N</span><span class="lbl">Perfect Duration</span></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 2. ABOUT CHOPTA -->
+  <section>
+    <div class="container">
+      <p class="pill">About the Destination</p>
+      <h2 class="section-title">What Makes <span>Chopta</span> So Special?</h2>
+      <div class="divider"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Chopta is a <strong>small, pristine meadow</strong> in Uttarakhand's Kedarnath Wildlife Sanctuary,
+            often called the <em>Mini Switzerland of India</em>. Unlike over-commercialised hill stations,
+            Chopta retains its raw, untouched Himalayan soul — dense rhododendron forests, silent alpine
+            meadows, and jaw-dropping snow vistas await every traveller who makes the journey here.
+          </p>
+          <p>
+            The <strong>Chopta Tungnath Chandrashila Trek</strong> is one of the most rewarding
+            weekend treks from Delhi. The 4 km trail from Chopta to Tungnath passes through
+            enchanting forests of oak and rhododendron, while the final 1 km push to Chandrashila
+            summit reveals a breathtaking panorama of the Garhwal Himalaya.
+          </p>
+          <p>
+            Whether you are a <strong>solo traveller</strong>, a couple seeking a romantic snow honeymoon in
+            Uttarakhand, a family, or a group of adventure-seekers, Chopta offers an experience like
+            no other. From summer blooms to winter snowfall — every season paints a different portrait.
+          </p>
+          <p>
+            Kafall's <strong>Chopta Tour Package</strong> covers everything — transportation from Delhi,
+            Haridwar, Rishikesh, or Dehradun; accommodation; guided treks; Dhari Devi darshan; and
+            an unforgettable bonfire night under a star-filled Himalayan sky.
+          </p>
+        </div>
+        <div class="altitude-cards">
+          <div class="alt-card">
+            <div class="icon">⛰️</div>
+            <div class="info">
+              <h4>Chopta Meadow</h4>
+              <span>Altitude: 2,680 m (8,793 ft) · Kedarnath Wildlife Sanctuary</span>
+            </div>
+          </div>
+          <div class="alt-card">
+            <div class="icon">🛕</div>
+            <div class="info">
+              <h4>Tungnath Temple</h4>
+              <span>Altitude: 3,680 m (12,073 ft) · Highest Shiva Temple in the World</span>
+            </div>
+          </div>
+          <div class="alt-card">
+            <div class="icon">🏔️</div>
+            <div class="info">
+              <h4>Chandrashila Summit</h4>
+              <span>Altitude: 4,000 m (13,123 ft) · 360° Himalayan Panorama</span>
+            </div>
+          </div>
+          <div class="alt-card">
+            <div class="icon">🌊</div>
+            <div class="info">
+              <h4>Deoria Tal</h4>
+              <span>Altitude: 2,438 m · Perfect Reflection Lake, 3 km from Sari Village</span>
+            </div>
+          </div>
+          <div class="alt-card">
+            <div class="icon">📍</div>
+            <div class="info">
+              <h4>Distance from Delhi</h4>
+              <span>~450 km · ~11–12 hrs overnight journey by bus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 3. THE THREE TREKS -->
+  <section>
+    <div class="container">
+      <p class="pill">Trek Details</p>
+      <h2 class="section-title">The Three <span>Iconic Treks</span></h2>
+      <p class="section-sub">From beginner-friendly meadow walks to thrilling summit climbs — Chopta region offers something for every level of trekker.</p>
+      <div class="divider"></div>
+      <div class="trek-cards">
+        <div class="trek-card">
+          <div class="trek-card-head">
+            <div class="trek-num">01</div>
+            <h3>Tungnath Trek</h3>
+            <span class="trek-badge">Easy – Moderate</span>
+          </div>
+          <div class="trek-card-body">
+            <p>
+              The trail to <strong>Tungnath Temple</strong> — the world's highest Shiva shrine — is 4 km
+              one-way from Chopta. The well-paved, scenic path passes through dense rhododendron and oak
+              forests and offers stunning views of Kedar Peak and Nanda Devi. Suitable for beginners and
+              families, it typically takes 2–3 hours one-way.
+            </p>
+            <div class="trek-meta">
+              <span class="trek-meta-item">📏 4 km one-way</span>
+              <span class="trek-meta-item">⏱ 2–3 hrs up</span>
+              <span class="trek-meta-item">📐 Elevation gain: ~1,000m</span>
+            </div>
+          </div>
+        </div>
+        <div class="trek-card">
+          <div class="trek-card-head">
+            <div class="trek-num">02</div>
+            <h3>Chandrashila Trek</h3>
+            <span class="trek-badge">Moderate</span>
+          </div>
+          <div class="trek-card-body">
+            <p>
+              Continue 1 km beyond Tungnath to reach the <strong>Chandrashila Summit at 4,000 m</strong>.
+              The final climb is steep but rewarding with a 360° panorama of Nanda Devi, Trishul,
+              Chaukhamba, Kedar Dome, and Bandarpunch. This is a must-do for any trekker visiting Chopta.
+              Best enjoyed at sunrise.
+            </p>
+            <div class="trek-meta">
+              <span class="trek-meta-item">📏 5 km one-way</span>
+              <span class="trek-meta-item">⏱ 3–4 hrs up</span>
+              <span class="trek-meta-item">🌄 360° Summit Views</span>
+            </div>
+          </div>
+        </div>
+        <div class="trek-card">
+          <div class="trek-card-head">
+            <div class="trek-num">03</div>
+            <h3>Deoria Tal Trek</h3>
+            <span class="trek-badge">Easy</span>
+          </div>
+          <div class="trek-card-body">
+            <p>
+              The <strong>Deoria Tal Trek</strong> starts from Sari Village near Ukhimath and leads to
+              a gorgeous high-altitude lake that mirrors the Chaukhamba peaks. The 3 km trail is easy,
+              making it perfect for families and first-time trekkers. Often combined with the Chopta
+              Tungnath package to create a premium 5-day Uttarakhand adventure.
+            </p>
+            <div class="trek-meta">
+              <span class="trek-meta-item">📏 3 km one-way</span>
+              <span class="trek-meta-item">⏱ 1.5–2 hrs up</span>
+              <span class="trek-meta-item">🏞 Reflection Lake</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 4. BEST TIME TO VISIT -->
+  <section>
+    <div class="container">
+      <p class="pill">When to Go</p>
+      <h2 class="section-title">Best Time to <span>Visit Chopta</span></h2>
+      <p class="section-sub">Chopta is magical in every season — spring blooms, summer meadows, autumn gold, and winter snow. Here's your month-by-month guide.</p>
+      <div class="divider"></div>
+      <div class="months-grid">
+        <div class="month-card snow">
+          <div class="m-icon">❄️</div>
+          <div class="m-name">January</div>
+          <div class="m-type">Heavy Snowfall</div>
+          <div class="m-desc">Chopta buried in snow. Magical winter trek. Ideal for snow lovers & couples.</div>
+        </div>
+        <div class="month-card snow">
+          <div class="m-icon">🌨️</div>
+          <div class="m-name">February</div>
+          <div class="m-type">Snow Season</div>
+          <div class="m-desc">Snowfall continues. One of the most popular Chopta winter tour months.</div>
+        </div>
+        <div class="month-card peak">
+          <div class="m-icon">🌸</div>
+          <div class="m-name">Mar–Apr</div>
+          <div class="m-type">Peak Season</div>
+          <div class="m-desc">Rhododendrons bloom, snow clears. Perfect weather. Highly recommended.</div>
+        </div>
+        <div class="month-card peak">
+          <div class="m-icon">☀️</div>
+          <div class="m-name">May–June</div>
+          <div class="m-type">Peak Season</div>
+          <div class="m-desc">Clear skies, green meadows. Best for Chandrashila summit views. Most popular.</div>
+        </div>
+        <div class="month-card closed">
+          <div class="m-icon">🌧️</div>
+          <div class="m-name">Jul–Aug</div>
+          <div class="m-type">Monsoon</div>
+          <div class="m-desc">Heavy rains, slippery trails. Trek not advisable. Temple road may be blocked.</div>
+        </div>
+        <div class="month-card good">
+          <div class="m-icon">🍂</div>
+          <div class="m-name">Sept–Oct</div>
+          <div class="m-type">Post-Monsoon</div>
+          <div class="m-desc">Clear air, vibrant landscapes, few crowds. One of the best times for the trek.</div>
+        </div>
+        <div class="month-card peak">
+          <div class="m-icon">🍁</div>
+          <div class="m-name">November</div>
+          <div class="m-type">Autumn Gold</div>
+          <div class="m-desc">Golden forests before snow. Crisp air. Tungnath closes in mid-November.</div>
+        </div>
+        <div class="month-card snow">
+          <div class="m-icon">⛄</div>
+          <div class="m-name">December</div>
+          <div class="m-type">Early Winter</div>
+          <div class="m-desc">First snowfall arrives. Chopta turns white. Christmas & New Year treks popular.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 5. HOW TO REACH -->
+  <section>
+    <div class="container">
+      <p class="pill">Travel Guide</p>
+      <h2 class="section-title">How to <span>Reach Chopta</span></h2>
+      <p class="section-sub">Chopta is well-connected from all major cities of North India. Here are the best routes from popular departure points.</p>
+      <div class="divider"></div>
+      <div class="routes-wrap">
+        <div class="route-card">
+          <h4><span class="r-icon">🚌</span>Chopta from Delhi</h4>
+          <div class="route-steps">
+            <div class="route-step">
+              <div class="step-dot"><span>1</span></div>
+              <div class="step-info"><div class="place">Delhi (Kashmere Gate / Anand Vihar)</div><div class="dist">Departure: Evening (8–9 PM)</div></div>
+            </div>
+            <div class="route-step">
+              <div class="step-dot"><span>2</span></div>
+              <div class="step-info"><div class="place">Haridwar / Rishikesh</div><div class="dist">~5–6 hrs from Delhi · NH-58</div></div>
+            </div>
+            <div class="route-step">
+              <div class="step-dot"><span>3</span></div>
+              <div class="step-info"><div class="place">Rudraprayag via Devprayag</div><div class="dist">~3 hrs from Rishikesh · Scenic riverside drive</div></div>
+            </div>
+            <div class="route-step">
+              <div class="step-dot"><span>4</span></div>
+              <div class="step-info"><div class="place">Ukhimath → Chopta</div><div class="dist">~1 hr from Rudraprayag · Total ~11–12 hrs from Delhi</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="route-card">
+          <h4><span class="r-icon">🚗</span>Chopta from Dehradun / Haridwar</h4>
+          <div class="route-steps">
+            <div class="route-step">
+              <div class="step-dot"><span>1</span></div>
+              <div class="step-info"><div class="place">Dehradun / Haridwar / Rishikesh</div><div class="dist">Starting point (~210 km from Chopta)</div></div>
+            </div>
+            <div class="route-step">
+              <div class="step-dot"><span>2</span></div>
+              <div class="step-info"><div class="place">Devprayag → Srinagar (Garhwal)</div><div class="dist">~90 km from Rishikesh</div></div>
+            </div>
+            <div class="route-step">
+              <div class="step-dot"><span>3</span></div>
+              <div class="step-info"><div class="place">Rudraprayag → Augustmuni</div><div class="dist">~35 km further on NH-107</div></div>
+            </div>
+            <div class="route-step">
+              <div class="step-dot"><span>4</span></div>
+              <div class="step-info"><div class="place">Ukhimath → Chopta</div><div class="dist">~13 km mountain road · Total 5–6 hrs</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 6. NEARBY ATTRACTIONS -->
+  <section>
+    <div class="container">
+      <p class="pill">Explore More</p>
+      <h2 class="section-title">Nearby <span>Attractions</span></h2>
+      <p class="section-sub">Extend your Chopta trip with these incredible nearby destinations — each just a short detour away.</p>
+      <div class="divider"></div>
+      <div class="attract-grid">
+        <div class="attract-card">
+          <div class="a-icon">🏞️</div>
+          <h4>Deoria Tal</h4>
+          <p>A pristine high-altitude lake near Sari Village offering stunning reflections of Chaukhamba peaks. Often added to the Chopta itinerary as a 2-hour detour.</p>
+          <span class="a-dist">~14 km from Chopta</span>
+        </div>
+        <div class="attract-card">
+          <div class="a-icon">🛕</div>
+          <h4>Omkareshwar Temple, Ukhimath</h4>
+          <p>The winter seat of Lord Kedarnath. This ancient temple in Ukhimath holds immense religious significance and is a must-visit on your way to Chopta.</p>
+          <span class="a-dist">~13 km from Chopta</span>
+        </div>
+        <div class="attract-card">
+          <div class="a-icon">🌊</div>
+          <h4>Maa Dhari Devi Temple</h4>
+          <p>One of the most sacred temples of Uttarakhand, dedicated to the goddess Dhari Devi, located on the banks of the Alaknanda River near Srinagar.</p>
+          <span class="a-dist">~95 km from Chopta</span>
+        </div>
+        <div class="attract-card">
+          <div class="a-icon">🏔️</div>
+          <h4>Kedarnath Dham</h4>
+          <p>The holiest Shiva temple in India, part of the Char Dham circuit. Combine your Chopta Tungnath tour with a Kedarnath darshan for a complete spiritual journey.</p>
+          <span class="a-dist">~65 km from Chopta</span>
+        </div>
+        <div class="attract-card">
+          <div class="a-icon">🚣</div>
+          <h4>White Water Rafting, Rishikesh</h4>
+          <p>Add the ultimate adventure to your trip with 16 km of Grade III–IV rapids on the Ganga at Rishikesh. Available as an add-on with our Premium Chopta Package.</p>
+          <span class="a-dist">~210 km from Chopta</span>
+        </div>
+        <div class="attract-card">
+          <div class="a-icon">🌿</div>
+          <h4>Chopta Wildlife Sanctuary</h4>
+          <p>The Kedarnath Wildlife Sanctuary surrounding Chopta is home to musk deer, Himalayan black bears, snow leopards, and over 200 species of birds. A paradise for nature lovers.</p>
+          <span class="a-dist">Within Chopta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 7. FAQ -->
+  <section>
+    <div class="container">
+      <p class="pill">Common Questions</p>
+      <h2 class="section-title" style="text-align:center">Frequently Asked <span>Questions</span></h2>
+      <div class="divider" style="margin:18px auto 0"></div>
+      <div class="faq-wrap">
+        <div class="faq-item open">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Is Chopta worth visiting? What makes it special?</span>
+            <div class="faq-arrow">▼</div>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Absolutely! Chopta is one of the most underrated gems of Uttarakhand. Often called the <em>Mini Switzerland of India</em>, it offers pristine alpine meadows, dense rhododendron forests, and unparalleled views of some of the highest peaks in the Garhwal Himalaya including Nanda Devi, Trishul, and Chaukhamba. The combination of spiritual trekking to Tungnath Temple and the thrilling Chandrashila summit makes it truly unique — and far less crowded than Auli or Mussoorie.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Can beginners do the Tungnath Trek? Is the Chandrashila Trek difficult?</span>
+            <div class="faq-arrow">▼</div>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Yes! The Tungnath Trek is rated Easy–Moderate and is suitable for beginners, including children and senior citizens. The 4 km paved trail from Chopta is gradual and well-maintained. The Chandrashila Trek (5 km from Chopta) is rated Moderate — the final 1 km to the summit is a bit steep, but manageable for anyone with reasonable fitness. No prior trekking experience is required.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How many days are enough for Chopta? What is the ideal itinerary?</span>
+            <div class="faq-arrow">▼</div>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              A 4 Days / 3 Nights package is ideal for Chopta. Day 1: Depart Delhi. Day 2: Dhari Devi Darshan → arrive Chopta → bonfire night. Day 3: Early morning Tungnath Darshan + Chandrashila Trek. Day 4: Return to Delhi. If you wish to include Deoria Tal or Kedarnath, a 5-day or 6-day package is recommended.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Which month has snowfall in Chopta? Is Chopta good in winter?</span>
+            <div class="faq-arrow">▼</div>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Chopta typically receives snowfall from <strong>December to February</strong>, with heavy snowfall in January. The meadows and trail to Tungnath are often fully snow-covered, making for an extremely picturesque winter trek. Snow-lovers and couples especially enjoy the Chopta January, December, and February tours. Proper winter gear is essential, and our guides ensure your safety on the snow trail.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Is Chopta safe for couples and solo travellers?</span>
+            <div class="faq-arrow">▼</div>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Yes, Chopta is extremely safe for both couples and solo travellers. It's a peaceful, welcoming mountain destination. The trekking trails are well-marked and manageable. Kafall's group tours provide a safe, fun environment for solo travellers to connect with like-minded adventurers. For couples, Chopta's scenic beauty and cosy camp settings make it one of the most romantic destinations in Uttarakhand.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What is the cost of a Chopta trip? Which is better — Auli or Chopta?</span>
+            <div class="faq-arrow">▼</div>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Kafall's Chopta Tour Package starts from ₹8,500/person (triple sharing) for a 4D/3N trip from Delhi, including transport, stays, meals, and treks. As for Auli vs Chopta — both are spectacular, but they offer different experiences. Auli is more suited for skiing and resort-style stays, while Chopta is better for trekking, spiritual experience, and getting away from crowds. If you seek authentic Himalayan adventure combined with spirituality, Chopta is the clear winner.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 8. WHY BOOK WITH KAFALL -->
+  <section class="why-section">
+    <div class="container">
+      <p class="pill" style="background:rgba(255,255,255,.2);color:#fff">Why Choose Kafall</p>
+      <h2 class="section-title">Why Book Your <span style="color:#fff;text-decoration:underline;text-underline-offset:6px;text-decoration-color:rgba(255,255,255,.4)">Chopta Package</span> with Us?</h2>
+      <p class="section-sub">We've been running Chopta tours for years — here's what sets us apart from every other Chopta travel agency.</p>
+      <div class="divider"></div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="w-icon">🏔️</div>
+          <h4>Expert Local Guides</h4>
+          <p>Our guides are born-and-bred Uttarakhandi trekkers with deep knowledge of the terrain, weather, and mountain culture.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">💰</div>
+          <h4>Transparent Pricing</h4>
+          <p>What you see is what you pay. No hidden charges, no last-minute surprises. Budget, Standard & Premium plans available.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">🚌</div>
+          <h4>Comfortable Transport</h4>
+          <p>Overnight Volvo/sleeper buses from Delhi, Haridwar, Rishikesh & Dehradun. Fully AC vehicles throughout the journey.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">⭐</div>
+          <h4>500+ Happy Trekkers</h4>
+          <p>Trusted by hundreds of solo travellers, couples, families, and corporate groups for Chopta Tungnath tours every season.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">🏕️</div>
+          <h4>Cosy Camps & Homestays</h4>
+          <p>Hand-picked stays at scenic mountain camps and warm homestays — authentic Himalayan hospitality guaranteed.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">📱</div>
+          <h4>24/7 WhatsApp Support</h4>
+          <p>Our team is just a message away. Pre-trip guidance, on-ground support, and real-time updates throughout your journey.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">🔄</div>
+          <h4>Flexible Booking</h4>
+          <p>Pay only 30% to confirm your seat. Modify dates based on availability. Weather-based rescheduling guaranteed.</p>
+        </div>
+        <div class="why-card">
+          <div class="w-icon">🍽️</div>
+          <h4>All Meals Included</h4>
+          <p>Enjoy hot mountain meals — parathas, dal-sabzi, chai — prepared fresh at camp. Veg & Jain options available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- 9. SEO TEXT BLOCK (visible, well-formatted) -->
+  <section class="seo-text-section">
+    <div class="container">
+      <p class="pill">Complete Travel Guide</p>
+      <h2 class="section-title">Chopta Travel Guide — <span>Everything You Need to Know</span></h2>
+      <div class="divider"></div>
+      <div class="seo-body">
+        <h3>Chopta Tungnath Chandrashila Trek Overview</h3>
+        <p>
+          The <strong>Chopta Tungnath Chandrashila Trek</strong> is widely regarded as one of the best weekend treks in Uttarakhand. Starting from the meadow of Chopta at 2,680 m, the trail ascends through magical forests to Tungnath Temple at 3,680 m — the highest Shiva temple in the world and one of the Panch Kedar shrines. From Tungnath, a short but steep trail leads to the Chandrashila Summit at 4,000 m, where trekkers are rewarded with a sweeping 360° panoramic view of the Himalayas including Nanda Devi (7,816 m), Trishul (7,120 m), and the Chaukhamba massif.
+        </p>
+ 
+        <h3>Chopta Tour Package from Delhi — What's Included?</h3>
+        <p>
+          Kafall's <strong>Chopta Tour Package from Delhi</strong> is a complete 4D/3N experience covering everything from pickup at Delhi to the trek and return. Your package includes AC transport, accommodation in Himalayan camps and homestays, all meals, a guided Tungnath and Chandrashila Trek, Maa Dhari Devi Darshan, and a magical bonfire night under the stars at Chopta. Packages start at just ₹8,500/person — making this one of the most affordable Himalayan treks from Delhi.
+        </p>
+ 
+        <h3>Chopta Package for Couples & Honeymoon</h3>
+        <p>
+          Chopta has emerged as one of Uttarakhand's most sought-after <strong>honeymoon destinations</strong> and couple trip ideas. Whether it's sitting by a bonfire with snow-capped peaks as your backdrop, or watching the sunrise together from Chandrashila summit — the romance is unmatched. Our <strong>Chopta couple packages</strong> offer dual sharing private rooms, candlelight dinners at mountain camps, and special sunset Tungnath darshan walks.
+        </p>
+ 
+        <h3>Chopta Snowfall — When Is It and What to Expect?</h3>
+        <p>
+          <strong>Chopta snowfall</strong> typically begins in late November and peaks through January and February. During this period, the entire meadow, trekking trail, and surrounding forests are blanketed in a thick layer of snow. The Tungnath trail can have 4–6 feet of snow in peak winter, making it an exhilarating and beautiful snow trek. Our winter packages include snow-safe equipment, gaiters, and experienced local guides who know the trail in all conditions.
+        </p>
+ 
+        <h3>Is Chopta Safe for Solo Travellers?</h3>
+        <p>
+          Yes, Chopta is one of the safest adventure destinations in India for solo travellers. Kafall's group departures every Friday from Delhi are especially popular with solo trekkers — you'll join a small group of 10–20 like-minded travellers, guided by our experienced trek leaders. The community atmosphere, set itinerary, and 24/7 support make it an ideal first Himalayan adventure for solo travellers from cities like Delhi, Noida, Gurgaon, Jaipur, and Lucknow.
+        </p>
+ 
+        <h3>Chopta vs Auli — Which Should You Choose?</h3>
+        <p>
+          <strong>Auli</strong> is India's premier ski destination with gondola rides and luxury resorts, while <strong>Chopta</strong> is a raw, authentic Himalayan meadow perfect for trekking, camping, and spiritual exploration. Chopta is less commercial, more affordable, and offers a far more immersive mountain experience. For those seeking adventure trekking + temple visits + snowfall + camping — Chopta wins decisively. For skiing and resort holidays, Auli is the better choice.
+        </p>
+      </div>
+    </div>
+  </section>
+ 
+</div><!-- /.chopta-seo -->
+ 
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+ 
+</body>
+
   <!-- ══ ADD-ONS ════════════════════════════════════ -->
   <section class="addons-section" id="addons">
     <div class="container">
