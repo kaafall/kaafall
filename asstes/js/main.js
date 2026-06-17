@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── SPLASH LOADER — 2 seconds ── */
   const splash = document.getElementById('splash');
-  setTimeout(() => splash && splash.classList.add('gone'), 2200);
+  setTimeout(() => splash && splash.classList.add('gone'), 850);
 
   /* ── NAVBAR STICKY ── */
   const navbar = document.getElementById('navbar');
