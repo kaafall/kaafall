@@ -51,9 +51,9 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
 
 /*/* ── HERO ── */
 .hero{
-  min-height:52vh;
+  min-height:42vh;
   display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:110px 6% 56px;
+  text-align:center;padding:100px 6% 24px;
   position:relative;overflow:hidden;
   background:#000;
 }
@@ -98,7 +98,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
 }
 .hero h1{
   font-family:'Montserrat',sans-serif;
-  font-size:clamp(2rem,4.5vw,3.4rem);
+  font-size:clamp(2.3rem,5.2vw,3.9rem);
   font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px;
   animation:fadeUp 0.7s 0.1s ease both;
 }
@@ -144,11 +144,11 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
 section{padding:80px 6%;}
 .section-label{font-size:0.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
 .section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:10px;line-height:1.25;}
-.section-desc{color:var(--text-light);font-size:1.05rem;line-height:1.8;max-width:680px;margin-bottom:44px;}
+.section-desc{color:var(--text-light);font-size:1.05rem;line-height:1.8;max-width:1400px;margin-bottom:44px;}
 .tc{text-align:center;}.tc .section-desc{margin:0 auto 44px;}
 
 /* ── PACKAGES ── */
-.packages-bg{background:var(--grey);}
+.packages-bg{background:var(--grey);padding-top:24px;}
 .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto;}
 .pkg-card{
   background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
@@ -191,11 +191,12 @@ section{padding:80px 6%;}
 
 /* ── ITINERARY ── */
 .itin-intro{
-  max-width:720px;margin:0 auto 44px;
+  max-width:1400px;margin:0 auto 44px;
   background:var(--green-light);border-left:4px solid var(--green);
   border-radius:var(--radius);padding:24px 28px;
   font-size:1.02rem;line-height:1.85;color:var(--text-mid);
 }
+.itin-download-wrap{text-align:center;margin-top:32px;}
 /* Desktop: 2x2 grid, all open */
 .itin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1400px;margin:0 auto;}
 .itin-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;}
@@ -218,11 +219,11 @@ section{padding:80px 6%;}
 .itin-body ul{list-style:none;}
 .itin-body ul li{
   display:flex;gap:9px;padding:6px 0;
-  font-size:0.83rem;color:var(--text-mid);
-  border-bottom:1px dashed #eee;line-height:1.5;
+  font-size:0.95rem;color:var(--text-mid);
+  border-bottom:1px dashed #eee;line-height:1.55;
 }
 .itin-body ul li:last-child{border-bottom:none;}
-.itin-body ul li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.72rem;}
+.itin-body ul li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.78rem;}
 
 /* ── GALLERY ── */
 .gallery-bg{background:var(--grey);}
@@ -433,20 +434,8 @@ footer a{color:var(--green);text-decoration:none;}
       <div class="hero-pill"><i class="fas fa-mountain"></i> 7,000 ft altitude</div>
       <div class="hero-pill"><i class="fas fa-star"></i> 4.7 Avg Rating</div>
     </div>
-    <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20interested%20in%20Chakrata%20Trip" class="hero-btn">
-      <i class="fab fa-whatsapp"></i> Book Your Chakrata Trip
-    </a>
   </div>
 </section>
-
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-item"><i class="fas fa-check-circle"></i><div><strong>500+ Trips</strong><span>Completed</span></div></div>
-  <div class="strip-item"><i class="fas fa-star"></i><div><strong>4.7 / 5</strong><span>Avg Rating</span></div></div>
-  <div class="strip-item"><i class="fas fa-headset"></i><div><strong>24/7</strong><span>Support</span></div></div>
-  <div class="strip-item"><i class="fas fa-tag"></i><div><strong>No Hidden</strong><span>Charges</span></div></div>
-  <div class="strip-item"><i class="fas fa-shield-alt"></i><div><strong>Verified</strong><span>Hotels & Guides</span></div></div>
-</div>
 
 <!-- PACKAGES -->
 <section class="packages-bg" id="packages">
@@ -587,6 +576,9 @@ footer a{color:var(--green);text-decoration:none;}
         <li><i class="fas fa-circle-dot"></i> Trip memories packed, hearts full 🏔️</li>
       </ul></div></div>
     </div>
+  </div>
+  <div class="itin-download-wrap reveal">
+    <button class="gallery-btn" onclick="downloadItinerary()"><i class="fas fa-download"></i> Download Itinerary</button>
   </div>
 </section>
 
@@ -822,6 +814,29 @@ document.querySelectorAll('.itin-head').forEach(head=>{
     }
   });
 });
+
+// Download Itinerary
+function downloadItinerary(){
+  const days=document.querySelectorAll('.itin-card');
+  let content="CHAKRATA TRIP FROM DELHI — 3N/4D ITINERARY\nKafall Travels | +91 98109 66202\n";
+  content+="=".repeat(50)+"\n\n";
+  days.forEach((card,idx)=>{
+    const title=card.querySelector('.itin-head h3').textContent.trim();
+    const sub=card.querySelector('.itin-head p').textContent.trim();
+    content+=`DAY ${idx+1}: ${title}\n(${sub})\n`;
+    card.querySelectorAll('.itin-body ul li').forEach(li=>{
+      content+=`  • ${li.textContent.trim()}\n`;
+    });
+    content+="\n";
+  });
+  content+="Book now: https://wa.me/919810966202\n";
+  const blob=new Blob([content],{type:'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='Chakrata-Itinerary-Kafall.txt';
+  document.body.appendChild(a);a.click();
+  document.body.removeChild(a);URL.revokeObjectURL(url);
+}
 
 // Gallery modal
 const caps=['Tiger Falls — 312 ft, one of India\'s tallest waterfalls','Deoban Sunrise — 9,000 ft Himalayan panorama','Mundali Snow Point — winter wonderland','Kanasar Deodar Forest — ancient trail','Chilmiri Neck — best sunset viewpoint','Camp Bonfire Night'];
