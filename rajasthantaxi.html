@@ -3,1454 +3,846 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Rajasthan Taxi Service</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<link rel="stylesheet" href="/asstes/css/style.css"/>
-<script src="/asstes/js/main.js" defer></script>
+<title>Chakrata Trip From Delhi | 3N 4D Package | Kafall Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-  :root {
-    --saffron: #E8651A;
-    --deep-red: #8B1A1A;
-    --gold: #D4A017;
-    --gold-light: #F5D060;
-    --cream: #FDF6E3;
-    --dark-brown: #2C1A0E;
-    --sand: #C9A96E;
-    --maroon: #6B0F1A;
-    --turquoise: #2A9D8F;
-    --ivory: #FFFDF5;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Lato', sans-serif;
-    background: var(--ivory);
-    color: var(--dark-brown);
-    overflow-x: hidden;
-  }
-
-  /* ===== ORNAMENTAL PATTERNS ===== */
-  .paisley-bg {
-    background-image: 
-      radial-gradient(ellipse at 20% 50%, rgba(232,101,26,0.06) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(212,160,23,0.08) 0%, transparent 50%),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  /* ===== BANNER ===== */
-  .banner {
-    position: relative;
-    background: linear-gradient(135deg, #1a0a00 0%, var(--maroon) 30%, #3D0C11 60%, #1a0a00 100%);
-    padding: 50px 20px 40px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4A017' fill-opacity='0.07'%3E%3Cpath d='M40 0C17.9 0 0 17.9 0 40s17.9 40 40 40 40-17.9 40-40S62.1 0 40 0zm0 70C23.4 70 10 56.6 10 40S23.4 10 40 10s30 13.4 30 30-13.4 30-30 30z'/%3E%3Cpath d='M40 20c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm0 30c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z'/%3E%3C/g%3E%3C/svg%3E");
-    animation: patternFloat 20s linear infinite;
-  }
-
-  @keyframes patternFloat {
-    0% { background-position: 0 0; }
-    100% { background-position: 80px 80px; }
-  }
-
-  .banner-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .banner-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 12px;
-    animation: fadeDown 0.8s ease both;
-  }
-
-  .ornament-line {
-    height: 1px;
-    width: 80px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-
-  .ornament-diamond {
-    width: 8px; height: 8px;
-    background: var(--gold);
-    transform: rotate(45deg);
-  }
-
-  .banner-badge {
-    display: inline-block;
-    font-family: 'Lato', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 16px;
-    animation: fadeDown 0.9s ease both;
-  }
-
-  .banner-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: clamp(28px, 5vw, 56px);
-    font-weight: 900;
-    color: var(--ivory);
-    line-height: 1.15;
-    margin-bottom: 8px;
-    text-shadow: 0 0 40px rgba(212,160,23,0.4);
-    animation: fadeDown 1s ease both;
-  }
-
-  .banner-title span {
-    color: var(--gold);
-    display: block;
-    font-size: clamp(20px, 3.5vw, 38px);
-    font-weight: 400;
-  }
-
-  .banner-sub {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(14px, 2vw, 18px);
-    color: rgba(253,246,227,0.75);
-    margin-top: 10px;
-    animation: fadeDown 1.1s ease both;
-  }
-
-  .banner-flags {
-    margin-top: 18px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    animation: fadeDown 1.2s ease both;
-  }
-
-  .flag-tag {
-    background: rgba(212,160,23,0.15);
-    border: 1px solid rgba(212,160,23,0.4);
-    color: var(--gold-light);
-    font-size: 11px;
-    letter-spacing: 2px;
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  .banner-bottom-border {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--maroon), var(--gold), var(--saffron), var(--gold), var(--maroon));
-  }
-
-  /* ===== SECTION TITLE ===== */
-  .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .section-title h2 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: clamp(22px, 3.5vw, 34px);
-    color: var(--deep-red);
-    margin-bottom: 8px;
-  }
-
-  .section-title p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--sand);
-    font-size: 15px;
-  }
-
-  .title-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 12px 0;
-  }
-
-  .title-divider::before,
-  .title-divider::after {
-    content: '';
-    height: 1px;
-    width: 60px;
-    background: linear-gradient(90deg, transparent, var(--gold));
-  }
-
-  .title-divider::after {
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
-
-  .lotus-icon { color: var(--gold); font-size: 18px; }
-
-  /* ===== FLEET SECTION ===== */
-  .fleet-section {
-    padding: 70px 20px;
-    background: var(--ivory);
-    position: relative;
-  }
-
-  .fleet-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(90deg, var(--saffron) 0, var(--saffron) 10px, var(--gold) 10px, var(--gold) 20px, var(--maroon) 20px, var(--maroon) 30px);
-  }
-
-  .fleet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .fleet-card {
-    background: linear-gradient(160deg, #fff 0%, var(--cream) 100%);
-    border: 1px solid rgba(212,160,23,0.25);
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .fleet-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease;
-  }
-
-  .fleet-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(139,26,26,0.15);
-  }
-
-  .fleet-card-header {
-    background: linear-gradient(135deg, var(--deep-red), var(--maroon));
-    padding: 22px 24px 18px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .fleet-card-header::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--saffron), var(--gold));
-  }
-
-  .fleet-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-    display: block;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-  }
-
-  .fleet-name {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 15px;
-    color: var(--ivory);
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .fleet-capacity {
-    font-size: 12px;
-    color: var(--gold-light);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  .fleet-body {
-    padding: 22px 24px;
-  }
-
-  .fleet-price-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-
-  .price-inr {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 28px;
-    color: var(--deep-red);
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .price-usd {
-    font-size: 14px;
-    color: var(--turquoise);
-    font-weight: 700;
-    background: rgba(42,157,143,0.1);
-    border: 1px solid rgba(42,157,143,0.3);
-    padding: 3px 10px;
-    border-radius: 20px;
-  }
-
-  .price-label {
-    font-size: 11px;
-    color: var(--sand);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    width: 100%;
-    margin-top: -8px;
-  }
-
-  .fleet-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .fleet-features li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: #555;
-  }
-
-  .fleet-features li::before {
-    content: '◆';
-    color: var(--gold);
-    font-size: 8px;
-    flex-shrink: 0;
-  }
-
-  .fleet-cta {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    background: linear-gradient(135deg, var(--deep-red), var(--maroon));
-    color: var(--gold-light);
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 12px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    transition: opacity 0.2s;
-  }
-
-  .fleet-cta:hover { opacity: 0.85; }
-
-  /* ===== BOOKING FORM ===== */
-  .booking-section {
-    padding: 70px 20px;
-    background: linear-gradient(160deg, #1a0a00 0%, var(--maroon) 40%, #2C0A0A 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .booking-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 5L55 20H70L59 29L63 44L50 35L37 44L41 29L30 20H45L50 5Z' fill='%23D4A017' fill-opacity='0.04'/%3E%3C/svg%3E");
-    animation: patternFloat 25s linear infinite;
-  }
-
-  .booking-section .section-title h2 { color: var(--gold); }
-  .booking-section .section-title p { color: rgba(253,246,227,0.6); }
-  .booking-section .title-divider::before { background: linear-gradient(90deg, transparent, rgba(212,160,23,0.5)); }
-  .booking-section .title-divider::after { background: linear-gradient(90deg, rgba(212,160,23,0.5), transparent); }
-
-  .booking-inner {
-    max-width: 1060px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .puppet-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .puppet-side svg { width: 100%; max-width: 320px; height: auto; }
-
-  .puppet-caption {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: rgba(253,246,227,0.55);
-    font-size: 13px;
-    text-align: center;
-    line-height: 1.6;
-  }
-
-  .booking-form-wrap {
-    background: rgba(255,253,245,0.04);
-    border: 1px solid rgba(212,160,23,0.2);
-    border-radius: 4px;
-    padding: 28px 28px 24px;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(10px);
-  }
-
-  .booking-form-wrap::before,
-  .booking-form-wrap::after {
-    content: '✦';
-    position: absolute;
-    color: var(--gold);
-    font-size: 16px;
-    opacity: 0.4;
-  }
-  .booking-form-wrap::before { top: 10px; left: 14px; }
-  .booking-form-wrap::after { bottom: 10px; right: 14px; }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .form-group.full { grid-column: 1 / -1; }
-
-  .form-group label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    opacity: 0.75;
-  }
-
-  .form-group input,
-  .form-group select {
-    background: rgba(255,253,245,0.07);
-    border: 1px solid rgba(212,160,23,0.2);
-    color: var(--ivory);
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-    padding: 9px 12px;
-    border-radius: 3px;
-    outline: none;
-    transition: border-color 0.25s, background 0.25s;
-    width: 100%;
-    -webkit-appearance: none;
-  }
-
-  .form-group input::placeholder { color: rgba(253,246,227,0.25); }
-  .form-group select option { background: var(--dark-brown); color: var(--ivory); }
-
-  .form-group input:focus,
-  .form-group select:focus {
-    border-color: rgba(212,160,23,0.55);
-    background: rgba(255,253,245,0.1);
-  }
-
-  .dates-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 13px;
-    background: linear-gradient(135deg, var(--saffron), var(--gold));
-    border: none;
-    color: var(--dark-brown);
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    cursor: pointer;
-    border-radius: 3px;
-    margin-top: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .submit-btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s;
-  }
-
-  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,101,26,0.4); }
-  .submit-btn:hover::before { left: 100%; }
-
-  @media (max-width: 780px) {
-    .booking-inner {
-      grid-template-columns: 1fr;
-    }
-    .puppet-side { flex-direction: row; justify-content: center; }
-    .puppet-side svg { max-width: 160px; }
-  }
-
-  /* ===== DESTINATIONS ===== */
-  .destinations-section {
-    padding: 70px 20px;
-    background: var(--cream);
-  }
-
-  .dest-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .dest-card {
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    background: #fff;
-    border: 1px solid rgba(212,160,23,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(25px);
-    cursor: pointer;
-  }
-
-  .dest-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
-  }
-
-  .dest-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(139,26,26,0.12);
-  }
-
-  .dest-img {
-    height: 200px;
-    background: linear-gradient(135deg, var(--deep-red), var(--maroon));
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .dest-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-
-  .dest-card:hover .dest-img img { transform: scale(1.08); }
-
-  .dest-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5) 100%);
-  }
-
-  .dest-tag {
-    position: absolute;
-    top: 14px; right: 14px;
-    background: var(--gold);
-    color: var(--dark-brown);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 20px;
-  }
-
-  .dest-body {
-    padding: 20px 22px;
-  }
-
-  .dest-name {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 16px;
-    color: var(--deep-red);
-    margin-bottom: 8px;
-  }
-
-  .dest-desc {
-    font-size: 13px;
-    color: #666;
-    line-height: 1.65;
-  }
-
-  .dest-info {
-    display: flex;
-    gap: 14px;
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(212,160,23,0.15);
-    flex-wrap: wrap;
-  }
-
-  .dest-info span {
-    font-size: 11px;
-    color: var(--sand);
-    font-weight: 700;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  /* ===== TRUST BAR ===== */
-  .trust-bar {
-    background: linear-gradient(135deg, var(--dark-brown), #3D1A0A);
-    padding: 28px 20px;
-    text-align: center;
-  }
-
-  .trust-items {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .trust-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: var(--ivory);
-  }
-
-  .trust-item .ti-icon { font-size: 24px; }
-  .trust-item .ti-val { font-family: 'Cinzel Decorative', cursive; font-size: 18px; color: var(--gold); }
-  .trust-item .ti-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(253,246,227,0.5); }
-
-  /* ===== SUCCESS POPUP ===== */
-  .success-popup {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    background: rgba(0,0,0,0.6);
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);
-  }
-
-  .success-popup.show { display: flex; animation: fadeIn 0.3s ease; }
-
-  .success-box {
-    background: linear-gradient(135deg, #fff, var(--cream));
-    border: 2px solid var(--gold);
-    border-radius: 4px;
-    padding: 44px 40px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    position: relative;
-    animation: scaleIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
-  }
-
-  .success-box .s-icon { font-size: 52px; margin-bottom: 16px; display: block; }
-  .success-box h3 { font-family: 'Cinzel Decorative', cursive; font-size: 20px; color: var(--deep-red); margin-bottom: 10px; }
-  .success-box p { font-size: 14px; color: #555; line-height: 1.6; }
-  .success-close {
-    margin-top: 24px;
-    padding: 11px 30px;
-    background: linear-gradient(135deg, var(--deep-red), var(--maroon));
-    color: var(--gold-light);
-    border: none;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-
-  /* ===== HANDICRAFT FOOTER BAR ===== */
-  .craft-bar {
-    background: var(--deep-red);
-    padding: 18px 20px;
-    text-align: center;
-    font-size: 12px;
-    color: rgba(253,246,227,0.55);
-    letter-spacing: 1px;
-  }
-
-  .craft-bar span { color: var(--gold); }
-
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; } to { opacity: 1; }
-  }
-
-  @keyframes scaleIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 640px) {
-    .form-row, .dates-row { grid-template-columns: 1fr; }
-    .form-group.full { grid-column: 1; }
-    .booking-form-wrap { padding: 28px 20px; }
-    .trust-items { gap: 24px; }
-    .fleet-grid { grid-template-columns: 1fr; }
-    .dest-grid { grid-template-columns: 1fr; }
-  }
+:root {
+  --green: #259E5C;
+  --green-dark: #1b7a44;
+  --green-light: #e8f7ef;
+  --black: #111111;
+  --dark: #1a1a1a;
+  --grey: #f5f5f5;
+  --grey2: #eeeeee;
+  --text: #222222;
+  --text-mid: #444444;
+  --text-light: #777777;
+  --white: #ffffff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;font-size:16px;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #e8e8e8;
+  padding:12px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:box-shadow 0.3s;
+}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.45rem;color:var(--dark);text-decoration:none;}
+.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links a{color:var(--text-mid);text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--green);}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:8px 18px;border-radius:50px;font-weight:700!important;}
+.nav-cta:hover{background:var(--green-dark)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:0.3s;}
+
+/*/* ── HERO ── */
+.hero{
+  min-height:52vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:110px 6% 56px;
+  position:relative;overflow:hidden;
+  background:#000;
+}
+.hero-img-bg{
+  position:absolute;inset:0;z-index:0;
+  background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&fit=crop') center center/cover no-repeat;
+  animation:heroPan 20s ease-in-out infinite alternate;
+  transform-origin:center center;
+}
+.hero-img-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.40) 50%,rgba(0,0,0,0.60) 100%);
+}
+@keyframes heroPan{
+  0%{transform:scale(1.08) translateX(0%);}
+  100%{transform:scale(1.08) translateX(-3%);}
+}
+.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;}
+.hero-particles span{
+  position:absolute;width:3px;height:3px;background:var(--green);
+  border-radius:50%;opacity:0;
+  animation:particleFly var(--d,4s) var(--delay,0s) ease-in infinite;
+}
+@keyframes particleFly{
+  0%{opacity:0;transform:translateY(0) scale(0);}
+  20%{opacity:0.8;}
+  80%{opacity:0.4;}
+  100%{opacity:0;transform:translateY(-300px) scale(1.5);}
+}
+.hero-wave{z-index:3;
+  position:absolute;bottom:0;left:0;right:0;height:60px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,70 1080,10 1440,40 L1440,60 L0,60Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
+}
+.hero-content{position:relative;z-index:3;max-width:860px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(37,158,92,0.15);border:1px solid rgba(37,158,92,0.35);
+  color:var(--green);padding:5px 16px;border-radius:50px;
+  font-size:0.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:14px;
+  animation:fadeDown 0.6s ease both;
+}
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(2rem,4.5vw,3.4rem);
+  font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero h1 span{color:var(--green);}
+.hero-sub{
+  font-size:1.05rem;color:rgba(255,255,255,0.72);
+  margin-bottom:22px;line-height:1.7;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-pills{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+  margin-bottom:26px;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.hero-pill{
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  color:rgba(255,255,255,0.85);padding:6px 14px;border-radius:50px;
+  font-size:0.88rem;font-weight:500;display:flex;align-items:center;gap:6px;
+}
+.hero-pill i{color:var(--green);}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green);color:#fff;
+  padding:13px 30px;border-radius:50px;
+  font-weight:700;font-size:1.05rem;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,158,92,0.35);
+  transition:transform 0.2s,box-shadow 0.2s,background 0.2s;
+  animation:fadeUp 0.7s 0.4s ease both;
+}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,158,92,0.45);background:var(--green-dark);}
+
+/* ── STRIP ── */
+.strip{
+  background:var(--green);padding:14px 5%;
+  display:flex;justify-content:center;gap:36px;flex-wrap:wrap;
+}
+.strip-item{display:flex;align-items:center;gap:8px;color:#fff;}
+.strip-item i{font-size:1.05rem;opacity:0.85;}
+.strip-item strong{font-size:1rem;font-weight:700;}
+.strip-item span{font-size:0.85rem;opacity:0.75;display:block;}
+
+/* ── SECTION COMMON ── */
+section{padding:80px 6%;}
+.section-label{font-size:0.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:10px;line-height:1.25;}
+.section-desc{color:var(--text-light);font-size:1.05rem;line-height:1.8;max-width:680px;margin-bottom:44px;}
+.tc{text-align:center;}.tc .section-desc{margin:0 auto 44px;}
+
+/* ── PACKAGES ── */
+.packages-bg{background:var(--grey);}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto;}
+.pkg-card{
+  background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform 0.3s,box-shadow 0.3s;position:relative;
+}
+.pkg-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);}
+.pkg-card.featured{border:2px solid var(--green);}
+.pkg-badge-tag{
+  position:absolute;top:14px;right:14px;
+  background:var(--green);color:#fff;
+  font-size:0.68rem;font-weight:700;letter-spacing:1px;
+  padding:3px 11px;border-radius:50px;text-transform:uppercase;
+}
+.pkg-head{
+  background:linear-gradient(135deg,var(--dark) 0%,#2d2d2d 100%);
+  padding:26px 26px 18px;color:#fff;
+}
+.pkg-type{font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px;}
+.pkg-name{font-family:'Montserrat',sans-serif;font-size:1.45rem;font-weight:800;margin-bottom:4px;}
+.pkg-nights{font-size:0.9rem;color:rgba(255,255,255,0.6);}
+.pkg-price-row{display:flex;align-items:baseline;gap:6px;margin-top:12px;}
+.pkg-price{font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:800;color:var(--green);}
+.pkg-per{font-size:0.88rem;color:rgba(255,255,255,0.55);}
+.pkg-body{padding:22px 26px;flex:1;display:flex;flex-direction:column;}
+.pkg-list{list-style:none;margin-bottom:22px;flex:1;}
+.pkg-list li{display:flex;align-items:flex-start;gap:9px;padding:8px 0;font-size:0.97rem;color:var(--text-mid);border-bottom:1px solid #f0f0f0;}
+.pkg-list li:last-child{border-bottom:none;}
+.pkg-list li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.8rem;}
+.pkg-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:13px;
+  background:var(--green);color:#fff;
+  border:none;border-radius:var(--radius-sm);
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;
+  cursor:pointer;text-decoration:none;
+  transition:background 0.2s,transform 0.15s;
+}
+.pkg-btn:hover{background:var(--green-dark);transform:scale(1.02);}
+
+/* ── ITINERARY ── */
+.itin-intro{
+  max-width:720px;margin:0 auto 44px;
+  background:var(--green-light);border-left:4px solid var(--green);
+  border-radius:var(--radius);padding:24px 28px;
+  font-size:1.02rem;line-height:1.85;color:var(--text-mid);
+}
+/* Desktop: 2x2 grid, all open */
+.itin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1400px;margin:0 auto;}
+.itin-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;}
+.itin-head{
+  background:linear-gradient(135deg,var(--dark),#2a2a2a);
+  padding:18px 20px;display:flex;align-items:center;gap:14px;color:#fff;
+}
+.itin-num{
+  background:var(--green);color:#fff;
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.95rem;flex-shrink:0;
+}
+.itin-head h3{font-size:1.05rem;font-weight:700;line-height:1.3;}
+.itin-head p{font-size:0.85rem;color:rgba(255,255,255,0.58);margin-top:3px;}
+.itin-chevron{margin-left:auto;color:rgba(255,255,255,0.5);font-size:0.85rem;display:none;transition:transform 0.3s;}
+/* Desktop body always visible */
+.itin-body{background:#fff;}
+.itin-body-inner{padding:16px 20px;}
+.itin-body ul{list-style:none;}
+.itin-body ul li{
+  display:flex;gap:9px;padding:6px 0;
+  font-size:0.83rem;color:var(--text-mid);
+  border-bottom:1px dashed #eee;line-height:1.5;
+}
+.itin-body ul li:last-child{border-bottom:none;}
+.itin-body ul li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.72rem;}
+
+/* ── GALLERY ── */
+.gallery-bg{background:var(--grey);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1400px;margin:0 auto 32px;}
+.gal-item{
+  border-radius:var(--radius-sm);overflow:hidden;
+  aspect-ratio:4/3;position:relative;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.35s;
+}
+.gal-item:hover{transform:scale(1.03);}
+.gal-item-inner{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;
+}
+.gal-overlay{
+  position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55),rgba(0,0,0,0.1));
+  opacity:0;transition:opacity 0.3s;
+  display:flex;align-items:flex-end;padding:12px;
+  color:#fff;font-size:0.78rem;font-weight:600;
+}
+.gal-item:hover .gal-overlay{opacity:1;}
+.gallery-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:0 auto;background:var(--dark);color:#fff;
+  border:none;border-radius:50px;padding:12px 32px;
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;
+  transition:background 0.2s,transform 0.2s;
+}
+.gallery-btn:hover{background:var(--green);transform:scale(1.03);}
+/* Modal */
+.gal-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.94);align-items:center;justify-content:center;padding:20px;}
+.gal-modal.open{display:flex;}
+.gal-modal-inner{max-width:860px;width:100%;position:relative;}
+.gal-modal-close{position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.7rem;cursor:pointer;}
+.gal-modal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;width:42px;height:42px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.gal-modal-nav:hover{background:var(--green);}
+.gal-prev{left:-52px;}.gal-next{right:-52px;}
+.gal-modal-img{width:100%;border-radius:12px;background:linear-gradient(135deg,#1a1a1a,#2d2d2d);height:380px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.35);flex-direction:column;gap:10px;}
+.gal-modal-cap{color:rgba(255,255,255,0.6);text-align:center;margin-top:12px;font-size:0.85rem;}
+
+/* ── HOTELS ── */
+.hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1400px;margin:0 auto;}
+.hotel-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+.hotel-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.hotel-img{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hotel-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.4s;}
+.hotel-card:hover .hotel-img-bg{transform:scale(1.07);}
+.hotel-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.45));}
+.hotel-price-tag{position:relative;z-index:1;background:var(--green);color:#fff;padding:5px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.95rem;}
+.hotel-body{padding:16px 18px;}
+.hotel-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.08rem;margin-bottom:3px;color:var(--dark);}
+.hotel-type{font-size:0.87rem;color:var(--text-light);margin-bottom:9px;}
+.hotel-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
+.hotel-tag{background:var(--green-light);color:var(--green-dark);font-size:0.8rem;padding:3px 9px;border-radius:50px;font-weight:600;}
+.hotel-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:9px;background:var(--dark);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Poppins',sans-serif;font-size:0.92rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.hotel-btn:hover{background:var(--green);}
+
+/* ── INFO (Exclusions + Pack) ── */
+.info-bg{background:var(--grey);}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1400px;margin:0 auto;}
+.info-box{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;}
+.info-box-title{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:9px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--grey2);}
+.info-box-title i{color:var(--green);}
+.info-list{list-style:none;}
+.info-list li{display:flex;gap:9px;padding:8px 0;font-size:0.97rem;color:var(--text-mid);border-bottom:1px dashed #eee;line-height:1.6;}
+.info-list li:last-child{border-bottom:none;}
+.excl-icon{color:#e74c3c;font-size:0.75rem;margin-top:4px;flex-shrink:0;}
+.pack-icon{color:var(--green);font-size:0.75rem;margin-top:4px;flex-shrink:0;}
+
+/* ── FAQ ── */
+.faq-wrap{max-width:900px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--grey2);}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0;cursor:pointer;text-align:left;font-family:'Poppins',sans-serif;font-size:1.02rem;font-weight:600;color:var(--dark);transition:color 0.2s;}
+.faq-q:hover{color:var(--green);}
+.faq-icon{color:var(--green);transition:transform 0.3s;flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;font-size:1rem;color:var(--text-light);line-height:1.8;}
+.faq-item.open .faq-a{max-height:220px;padding-bottom:16px;}
+
+/* ── ROUTE BANNER ── */
+.route-bg{background:var(--dark);padding:80px 6%;}
+.route-inner{max-width:1400px;margin:0 auto;background:linear-gradient(135deg,#1e1e1e,#2a2a2a);border-radius:var(--radius);padding:44px 52px;position:relative;overflow:hidden;display:flex;align-items:center;gap:48px;}
+.route-deco{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23259E5C' fill-opacity='0.06'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");}
+.route-content{position:relative;z-index:1;flex:1;}
+.route-title{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:18px;}
+.route-path{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:22px;}
+.route-stop{background:rgba(255,255,255,0.1);color:#fff;padding:7px 16px;border-radius:50px;font-size:0.92rem;font-weight:600;}
+.route-arr{color:var(--green);padding:0 4px;font-size:0.9rem;}
+.route-stats{display:flex;gap:28px;flex-wrap:wrap;}
+.route-stat{color:rgba(255,255,255,0.7);font-size:0.95rem;}
+.route-stat strong{color:var(--green);font-size:1.15rem;display:block;font-family:'Montserrat',sans-serif;font-weight:800;}
+.route-img-box{position:relative;z-index:1;width:240px;height:180px;flex-shrink:0;background:rgba(37,158,92,0.1);border-radius:var(--radius-sm);border:1px dashed rgba(37,158,92,0.3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.3);text-align:center;font-size:0.75rem;padding:16px;}
+.route-img-box i{font-size:2.2rem;color:rgba(37,158,92,0.4);}
+
+/* ── TESTIMONIALS ── */
+.testi-bg{background:var(--grey);}
+.testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1400px;margin:0 auto;}
+.testi-card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform 0.3s,box-shadow 0.3s;}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.testi-stars{color:var(--green);font-size:0.95rem;margin-bottom:10px;}
+.testi-text{font-size:0.96rem;color:var(--text-mid);line-height:1.7;margin-bottom:14px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:0.9rem;flex-shrink:0;}
+.testi-name{font-weight:700;font-size:0.96rem;color:var(--dark);}
+.testi-loc{font-size:0.84rem;color:var(--text-light);}
+
+/* ── FINAL CTA ── */
+.cta-bg{background:var(--dark);padding:80px 6%;text-align:center;}
+.cta-bg h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:#fff;margin-bottom:12px;}
+.cta-bg p{color:rgba(255,255,255,0.65);max-width:560px;margin:0 auto 28px;line-height:1.75;font-size:1.05rem;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:#25d366;color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,211,102,0.4);}
+.btn-call{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.3);padding:13px 28px;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color 0.2s,background 0.2s;}
+.btn-call:hover{border-color:var(--green);background:rgba(37,158,92,0.1);}
+
+/* ── FOOTER ── */
+footer{background:#0a0a0a;padding:26px 5%;text-align:center;color:rgba(255,255,255,0.35);font-size:0.9rem;}
+footer a{color:var(--green);text-decoration:none;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-30px);}to{opacity:1;transform:translateX(0);}}
+@keyframes slideRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,158,92,0.4);}50%{box-shadow:0 0 0 12px rgba(37,158,92,0);}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+
+.pkg-btn{animation-name:pulse;}
+.hero-btn{animation:pulse 2.5s 1.5s infinite;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .packages-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .hotels-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  nav{padding:12px 5%;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:18px 5%;gap:14px;box-shadow:0 8px 24px rgba(0,0,0,0.1);border-top:1px solid #eee;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .hero{min-height:auto;}
+  section{padding:60px 6%;}
+  .info-grid{grid-template-columns:1fr;}
+  .hotels-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .route-inner{flex-direction:column;padding:32px 24px;gap:24px;}
+  .route-img-box{width:100%;height:120px;}
+  /* ITINERARY MOBILE: 1 col accordion */
+  .itin-grid{grid-template-columns:1fr;max-width:540px;margin:0 auto;}
+  .itin-chevron{display:flex!important;}
+  .itin-head{cursor:pointer;}
+  .itin-body{max-height:0!important;overflow:hidden!important;transition:max-height 0.4s ease!important;}
+  .itin-card.mob-open .itin-body{max-height:480px!important;}
+  .itin-card.mob-open .itin-chevron{transform:rotate(180deg);}
+  .gal-prev{left:-8px;}.gal-next{right:-8px;}
+}
+@media(max-width:480px){
+  .testi-grid{grid-template-columns:1fr;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .strip{gap:14px;}
+}
 </style>
 </head>
-<body class="paisley-bg">
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <!-- Logo -->
-    <a href="/index.html" class="nav-logo">
-      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
-      <div class="nav-logo-text">
-        <span class="nl-main">kafall</span>
-        <span class="nl-sub">presents</span>
-      </div>
-    </a>
+<body>
 
-    <!-- Nav Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/aboutus.html">About us</a></li>
-      <li><a href="/packages.html">Packages</a></li>
-      <li><a href="/chardham.html">Char Dham</a></li>
-      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/Taxi.html">Taxi Services</a></li>
-      <li><a href="/RajasthanTaxi.html">Rajasthan taxi </a></li>
-      <li><a href="/contactus.html">Contact us</a></li>
-    </ul>
-
-    <!-- Nav Right -->
-    <div class="nav-right">
-      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="https://kafall.com" class="nav-logo">Ka<span>fall</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="https://kafall.com/aboutus.html">About Us</a></li>
+    <li><a href="https://kafall.com/packages.html">Packages</a></li>
+    <li><a href="https://kafall.com/chardham.html">Char Dham</a></li>
+    <li><a href="https://kafall.com/weakendtrip.html">Weekend Trips</a></li>
+    <li><a href="https://kafall.com/blog.html">Blog</a></li>
+    <li><a href="https://wa.me/919810966202" class="nav-cta"><i class="fab fa-whatsapp"></i> Book Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
-<!-- ===== BANNER ===== -->
-<section class="banner">
-  <div class="banner-inner">
-    <div class="banner-ornament">
-      <span class="ornament-line"></span>
-      <span class="ornament-diamond"></span>
-      <span class="ornament-line"></span>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-img-bg"></div>
+  <div class="hero-img-overlay"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-wave"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-mountain"></i> Uttarakhand's Best-Kept Secret</div>
+    <h1>Chakrata Trip<br><span>From Delhi</span></h1>
+    <p class="hero-sub">335 km from Delhi · Deodar forests · Tiger Falls · Himalayan sunrises<br>Chakrata awaits — uncrowded, unspoilt, unforgettable.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><i class="fas fa-calendar-alt"></i> 3 Nights · 4 Days</div>
+      <div class="hero-pill"><i class="fas fa-route"></i> 335 km from Delhi</div>
+      <div class="hero-pill"><i class="fas fa-mountain"></i> 7,000 ft altitude</div>
+      <div class="hero-pill"><i class="fas fa-star"></i> 4.7 Avg Rating</div>
     </div>
-    <div class="banner-badge">Est. Since 2010 &nbsp;•&nbsp; Trusted by 50,000+ Travelers</div>
-    <h1 class="banner-title">
-      Royal Rajasthan
-      <span>Taxi Service</span>
-    </h1>
-    <p class="banner-sub">Where Every Journey Becomes a Royal Saga — Fully Air Conditioned Fleets for the Discerning Traveler</p>
-    <div class="banner-flags">
-      <span class="flag-tag">🇺🇸 USD Prices</span>
-      <span class="flag-tag"> Airport Pickup</span>
-      <span class="flag-tag"> English Speaking Drivers</span>
-      <span class="flag-tag"> All Cards Accepted</span>
-    </div>
+    <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20interested%20in%20Chakrata%20Trip" class="hero-btn">
+      <i class="fab fa-whatsapp"></i> Book Your Chakrata Trip
+    </a>
   </div>
-  <div class="banner-bottom-border"></div>
 </section>
 
-<!-- ===== TRUST BAR ===== -->
-<div class="trust-bar">
-  <div class="trust-items">
-    <div class="trust-item"><span class="ti-icon"></span><span class="ti-val">15+</span><span class="ti-label">Years Experience</span></div>
-    <div class="trust-item"><span class="ti-icon"></span><span class="ti-val">50+</span><span class="ti-label">AC Vehicles</span></div>
-    <div class="trust-item"><span class="ti-icon"></span><span class="ti-val">4.9★</span><span class="ti-label">Tourist Rating</span></div>
-    <div class="trust-item"><span class="ti-icon"></span><span class="ti-val">30+</span><span class="ti-label">Countries Served</span></div>
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item"><i class="fas fa-check-circle"></i><div><strong>500+ Trips</strong><span>Completed</span></div></div>
+  <div class="strip-item"><i class="fas fa-star"></i><div><strong>4.7 / 5</strong><span>Avg Rating</span></div></div>
+  <div class="strip-item"><i class="fas fa-headset"></i><div><strong>24/7</strong><span>Support</span></div></div>
+  <div class="strip-item"><i class="fas fa-tag"></i><div><strong>No Hidden</strong><span>Charges</span></div></div>
+  <div class="strip-item"><i class="fas fa-shield-alt"></i><div><strong>Verified</strong><span>Hotels & Guides</span></div></div>
+</div>
+
+<!-- PACKAGES -->
+<section class="packages-bg" id="packages">
+  <div class="tc reveal">
+    <div class="section-label">Choose Your Plan</div>
+    <h2 class="section-title">Chakrata Tour Packages</h2>
+    <p class="section-desc">3 Nights · 4 Days from Delhi — cab, verified stay, sightseeing & 24/7 support. Zero surprise charges.</p>
+  </div>
+  <div class="packages-grid">
+    <div class="pkg-card reveal-scale">
+      <div class="pkg-head">
+        <div class="pkg-type">Basic Plan</div>
+        <div class="pkg-name">Weekend Escape</div>
+        <div class="pkg-nights">3 Nights · 4 Days | Min 2 Persons</div>
+        <div class="pkg-price-row"><div class="pkg-price">₹6,500</div><div class="pkg-per">/person</div></div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-list">
+          <li><i class="fas fa-car"></i> Private cab Delhi → Chakrata → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights budget hotel / homestay</li>
+          <li><i class="fas fa-utensils"></i> Daily breakfast included</li>
+          <li><i class="fas fa-map-marked-alt"></i> Tiger Falls & Chilmiri sightseeing</li>
+          <li><i class="fas fa-route"></i> Detailed trip itinerary provided</li>
+          <li><i class="fas fa-headset"></i> 24/7 on-trip support</li>
+        </ul>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Basic%20Package%206500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+      </div>
+    </div>
+    <div class="pkg-card featured reveal-scale">
+      <div class="pkg-badge-tag">Most Booked</div>
+      <div class="pkg-head">
+        <div class="pkg-type">Standard Plan</div>
+        <div class="pkg-name">Valley Explorer</div>
+        <div class="pkg-nights">3 Nights · 4 Days | Solo to Group</div>
+        <div class="pkg-price-row"><div class="pkg-price">₹7,500</div><div class="pkg-per">/person</div></div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-list">
+          <li><i class="fas fa-car"></i> Private cab Delhi → Chakrata → Mundali → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights mid-range hotel / mountain-view cottage</li>
+          <li><i class="fas fa-utensils"></i> Breakfast + dinner daily</li>
+          <li><i class="fas fa-map-marked-alt"></i> Tiger Falls, Deoban, Mundali, Kanasar</li>
+          <li><i class="fas fa-hiking"></i> Local trekking guide for forest trail</li>
+          <li><i class="fas fa-user-tie"></i> Dedicated trip manager + 24/7 support</li>
+        </ul>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Standard%20Package%207500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Book This Package</a>
+      </div>
+    </div>
+    <div class="pkg-card reveal-scale">
+      <div class="pkg-head">
+        <div class="pkg-type">Premium Plan</div>
+        <div class="pkg-name">Luxury Retreat</div>
+        <div class="pkg-nights">3 Nights · 4 Days | Couple / Group</div>
+        <div class="pkg-price-row"><div class="pkg-price">₹9,500</div><div class="pkg-per">/person</div></div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-list">
+          <li><i class="fas fa-car"></i> Luxury cab — Innova Crysta or equivalent</li>
+          <li><i class="fas fa-bed"></i> Premium resort / boutique valley-view cottage</li>
+          <li><i class="fas fa-utensils"></i> All meals: breakfast, lunch & dinner</li>
+          <li><i class="fas fa-map-marked-alt"></i> Customised itinerary + private guide</li>
+          <li><i class="fas fa-fire"></i> Bonfire, room decoration & welcome hamper</li>
+          <li><i class="fas fa-camera"></i> Photography session + all entry tickets</li>
+        </ul>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Premium%20Package%209500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+  <div class="tc reveal">
+    <div class="section-label">Day-by-Day Plan</div>
+    <h2 class="section-title">3N 4D Chakrata Itinerary</h2>
+  </div>
+  <div class="itin-intro reveal">
+    <strong>Your Chakrata journey starts the moment we pick you up from Delhi.</strong> Over 4 days you'll wind through Dehradun valleys, stand under one of India's tallest waterfalls, trek through ancient deodar forests, catch a snow meadow at Mundali, and watch the Himalayas glow at sunrise from Deoban. We've planned every detail — all you need to do is show up.
+  </div>
+  <div class="itin-grid">
+    <div class="itin-card reveal-left">
+      <div class="itin-head">
+        <div class="itin-num">1</div>
+        <div><h3>Delhi → Dehradun → Chakrata</h3><p>Departure · Overnight Drive · Arrival</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Evening pickup from Delhi (8–10 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Overnight drive via Dehradun & Vikasnagar</li>
+        <li><i class="fas fa-circle-dot"></i> Breakfast stop en route</li>
+        <li><i class="fas fa-circle-dot"></i> Arrive Chakrata by morning (7–9 AM)</li>
+        <li><i class="fas fa-circle-dot"></i> Hotel check-in, freshen up & rest</li>
+        <li><i class="fas fa-circle-dot"></i> Evening walk to Chilmiri Neck viewpoint</li>
+      </ul></div></div>
+    </div>
+    <div class="itin-card reveal-right">
+      <div class="itin-head">
+        <div class="itin-num">2</div>
+        <div><h3>Tiger Falls + Kanasar Forest</h3><p>Waterfall Trek · Dense Deodar Forest</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Breakfast at hotel; start by 9 AM</li>
+        <li><i class="fas fa-circle-dot"></i> Drive to Tiger Falls — 312 ft waterfall trek</li>
+        <li><i class="fas fa-circle-dot"></i> Splash & photography at the base</li>
+        <li><i class="fas fa-circle-dot"></i> Lunch break at local dhaba</li>
+        <li><i class="fas fa-circle-dot"></i> Kanasar forest walk — ancient oak & deodar</li>
+        <li><i class="fas fa-circle-dot"></i> Bonfire & dinner at camp</li>
+      </ul></div></div>
+    </div>
+    <div class="itin-card reveal-left">
+      <div class="itin-head">
+        <div class="itin-num">3</div>
+        <div><h3>Deoban + Mundali Snow Point</h3><p>Himalayan Sunrise · Snow Meadows</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Early start (6 AM) — drive to Deoban (9,000 ft)</li>
+        <li><i class="fas fa-circle-dot"></i> Sunrise photography with Himalayan views</li>
+        <li><i class="fas fa-circle-dot"></i> Nature walk through Deoban plateau forests</li>
+        <li><i class="fas fa-circle-dot"></i> Drive to Mundali — snow point</li>
+        <li><i class="fas fa-circle-dot"></i> Snow play or meadow picnic by season</li>
+        <li><i class="fas fa-circle-dot"></i> Return to Chakrata; local market stroll</li>
+      </ul></div></div>
+    </div>
+    <div class="itin-card reveal-right">
+      <div class="itin-head">
+        <div class="itin-num">4</div>
+        <div><h3>Chakrata → Delhi Departure</h3><p>Check-out · Scenic Drive · Home</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Early breakfast & hotel check-out</li>
+        <li><i class="fas fa-circle-dot"></i> Quick stop at Ram Tal garden</li>
+        <li><i class="fas fa-circle-dot"></i> Drive back through Dehradun</li>
+        <li><i class="fas fa-circle-dot"></i> Optional Dehradun bakery stop</li>
+        <li><i class="fas fa-circle-dot"></i> Drop back at Delhi by evening (6–8 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Trip memories packed, hearts full 🏔️</li>
+      </ul></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-bg" id="gallery">
+  <div class="tc reveal">
+    <div class="section-label">Visual Journey</div>
+    <h2 class="section-title">Chakrata Gallery</h2>
+    <p class="section-desc">Glimpses from real Kafall trips — waterfalls, snowfields, sunrises & more.</p>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0d2318,#1b4d30)" onclick="openModal(0)">
+      <div class="gal-item-inner"><i class="fas fa-water" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Tiger Falls</span></div>
+      <div class="gal-overlay">Tiger Falls — 312 ft</div>
+    </div>
+    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)" onclick="openModal(1)">
+      <div class="gal-item-inner"><i class="fas fa-mountain" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Deoban Sunrise</span></div>
+      <div class="gal-overlay">Deoban — 9,000 ft Sunrise</div>
+    </div>
+    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0a1628,#1a3c5e)" onclick="openModal(2)">
+      <div class="gal-item-inner"><i class="fas fa-snowflake" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Mundali Snow</span></div>
+      <div class="gal-overlay">Mundali Snow Point</div>
+    </div>
+    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0d2318,#134024)" onclick="openModal(3)">
+      <div class="gal-item-inner"><i class="fas fa-tree" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Kanasar Forest</span></div>
+      <div class="gal-overlay">Kanasar Deodar Trail</div>
+    </div>
+    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)" onclick="openModal(4)">
+      <div class="gal-item-inner"><i class="fas fa-campground" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Chilmiri Sunset</span></div>
+      <div class="gal-overlay">Chilmiri Neck Sunset</div>
+    </div>
+    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#1a0a0a,#3a1010)" onclick="openModal(5)">
+      <div class="gal-item-inner"><i class="fas fa-fire" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Bonfire Night</span></div>
+      <div class="gal-overlay">Camp Bonfire Night</div>
+    </div>
+  </div>
+  <button class="gallery-btn reveal" onclick="openModal(0)"><i class="fas fa-images"></i> View All Photos (+12)</button>
+</section>
+
+<!-- Gallery Modal -->
+<div class="gal-modal" id="galModal">
+  <div class="gal-modal-inner">
+    <button class="gal-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <button class="gal-modal-nav gal-prev" onclick="prevPhoto()"><i class="fas fa-chevron-left"></i></button>
+    <button class="gal-modal-nav gal-next" onclick="nextPhoto()"><i class="fas fa-chevron-right"></i></button>
+    <div class="gal-modal-img" id="modalImg"><i class="fas fa-mountain" style="font-size:2.5rem;color:rgba(37,158,92,0.4)"></i><span>Add your Chakrata photos here</span></div>
+    <div class="gal-modal-cap" id="modalCap">Tiger Falls — Chakrata's crown jewel</div>
   </div>
 </div>
 
-<!-- ===== FLEET SECTION ===== -->
-<section class="fleet-section">
-  <div class="section-title">
-    <h2>Our Royal Fleet</h2>
-    <div class="title-divider"><span class="lotus-icon">❁</span></div>
-    <p>All vehicles are fully air-conditioned, GPS-equipped & sanitized for your comfort</p>
+<!-- HOTELS -->
+<section id="hotels">
+  <div class="tc reveal">
+    <div class="section-label">Where You'll Stay</div>
+    <h2 class="section-title">Hotels in Chakrata</h2>
+    <p class="section-desc">Kafall-verified stays for every budget — guesthouses to premium mountain-view cottages.</p>
   </div>
-
-  <div class="fleet-grid">
-
-    <!-- 5 Seater -->
-    <div class="fleet-card" data-scroll>
-      <div class="fleet-card-header">
-        <span class="fleet-icon"></span>
-        <div class="fleet-name">Comfort Sedan</div>
-        <div class="fleet-capacity">5 Seater • Economy</div>
-      </div>
-      <div class="fleet-body">
-        <div class="fleet-price-row">
-          <div class="price-inr">₹3,500</div>
-          <div class="price-usd">≈ $42 USD</div>
-          <div class="price-label">per day</div>
-        </div>
-        <ul class="fleet-features">
-          <li>Swift Dzire / Toyota Etios</li>
-          <li>Full AC & Music System</li>
-          <li>Experienced Licensed Driver</li>
-          <li>Fuel Included</li>
-          <li>Free City Pick-up & Drop</li>
-          <li>24×7 Customer Support</li>
-        </ul>
-        <button class="fleet-cta" onclick="scrollToForm('5-Seater Sedan')">Book This Vehicle</button>
-      </div>
+  <div class="hotels-grid">
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0d2318,#1b4d30)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹1,500/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Budget Guesthouse</div><div class="hotel-type">Homestay · Chakrata Town</div><div class="hotel-tags"><span class="hotel-tag">WiFi</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Budget+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
-
-    <!-- 7 Seater -->
-    <div class="fleet-card" data-scroll>
-      <div class="fleet-card-header">
-        <span class="fleet-icon"></span>
-        <div class="fleet-name">Premium SUV / MUV</div>
-        <div class="fleet-capacity">7 Seater • Premium</div>
-      </div>
-      <div class="fleet-body">
-        <div class="fleet-price-row">
-          <div class="price-inr">₹4,500</div>
-          <div class="price-usd">≈ $54 USD</div>
-          <div class="price-label">per day</div>
-        </div>
-        <ul class="fleet-features">
-          <li>Innova Crysta / Ertiga</li>
-          <li>Full AC & Entertainment</li>
-          <li>English Speaking Driver</li>
-          <li>Fuel Included</li>
-          <li>Luggage Space for 5+ Bags</li>
-          <li>24×7 Customer Support</li>
-        </ul>
-        <button class="fleet-cta" onclick="scrollToForm('7-Seater SUV')">Book This Vehicle</button>
-      </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,000/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Standard Hotel</div><div class="hotel-type">Standard Rooms · Market Area</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Opt.</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Standard+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
-
-    <!-- Tempo Traveller -->
-    <div class="fleet-card" data-scroll>
-      <div class="fleet-card-header">
-        <span class="fleet-icon"></span>
-        <div class="fleet-name">Tempo Traveller</div>
-        <div class="fleet-capacity">12-15 Seater • Group</div>
-      </div>
-      <div class="fleet-body">
-        <div class="fleet-price-row">
-          <div class="price-inr">₹9,500</div>
-          <div class="price-usd">≈ $114 USD</div>
-          <div class="price-label">per day</div>
-        </div>
-        <ul class="fleet-features">
-          <li>Force Tempo Traveller</li>
-          <li>Push-Back Recliner Seats</li>
-          <li>Full AC & Muzak System</li>
-          <li>Ideal for Group / Family Tours</li>
-          <li>Fuel Included</li>
-          <li>24×7 Customer Support</li>
-        </ul>
-        <button class="fleet-cta" onclick="scrollToForm('Tempo Traveller')">Book This Vehicle</button>
-      </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0a1e30,#1a3c5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,500/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Family Hotel</div><div class="hotel-type">Mid-Range · Mountain View</div><div class="hotel-tags"><span class="hotel-tag">Mountain View</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Family Rooms</span></div><a href="https://wa.me/919810966202?text=Family+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
-
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1e0a2e,#3a1a5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,000/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Forest Cottage</div><div class="hotel-type">Cottage · Valley Views</div><div class="hotel-tags"><span class="hotel-tag">Valley View</span><span class="hotel-tag">Bonfire</span><span class="hotel-tag">Cottage Stay</span></div><a href="https://wa.me/919810966202?text=Cottage+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,500/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Boutique Resort</div><div class="hotel-type">Resort · Panoramic Views</div><div class="hotel-tags"><span class="hotel-tag">Panoramic View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Lawn Seating</span></div><a href="https://wa.me/919810966202?text=Resort+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a1a0a,#3a3a10)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹4,000+/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Luxury Mountain Stay</div><div class="hotel-type">Premium Resort · Concierge</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Premium Décor</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Luxury+resort+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
   </div>
 </section>
 
-<!-- ===== BOOKING FORM ===== -->
-<section class="booking-section" id="booking-form">
-  <div class="section-title">
-    <h2>Reserve Your Ride</h2>
-    <div class="title-divider"><span class="lotus-icon">❁</span></div>
-    <p>Fill in your details — confirmation within 2 hours</p>
-  </div>
-
-  <div class="booking-inner">
-
-    <!-- KATHPUTLI PUPPET SIDE -->
-    <div class="puppet-side">
-      <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <style>
-            @keyframes sway { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(4deg)} }
-            @keyframes swayR { 0%,100%{transform:rotate(3deg)} 50%{transform:rotate(-5deg)} }
-            @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
-            @keyframes armL { 0%,100%{transform:rotate(-10deg)} 50%{transform:rotate(10deg)} }
-            @keyframes armR { 0%,100%{transform:rotate(10deg)} 50%{transform:rotate(-10deg)} }
-            @keyframes legL { 0%,100%{transform:rotate(-8deg)} 50%{transform:rotate(12deg)} }
-            @keyframes legR { 0%,100%{transform:rotate(8deg)} 50%{transform:rotate(-12deg)} }
-            @keyframes stringPulse { 0%,100%{opacity:0.5} 50%{opacity:0.9} }
-          </style>
-        </defs>
-
-        <!-- STRINGS from top -->
-        <g style="animation:stringPulse 2s ease-in-out infinite">
-          <line x1="90" y1="30" x2="118" y2="110" stroke="#D4A017" stroke-width="0.8" stroke-dasharray="3,3"/>
-          <line x1="140" y1="25" x2="160" y2="108" stroke="#D4A017" stroke-width="0.8" stroke-dasharray="3,3"/>
-          <line x1="190" y1="25" x2="163" y2="108" stroke="#D4A017" stroke-width="0.8" stroke-dasharray="3,3"/>
-          <line x1="240" y1="30" x2="205" y2="110" stroke="#D4A017" stroke-width="0.8" stroke-dasharray="3,3"/>
-          <!-- leg strings -->
-          <line x1="125" y1="28" x2="148" y2="320" stroke="#D4A017" stroke-width="0.6" stroke-dasharray="2,4" opacity="0.4"/>
-          <line x1="210" y1="28" x2="173" y2="320" stroke="#D4A017" stroke-width="0.6" stroke-dasharray="2,4" opacity="0.4"/>
-        </g>
-
-        <!-- CROSSBAR (puppet controller) -->
-        <rect x="68" y="22" width="188" height="8" rx="4" fill="#8B4513"/>
-        <rect x="120" y="14" width="8" height="16" rx="2" fill="#6B3410"/>
-        <rect x="192" y="14" width="8" height="16" rx="2" fill="#6B3410"/>
-        <!-- decorative gold knobs -->
-        <circle cx="72" cy="26" r="5" fill="#D4A017"/>
-        <circle cx="252" cy="26" r="5" fill="#D4A017"/>
-        <circle cx="160" cy="22" r="4" fill="#E8651A"/>
-
-        <!-- WHOLE PUPPET (bobbing) -->
-        <g style="transform-origin:160px 110px; animation:bob 2.4s ease-in-out infinite">
-
-          <!-- HEAD -->
-          <g style="transform-origin:160px 130px">
-            <!-- Crown / Pagdi -->
-            <ellipse cx="160" cy="112" rx="26" ry="10" fill="#8B1A1A"/>
-            <rect x="138" y="100" width="44" height="14" rx="3" fill="#8B1A1A"/>
-            <!-- Pagdi fan -->
-            <ellipse cx="160" cy="100" rx="22" ry="8" fill="#E8651A"/>
-            <!-- Pagdi center jewel -->
-            <ellipse cx="160" cy="100" rx="10" ry="4" fill="#D4A017"/>
-            <circle cx="160" cy="100" r="4" fill="#F5D060"/>
-            <!-- Pagdi feather -->
-            <path d="M182 96 Q196 80 194 68 Q188 80 183 94" fill="#E8651A" opacity="0.9"/>
-            <path d="M182 94 Q198 74 200 60 Q190 76 183 92" fill="#D4A017" opacity="0.7"/>
-
-            <!-- Face -->
-            <ellipse cx="160" cy="132" rx="24" ry="26" fill="#D4956A"/>
-            <!-- Moustache -->
-            <path d="M148 140 Q155 136 160 139 Q165 136 172 140 Q165 144 160 141 Q155 144 148 140Z" fill="#3D1A0A"/>
-            <!-- Eyes -->
-            <ellipse cx="151" cy="128" rx="5" ry="5.5" fill="white"/>
-            <circle cx="152" cy="129" r="3" fill="#1A0A00"/>
-            <circle cx="153" cy="128" r="1" fill="white"/>
-            <ellipse cx="169" cy="128" rx="5" ry="5.5" fill="white"/>
-            <circle cx="170" cy="129" r="3" fill="#1A0A00"/>
-            <circle cx="171" cy="128" r="1" fill="white"/>
-            <!-- Eyebrows -->
-            <path d="M147 122 Q151 119 156 121" stroke="#3D1A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M164 121 Q168 119 173 122" stroke="#3D1A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <!-- Nose -->
-            <ellipse cx="160" cy="134" rx="4" ry="3" fill="#C4825A"/>
-            <!-- Earrings -->
-            <circle cx="136" cy="132" r="4" fill="#D4A017"/>
-            <circle cx="184" cy="132" r="4" fill="#D4A017"/>
-            <circle cx="136" cy="139" r="3" fill="#E8651A"/>
-            <circle cx="184" cy="139" r="3" fill="#E8651A"/>
-          </g>
-
-          <!-- NECK -->
-          <rect x="154" y="155" width="12" height="12" rx="2" fill="#C4825A"/>
-
-          <!-- BODY (angarkha / kurta) -->
-          <g>
-            <!-- Main body -->
-            <path d="M125 167 Q118 175 116 230 L120 270 L200 270 L204 230 Q202 175 195 167 Q180 160 160 160 Q140 160 125 167Z" fill="#8B1A1A"/>
-            <!-- Kurta collar V -->
-            <path d="M148 167 L160 195 L172 167" fill="#6B0F1A" stroke="#D4A017" stroke-width="1"/>
-            <!-- Kurta border (gold hem) -->
-            <path d="M116 230 L120 270 L200 270 L204 230" fill="none" stroke="#D4A017" stroke-width="2"/>
-            <!-- Mirror work dots on kurta -->
-            <circle cx="140" cy="190" r="3" fill="#D4A017" opacity="0.8"/>
-            <circle cx="180" cy="190" r="3" fill="#D4A017" opacity="0.8"/>
-            <circle cx="145" cy="210" r="2.5" fill="#F5D060" opacity="0.7"/>
-            <circle cx="175" cy="210" r="2.5" fill="#F5D060" opacity="0.7"/>
-            <circle cx="160" cy="220" r="3" fill="#D4A017" opacity="0.8"/>
-            <!-- Patka (sash) -->
-            <path d="M124 215 Q118 220 115 235 Q120 230 125 225Z" fill="#E8651A"/>
-            <path d="M196 215 Q202 220 205 235 Q200 230 195 225Z" fill="#E8651A"/>
-          </g>
-
-          <!-- LEFT ARM -->
-          <g style="transform-origin:125px 175px; animation:armL 2.4s ease-in-out infinite">
-            <rect x="100" y="170" width="30" height="10" rx="5" fill="#8B1A1A" transform="rotate(-20,125,175)"/>
-            <!-- lower arm -->
-            <rect x="82" y="188" width="28" height="9" rx="4" fill="#D4956A" transform="rotate(-30,110,192)"/>
-            <!-- Hand -->
-            <ellipse cx="80" cy="206" rx="9" ry="7" fill="#D4956A"/>
-            <!-- Bangles -->
-            <ellipse cx="90" cy="198" rx="6" ry="4" fill="none" stroke="#D4A017" stroke-width="2" transform="rotate(-30,90,198)"/>
-            <ellipse cx="88" cy="202" rx="6" ry="4" fill="none" stroke="#E8651A" stroke-width="1.5" transform="rotate(-30,88,202)"/>
-          </g>
-
-          <!-- RIGHT ARM -->
-          <g style="transform-origin:195px 175px; animation:armR 2.4s ease-in-out infinite">
-            <rect x="195" y="170" width="30" height="10" rx="5" fill="#8B1A1A" transform="rotate(20,195,175)"/>
-            <!-- lower arm -->
-            <rect x="210" y="188" width="28" height="9" rx="4" fill="#D4956A" transform="rotate(30,210,192)"/>
-            <!-- Hand -->
-            <ellipse cx="243" cy="206" rx="9" ry="7" fill="#D4956A"/>
-            <!-- Bangles -->
-            <ellipse cx="232" cy="198" rx="6" ry="4" fill="none" stroke="#D4A017" stroke-width="2" transform="rotate(30,232,198)"/>
-            <ellipse cx="234" cy="202" rx="6" ry="4" fill="none" stroke="#E8651A" stroke-width="1.5" transform="rotate(30,234,202)"/>
-          </g>
-
-          <!-- DHOTI / LOWER BODY -->
-          <path d="M120 268 Q118 300 122 320 L152 320 L160 290 L168 320 L198 320 Q202 300 200 268Z" fill="#E8651A"/>
-          <!-- Dhoti border pattern -->
-          <path d="M120 268 Q118 300 122 320" fill="none" stroke="#D4A017" stroke-width="1.5"/>
-          <path d="M200 268 Q202 300 198 320" fill="none" stroke="#D4A017" stroke-width="1.5"/>
-          <!-- Dhoti mirror dots -->
-          <circle cx="138" cy="285" r="2" fill="#D4A017" opacity="0.9"/>
-          <circle cx="160" cy="280" r="2.5" fill="#D4A017" opacity="0.9"/>
-          <circle cx="182" cy="285" r="2" fill="#D4A017" opacity="0.9"/>
-
-          <!-- LEFT LEG -->
-          <g style="transform-origin:148px 320px; animation:legL 2.2s ease-in-out infinite">
-            <rect x="138" y="318" width="22" height="50" rx="8" fill="#D4956A"/>
-            <!-- Payal (anklet) -->
-            <ellipse cx="149" cy="362" rx="12" ry="5" fill="none" stroke="#D4A017" stroke-width="2"/>
-            <!-- Jutis (shoes) -->
-            <ellipse cx="149" cy="370" rx="14" ry="8" fill="#8B1A1A"/>
-            <path d="M135 368 Q149 362 163 368" fill="none" stroke="#D4A017" stroke-width="1.5"/>
-            <circle cx="163" cy="368" r="3" fill="#D4A017"/>
-          </g>
-
-          <!-- RIGHT LEG -->
-          <g style="transform-origin:172px 320px; animation:legR 2.2s ease-in-out infinite">
-            <rect x="162" y="318" width="22" height="50" rx="8" fill="#D4956A"/>
-            <!-- Payal -->
-            <ellipse cx="173" cy="362" rx="12" ry="5" fill="none" stroke="#D4A017" stroke-width="2"/>
-            <!-- Jutis -->
-            <ellipse cx="173" cy="370" rx="14" ry="8" fill="#8B1A1A"/>
-            <path d="M159 368 Q173 362 187 368" fill="none" stroke="#D4A017" stroke-width="1.5"/>
-            <circle cx="187" cy="368" r="3" fill="#D4A017"/>
-          </g>
-
-        </g><!-- end bob group -->
-
-        <!-- Ground shadow -->
-        <ellipse cx="160" cy="388" rx="45" ry="8" fill="rgba(0,0,0,0.25)"/>
-
-        <!-- Decorative border bottom -->
-        <rect x="40" y="405" width="240" height="2" rx="1" fill="#D4A017" opacity="0.3"/>
-
-        <!-- Caption text -->
-        <text x="160" y="425" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="13" fill="#F5D060" opacity="0.7">Kathputli — String Puppet</text>
-        <text x="160" y="444" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="11" fill="#C9A96E" opacity="0.6">Traditional Rajasthan Folk Art</text>
-      </svg>
+<!-- EXCLUSIONS + PACK -->
+<section class="info-bg" id="info">
+  <div class="info-grid">
+    <div class="info-box reveal-left">
+      <div class="info-box-title"><i class="fas fa-times-circle"></i> Exclusions</div>
+      <ul class="info-list">
+        <li><i class="fas fa-xmark excl-icon"></i> 5% GST extra on all packages</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Extra drinks, food, tea & snacks</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Tickets for sightseeing or extra activity outside camp area</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Travel insurance and other personal benefits</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Anything not mentioned in inclusions</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Cost escalation due to weather, road conditions, landslide etc.</li>
+      </ul>
     </div>
-
-    <!-- COMPACT FORM -->
-    <div class="booking-form-wrap">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="f-name" placeholder="John Smith" autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label>Phone / WhatsApp</label>
-          <input type="tel" id="f-phone" placeholder="+1 234 567 8900" autocomplete="tel">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" id="f-email" placeholder="john@example.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label>Nationality</label>
-          <input type="text" id="f-nationality" placeholder="USA / UK / Germany...">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Vehicle Type</label>
-          <select id="f-vehicle">
-            <option value="">— Select Vehicle —</option>
-            <option>5-Seater Sedan (₹3,500 / $42 per day)</option>
-            <option>7-Seater SUV (₹4,500 / $54 per day)</option>
-            <option>Tempo Traveller (₹9,500 / $114 per day)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Passengers</label>
-          <input type="number" id="f-pax" placeholder="e.g. 4" min="1" max="15">
-        </div>
-      </div>
-
-      <div class="dates-row">
-        <div class="form-group">
-          <label>Start Date</label>
-          <input type="date" id="f-from">
-        </div>
-        <div class="form-group">
-          <label>End Date</label>
-          <input type="date" id="f-to">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Pickup Location</label>
-          <input type="text" id="f-pickup" placeholder="Jaipur Airport / Hotel...">
-        </div>
-        <div class="form-group">
-          <label>Destinations</label>
-          <input type="text" id="f-dest" placeholder="Jaisalmer, Udaipur...">
-        </div>
-      </div>
-
-      <button class="submit-btn" onclick="submitForm()">
-        ✦ &nbsp; Confirm My Royal Journey &nbsp; ✦
-      </button>
+    <div class="info-box reveal-right">
+      <div class="info-box-title"><i class="fas fa-backpack"></i> Things to Pack</div>
+      <ul class="info-list">
+        <li><i class="fas fa-check pack-icon"></i> Day backpack (20–30 ltr.)</li>
+        <li><i class="fas fa-check pack-icon"></i> Sunscreen (SPF 40+) & lip balm</li>
+        <li><i class="fas fa-check pack-icon"></i> Floaters or sandals + outdoor shoes</li>
+        <li><i class="fas fa-check pack-icon"></i> Water bottle 1 Ltr.</li>
+        <li><i class="fas fa-check pack-icon"></i> 1 Down jacket / main jacket</li>
+        <li><i class="fas fa-check pack-icon"></i> Toiletry bag & personal medical kit</li>
+        <li><i class="fas fa-check pack-icon"></i> 3 quick-dry tees + 3 pair of cotton socks</li>
+        <li><i class="fas fa-check pack-icon"></i> Mobile charger / power bank</li>
+        <li><i class="fas fa-check pack-icon"></i> Cold cream, sanitizer & quick-dry towel</li>
+        <li><i class="fas fa-check pack-icon"></i> Camera, sun cap & sunglasses</li>
+        <li><i class="fas fa-check pack-icon"></i> Travel laundry bag & all documents</li>
+      </ul>
     </div>
-
   </div>
 </section>
 
-
-<!-- ===== DESTINATIONS ===== -->
-<section class="destinations-section">
-  <div class="section-title">
-    <h2>Iconic Destinations</h2>
-    <div class="title-divider"><span class="lotus-icon">❁</span></div>
-    <p>Curated stops that define the soul of Rajasthan</p>
+<!-- FAQ -->
+<section id="faq">
+  <div class="tc reveal">
+    <div class="section-label">Got Questions?</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
   </div>
-
-  <div class="dest-grid">
-
-    <div class="dest-card" data-scroll>
-      <div class="dest-img">
-        <img src="/images/jaipur.jpg" alt="Amber Fort Jaipur" loading="lazy">
-        <div class="dest-overlay"></div>
-        <span class="dest-tag">Pink City</span>
-      </div>
-      <div class="dest-body">
-        <div class="dest-name">Jaipur</div>
-        <p class="dest-desc">The Pink City mesmerizes with its amber-hued forts, ornate havelis, and bustling bazaars alive with handcrafted jewelry and block-printed fabrics.</p>
-        <div class="dest-info">
-          <span> Amber Fort</span>
-          <span> Hawa Mahal</span>
-          <span> Johari Bazaar</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dest-card" data-scroll>
-      <div class="dest-img">
-        <img src="/images/Jaisalmer.jpg" alt="Jaisalmer Fort" loading="lazy">
-        <div class="dest-overlay"></div>
-        <span class="dest-tag">Golden City</span>
-      </div>
-      <div class="dest-body">
-        <div class="dest-name">Jaisalmer</div>
-        <p class="dest-desc">Rising from the Thar Desert like a sandcastle dream, Jaisalmer's golden limestone fort and camel safaris offer the ultimate desert fantasy.</p>
-        <div class="dest-info">
-          <span> Camel Safari</span>
-          <span> Desert Camping</span>
-          <span> Sonar Qila</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dest-card" data-scroll>
-      <div class="dest-img">
-        <img src="/images/Udaipur.jpg" alt="Udaipur Lake Palace" loading="lazy">
-        <div class="dest-overlay"></div>
-        <span class="dest-tag">Lake City</span>
-      </div>
-      <div class="dest-body">
-        <div class="dest-name">Udaipur</div>
-        <p class="dest-desc">Floating palaces, shimmering lakes, and terraced hillside temples make Udaipur arguably India's most romantic city — a painter's paradise.</p>
-        <div class="dest-info">
-          <span> Lake Pichola</span>
-          <span> City Palace</span>
-          <span> Saheliyon Ki Bari</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dest-card" data-scroll>
-      <div class="dest-img">
-        <img src="/images/ranthambore.jpg" alt="Ranthambore Tiger" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bengal_Tiger_at_Ranthambhore_National_Park.jpg/1280px-Bengal_Tiger_at_Ranthambhore_National_Park.jpg'">
-        <div class="dest-overlay"></div>
-        <span class="dest-tag">Wildlife</span>
-      </div>
-      <div class="dest-body">
-        <div class="dest-name">Ranthambore</div>
-        <p class="dest-desc">Home to majestic Bengal tigers and ancient ruins, Ranthambore National Park delivers unforgettable wildlife encounters in a hauntingly beautiful landscape.</p>
-        <div class="dest-info">
-          <span> Tiger Safari</span>
-          <span> Jungle Drive</span>
-          <span> Fort Ruins</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dest-card" data-scroll>
-      <div class="dest-img">
-        <img src="/images/Bharatpur.jpg" alt="Bharatpur Bird Sanctuary" loading="lazy">
-        <div class="dest-overlay"></div>
-        <span class="dest-tag">Bird Sanctuary</span>
-      </div>
-      <div class="dest-body">
-        <div class="dest-name">Bharatpur</div>
-        <p class="dest-desc">Keoladeo National Park, a UNESCO World Heritage Site, hosts thousands of migratory birds — a paradise for nature lovers and birdwatchers worldwide.</p>
-        <div class="dest-info">
-          <span> Bird Watching</span>
-          <span> Cycle Tours</span>
-          <span> UNESCO Site</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dest-card" data-scroll>
-      <div class="dest-img">
-        <img src="/images/Jodhpur.jpg" alt="Mehrangarh Fort Jodhpur" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Jodhpur_blue_city.jpg/1280px-Jodhpur_blue_city.jpg'">
-        <div class="dest-overlay"></div>
-        <span class="dest-tag">Blue City</span>
-      </div>
-      <div class="dest-body">
-        <div class="dest-name">Jodhpur</div>
-        <p class="dest-desc">The Blue City's cobalt rooftops cascade beneath the colossal Mehrangarh Fort — an architectural titan that commands the skyline with regal authority.</p>
-        <div class="dest-info">
-          <span> Mehrangarh Fort</span>
-          <span> Blue Lanes</span>
-          <span> Umaid Bhawan</span>
-        </div>
-      </div>
-    </div>
-
+  <div class="faq-wrap">
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Where is Chakrata located? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chakrata is a serene hill station in Uttarakhand, located at an altitude of around 2,118 meters (7,000 ft) in the Jaunsar-Bawar hills of Dehradun district. It's known for its dense deodar forests, powerful waterfalls, and unobstructed Himalayan views.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How far is Chakrata from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chakrata is approximately 335 km from Delhi by road. The journey takes around 7–9 hours. Most guests prefer a Friday night departure to reach Chakrata by Saturday morning.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best way to reach Chakrata from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">By road: Delhi → Dehradun → Vikasnagar → Chakrata. Kafall arranges private cabs for a comfortable door-to-door journey. By train: Take a train to Dehradun and then a cab to Chakrata (~100 km).</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chakrata good for a weekend trip? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Absolutely! A 3N/4D trip gives you enough time to cover Tiger Falls, Deoban, Mundali, and Chilmiri without feeling rushed. Many travellers leave Friday night and return Monday evening.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is Chakrata famous for? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chakrata is most famous for Tiger Falls — one of India's tallest direct waterfalls at 312 feet. Also known for Deoban's panoramic Himalayan sunrise views, Mundali snow point, the ancient Jaunsar tribal culture, and rare tranquility.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chakrata suitable for couples and families? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! Chakrata offers cottages and resorts perfect for honeymoon couples, and its peaceful, safe environment is great for families with children. We have dedicated couple and family packages.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What kind of activities can I do in Chakrata? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Trekking through deodar forests, waterfall visits, birdwatching, nature photography, bonfire evenings, snowfall at Mundali (winter), sunrise viewpoints at Deoban, and exploring Jaunsar-Bawar culture.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is snowfall available in Chakrata? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! From December to February, Mundali receives heavy snowfall. Deoban and higher areas also see snow. A winter Chakrata trip is immersive and far less crowded than typical snow destinations.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Are there good stays in Chakrata? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes — from budget guesthouses (₹1,500/night) to premium mountain-view cottages and resorts (₹4,000+/night). Kafall partners only with verified, quality-checked properties.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chakrata crowded like Mussoorie? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Not at all! Chakrata remains beautifully uncrowded and uncommercialized. It's a cantonment area with restricted access, which keeps tourist numbers low and the environment pristine.</div></div>
   </div>
 </section>
 
-<!-- ===== CRAFT BAR ===== -->
-<!-- <div class="craft-bar">
-  <p> Rajasthan — Land of <span>Block Printing</span> · <span>Blue Pottery</span> · <span>Miniature Art</span> · <span>Bandhani Textiles</span> · <span>Meenakari Jewelry</span></p>
-  <p style="margin-top:8px;">© 2024 Royal Rajasthan Taxi Service &nbsp;|&nbsp; <span>Licensed & Insured</span> &nbsp;|&nbsp; Jaipur, Rajasthan, India</p>
-</div> -->
-
-<!-- ===== SUCCESS POPUP ===== -->
-<div class="success-popup" id="successPopup">
-  <div class="success-box">
-    <span class="s-icon"></span>
-    <h3>Booking Received!</h3>
-    <p>Thank you for choosing Royal Rajasthan. Our team will contact you within <strong>2 hours</strong> to confirm your royal journey.</p>
-    <p style="margin-top:10px; font-size:12px; color:#888;">Check your email & WhatsApp for confirmation details.</p>
-    <button class="success-close" onclick="closePopup()">Wonderful!</button>
+<!-- ROUTE BANNER -->
+<div class="route-bg" id="route">
+  <div class="route-inner reveal">
+    <div class="route-content">
+      <div class="route-title">🗺️ Delhi to Chakrata Route</div>
+      <div class="route-path">
+        <span class="route-stop">Delhi</span><span class="route-arr">→</span>
+        <span class="route-stop">Meerut</span><span class="route-arr">→</span>
+        <span class="route-stop">Muzaffarnagar</span><span class="route-arr">→</span>
+        <span class="route-stop">Dehradun</span><span class="route-arr">→</span>
+        <span class="route-stop">Vikasnagar</span><span class="route-arr">→</span>
+        <span class="route-stop">Chakrata</span>
+      </div>
+      <div class="route-stats">
+        <div class="route-stat"><strong>335 km</strong>Total Distance</div>
+        <div class="route-stat"><strong>7–9 hrs</strong>Drive Time</div>
+        <div class="route-stat"><strong>NH-58</strong>Main Highway</div>
+        <div class="route-stat"><strong>Night</strong>Best Departure</div>
+      </div>
+    </div>
+    <div class="route-img-box"><i class="fas fa-map-marked-alt"></i><span>Replace with your route map image</span></div>
   </div>
 </div>
 
-<footer class="footer">
-  <div class="footer-top">
-    <div class="wrap footer-grid">
-      <div class="ft-brand">
-        <div class="ft-logo">
-          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
-          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
-        </div>
-        <p>India’s trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
-        <div class="ft-socials">
-          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <!-- <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a> -->
-          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <!-- <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a> -->
-        </div>
-      </div>
+<!-- TESTIMONIALS -->
+<section class="testi-bg" id="testimonials">
+  <div class="tc reveal">
+    <div class="section-label">Real Experiences</div>
+    <h2 class="section-title">What Travellers Say</h2>
+    <p class="section-desc">500+ Chakrata trips — here's what our guests remember most.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tiger Falls was absolutely breathtaking. Kafall handled everything so smoothly — right from Delhi pickup to the hotel. Highly recommend!"</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rahul Sharma</div><div class="testi-loc">Delhi · Solo Trip</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our honeymoon at Chakrata was magical. Valley-view cottage, perfect bonfire, super responsive team. 10/10 experience."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Priya & Arjun</div><div class="testi-loc">Gurgaon · Honeymoon</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★☆</div><div class="testi-text">"Deoban at sunrise with snow-capped Himalayas in the backdrop — that moment alone was worth the entire trip. Great value!"</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Ankita Verma</div><div class="testi-loc">Noida · Group of 4</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"No crowds, pristine nature, and Kafall's local guide knew hidden spots. We found a waterfall not on any map!"</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Saurabh Tyagi</div><div class="testi-loc">Lucknow · Family</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"The kids loved the snow at Mundali! Everything arranged perfectly — cab, food, stays. Made a stressful trip feel like a real holiday."</div><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Meera Gupta</div><div class="testi-loc">Delhi · Family with Kids</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our office team trip was flawlessly organized. The Kanasar forest trail was a highlight everyone keeps talking about!"</div><div class="testi-author"><div class="testi-av">V</div><div><div class="testi-name">Vikram Singh</div><div class="testi-loc">Faridabad · Corporate</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"As a solo female traveller I was nervous, but Kafall's team was professional and caring throughout. Will travel again!"</div><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Nisha Rawat</div><div class="testi-loc">Meerut · Solo Female</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Three words: peaceful, beautiful, affordable. After Mussoorie, Chakrata felt like discovering a secret. Kafall's pricing is fully transparent."</div><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Kartik Mehta</div><div class="testi-loc">Jaipur · Couple</div></div></div></div>
+  </div>
+</section>
 
-      <div class="ft-col">
-        <h5>Uttarakhand</h5>
-        <ul>
-          <li><a href="/All Packages/kedarnath.html">Kedarnath</a></li>
-          <li><a href="/All Packages/rishikesh.html">Rishikesh & Haridwar</a></li>
-          <li><a href="/chardham.html">Char Dham Yatra</a></li>
-          <li><a href="/All Packages/munsyari.html">Munsyari</a></li>
-          <!-- <li><a href="#">Valley of Flowers</a></li>
-          <li><a href="#">Jim Corbett</a></li>
-          <li><a href="#">Chopta & Tungnath</a></li>
-          <li><a href="#">Mussoorie & Nainital</a></li> -->
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>temples</h5>
-        <ul>
-          <li><a href="/All Packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
-          <li><a href="/All Packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
-          <li><a href="/All Packages/Kartikswmi.html">Kartik Swami Temple</a></li>
-          <li><a href="/All Packages/jagheshwar.html">Jageshwar</a></li>
-          <li><a href="/All Packages/surkandadevi.html">Surkanda Devi Temple</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="/packages.html">All Packages</a></li>
-          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
-          <li><a href="/blog.html">Travel Blog</a></li>
-          <li><a href="/P&P.html">Privacy Policy</a></li>
-          <li><a href="/t&c.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Contact</h5>
-        <ul class="ft-contact">
-          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
-          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
-        </ul>
-      </div>
+<!-- FINAL CTA -->
+<div class="cta-bg">
+  <div class="reveal">
+    <h2>Ready for Your Chakrata Adventure?</h2>
+    <p>Chat with our Uttarakhand specialists. We'll plan every detail — so you just show up and soak it in.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chakrata%20Trip%20please" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="tel:+919810966202" class="btn-call"><i class="fas fa-phone"></i> Call Us Now</a>
     </div>
   </div>
-  <div class="footer-bar">
-    <div class="wrap footer-bar-inner">
-      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
-      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
-    </div>
-  </div>
+</div>
+
+<footer>
+  <p>© 2025 Kafall Travels · Uttarakhand Specialists · <a href="tel:+919810966202">+91 98109 66202</a></p>
 </footer>
-<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
-
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
 
 <script>
-  // ===== SCROLL ANIMATIONS =====
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 120);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+// Nav scroll shadow
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+});
 
-  document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
+// Hamburger
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 
-  // Stagger cards within same parent
-  document.querySelectorAll('.fleet-grid, .dest-grid').forEach(grid => {
-    const cards = grid.querySelectorAll('[data-scroll]');
-    const gridObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        cards.forEach((card, i) => {
-          setTimeout(() => card.classList.add('visible'), i * 150);
-        });
-        gridObserver.unobserve(entries[0].target);
-      }
-    }, { threshold: 0.05 });
-    gridObserver.observe(grid);
-  });
-
-  // ===== SCROLL TO FORM & PRE-FILL =====
-  function scrollToForm(vehicle) {
-    document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
-      const sel = document.getElementById('f-vehicle');
-      for (let o of sel.options) {
-        if (o.text.includes(vehicle.split('-')[0])) { sel.value = o.value; break; }
-      }
-    }, 600);
+// Hero particles
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<28;i++){
+    const s=document.createElement('span');
+    s.style.cssText=`left:${Math.random()*100}%;top:${60+Math.random()*40}%;--d:${3+Math.random()*4}s;--delay:${Math.random()*4}s;`;
+    c.appendChild(s);
   }
+})();
 
-  // ===== FORM VALIDATION & SUBMIT =====
-  function submitForm() {
-    const name = document.getElementById('f-name').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const vehicle = document.getElementById('f-vehicle').value;
-    const fromDate = document.getElementById('f-from').value;
-    const toDate = document.getElementById('f-to').value;
+// FAQ
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
 
-    if (!name || !phone || !email || !vehicle || !fromDate || !toDate) {
-      shakeMissing();
-      alert('Please fill all required fields (Name, Phone, Email, Vehicle, Dates).');
-      return;
+// Itinerary mobile accordion
+document.querySelectorAll('.itin-head').forEach(head=>{
+  head.addEventListener('click',()=>{
+    if(window.innerWidth<=768){
+      const card=head.closest('.itin-card');
+      const wasOpen=card.classList.contains('mob-open');
+      document.querySelectorAll('.itin-card').forEach(c=>c.classList.remove('mob-open'));
+      if(!wasOpen) card.classList.add('mob-open');
     }
-
-    document.getElementById('successPopup').classList.add('show');
-    resetForm();
-  }
-
-  function shakeMissing() {
-    const fields = ['f-name','f-phone','f-email','f-vehicle','f-from','f-to'];
-    fields.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el.value.trim()) {
-        el.style.borderColor = '#E8651A';
-        el.style.transition = 'none';
-        setTimeout(() => el.style.transition = '', 500);
-      }
-    });
-  }
-
-  function resetForm() {
-    ['f-name','f-phone','f-email','f-nationality','f-vehicle','f-pax','f-from','f-to','f-pickup','f-dest']
-      .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
-  }
-
-  function closePopup() {
-    document.getElementById('successPopup').classList.remove('show');
-  }
-
-  // Set min date for date inputs
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('f-from').min = today;
-  document.getElementById('f-to').min = today;
-  document.getElementById('f-from').addEventListener('change', function() {
-    document.getElementById('f-to').min = this.value;
   });
+});
 
-  // Exchange rate note
-  // 1 USD ≈ 83.5 INR (approx)
+// Gallery modal
+const caps=['Tiger Falls — 312 ft, one of India\'s tallest waterfalls','Deoban Sunrise — 9,000 ft Himalayan panorama','Mundali Snow Point — winter wonderland','Kanasar Deodar Forest — ancient trail','Chilmiri Neck — best sunset viewpoint','Camp Bonfire Night'];
+let curPhoto=0;
+function openModal(i){curPhoto=i;document.getElementById('galModal').classList.add('open');document.getElementById('modalCap').textContent=caps[i];}
+function closeModal(){document.getElementById('galModal').classList.remove('open');}
+function prevPhoto(){curPhoto=(curPhoto-1+caps.length)%caps.length;document.getElementById('modalCap').textContent=caps[curPhoto];}
+function nextPhoto(){curPhoto=(curPhoto+1)%caps.length;document.getElementById('modalCap').textContent=caps[curPhoto];}
+document.getElementById('galModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')prevPhoto();if(e.key==='ArrowRight')nextPhoto();});
+
+// Scroll reveal
+const obsOpts={threshold:0.1};
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*55);
+    }
+  });
+},obsOpts);
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
