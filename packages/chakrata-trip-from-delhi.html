@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chopta Tungnath Trip From Delhi | 3N 4D Package | Kafall Travels</title>
+<title>Chakrata Trip From Delhi | 3N 4D Package | Kafall Travels</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="/asstes/css/style.css"/>
+  <script src="/asstes/js/main.js" defer></script>
 <style>
 :root {
   --green: #259E5C;
@@ -59,7 +64,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
 }
 .hero-img-bg{
   position:absolute;inset:0;z-index:0;
-  background:url('https://images.unsplash.com/photo-1699214101660-df4e21fbabcd?w=1600&q=80&fit=crop') center center/cover no-repeat;
+  background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&fit=crop') center center/cover no-repeat;
   animation:heroPan 20s ease-in-out infinite alternate;
   transform-origin:center center;
 }
@@ -405,17 +410,36 @@ footer a{color:var(--green);text-decoration:none;}
 <body>
 
 <!-- NAV -->
-<nav id="mainNav">
-  <a href="https://kafall.com" class="nav-logo">Ka<span>fall</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="https://kafall.com/aboutus.html">About Us</a></li>
-    <li><a href="https://kafall.com/packages.html">Packages</a></li>
-    <li><a href="https://kafall.com/chardham.html">Char Dham</a></li>
-    <li><a href="https://kafall.com/weakendtrip.html">Weekend Trips</a></li>
-    <li><a href="https://kafall.com/blog.html">Blog</a></li>
-    <li><a href="https://wa.me/919810966202" class="nav-cta"><i class="fab fa-whatsapp"></i> Book Now</a></li>
-  </ul>
-  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/" class="nav-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nl-main">kafall</span>
+        <span class="nl-sub">presents</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/aboutus.html">About us</a></li>
+      <li><a href="/packages.html">Packages</a></li>
+      <li><a href="/chardham.html">Char Dham</a></li>
+      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/Taxi.html">Taxi Services</a></li>
+      <li><a href="/contactus.html">Contact us</a></li>
+    </ul>
+
+    <!-- Nav Right -->
+    <div class="nav-right">
+      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -425,14 +449,14 @@ footer a{color:var(--green);text-decoration:none;}
   <div class="hero-particles" id="particles"></div>
   <div class="hero-wave"></div>
   <div class="hero-content">
-    <div class="hero-badge"><i class="fas fa-mountain"></i> Mini Switzerland of Uttarakhand</div>
-    <h1>Chopta Tungnath Trip<br><span>From Delhi</span></h1>
-    <p class="hero-sub">460 km from Delhi · World's Highest Shiva Temple · Chandrashila Summit · Deoria Tal<br>Chopta awaits — meadows, snow peaks & the trek of a lifetime.</p>
+    <div class="hero-badge"><i class="fas fa-mountain"></i> Uttarakhand's Best-Kept Secret</div>
+    <h1>Chakrata Trip<br><span>From Delhi</span></h1>
+    <p class="hero-sub">335 km from Delhi · Deodar forests · Tiger Falls · Himalayan sunrises<br>Chakrata awaits — uncrowded, unspoilt, unforgettable.</p>
     <div class="hero-pills">
       <div class="hero-pill"><i class="fas fa-calendar-alt"></i> 3 Nights · 4 Days</div>
-      <div class="hero-pill"><i class="fas fa-route"></i> 460 km from Delhi</div>
-      <div class="hero-pill"><i class="fas fa-mountain"></i> 12,073 ft summit</div>
-      <div class="hero-pill"><i class="fas fa-star"></i> 4.8 Avg Rating</div>
+      <div class="hero-pill"><i class="fas fa-route"></i> 335 km from Delhi</div>
+      <div class="hero-pill"><i class="fas fa-mountain"></i> 7,000 ft altitude</div>
+      <div class="hero-pill"><i class="fas fa-star"></i> 4.7 Avg Rating</div>
     </div>
   </div>
 </section>
@@ -441,66 +465,66 @@ footer a{color:var(--green);text-decoration:none;}
 <section class="packages-bg" id="packages">
   <div class="tc reveal">
     <div class="section-label">Choose Your Plan</div>
-    <h2 class="section-title">Chopta Tungnath Tour Packages</h2>
-    <p class="section-desc">3 Nights · 4 Days from Delhi — cab, verified stay, Tungnath-Chandrashila trek guide, sightseeing & 24/7 support. Zero surprise charges.</p>
+    <h2 class="section-title">Chakrata Tour Packages</h2>
+    <p class="section-desc">3 Nights · 4 Days from Delhi — cab, verified stay, sightseeing & 24/7 support. Zero surprise charges.</p>
   </div>
   <div class="packages-grid">
     <div class="pkg-card reveal-scale">
       <div class="pkg-head">
         <div class="pkg-type">Basic Plan</div>
-        <div class="pkg-name">Trekker's Escape</div>
+        <div class="pkg-name">Weekend Escape</div>
         <div class="pkg-nights">3 Nights · 4 Days | Min 2 Persons</div>
-        <div class="pkg-price-row"><div class="pkg-price">₹7,499</div><div class="pkg-per">/person</div></div>
+        <div class="pkg-price-row"><div class="pkg-price">₹6,500</div><div class="pkg-per">/person</div></div>
       </div>
       <div class="pkg-body">
         <ul class="pkg-list">
-          <li><i class="fas fa-car"></i> Private cab Delhi → Chopta → Delhi</li>
-          <li><i class="fas fa-bed"></i> 3 nights budget homestay / camp</li>
+          <li><i class="fas fa-car"></i> Private cab Delhi → Chakrata → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights budget hotel / homestay</li>
           <li><i class="fas fa-utensils"></i> Daily breakfast included</li>
-          <li><i class="fas fa-mountain"></i> Tungnath Temple & Chandrashila trek</li>
+          <li><i class="fas fa-map-marked-alt"></i> Tiger Falls & Chilmiri sightseeing</li>
           <li><i class="fas fa-route"></i> Detailed trip itinerary provided</li>
           <li><i class="fas fa-headset"></i> 24/7 on-trip support</li>
         </ul>
-        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Basic%20Package%207499" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Basic%20Package%206500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       </div>
     </div>
     <div class="pkg-card featured reveal-scale">
       <div class="pkg-badge-tag">Most Booked</div>
       <div class="pkg-head">
         <div class="pkg-type">Standard Plan</div>
-        <div class="pkg-name">Summit Explorer</div>
+        <div class="pkg-name">Valley Explorer</div>
         <div class="pkg-nights">3 Nights · 4 Days | Solo to Group</div>
-        <div class="pkg-price-row"><div class="pkg-price">₹8,999</div><div class="pkg-per">/person</div></div>
+        <div class="pkg-price-row"><div class="pkg-price">₹7,500</div><div class="pkg-per">/person</div></div>
       </div>
       <div class="pkg-body">
         <ul class="pkg-list">
-          <li><i class="fas fa-car"></i> Private cab Delhi → Chopta → Deoria Tal → Delhi</li>
-          <li><i class="fas fa-bed"></i> 3 nights mid-range camp / mountain-view cottage</li>
+          <li><i class="fas fa-car"></i> Private cab Delhi → Chakrata → Mundali → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights mid-range hotel / mountain-view cottage</li>
           <li><i class="fas fa-utensils"></i> Breakfast + dinner daily</li>
-          <li><i class="fas fa-mountain"></i> Tungnath, Chandrashila & Deoria Tal trek</li>
-          <li><i class="fas fa-hiking"></i> Certified trekking guide included</li>
+          <li><i class="fas fa-map-marked-alt"></i> Tiger Falls, Deoban, Mundali, Kanasar</li>
+          <li><i class="fas fa-hiking"></i> Local trekking guide for forest trail</li>
           <li><i class="fas fa-user-tie"></i> Dedicated trip manager + 24/7 support</li>
         </ul>
-        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Standard%20Package%208999" class="pkg-btn"><i class="fab fa-whatsapp"></i> Book This Package</a>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Standard%20Package%207500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Book This Package</a>
       </div>
     </div>
     <div class="pkg-card reveal-scale">
       <div class="pkg-head">
         <div class="pkg-type">Premium Plan</div>
-        <div class="pkg-name">Himalayan Retreat</div>
+        <div class="pkg-name">Luxury Retreat</div>
         <div class="pkg-nights">3 Nights · 4 Days | Couple / Group</div>
-        <div class="pkg-price-row"><div class="pkg-price">₹11,499</div><div class="pkg-per">/person</div></div>
+        <div class="pkg-price-row"><div class="pkg-price">₹9,500</div><div class="pkg-per">/person</div></div>
       </div>
       <div class="pkg-body">
         <ul class="pkg-list">
           <li><i class="fas fa-car"></i> Luxury cab — Innova Crysta or equivalent</li>
-          <li><i class="fas fa-bed"></i> Premium camp / boutique valley-view resort</li>
+          <li><i class="fas fa-bed"></i> Premium resort / boutique valley-view cottage</li>
           <li><i class="fas fa-utensils"></i> All meals: breakfast, lunch & dinner</li>
-          <li><i class="fas fa-mountain"></i> Private guide + sunrise Chandrashila trek</li>
+          <li><i class="fas fa-map-marked-alt"></i> Customised itinerary + private guide</li>
           <li><i class="fas fa-fire"></i> Bonfire, room decoration & welcome hamper</li>
-          <li><i class="fas fa-camera"></i> Photography session + all entry permits</li>
+          <li><i class="fas fa-camera"></i> Photography session + all entry tickets</li>
         </ul>
-        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Premium%20Package%2011499" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Premium%20Package%209500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -510,69 +534,69 @@ footer a{color:var(--green);text-decoration:none;}
 <section id="itinerary">
   <div class="tc reveal">
     <div class="section-label">Day-by-Day Plan</div>
-    <h2 class="section-title">3N 4D Chopta Tungnath Itinerary</h2>
+    <h2 class="section-title">3N 4D Chakrata Itinerary</h2>
   </div>
   <div class="itin-intro reveal">
-    <strong>Your Chopta journey starts the moment we pick you up from Delhi.</strong> Over 4 days you'll drive through the Rishikesh-Rudraprayag valley, trek up to the world's highest Shiva temple, summit Chandrashila for a 360° Himalayan panorama, and walk beside the mirror-still waters of Deoria Tal. We've planned every detail — all you need to do is show up.
+    <strong>Your Chakrata journey starts the moment we pick you up from Delhi.</strong> Over 4 days you'll wind through Dehradun valleys, stand under one of India's tallest waterfalls, trek through ancient deodar forests, catch a snow meadow at Mundali, and watch the Himalayas glow at sunrise from Deoban. We've planned every detail — all you need to do is show up.
   </div>
   <div class="itin-grid">
     <div class="itin-card reveal-left">
       <div class="itin-head">
         <div class="itin-num">1</div>
-        <div><h3>Delhi → Rudraprayag → Chopta</h3><p>Departure · Overnight Drive · Arrival</p></div>
+        <div><h3>Delhi → Dehradun → Chakrata</h3><p>Departure · Overnight Drive · Arrival</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Evening pickup from Delhi (7–9 PM)</li>
-        <li><i class="fas fa-circle-dot"></i> Overnight drive via Rishikesh & Rudraprayag</li>
-        <li><i class="fas fa-circle-dot"></i> Breakfast stop en route with river views</li>
-        <li><i class="fas fa-circle-dot"></i> Arrive Chopta by afternoon (2–3 PM)</li>
-        <li><i class="fas fa-circle-dot"></i> Camp/homestay check-in, freshen up & rest</li>
-        <li><i class="fas fa-circle-dot"></i> Evening acclimatisation walk in the meadows</li>
+        <li><i class="fas fa-circle-dot"></i> Evening pickup from Delhi (8–10 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Overnight drive via Dehradun & Vikasnagar</li>
+        <li><i class="fas fa-circle-dot"></i> Breakfast stop en route</li>
+        <li><i class="fas fa-circle-dot"></i> Arrive Chakrata by morning (7–9 AM)</li>
+        <li><i class="fas fa-circle-dot"></i> Hotel check-in, freshen up & rest</li>
+        <li><i class="fas fa-circle-dot"></i> Evening walk to Chilmiri Neck viewpoint</li>
       </ul></div></div>
     </div>
     <div class="itin-card reveal-right">
       <div class="itin-head">
         <div class="itin-num">2</div>
-        <div><h3>Tungnath Temple + Chandrashila Summit</h3><p>Sunrise Trek · World's Highest Shiva Temple</p></div>
+        <div><h3>Tiger Falls + Kanasar Forest</h3><p>Waterfall Trek · Dense Deodar Forest</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Early start (4–5 AM) for the sunrise trek</li>
-        <li><i class="fas fa-circle-dot"></i> Trek to Tungnath Temple (3.5 km, 12,073 ft)</li>
-        <li><i class="fas fa-circle-dot"></i> Continue to Chandrashila summit (~1.5 km further)</li>
-        <li><i class="fas fa-circle-dot"></i> Sunrise views of Nanda Devi, Trishul & Kedarnath peaks</li>
-        <li><i class="fas fa-circle-dot"></i> Descend & lunch back at Chopta</li>
+        <li><i class="fas fa-circle-dot"></i> Breakfast at hotel; start by 9 AM</li>
+        <li><i class="fas fa-circle-dot"></i> Drive to Tiger Falls — 312 ft waterfall trek</li>
+        <li><i class="fas fa-circle-dot"></i> Splash & photography at the base</li>
+        <li><i class="fas fa-circle-dot"></i> Lunch break at local dhaba</li>
+        <li><i class="fas fa-circle-dot"></i> Kanasar forest walk — ancient oak & deodar</li>
         <li><i class="fas fa-circle-dot"></i> Bonfire & dinner at camp</li>
       </ul></div></div>
     </div>
     <div class="itin-card reveal-left">
       <div class="itin-head">
         <div class="itin-num">3</div>
-        <div><h3>Deoria Tal + Rohini Bugyal</h3><p>Mirror Lake Trek · Alpine Meadows</p></div>
+        <div><h3>Deoban + Mundali Snow Point</h3><p>Himalayan Sunrise · Snow Meadows</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Breakfast at camp; drive to Sari village</li>
-        <li><i class="fas fa-circle-dot"></i> Trek to Deoria Tal (2 km) — Chaukhamba reflection lake</li>
-        <li><i class="fas fa-circle-dot"></i> Lakeside photography & picnic lunch</li>
-        <li><i class="fas fa-circle-dot"></i> Visit Rohini Bugyal alpine meadows</li>
-        <li><i class="fas fa-circle-dot"></i> Rhododendron forest nature walk</li>
-        <li><i class="fas fa-circle-dot"></i> Return to Chopta; bonfire evening</li>
+        <li><i class="fas fa-circle-dot"></i> Early start (6 AM) — drive to Deoban (9,000 ft)</li>
+        <li><i class="fas fa-circle-dot"></i> Sunrise photography with Himalayan views</li>
+        <li><i class="fas fa-circle-dot"></i> Nature walk through Deoban plateau forests</li>
+        <li><i class="fas fa-circle-dot"></i> Drive to Mundali — snow point</li>
+        <li><i class="fas fa-circle-dot"></i> Snow play or meadow picnic by season</li>
+        <li><i class="fas fa-circle-dot"></i> Return to Chakrata; local market stroll</li>
       </ul></div></div>
     </div>
     <div class="itin-card reveal-right">
       <div class="itin-head">
         <div class="itin-num">4</div>
-        <div><h3>Chopta → Delhi Departure</h3><p>Check-out · Scenic Drive · Home</p></div>
+        <div><h3>Chakrata → Delhi Departure</h3><p>Check-out · Scenic Drive · Home</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Early breakfast & camp check-out</li>
-        <li><i class="fas fa-circle-dot"></i> Quick stop at Ukhimath viewpoint</li>
-        <li><i class="fas fa-circle-dot"></i> Drive back through Rudraprayag & Rishikesh</li>
-        <li><i class="fas fa-circle-dot"></i> Optional Rishikesh riverside stop</li>
-        <li><i class="fas fa-circle-dot"></i> Drop back at Delhi late evening (9–10 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Early breakfast & hotel check-out</li>
+        <li><i class="fas fa-circle-dot"></i> Quick stop at Ram Tal garden</li>
+        <li><i class="fas fa-circle-dot"></i> Drive back through Dehradun</li>
+        <li><i class="fas fa-circle-dot"></i> Optional Dehradun bakery stop</li>
+        <li><i class="fas fa-circle-dot"></i> Drop back at Delhi by evening (6–8 PM)</li>
         <li><i class="fas fa-circle-dot"></i> Trip memories packed, hearts full 🏔️</li>
       </ul></div></div>
     </div>
@@ -586,29 +610,29 @@ footer a{color:var(--green);text-decoration:none;}
 <section class="gallery-bg" id="gallery">
   <div class="tc reveal">
     <div class="section-label">Visual Journey</div>
-    <h2 class="section-title">Chopta Tungnath Gallery</h2>
-    <p class="section-desc">Glimpses from real Kafall trips — Himalayan summits, temples, meadows & more.</p>
+    <h2 class="section-title">Chakrata Gallery</h2>
+    <p class="section-desc">Glimpses from real Kafall trips — waterfalls, snowfields, sunrises & more.</p>
   </div>
   <div class="gallery-grid reveal">
     <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0d2318,#1b4d30)" onclick="openModal(0)">
-      <div class="gal-item-inner"><i class="fas fa-place-of-worship" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Tungnath Temple</span></div>
-      <div class="gal-overlay">Tungnath — Highest Shiva Temple</div>
+      <div class="gal-item-inner"><i class="fas fa-water" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Tiger Falls</span></div>
+      <div class="gal-overlay">Tiger Falls — 312 ft</div>
     </div>
     <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)" onclick="openModal(1)">
-      <div class="gal-item-inner"><i class="fas fa-mountain" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Chandrashila Sunrise</span></div>
-      <div class="gal-overlay">Chandrashila — 12,073 ft Sunrise</div>
+      <div class="gal-item-inner"><i class="fas fa-mountain" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Deoban Sunrise</span></div>
+      <div class="gal-overlay">Deoban — 9,000 ft Sunrise</div>
     </div>
     <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0a1628,#1a3c5e)" onclick="openModal(2)">
-      <div class="gal-item-inner"><i class="fas fa-water" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Deoria Tal</span></div>
-      <div class="gal-overlay">Deoria Tal — Mirror Lake</div>
+      <div class="gal-item-inner"><i class="fas fa-snowflake" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Mundali Snow</span></div>
+      <div class="gal-overlay">Mundali Snow Point</div>
     </div>
     <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0d2318,#134024)" onclick="openModal(3)">
-      <div class="gal-item-inner"><i class="fas fa-tree" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Rhododendron Forest</span></div>
-      <div class="gal-overlay">Chopta Rhododendron Trail</div>
+      <div class="gal-item-inner"><i class="fas fa-tree" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Kanasar Forest</span></div>
+      <div class="gal-overlay">Kanasar Deodar Trail</div>
     </div>
     <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)" onclick="openModal(4)">
-      <div class="gal-item-inner"><i class="fas fa-seedling" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Rohini Bugyal</span></div>
-      <div class="gal-overlay">Rohini Bugyal Meadows</div>
+      <div class="gal-item-inner"><i class="fas fa-campground" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Chilmiri Sunset</span></div>
+      <div class="gal-overlay">Chilmiri Neck Sunset</div>
     </div>
     <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#1a0a0a,#3a1010)" onclick="openModal(5)">
       <div class="gal-item-inner"><i class="fas fa-fire" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Bonfire Night</span></div>
@@ -624,8 +648,8 @@ footer a{color:var(--green);text-decoration:none;}
     <button class="gal-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
     <button class="gal-modal-nav gal-prev" onclick="prevPhoto()"><i class="fas fa-chevron-left"></i></button>
     <button class="gal-modal-nav gal-next" onclick="nextPhoto()"><i class="fas fa-chevron-right"></i></button>
-    <div class="gal-modal-img" id="modalImg"><i class="fas fa-mountain" style="font-size:2.5rem;color:rgba(37,158,92,0.4)"></i><span>Add your Chopta Tungnath photos here</span></div>
-    <div class="gal-modal-cap" id="modalCap">Tungnath Temple — Chopta's crown jewel</div>
+    <div class="gal-modal-img" id="modalImg"><i class="fas fa-mountain" style="font-size:2.5rem;color:rgba(37,158,92,0.4)"></i><span>Add your Chakrata photos here</span></div>
+    <div class="gal-modal-cap" id="modalCap">Tiger Falls — Chakrata's crown jewel</div>
   </div>
 </div>
 
@@ -633,33 +657,33 @@ footer a{color:var(--green);text-decoration:none;}
 <section id="hotels">
   <div class="tc reveal">
     <div class="section-label">Where You'll Stay</div>
-    <h2 class="section-title">Hotels & Camps in Chopta</h2>
-    <p class="section-desc">Kafall-verified stays for every budget — homestays to premium mountain-view camps.</p>
+    <h2 class="section-title">Hotels in Chakrata</h2>
+    <p class="section-desc">Kafall-verified stays for every budget — guesthouses to premium mountain-view cottages.</p>
   </div>
   <div class="hotels-grid">
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0d2318,#1b4d30)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹1,800/night</div></div>
-      <div class="hotel-body"><div class="hotel-name">Budget Homestay</div><div class="hotel-type">Homestay · Duggalbitta</div><div class="hotel-tags"><span class="hotel-tag">WiFi</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Budget+homestay+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0d2318,#1b4d30)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹1,500/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Budget Guesthouse</div><div class="hotel-type">Homestay · Chakrata Town</div><div class="hotel-tags"><span class="hotel-tag">WiFi</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Budget+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,300/night</div></div>
-      <div class="hotel-body"><div class="hotel-name">Standard Camp</div><div class="hotel-type">Swiss-Tent Camp · Meadow Edge</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Opt.</span><span class="hotel-tag">Bonfire</span></div><a href="https://wa.me/919810966202?text=Standard+camp+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,000/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Standard Hotel</div><div class="hotel-type">Standard Rooms · Market Area</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Opt.</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Standard+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0a1e30,#1a3c5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,900/night</div></div>
-      <div class="hotel-body"><div class="hotel-name">Family Guesthouse</div><div class="hotel-type">Mid-Range · Mountain View</div><div class="hotel-tags"><span class="hotel-tag">Mountain View</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Family Rooms</span></div><a href="https://wa.me/919810966202?text=Family+guesthouse+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0a1e30,#1a3c5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,500/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Family Hotel</div><div class="hotel-type">Mid-Range · Mountain View</div><div class="hotel-tags"><span class="hotel-tag">Mountain View</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Family Rooms</span></div><a href="https://wa.me/919810966202?text=Family+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1e0a2e,#3a1a5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,400/night</div></div>
-      <div class="hotel-body"><div class="hotel-name">Meadow-View Cottage</div><div class="hotel-type">Cottage · Bugyal Views</div><div class="hotel-tags"><span class="hotel-tag">Meadow View</span><span class="hotel-tag">Bonfire</span><span class="hotel-tag">Cottage Stay</span></div><a href="https://wa.me/919810966202?text=Cottage+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1e0a2e,#3a1a5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,000/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Forest Cottage</div><div class="hotel-type">Cottage · Valley Views</div><div class="hotel-tags"><span class="hotel-tag">Valley View</span><span class="hotel-tag">Bonfire</span><span class="hotel-tag">Cottage Stay</span></div><a href="https://wa.me/919810966202?text=Cottage+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹4,000/night</div></div>
-      <div class="hotel-body"><div class="hotel-name">Boutique Resort</div><div class="hotel-type">Resort · Panoramic Himalayan Views</div><div class="hotel-tags"><span class="hotel-tag">Panoramic View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Lawn Seating</span></div><a href="https://wa.me/919810966202?text=Resort+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,500/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Boutique Resort</div><div class="hotel-type">Resort · Panoramic Views</div><div class="hotel-tags"><span class="hotel-tag">Panoramic View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Lawn Seating</span></div><a href="https://wa.me/919810966202?text=Resort+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a1a0a,#3a3a10)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹4,800+/night</div></div>
-      <div class="hotel-body"><div class="hotel-name">Luxury Mountain Camp</div><div class="hotel-type">Premium Camp · Concierge</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Premium Décor</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Luxury+camp+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a1a0a,#3a3a10)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹4,000+/night</div></div>
+      <div class="hotel-body"><div class="hotel-name">Luxury Mountain Stay</div><div class="hotel-type">Premium Resort · Concierge</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Premium Décor</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Luxury+resort+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
   </div>
 </section>
@@ -682,17 +706,16 @@ footer a{color:var(--green);text-decoration:none;}
       <div class="info-box-title"><i class="fas fa-backpack"></i> Things to Pack</div>
       <ul class="info-list">
         <li><i class="fas fa-check pack-icon"></i> Day backpack (20–30 ltr.)</li>
-        <li><i class="fas fa-check pack-icon"></i> Sturdy trekking shoes with good grip</li>
         <li><i class="fas fa-check pack-icon"></i> Sunscreen (SPF 40+) & lip balm</li>
-        <li><i class="fas fa-check pack-icon"></i> Water bottle 1 Ltr. + energy bars/glucose</li>
-        <li><i class="fas fa-check pack-icon"></i> Heavy down jacket / windcheater (sub-zero at summit)</li>
-        <li><i class="fas fa-check pack-icon"></i> Thermal wear, gloves & woolen cap</li>
+        <li><i class="fas fa-check pack-icon"></i> Floaters or sandals + outdoor shoes</li>
+        <li><i class="fas fa-check pack-icon"></i> Water bottle 1 Ltr.</li>
+        <li><i class="fas fa-check pack-icon"></i> 1 Down jacket / main jacket</li>
         <li><i class="fas fa-check pack-icon"></i> Toiletry bag & personal medical kit</li>
-        <li><i class="fas fa-check pack-icon"></i> 3 quick-dry tees + 3 pair of woolen socks</li>
-        <li><i class="fas fa-check pack-icon"></i> Torch/headlamp for early sunrise trek</li>
-        <li><i class="fas fa-check pack-icon"></i> Trekking pole (recommended)</li>
+        <li><i class="fas fa-check pack-icon"></i> 3 quick-dry tees + 3 pair of cotton socks</li>
+        <li><i class="fas fa-check pack-icon"></i> Mobile charger / power bank</li>
+        <li><i class="fas fa-check pack-icon"></i> Cold cream, sanitizer & quick-dry towel</li>
         <li><i class="fas fa-check pack-icon"></i> Camera, sun cap & sunglasses</li>
-        <li><i class="fas fa-check pack-icon"></i> Government ID proof & all documents</li>
+        <li><i class="fas fa-check pack-icon"></i> Travel laundry bag & all documents</li>
       </ul>
     </div>
   </div>
@@ -705,16 +728,16 @@ footer a{color:var(--green);text-decoration:none;}
     <h2 class="section-title">Frequently Asked Questions</h2>
   </div>
   <div class="faq-wrap">
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Where is Chopta located? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is a high-altitude meadow in the Rudraprayag district of Uttarakhand, at around 2,680 meters (8,790 ft), often called the "Mini Switzerland of India." It's the base for the Tungnath Temple and Chandrashila trek.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How far is Chopta from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is approximately 460 km from Delhi by road via Rishikesh and Rudraprayag. The journey takes around 10–12 hours, so most guests prefer an overnight departure.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best way to reach Chopta from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">By road: Delhi → Rishikesh → Rudraprayag → Ukhimath → Chopta. Kafall arranges private cabs for a comfortable door-to-door journey. By train: Take a train to Rishikesh/Haridwar and then a cab to Chopta.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How difficult is the Tungnath-Chandrashila trek? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">The Tungnath trek (3.5 km) is easy-to-moderate on a paved path. The extension to Chandrashila summit (further ~1.5 km) is moderately steep. Reasonable fitness is enough; our guides pace the trek for all group members.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is Chopta famous for? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is most famous for Tungnath — the highest Shiva temple in the world — and the Chandrashila summit trek, which offers 360° views of Nanda Devi, Trishul, and Kedarnath peaks. Deoria Tal and its alpine meadows are also major draws.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chopta suitable for families and beginners? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">The Tungnath trek is family-friendly for reasonably fit members, including older kids. The Chandrashila summit push is better suited to adults comfortable with a moderate trek. We customise the itinerary for family groups.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What kind of activities can I do in Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Sunrise trekking to Chandrashila, Tungnath Temple darshan, the Deoria Tal lake trek, birdwatching, nature photography, bonfire evenings, and walks through rhododendron forests and high-altitude bugyals (meadows).</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is snowfall available in Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! From December to February, Chopta and the Tungnath trail receive heavy snowfall, making the trek more challenging but visually stunning. Spring (April–June) and autumn (Sept–Nov) are best for regular trekking.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Are there good stays in Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes — from budget homestays (₹1,800/night) to premium mountain-view camps and resorts (₹4,800+/night) in and around Chopta and Duggalbitta. Kafall partners only with verified, quality-checked properties.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Do I need any permit for the Tungnath trek? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">No special permit is needed for the Tungnath-Chandrashila trek, just a valid government ID. Kafall handles any local entry formalities as part of your package.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Where is Chakrata located? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chakrata is a serene hill station in Uttarakhand, located at an altitude of around 2,118 meters (7,000 ft) in the Jaunsar-Bawar hills of Dehradun district. It's known for its dense deodar forests, powerful waterfalls, and unobstructed Himalayan views.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How far is Chakrata from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chakrata is approximately 335 km from Delhi by road. The journey takes around 7–9 hours. Most guests prefer a Friday night departure to reach Chakrata by Saturday morning.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best way to reach Chakrata from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">By road: Delhi → Dehradun → Vikasnagar → Chakrata. Kafall arranges private cabs for a comfortable door-to-door journey. By train: Take a train to Dehradun and then a cab to Chakrata (~100 km).</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chakrata good for a weekend trip? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Absolutely! A 3N/4D trip gives you enough time to cover Tiger Falls, Deoban, Mundali, and Chilmiri without feeling rushed. Many travellers leave Friday night and return Monday evening.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is Chakrata famous for? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chakrata is most famous for Tiger Falls — one of India's tallest direct waterfalls at 312 feet. Also known for Deoban's panoramic Himalayan sunrise views, Mundali snow point, the ancient Jaunsar tribal culture, and rare tranquility.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chakrata suitable for couples and families? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! Chakrata offers cottages and resorts perfect for honeymoon couples, and its peaceful, safe environment is great for families with children. We have dedicated couple and family packages.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What kind of activities can I do in Chakrata? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Trekking through deodar forests, waterfall visits, birdwatching, nature photography, bonfire evenings, snowfall at Mundali (winter), sunrise viewpoints at Deoban, and exploring Jaunsar-Bawar culture.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is snowfall available in Chakrata? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! From December to February, Mundali receives heavy snowfall. Deoban and higher areas also see snow. A winter Chakrata trip is immersive and far less crowded than typical snow destinations.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Are there good stays in Chakrata? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes — from budget guesthouses (₹1,500/night) to premium mountain-view cottages and resorts (₹4,000+/night). Kafall partners only with verified, quality-checked properties.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chakrata crowded like Mussoorie? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Not at all! Chakrata remains beautifully uncrowded and uncommercialized. It's a cantonment area with restricted access, which keeps tourist numbers low and the environment pristine.</div></div>
   </div>
 </section>
 
@@ -722,19 +745,19 @@ footer a{color:var(--green);text-decoration:none;}
 <div class="route-bg" id="route">
   <div class="route-inner reveal">
     <div class="route-content">
-      <div class="route-title">🗺️ Delhi to Chopta Route</div>
+      <div class="route-title">🗺️ Delhi to Chakrata Route</div>
       <div class="route-path">
         <span class="route-stop">Delhi</span><span class="route-arr">→</span>
-        <span class="route-stop">Haridwar</span><span class="route-arr">→</span>
-        <span class="route-stop">Rishikesh</span><span class="route-arr">→</span>
-        <span class="route-stop">Rudraprayag</span><span class="route-arr">→</span>
-        <span class="route-stop">Ukhimath</span><span class="route-arr">→</span>
-        <span class="route-stop">Chopta</span>
+        <span class="route-stop">Meerut</span><span class="route-arr">→</span>
+        <span class="route-stop">Muzaffarnagar</span><span class="route-arr">→</span>
+        <span class="route-stop">Dehradun</span><span class="route-arr">→</span>
+        <span class="route-stop">Vikasnagar</span><span class="route-arr">→</span>
+        <span class="route-stop">Chakrata</span>
       </div>
       <div class="route-stats">
-        <div class="route-stat"><strong>460 km</strong>Total Distance</div>
-        <div class="route-stat"><strong>10–12 hrs</strong>Drive Time</div>
-        <div class="route-stat"><strong>NH-58/NH-107</strong>Main Highway</div>
+        <div class="route-stat"><strong>335 km</strong>Total Distance</div>
+        <div class="route-stat"><strong>7–9 hrs</strong>Drive Time</div>
+        <div class="route-stat"><strong>NH-58</strong>Main Highway</div>
         <div class="route-stat"><strong>Night</strong>Best Departure</div>
       </div>
     </div>
@@ -747,35 +770,114 @@ footer a{color:var(--green);text-decoration:none;}
   <div class="tc reveal">
     <div class="section-label">Real Experiences</div>
     <h2 class="section-title">What Travellers Say</h2>
-    <p class="section-desc">500+ Chopta Tungnath trips — here's what our guests remember most.</p>
+    <p class="section-desc">500+ Chakrata trips — here's what our guests remember most.</p>
   </div>
   <div class="testi-grid">
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Watching sunrise from Chandrashila with Nanda Devi glowing gold was surreal. Kafall's guide made the trek so much easier."</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rahul Sharma</div><div class="testi-loc">Delhi · Solo Trip</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our anniversary trip to Chopta was magical. Cozy camp, perfect bonfire, super responsive team. 10/10 experience."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Priya & Arjun</div><div class="testi-loc">Gurgaon · Couple</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★☆</div><div class="testi-text">"Deoria Tal's reflection of Chaukhamba peak was the highlight — that moment alone was worth the entire trip. Great value!"</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Ankita Verma</div><div class="testi-loc">Noida · Group of 4</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"No crowds, pristine meadows, and Kafall's local guide knew the best pace for our group. Tungnath temple was so peaceful."</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Saurabh Tyagi</div><div class="testi-loc">Lucknow · Family</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Doing the Tungnath trek with my teenage kids was unforgettable. Everything arranged perfectly — cab, food, camp stay."</div><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Meera Gupta</div><div class="testi-loc">Delhi · Family with Kids</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our office team trip was flawlessly organized. The Chandrashila summit push was a highlight everyone keeps talking about!"</div><div class="testi-author"><div class="testi-av">V</div><div><div class="testi-name">Vikram Singh</div><div class="testi-loc">Faridabad · Corporate</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"As a solo female traveller I was nervous about the trek, but Kafall's team was professional and caring throughout. Will travel again!"</div><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Nisha Rawat</div><div class="testi-loc">Meerut · Solo Female</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Three words: breathtaking, spiritual, affordable. Reaching the world's highest Shiva temple felt like discovering a secret. Kafall's pricing is fully transparent."</div><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Kartik Mehta</div><div class="testi-loc">Jaipur · Couple</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tiger Falls was absolutely breathtaking. Kafall handled everything so smoothly — right from Delhi pickup to the hotel. Highly recommend!"</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rahul Sharma</div><div class="testi-loc">Delhi · Solo Trip</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our honeymoon at Chakrata was magical. Valley-view cottage, perfect bonfire, super responsive team. 10/10 experience."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Priya & Arjun</div><div class="testi-loc">Gurgaon · Honeymoon</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★☆</div><div class="testi-text">"Deoban at sunrise with snow-capped Himalayas in the backdrop — that moment alone was worth the entire trip. Great value!"</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Ankita Verma</div><div class="testi-loc">Noida · Group of 4</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"No crowds, pristine nature, and Kafall's local guide knew hidden spots. We found a waterfall not on any map!"</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Saurabh Tyagi</div><div class="testi-loc">Lucknow · Family</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"The kids loved the snow at Mundali! Everything arranged perfectly — cab, food, stays. Made a stressful trip feel like a real holiday."</div><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Meera Gupta</div><div class="testi-loc">Delhi · Family with Kids</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our office team trip was flawlessly organized. The Kanasar forest trail was a highlight everyone keeps talking about!"</div><div class="testi-author"><div class="testi-av">V</div><div><div class="testi-name">Vikram Singh</div><div class="testi-loc">Faridabad · Corporate</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"As a solo female traveller I was nervous, but Kafall's team was professional and caring throughout. Will travel again!"</div><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Nisha Rawat</div><div class="testi-loc">Meerut · Solo Female</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Three words: peaceful, beautiful, affordable. After Mussoorie, Chakrata felt like discovering a secret. Kafall's pricing is fully transparent."</div><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Kartik Mehta</div><div class="testi-loc">Jaipur · Couple</div></div></div></div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <div class="cta-bg">
   <div class="reveal">
-    <h2>Ready for Your Chopta Tungnath Adventure?</h2>
-    <p>Chat with our Uttarakhand trek specialists. We'll plan every detail — so you just show up and climb.</p>
+    <h2>Ready for Your Chakrata Adventure?</h2>
+    <p>Chat with our Uttarakhand specialists. We'll plan every detail — so you just show up and soak it in.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chopta%20Tungnath%20Trip%20please" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chakrata%20Trip%20please" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
       <a href="tel:+919810966202" class="btn-call"><i class="fas fa-phone"></i> Call Us Now</a>
     </div>
   </div>
 </div>
 
-<footer>
-  <p>© 2025 Kafall Travels · Uttarakhand Specialists · <a href="tel:+919810966202">+91 98109 66202</a></p>
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="wrap footer-grid">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
+          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
+        </div>
+        <p>India’s trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
+        <div class="ft-socials">
+          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a> -->
+          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <!-- <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a> -->
+        </div>
+      </div>
+
+      <div class="ft-col">
+        <h5>Uttarakhand</h5>
+        <ul>
+          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
+          <li><a href="/packages/rishikesh.html">Rishikesh & Haridwar</a></li>
+          <li><a href="/chardham.html">Char Dham Yatra</a></li>
+          <li><a href="/packages/munsyari.html">Munsyari</a></li>
+          <!-- <li><a href="#">Valley of Flowers</a></li>
+          <li><a href="#">Jim Corbett</a></li>
+          <li><a href="#">Chopta & Tungnath</a></li>
+          <li><a href="#">Mussoorie & Nainital</a></li> -->
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>temples</h5>
+        <ul>
+          <li><a href="/packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
+          <li><a href="/packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
+          <li><a href="/packages/kartikswami.html">Kartik Swami Temple</a></li>
+          <li><a href="/packages/jagheshwar.html">Jageshwar</a></li>
+          <li><a href="/packages/surkandadevi.html">Surkanda Devi Temple</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="/aboutus.html">About Us</a></li>
+          <li><a href="/packages.html">All Packages</a></li>
+          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
+          <li><a href="/blog.html">Travel Blog</a></li>
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/t&c.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <ul class="ft-contact">
+          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
+          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="wrap footer-bar-inner">
+      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
+      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
+    </div>
+  </div>
 </footer>
+
+<!-- Scroll Top -->
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 // Nav scroll shadow
@@ -819,7 +921,7 @@ document.querySelectorAll('.itin-head').forEach(head=>{
 // Download Itinerary
 function downloadItinerary(){
   const days=document.querySelectorAll('.itin-card');
-  let content="CHOPTA TUNGNATH TRIP FROM DELHI — 3N/4D ITINERARY\nKafall Travels | +91 98109 66202\n";
+  let content="CHAKRATA TRIP FROM DELHI — 3N/4D ITINERARY\nKafall Travels | +91 98109 66202\n";
   content+="=".repeat(50)+"\n\n";
   days.forEach((card,idx)=>{
     const title=card.querySelector('.itin-head h3').textContent.trim();
@@ -834,13 +936,13 @@ function downloadItinerary(){
   const blob=new Blob([content],{type:'text/plain'});
   const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
-  a.href=url;a.download='Chopta-Tungnath-Itinerary-Kafall.txt';
+  a.href=url;a.download='Chakrata-Itinerary-Kafall.txt';
   document.body.appendChild(a);a.click();
   document.body.removeChild(a);URL.revokeObjectURL(url);
 }
 
 // Gallery modal
-const caps=['Tungnath Temple — the world\'s highest Shiva temple','Chandrashila Summit — 12,073 ft sunrise panorama','Deoria Tal — mirror lake reflecting Chaukhamba','Chopta Rhododendron Forest — ancient trail','Rohini Bugyal — high-altitude alpine meadows','Camp Bonfire Night'];
+const caps=['Tiger Falls — 312 ft, one of India\'s tallest waterfalls','Deoban Sunrise — 9,000 ft Himalayan panorama','Mundali Snow Point — winter wonderland','Kanasar Deodar Forest — ancient trail','Chilmiri Neck — best sunset viewpoint','Camp Bonfire Night'];
 let curPhoto=0;
 function openModal(i){curPhoto=i;document.getElementById('galModal').classList.add('open');document.getElementById('modalCap').textContent=caps[i];}
 function closeModal(){document.getElementById('galModal').classList.remove('open');}
