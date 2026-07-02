@@ -6,11 +6,6 @@
 <title>Chakrata Trip From Delhi | 3N 4D Package | Kafall Travels</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="/asstes/css/style.css"/>
-  <script src="/asstes/js/main.js" defer></script>
 <style>
 :root {
   --green: #259E5C;
@@ -33,7 +28,7 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;font-size:16px;}
 
-/* ── NAV ── */
+/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:999;
   background:rgba(255,255,255,0.97);
@@ -44,21 +39,21 @@ nav{
   transition:box-shadow 0.3s;
 }
 nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
-.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.45rem;color:var(--dark);text-decoration:none;}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--dark);text-decoration:none;}
 .nav-logo span{color:var(--green);}
-.nav-links{display:flex;gap:26px;list-style:none;}
-.nav-links a{color:var(--text-mid);text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.2s;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:var(--text-mid);text-decoration:none;font-size:0.98rem;font-weight:500;transition:color 0.2s;}
 .nav-links a:hover{color:var(--green);}
 .nav-cta{background:var(--green)!important;color:#fff!important;padding:8px 18px;border-radius:50px;font-weight:700!important;}
 .nav-cta:hover{background:var(--green-dark)!important;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:0.3s;}
 
-/*/* ── HERO ── */
+/* HERO */
 .hero{
-  min-height:42vh;
+  min-height:38vh;
   display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:100px 6% 24px;
+  text-align:center;padding:90px 6% 20px;
   position:relative;overflow:hidden;
   background:#000;
 }
@@ -92,69 +87,69 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
   position:absolute;bottom:0;left:0;right:0;height:60px;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,70 1080,10 1440,40 L1440,60 L0,60Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
 }
-.hero-content{position:relative;z-index:3;max-width:860px;}
+.hero-content{position:relative;z-index:3;max-width:800px;}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
   background:rgba(37,158,92,0.15);border:1px solid rgba(37,158,92,0.35);
   color:var(--green);padding:5px 16px;border-radius:50px;
-  font-size:0.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  margin-bottom:14px;
+  font-size:0.76rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:12px;
   animation:fadeDown 0.6s ease both;
 }
 .hero h1{
   font-family:'Montserrat',sans-serif;
-  font-size:clamp(2.3rem,5.2vw,3.9rem);
-  font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px;
+  font-size:clamp(1.9rem,4.3vw,3.1rem);
+  font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px;
   animation:fadeUp 0.7s 0.1s ease both;
 }
 .hero h1 span{color:var(--green);}
 .hero-sub{
-  font-size:1.05rem;color:rgba(255,255,255,0.72);
-  margin-bottom:22px;line-height:1.7;
+  font-size:0.94rem;color:rgba(255,255,255,0.72);
+  margin-bottom:18px;line-height:1.6;
   animation:fadeUp 0.7s 0.2s ease both;
 }
 .hero-pills{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
-  margin-bottom:26px;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:7px;
+  margin-bottom:20px;
   animation:fadeUp 0.7s 0.3s ease both;
 }
 .hero-pill{
   background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
-  color:rgba(255,255,255,0.85);padding:6px 14px;border-radius:50px;
-  font-size:0.88rem;font-weight:500;display:flex;align-items:center;gap:6px;
+  color:rgba(255,255,255,0.85);padding:5px 13px;border-radius:50px;
+  font-size:0.78rem;font-weight:500;display:flex;align-items:center;gap:6px;
 }
 .hero-pill i{color:var(--green);}
 .hero-btn{
   display:inline-flex;align-items:center;gap:10px;
   background:var(--green);color:#fff;
-  padding:13px 30px;border-radius:50px;
-  font-weight:700;font-size:1.05rem;text-decoration:none;
+  padding:11px 26px;border-radius:50px;
+  font-weight:700;font-size:0.94rem;text-decoration:none;
   box-shadow:0 4px 20px rgba(37,158,92,0.35);
   transition:transform 0.2s,box-shadow 0.2s,background 0.2s;
   animation:fadeUp 0.7s 0.4s ease both;
 }
 .hero-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,158,92,0.45);background:var(--green-dark);}
 
-/* ── STRIP ── */
+/* STRIP */
 .strip{
   background:var(--green);padding:14px 5%;
   display:flex;justify-content:center;gap:36px;flex-wrap:wrap;
 }
 .strip-item{display:flex;align-items:center;gap:8px;color:#fff;}
-.strip-item i{font-size:1.05rem;opacity:0.85;}
-.strip-item strong{font-size:1rem;font-weight:700;}
-.strip-item span{font-size:0.85rem;opacity:0.75;display:block;}
+.strip-item i{font-size:1rem;opacity:0.85;}
+.strip-item strong{font-size:1.05rem;font-weight:700;}
+.strip-item span{font-size:0.9rem;opacity:0.75;display:block;}
 
-/* ── SECTION COMMON ── */
-section{padding:80px 6%;}
+/* SECTION COMMON */
+section{padding:72px 6%;}
 .section-label{font-size:0.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
-.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:10px;line-height:1.25;}
-.section-desc{color:var(--text-light);font-size:1.05rem;line-height:1.8;max-width:1400px;margin-bottom:44px;}
-.tc{text-align:center;}.tc .section-desc{margin:0 auto 44px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.75rem,3.1vw,2.5rem);font-weight:800;color:var(--dark);margin-bottom:11px;line-height:1.2;}
+.section-desc{color:var(--text-light);font-size:0.98rem;line-height:1.7;max-width:1340px;margin-bottom:36px;}
+.tc{text-align:center;}.tc .section-desc{margin:0 auto 34px;}
 
-/* ── PACKAGES ── */
-.packages-bg{background:var(--grey);padding-top:24px;}
-.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto;}
+/* PACKAGES */
+.packages-bg{background:var(--grey);padding-top:18px;}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1340px;margin:0 auto;}
 .pkg-card{
   background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
   overflow:hidden;display:flex;flex-direction:column;
@@ -163,47 +158,46 @@ section{padding:80px 6%;}
 .pkg-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);}
 .pkg-card.featured{border:2px solid var(--green);}
 .pkg-badge-tag{
-  position:absolute;top:14px;right:14px;
+  position:absolute;top:12px;right:12px;
   background:var(--green);color:#fff;
-  font-size:0.68rem;font-weight:700;letter-spacing:1px;
-  padding:3px 11px;border-radius:50px;text-transform:uppercase;
+  font-size:0.62rem;font-weight:700;letter-spacing:1px;
+  padding:3px 10px;border-radius:50px;text-transform:uppercase;
 }
 .pkg-head{
   background:linear-gradient(135deg,var(--dark) 0%,#2d2d2d 100%);
-  padding:26px 26px 18px;color:#fff;
+  padding:22px 20px 16px;color:#fff;
 }
-.pkg-type{font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px;}
-.pkg-name{font-family:'Montserrat',sans-serif;font-size:1.45rem;font-weight:800;margin-bottom:4px;}
-.pkg-nights{font-size:0.9rem;color:rgba(255,255,255,0.6);}
-.pkg-price-row{display:flex;align-items:baseline;gap:6px;margin-top:12px;}
-.pkg-price{font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:800;color:var(--green);}
-.pkg-per{font-size:0.88rem;color:rgba(255,255,255,0.55);}
-.pkg-body{padding:22px 26px;flex:1;display:flex;flex-direction:column;}
-.pkg-list{list-style:none;margin-bottom:22px;flex:1;}
-.pkg-list li{display:flex;align-items:flex-start;gap:9px;padding:8px 0;font-size:0.97rem;color:var(--text-mid);border-bottom:1px solid #f0f0f0;}
+.pkg-type{font-size:0.76rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px;}
+.pkg-name{font-family:'Montserrat',sans-serif;font-size:1.35rem;font-weight:800;margin-bottom:5px;}
+.pkg-nights{font-size:0.84rem;color:rgba(255,255,255,0.6);}
+.pkg-price-row{display:flex;align-items:baseline;gap:6px;margin-top:9px;}
+.pkg-price{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:800;color:var(--green);}
+.pkg-per{font-size:0.86rem;color:rgba(255,255,255,0.55);}
+.pkg-body{padding:18px 20px;flex:1;display:flex;flex-direction:column;}
+.pkg-list{list-style:none;margin-bottom:16px;flex:1;}
+.pkg-list li{display:flex;align-items:flex-start;gap:9px;padding:8px 0;font-size:0.9rem;color:var(--text-mid);border-bottom:1px solid #f0f0f0;}
 .pkg-list li:last-child{border-bottom:none;}
-.pkg-list li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.8rem;}
+.pkg-list li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.74rem;}
 .pkg-btn{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;padding:13px;
+  width:100%;padding:12px;
   background:var(--green);color:#fff;
   border:none;border-radius:var(--radius-sm);
-  font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:0.94rem;
   cursor:pointer;text-decoration:none;
   transition:background 0.2s,transform 0.15s;
 }
 .pkg-btn:hover{background:var(--green-dark);transform:scale(1.02);}
 
-/* ── ITINERARY ── */
+/* ITINERARY */
 .itin-intro{
-  max-width:1400px;margin:0 auto 44px;
+  max-width:1340px;margin:0 auto 34px;
   background:var(--green-light);border-left:4px solid var(--green);
-  border-radius:var(--radius);padding:24px 28px;
-  font-size:1.02rem;line-height:1.85;color:var(--text-mid);
+  border-radius:var(--radius);padding:18px 22px;
+  font-size:0.96rem;line-height:1.75;color:var(--text-mid);
 }
-.itin-download-wrap{text-align:center;margin-top:32px;}
-/* Desktop: 2x2 grid, all open */
-.itin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1400px;margin:0 auto;}
+.itin-download-wrap{text-align:center;margin-top:26px;}
+.itin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1340px;margin:0 auto;}
 .itin-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;}
 .itin-head{
   background:linear-gradient(135deg,var(--dark),#2a2a2a);
@@ -211,152 +205,188 @@ section{padding:80px 6%;}
 }
 .itin-num{
   background:var(--green);color:#fff;
-  width:40px;height:40px;border-radius:50%;
+  width:42px;height:42px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.95rem;flex-shrink:0;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;flex-shrink:0;
 }
-.itin-head h3{font-size:1.05rem;font-weight:700;line-height:1.3;}
-.itin-head p{font-size:0.85rem;color:rgba(255,255,255,0.58);margin-top:3px;}
-.itin-chevron{margin-left:auto;color:rgba(255,255,255,0.5);font-size:0.85rem;display:none;transition:transform 0.3s;}
-/* Desktop body always visible */
+.itin-head h3{font-size:1.08rem;font-weight:700;line-height:1.3;}
+.itin-head p{font-size:0.88rem;color:rgba(255,255,255,0.58);margin-top:4px;}
+.itin-chevron{margin-left:auto;color:rgba(255,255,255,0.5);font-size:0.82rem;display:none;transition:transform 0.3s;}
 .itin-body{background:#fff;}
 .itin-body-inner{padding:16px 20px;}
 .itin-body ul{list-style:none;}
 .itin-body ul li{
-  display:flex;gap:9px;padding:6px 0;
+  display:flex;gap:10px;padding:9px 0;
   font-size:0.95rem;color:var(--text-mid);
   border-bottom:1px dashed #eee;line-height:1.55;
 }
 .itin-body ul li:last-child{border-bottom:none;}
-.itin-body ul li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.78rem;}
+.itin-body ul li i{color:var(--green);margin-top:4px;flex-shrink:0;font-size:0.9rem;}
 
-/* ── GALLERY ── */
+/* GALLERY */
 .gallery-bg{background:var(--grey);}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1400px;margin:0 auto 32px;}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;max-width:1340px;margin:0 auto 26px;
+}
 .gal-item{
   border-radius:var(--radius-sm);overflow:hidden;
   aspect-ratio:4/3;position:relative;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
   transition:transform 0.35s;
 }
 .gal-item:hover{transform:scale(1.03);}
-.gal-item-inner{
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:8px;
+.gal-item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.4s;
 }
+.gal-item:hover img{transform:scale(1.07);}
 .gal-overlay{
-  position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55),rgba(0,0,0,0.1));
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.60),rgba(0,0,0,0.05));
   opacity:0;transition:opacity 0.3s;
-  display:flex;align-items:flex-end;padding:12px;
+  display:flex;align-items:flex-end;padding:11px;
   color:#fff;font-size:0.78rem;font-weight:600;
 }
 .gal-item:hover .gal-overlay{opacity:1;}
 .gallery-btn{
   display:flex;align-items:center;justify-content:center;gap:8px;
   margin:0 auto;background:var(--dark);color:#fff;
-  border:none;border-radius:50px;padding:12px 32px;
-  font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;
+  border:none;border-radius:50px;padding:10px 26px;
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:0.94rem;cursor:pointer;
   transition:background 0.2s,transform 0.2s;
 }
 .gallery-btn:hover{background:var(--green);transform:scale(1.03);}
-/* Modal */
 .gal-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.94);align-items:center;justify-content:center;padding:20px;}
 .gal-modal.open{display:flex;}
-.gal-modal-inner{max-width:860px;width:100%;position:relative;}
-.gal-modal-close{position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.7rem;cursor:pointer;}
-.gal-modal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;width:42px;height:42px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.gal-modal-inner{max-width:800px;width:100%;position:relative;}
+.gal-modal-close{position:absolute;top:-42px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+.gal-modal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;width:42px;height:42px;border-radius:50%;font-size:0.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:2;}
 .gal-modal-nav:hover{background:var(--green);}
-.gal-prev{left:-52px;}.gal-next{right:-52px;}
-.gal-modal-img{width:100%;border-radius:12px;background:linear-gradient(135deg,#1a1a1a,#2d2d2d);height:380px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.35);flex-direction:column;gap:10px;}
-.gal-modal-cap{color:rgba(255,255,255,0.6);text-align:center;margin-top:12px;font-size:0.85rem;}
+.gal-prev{left:-54px;}.gal-next{right:-54px;}
+.gal-modal-img{width:100%;border-radius:12px;overflow:hidden;max-height:70vh;}
+.gal-modal-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;}
+.gal-modal-cap{color:rgba(255,255,255,0.65);text-align:center;margin-top:12px;font-size:0.86rem;}
 
-/* ── HOTELS ── */
-.hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1400px;margin:0 auto;}
+/* HOTELS */
+.hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1340px;margin:0 auto;}
 .hotel-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
 .hotel-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
-.hotel-img{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.hotel-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.4s;}
-.hotel-card:hover .hotel-img-bg{transform:scale(1.07);}
-.hotel-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.45));}
-.hotel-price-tag{position:relative;z-index:1;background:var(--green);color:#fff;padding:5px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.95rem;}
-.hotel-body{padding:16px 18px;}
-.hotel-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.08rem;margin-bottom:3px;color:var(--dark);}
-.hotel-type{font-size:0.87rem;color:var(--text-light);margin-bottom:9px;}
-.hotel-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
-.hotel-tag{background:var(--green-light);color:var(--green-dark);font-size:0.8rem;padding:3px 9px;border-radius:50px;font-weight:600;}
-.hotel-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:9px;background:var(--dark);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Poppins',sans-serif;font-size:0.92rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.hotel-img{
+  height:175px;position:relative;overflow:hidden;
+}
+.hotel-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.4s;
+}
+.hotel-card:hover .hotel-img img{transform:scale(1.07);}
+.hotel-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.40));}
+.hotel-price-tag{
+  position:absolute;bottom:9px;left:9px;z-index:1;
+  background:var(--green);color:#fff;
+  padding:4px 12px;border-radius:50px;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.9rem;
+}
+.hotel-body{padding:14px 16px;}
+.hotel-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.02rem;margin-bottom:4px;color:var(--dark);}
+.hotel-type{font-size:0.82rem;color:var(--text-light);margin-bottom:9px;}
+.hotel-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.hotel-tag{background:var(--green-light);color:var(--green-dark);font-size:0.76rem;padding:4px 10px;border-radius:50px;font-weight:600;}
+.hotel-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:8px;background:var(--dark);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Poppins',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s;}
 .hotel-btn:hover{background:var(--green);}
 
-/* ── INFO (Exclusions + Pack) ── */
+/* INFO */
 .info-bg{background:var(--grey);}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1400px;margin:0 auto;}
-.info-box{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;}
-.info-box-title{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:9px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--grey2);}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1340px;margin:0 auto;}
+.info-box{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 28px;}
+.info-box-title{font-family:'Montserrat',sans-serif;font-size:1.12rem;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:9px;margin-bottom:16px;padding-bottom:11px;border-bottom:2px solid var(--grey2);}
 .info-box-title i{color:var(--green);}
 .info-list{list-style:none;}
-.info-list li{display:flex;gap:9px;padding:8px 0;font-size:0.97rem;color:var(--text-mid);border-bottom:1px dashed #eee;line-height:1.6;}
+.info-list li{display:flex;gap:10px;padding:8px 0;font-size:0.92rem;color:var(--text-mid);border-bottom:1px dashed #eee;line-height:1.55;}
 .info-list li:last-child{border-bottom:none;}
-.excl-icon{color:#e74c3c;font-size:0.75rem;margin-top:4px;flex-shrink:0;}
-.pack-icon{color:var(--green);font-size:0.75rem;margin-top:4px;flex-shrink:0;}
+.excl-icon{color:#e74c3c;font-size:0.7rem;margin-top:4px;flex-shrink:0;}
+.pack-icon{color:var(--green);font-size:0.7rem;margin-top:4px;flex-shrink:0;}
 
-/* ── FAQ ── */
-.faq-wrap{max-width:900px;margin:0 auto;}
+/* FAQ */
+.faq-wrap{max-width:800px;margin:0 auto;}
 .faq-item{border-bottom:1px solid var(--grey2);}
-.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0;cursor:pointer;text-align:left;font-family:'Poppins',sans-serif;font-size:1.02rem;font-weight:600;color:var(--dark);transition:color 0.2s;}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;cursor:pointer;text-align:left;font-family:'Poppins',sans-serif;font-size:0.98rem;font-weight:600;color:var(--dark);transition:color 0.2s;}
 .faq-q:hover{color:var(--green);}
 .faq-icon{color:var(--green);transition:transform 0.3s;flex-shrink:0;}
 .faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;font-size:1rem;color:var(--text-light);line-height:1.8;}
-.faq-item.open .faq-a{max-height:220px;padding-bottom:16px;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;font-size:0.92rem;color:var(--text-light);line-height:1.72;}
+.faq-item.open .faq-a{max-height:220px;padding-bottom:13px;}
 
-/* ── ROUTE BANNER ── */
-.route-bg{background:var(--dark);padding:80px 6%;}
-.route-inner{max-width:1400px;margin:0 auto;background:linear-gradient(135deg,#1e1e1e,#2a2a2a);border-radius:var(--radius);padding:44px 52px;position:relative;overflow:hidden;display:flex;align-items:center;gap:48px;}
-.route-deco{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23259E5C' fill-opacity='0.06'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");}
-.route-content{position:relative;z-index:1;flex:1;}
-.route-title{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:18px;}
-.route-path{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:22px;}
-.route-stop{background:rgba(255,255,255,0.1);color:#fff;padding:7px 16px;border-radius:50px;font-size:0.92rem;font-weight:600;}
-.route-arr{color:var(--green);padding:0 4px;font-size:0.9rem;}
-.route-stats{display:flex;gap:28px;flex-wrap:wrap;}
-.route-stat{color:rgba(255,255,255,0.7);font-size:0.95rem;}
-.route-stat strong{color:var(--green);font-size:1.15rem;display:block;font-family:'Montserrat',sans-serif;font-weight:800;}
-.route-img-box{position:relative;z-index:1;width:240px;height:180px;flex-shrink:0;background:rgba(37,158,92,0.1);border-radius:var(--radius-sm);border:1px dashed rgba(37,158,92,0.3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.3);text-align:center;font-size:0.75rem;padding:16px;}
-.route-img-box i{font-size:2.2rem;color:rgba(37,158,92,0.4);}
+/* ROUTE BANNER */
+.route-bg{background:#0a0a0a;padding:64px 6%;}
+.route-bg .section-title{color:#fff;}
+.route-bg .section-desc{color:rgba(255,255,255,0.5);}
+.route-card{
+  max-width:1340px;margin:0 auto;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius);padding:36px 44px;
+}
+.route-stepper{display:flex;align-items:flex-start;gap:0;margin-bottom:40px;}
+.route-step{display:flex;flex-direction:column;align-items:center;gap:9px;flex-shrink:0;}
+.route-dot{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,0.05);border:2px solid rgba(37,158,92,0.45);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;
+}
+.route-step.is-end .route-dot{background:var(--green);border-color:var(--green);}
+.route-step-label{font-size:0.84rem;color:rgba(255,255,255,0.8);font-weight:600;text-align:center;white-space:nowrap;}
+.route-line{flex:1;height:2px;min-width:16px;background:linear-gradient(to right,rgba(37,158,92,0.5),rgba(37,158,92,0.15));margin-top:16px;}
+.route-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.route-stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:18px 14px;text-align:center;}
+.route-stat-card i{color:var(--green);font-size:1.15rem;margin-bottom:9px;display:block;}
+.route-stat-card strong{display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:3px;}
+.route-stat-card span{color:rgba(255,255,255,0.5);font-size:0.8rem;}
 
-/* ── TESTIMONIALS ── */
+/* TESTIMONIALS */
 .testi-bg{background:var(--grey);}
-.testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1400px;margin:0 auto;}
-.testi-card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform 0.3s,box-shadow 0.3s;}
+.testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1340px;margin:0 auto;}
+.testi-card{background:#fff;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform 0.3s,box-shadow 0.3s;}
 .testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-.testi-stars{color:var(--green);font-size:0.95rem;margin-bottom:10px;}
-.testi-text{font-size:0.96rem;color:var(--text-mid);line-height:1.7;margin-bottom:14px;font-style:italic;}
+.testi-stars{color:var(--green);font-size:0.96rem;margin-bottom:9px;}
+.testi-text{font-size:0.9rem;color:var(--text-mid);line-height:1.65;margin-bottom:13px;font-style:italic;}
 .testi-author{display:flex;align-items:center;gap:10px;}
-.testi-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:0.9rem;flex-shrink:0;}
-.testi-name{font-weight:700;font-size:0.96rem;color:var(--dark);}
-.testi-loc{font-size:0.84rem;color:var(--text-light);}
+.testi-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:0.88rem;flex-shrink:0;}
+.testi-name{font-weight:700;font-size:0.94rem;color:var(--dark);}
+.testi-loc{font-size:0.82rem;color:var(--text-light);}
 
-/* ── FINAL CTA ── */
-.cta-bg{background:var(--dark);padding:80px 6%;text-align:center;}
-.cta-bg h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:#fff;margin-bottom:12px;}
-.cta-bg p{color:rgba(255,255,255,0.65);max-width:560px;margin:0 auto 28px;line-height:1.75;font-size:1.05rem;}
-.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
-.btn-wa{display:inline-flex;align-items:center;gap:9px;background:#25d366;color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.3);transition:transform 0.2s,box-shadow 0.2s;}
-.btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,211,102,0.4);}
-.btn-call{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.3);padding:13px 28px;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color 0.2s,background 0.2s;}
-.btn-call:hover{border-color:var(--green);background:rgba(37,158,92,0.1);}
+/* FINAL CTA */
+.cta-bg{background:var(--green);padding:58px 6%;text-align:center;}
+.cta-bg h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.75rem,3.1vw,2.5rem);font-weight:800;color:#fff;margin-bottom:13px;}
+.cta-bg p{color:rgba(255,255,255,0.88);max-width:560px;margin:0 auto 26px;line-height:1.7;font-size:0.98rem;}
+.cta-btns{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:9px;
+  background:#fff;color:var(--green);
+  padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.9rem;
+  text-decoration:none;
+  box-shadow:0 4px 18px rgba(0,0,0,0.15);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
+.btn-call{
+  display:inline-flex;align-items:center;gap:9px;
+  background:transparent;color:#fff;
+  border:2px solid rgba(255,255,255,0.6);
+  padding:11px 24px;border-radius:50px;font-weight:600;font-size:0.9rem;
+  text-decoration:none;transition:border-color 0.2s,background 0.2s;
+}
+.btn-call:hover{border-color:#fff;background:rgba(255,255,255,0.15);}
 
-/* ── FOOTER ── */
-footer{background:#0a0a0a;padding:26px 5%;text-align:center;color:rgba(255,255,255,0.35);font-size:0.9rem;}
+/* FOOTER */
+footer{background:#0a0a0a;padding:22px 5%;text-align:center;color:rgba(255,255,255,0.35);font-size:0.82rem;}
 footer a{color:var(--green);text-decoration:none;}
 
-/* ── ANIMATIONS ── */
+/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes slideLeft{from{opacity:0;transform:translateX(-30px);}to{opacity:1;transform:translateX(0);}}
-@keyframes slideRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
 @keyframes scaleIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,158,92,0.4);}50%{box-shadow:0 0 0 12px rgba(37,158,92,0);}}
 
@@ -368,15 +398,17 @@ footer a{color:var(--green);text-decoration:none;}
 .reveal-right.visible{opacity:1;transform:translateX(0);}
 .reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.55s ease,transform 0.55s ease;}
 .reveal-scale.visible{opacity:1;transform:scale(1);}
-
-.pkg-btn{animation-name:pulse;}
 .hero-btn{animation:pulse 2.5s 1.5s infinite;}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:1024px){
-  .packages-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
+  .packages-grid{grid-template-columns:repeat(2,1fr);}
   .testi-grid{grid-template-columns:repeat(2,1fr);}
   .hotels-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:640px){
+  .packages-grid{grid-template-columns:1fr;}
+  .hotels-grid{grid-template-columns:1fr;}
 }
 @media(max-width:768px){
   nav{padding:12px 5%;}
@@ -384,15 +416,18 @@ footer a{color:var(--green);text-decoration:none;}
   .nav-links.open{display:flex;}
   .hamburger{display:flex;}
   .hero{min-height:auto;}
-  section{padding:60px 6%;}
+  section{padding:48px 6%;}
   .info-grid{grid-template-columns:1fr;}
   .hotels-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr 1fr;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
-  .route-inner{flex-direction:column;padding:32px 24px;gap:24px;}
-  .route-img-box{width:100%;height:120px;}
-  /* ITINERARY MOBILE: 1 col accordion */
-  .itin-grid{grid-template-columns:1fr;max-width:540px;margin:0 auto;}
+  .route-card{padding:26px 20px;}
+  .route-stepper{flex-direction:column;align-items:flex-start;gap:0;margin-bottom:30px;}
+  .route-step{flex-direction:row;align-items:center;gap:14px;width:100%;}
+  .route-step-label{text-align:left;}
+  .route-line{flex:none;width:2px;height:22px;min-width:2px;margin:2px 0 2px 16px;background:linear-gradient(to bottom,rgba(37,158,92,0.5),rgba(37,158,92,0.15));}
+  .route-stats-grid{grid-template-columns:repeat(2,1fr);}
+  .itin-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
   .itin-chevron{display:flex!important;}
   .itin-head{cursor:pointer;}
   .itin-body{max-height:0!important;overflow:hidden!important;transition:max-height 0.4s ease!important;}
@@ -408,39 +443,6 @@ footer a{color:var(--green);text-decoration:none;}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <!-- Logo -->
-    <a href="/" class="nav-logo">
-      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
-      <div class="nav-logo-text">
-        <span class="nl-main">kafall</span>
-        <span class="nl-sub">presents</span>
-      </div>
-    </a>
-
-    <!-- Nav Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/aboutus.html">About us</a></li>
-      <li><a href="/packages.html">Packages</a></li>
-      <li><a href="/chardham.html">Char Dham</a></li>
-      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/Taxi.html">Taxi Services</a></li>
-      <li><a href="/contactus.html">Contact us</a></li>
-    </ul>
-
-    <!-- Nav Right -->
-    <div class="nav-right">
-      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -602,7 +604,7 @@ footer a{color:var(--green);text-decoration:none;}
     </div>
   </div>
   <div class="itin-download-wrap reveal">
-    <button class="gallery-btn" onclick="downloadItinerary()"><i class="fas fa-download"></i> Download Itinerary</button>
+    <a href="Chakrata-Itinerary-Kafall.pdf" download="Chakrata-Itinerary-Kafall.pdf" class="gallery-btn" style="text-decoration:none;display:inline-flex;"><i class="fas fa-file-pdf"></i> Download Itinerary (PDF)</a>
   </div>
 </section>
 
@@ -613,29 +615,29 @@ footer a{color:var(--green);text-decoration:none;}
     <h2 class="section-title">Chakrata Gallery</h2>
     <p class="section-desc">Glimpses from real Kafall trips — waterfalls, snowfields, sunrises & more.</p>
   </div>
-  <div class="gallery-grid reveal">
-    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0d2318,#1b4d30)" onclick="openModal(0)">
-      <div class="gal-item-inner"><i class="fas fa-water" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Tiger Falls</span></div>
+  <div class="gallery-grid">
+    <div class="gal-item reveal-scale" onclick="openModal(0)">
+      <img src="https://images.unsplash.com/photo-1585016495481-91613a3b1e7e?w=800&q=80&fit=crop" alt="Tiger Falls Chakrata"/>
       <div class="gal-overlay">Tiger Falls — 312 ft</div>
     </div>
-    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)" onclick="openModal(1)">
-      <div class="gal-item-inner"><i class="fas fa-mountain" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Deoban Sunrise</span></div>
+    <div class="gal-item reveal-scale" onclick="openModal(1)">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&fit=crop" alt="Himalayan Sunrise Deoban"/>
       <div class="gal-overlay">Deoban — 9,000 ft Sunrise</div>
     </div>
-    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0a1628,#1a3c5e)" onclick="openModal(2)">
-      <div class="gal-item-inner"><i class="fas fa-snowflake" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Mundali Snow</span></div>
+    <div class="gal-item reveal-scale" onclick="openModal(2)">
+      <img src="https://images.unsplash.com/photo-1547234935-80c7145ec969?w=800&q=80&fit=crop" alt="Mundali Snow Point"/>
       <div class="gal-overlay">Mundali Snow Point</div>
     </div>
-    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#0d2318,#134024)" onclick="openModal(3)">
-      <div class="gal-item-inner"><i class="fas fa-tree" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Kanasar Forest</span></div>
+    <div class="gal-item reveal-scale" onclick="openModal(3)">
+      <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80&fit=crop" alt="Kanasar Forest"/>
       <div class="gal-overlay">Kanasar Deodar Trail</div>
     </div>
-    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)" onclick="openModal(4)">
-      <div class="gal-item-inner"><i class="fas fa-campground" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Chilmiri Sunset</span></div>
+    <div class="gal-item reveal-scale" onclick="openModal(4)">
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&fit=crop" alt="Chilmiri Viewpoint Sunset"/>
       <div class="gal-overlay">Chilmiri Neck Sunset</div>
     </div>
-    <div class="gal-item reveal-scale" style="background:linear-gradient(135deg,#1a0a0a,#3a1010)" onclick="openModal(5)">
-      <div class="gal-item-inner"><i class="fas fa-fire" style="color:rgba(255,255,255,0.3);font-size:2.2rem"></i><span style="color:rgba(255,255,255,0.35);font-size:0.76rem">Bonfire Night</span></div>
+    <div class="gal-item reveal-scale" onclick="openModal(5)">
+      <img src="https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?w=800&q=80&fit=crop" alt="Bonfire Camp Night"/>
       <div class="gal-overlay">Camp Bonfire Night</div>
     </div>
   </div>
@@ -648,8 +650,10 @@ footer a{color:var(--green);text-decoration:none;}
     <button class="gal-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
     <button class="gal-modal-nav gal-prev" onclick="prevPhoto()"><i class="fas fa-chevron-left"></i></button>
     <button class="gal-modal-nav gal-next" onclick="nextPhoto()"><i class="fas fa-chevron-right"></i></button>
-    <div class="gal-modal-img" id="modalImg"><i class="fas fa-mountain" style="font-size:2.5rem;color:rgba(37,158,92,0.4)"></i><span>Add your Chakrata photos here</span></div>
-    <div class="gal-modal-cap" id="modalCap">Tiger Falls — Chakrata's crown jewel</div>
+    <div class="gal-modal-img" id="modalImg">
+      <img id="modalImgTag" src="" alt=""/>
+    </div>
+    <div class="gal-modal-cap" id="modalCap"></div>
   </div>
 </div>
 
@@ -662,27 +666,51 @@ footer a{color:var(--green);text-decoration:none;}
   </div>
   <div class="hotels-grid">
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0d2318,#1b4d30)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹1,500/night</div></div>
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&fit=crop" alt="Budget Guesthouse Chakrata"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹1,500/night</div>
+      </div>
       <div class="hotel-body"><div class="hotel-name">Budget Guesthouse</div><div class="hotel-type">Homestay · Chakrata Town</div><div class="hotel-tags"><span class="hotel-tag">WiFi</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Budget+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a3c2e,#259E5C)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,000/night</div></div>
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&fit=crop" alt="Standard Hotel Chakrata"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹2,000/night</div>
+      </div>
       <div class="hotel-body"><div class="hotel-name">Standard Hotel</div><div class="hotel-type">Standard Rooms · Market Area</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Opt.</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Standard+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#0a1e30,#1a3c5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹2,500/night</div></div>
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80&fit=crop" alt="Family Hotel Mountain View"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹2,500/night</div>
+      </div>
       <div class="hotel-body"><div class="hotel-name">Family Hotel</div><div class="hotel-type">Mid-Range · Mountain View</div><div class="hotel-tags"><span class="hotel-tag">Mountain View</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Family Rooms</span></div><a href="https://wa.me/919810966202?text=Family+hotel+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1e0a2e,#3a1a5e)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,000/night</div></div>
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80&fit=crop" alt="Forest Cottage Valley View"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹3,000/night</div>
+      </div>
       <div class="hotel-body"><div class="hotel-name">Forest Cottage</div><div class="hotel-type">Cottage · Valley Views</div><div class="hotel-tags"><span class="hotel-tag">Valley View</span><span class="hotel-tag">Bonfire</span><span class="hotel-tag">Cottage Stay</span></div><a href="https://wa.me/919810966202?text=Cottage+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#2a1a0a,#4a3010)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹3,500/night</div></div>
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80&fit=crop" alt="Boutique Resort Panoramic"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹3,500/night</div>
+      </div>
       <div class="hotel-body"><div class="hotel-name">Boutique Resort</div><div class="hotel-type">Resort · Panoramic Views</div><div class="hotel-tags"><span class="hotel-tag">Panoramic View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Lawn Seating</span></div><a href="https://wa.me/919810966202?text=Resort+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
-      <div class="hotel-img"><div class="hotel-img-bg" style="background:linear-gradient(135deg,#1a1a0a,#3a3a10)"></div><div class="hotel-img-ov"></div><div class="hotel-price-tag">₹4,000+/night</div></div>
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80&fit=crop" alt="Luxury Mountain Resort"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹4,000+/night</div>
+      </div>
       <div class="hotel-body"><div class="hotel-name">Luxury Mountain Stay</div><div class="hotel-type">Premium Resort · Concierge</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Premium Décor</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Luxury+resort+Chakrata" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
   </div>
@@ -741,29 +769,35 @@ footer a{color:var(--green);text-decoration:none;}
   </div>
 </section>
 
-<!-- ROUTE BANNER -->
-<div class="route-bg" id="route">
-  <div class="route-inner reveal">
-    <div class="route-content">
-      <div class="route-title">🗺️ Delhi to Chakrata Route</div>
-      <div class="route-path">
-        <span class="route-stop">Delhi</span><span class="route-arr">→</span>
-        <span class="route-stop">Meerut</span><span class="route-arr">→</span>
-        <span class="route-stop">Muzaffarnagar</span><span class="route-arr">→</span>
-        <span class="route-stop">Dehradun</span><span class="route-arr">→</span>
-        <span class="route-stop">Vikasnagar</span><span class="route-arr">→</span>
-        <span class="route-stop">Chakrata</span>
-      </div>
-      <div class="route-stats">
-        <div class="route-stat"><strong>335 km</strong>Total Distance</div>
-        <div class="route-stat"><strong>7–9 hrs</strong>Drive Time</div>
-        <div class="route-stat"><strong>NH-58</strong>Main Highway</div>
-        <div class="route-stat"><strong>Night</strong>Best Departure</div>
-      </div>
-    </div>
-    <div class="route-img-box"><i class="fas fa-map-marked-alt"></i><span>Replace with your route map image</span></div>
+<!-- ROUTE BANNER — GREEN BACKGROUND -->
+<section class="route-bg" id="route">
+  <div class="tc reveal">
+    <div class="section-label">Getting There</div>
+    <h2 class="section-title">Delhi to Chakrata Route</h2>
+    <p class="section-desc">A smooth 335 km drive on NH-58 — best covered overnight for a fresh, sunlit arrival.</p>
   </div>
-</div>
+  <div class="route-card reveal">
+    <div class="route-stepper">
+      <div class="route-step is-end"><span class="route-dot">1</span><span class="route-step-label">Delhi</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">2</span><span class="route-step-label">Meerut</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">3</span><span class="route-step-label">Muzaffarnagar</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">4</span><span class="route-step-label">Dehradun</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">5</span><span class="route-step-label">Vikasnagar</span></div>
+      <div class="route-line"></div>
+      <div class="route-step is-end"><span class="route-dot">6</span><span class="route-step-label">Chakrata</span></div>
+    </div>
+    <div class="route-stats-grid">
+      <div class="route-stat-card"><i class="fas fa-road"></i><strong>335 km</strong><span>Total Distance</span></div>
+      <div class="route-stat-card"><i class="fas fa-clock"></i><strong>7–9 hrs</strong><span>Drive Time</span></div>
+      <div class="route-stat-card"><i class="fas fa-signs-post"></i><strong>NH-58</strong><span>Main Highway</span></div>
+      <div class="route-stat-card"><i class="fas fa-moon"></i><strong>Night</strong><span>Best Departure</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
 <section class="testi-bg" id="testimonials">
@@ -784,7 +818,7 @@ footer a{color:var(--green);text-decoration:none;}
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- FINAL CTA — GREEN BACKGROUND -->
 <div class="cta-bg">
   <div class="reveal">
     <h2>Ready for Your Chakrata Adventure?</h2>
@@ -796,99 +830,13 @@ footer a{color:var(--green);text-decoration:none;}
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     FOOTER
-══════════════════════════════ -->
-<footer class="footer">
-  <div class="footer-top">
-    <div class="wrap footer-grid">
-      <div class="ft-brand">
-        <div class="ft-logo">
-          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
-          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
-        </div>
-        <p>India’s trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
-        <div class="ft-socials">
-          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <!-- <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a> -->
-          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <!-- <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a> -->
-        </div>
-      </div>
-
-      <div class="ft-col">
-        <h5>Uttarakhand</h5>
-        <ul>
-          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
-          <li><a href="/packages/rishikesh.html">Rishikesh & Haridwar</a></li>
-          <li><a href="/chardham.html">Char Dham Yatra</a></li>
-          <li><a href="/packages/munsyari.html">Munsyari</a></li>
-          <!-- <li><a href="#">Valley of Flowers</a></li>
-          <li><a href="#">Jim Corbett</a></li>
-          <li><a href="#">Chopta & Tungnath</a></li>
-          <li><a href="#">Mussoorie & Nainital</a></li> -->
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>temples</h5>
-        <ul>
-          <li><a href="/packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
-          <li><a href="/packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
-          <li><a href="/packages/kartikswami.html">Kartik Swami Temple</a></li>
-          <li><a href="/packages/jagheshwar.html">Jageshwar</a></li>
-          <li><a href="/packages/surkandadevi.html">Surkanda Devi Temple</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="/packages.html">All Packages</a></li>
-          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
-          <li><a href="/blog.html">Travel Blog</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/t&c.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Contact</h5>
-        <ul class="ft-contact">
-          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
-          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bar">
-    <div class="wrap footer-bar-inner">
-      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
-      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
-    </div>
-  </div>
-</footer>
-
-<!-- Scroll Top -->
-<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
-
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
 <script>
-// Nav scroll shadow
 window.addEventListener('scroll',()=>{
   document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
 });
 
-// Hamburger
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 
-// Hero particles
 (function(){
   const c=document.getElementById('particles');
   for(let i=0;i<28;i++){
@@ -898,7 +846,6 @@ function toggleNav(){document.getElementById('navLinks').classList.toggle('open'
   }
 })();
 
-// FAQ
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const wasOpen=item.classList.contains('open');
@@ -906,7 +853,6 @@ function toggleFaq(btn){
   if(!wasOpen) item.classList.add('open');
 }
 
-// Itinerary mobile accordion
 document.querySelectorAll('.itin-head').forEach(head=>{
   head.addEventListener('click',()=>{
     if(window.innerWidth<=768){
@@ -918,48 +864,37 @@ document.querySelectorAll('.itin-head').forEach(head=>{
   });
 });
 
-// Download Itinerary
-function downloadItinerary(){
-  const days=document.querySelectorAll('.itin-card');
-  let content="CHAKRATA TRIP FROM DELHI — 3N/4D ITINERARY\nKafall Travels | +91 98109 66202\n";
-  content+="=".repeat(50)+"\n\n";
-  days.forEach((card,idx)=>{
-    const title=card.querySelector('.itin-head h3').textContent.trim();
-    const sub=card.querySelector('.itin-head p').textContent.trim();
-    content+=`DAY ${idx+1}: ${title}\n(${sub})\n`;
-    card.querySelectorAll('.itin-body ul li').forEach(li=>{
-      content+=`  • ${li.textContent.trim()}\n`;
-    });
-    content+="\n";
-  });
-  content+="Book now: https://wa.me/919810966202\n";
-  const blob=new Blob([content],{type:'text/plain'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;a.download='Chakrata-Itinerary-Kafall.txt';
-  document.body.appendChild(a);a.click();
-  document.body.removeChild(a);URL.revokeObjectURL(url);
-}
-
-// Gallery modal
-const caps=['Tiger Falls — 312 ft, one of India\'s tallest waterfalls','Deoban Sunrise — 9,000 ft Himalayan panorama','Mundali Snow Point — winter wonderland','Kanasar Deodar Forest — ancient trail','Chilmiri Neck — best sunset viewpoint','Camp Bonfire Night'];
+const galImgs=[
+  {src:'https://images.unsplash.com/photo-1585016495481-91613a3b1e7e?w=1200&q=85&fit=crop',cap:'Tiger Falls — 312 ft, one of India\'s tallest waterfalls'},
+  {src:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85&fit=crop',cap:'Deoban Sunrise — 9,000 ft Himalayan panorama'},
+  {src:'https://images.unsplash.com/photo-1547234935-80c7145ec969?w=1200&q=85&fit=crop',cap:'Mundali Snow Point — winter wonderland'},
+  {src:'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=85&fit=crop',cap:'Kanasar Deodar Forest — ancient trail'},
+  {src:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85&fit=crop',cap:'Chilmiri Neck — best sunset viewpoint'},
+  {src:'https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?w=1200&q=85&fit=crop',cap:'Camp Bonfire Night'},
+];
 let curPhoto=0;
-function openModal(i){curPhoto=i;document.getElementById('galModal').classList.add('open');document.getElementById('modalCap').textContent=caps[i];}
+function openModal(i){
+  curPhoto=i;
+  document.getElementById('galModal').classList.add('open');
+  document.getElementById('modalImgTag').src=galImgs[i].src;
+  document.getElementById('modalImgTag').alt=galImgs[i].cap;
+  document.getElementById('modalCap').textContent=galImgs[i].cap;
+}
 function closeModal(){document.getElementById('galModal').classList.remove('open');}
-function prevPhoto(){curPhoto=(curPhoto-1+caps.length)%caps.length;document.getElementById('modalCap').textContent=caps[curPhoto];}
-function nextPhoto(){curPhoto=(curPhoto+1)%caps.length;document.getElementById('modalCap').textContent=caps[curPhoto];}
+function prevPhoto(){curPhoto=(curPhoto-1+galImgs.length)%galImgs.length;openModal(curPhoto);}
+function nextPhoto(){curPhoto=(curPhoto+1)%galImgs.length;openModal(curPhoto);}
 document.getElementById('galModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')prevPhoto();if(e.key==='ArrowRight')nextPhoto();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeModal();
+  if(e.key==='ArrowLeft')prevPhoto();
+  if(e.key==='ArrowRight')nextPhoto();
+});
 
-// Scroll reveal
-const obsOpts={threshold:0.1};
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('visible'),i*55);
-    }
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*55);
   });
-},obsOpts);
+},{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
 </script>
 </body>
