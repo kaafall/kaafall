@@ -1,355 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kedarnath Trip – Trekhievers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-  <link href="/asstes/css/style.css" rel="stylesheet">
-  <script src="/asstes/js/main.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kedarnath Trip From Delhi | 3N 4D Package | Kafall Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="stylesheet" href="/asstes/css/style.css"/>
+  <script src="/asstes/js/main.js" defer></script>
+<style>
+:root {
+  --green: #259E5C;
+  --green-dark: #1b7a44;
+  --green-light: #e8f7ef;
+  --black: #111111;
+  --dark: #1a1a1a;
+  --grey: #f5f5f5;
+  --grey2: #eeeeee;
+  --text: #222222;
+  --text-mid: #444444;
+  --text-light: #777777;
+  --white: #ffffff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;font-size:16px;}
 
-    :root {
-      --green-dark:   #1a5c2e;
-      --green-mid:    #2d8a4e;
-      --green-light:  #4caf78;
-      --green-pale:   #e8f5ee;
-      --white:        #ffffff;
-      --off-white:    #f7faf8;
-      --text-dark:    #1a2e22;
-      --text-mid:     #3d5a47;
-      --text-light:   #6b8f78;
-      --gold:         #c9973a;
-      --gold-light:   #f5e4c0;
-      --shadow:       0 8px 32px rgba(26,92,46,0.12);
-      --shadow-hover: 0 16px 48px rgba(26,92,46,0.22);
-      --radius:       16px;
-      --radius-sm:    10px;
-      --transition:   0.3s cubic-bezier(0.4,0,0.2,1);
-    }
 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
+/* HERO */
+.hero{
+  min-height:38vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:90px 6% 20px;
+  position:relative;overflow:hidden;
+  background:#000;
+}
+.hero-img-bg{
+  position:absolute;inset:0;z-index:0;
+  background:url('https://images.unsplash.com/photo-1626016842882-1c6e6f7a5b6e?w=1600&q=80&fit=crop') center center/cover no-repeat;
+  animation:heroPan 20s ease-in-out infinite alternate;
+  transform-origin:center center;
+}
+.hero-img-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.40) 50%,rgba(0,0,0,0.60) 100%);
+}
+@keyframes heroPan{
+  0%{transform:scale(1.08) translateX(0%);}
+  100%{transform:scale(1.08) translateX(-3%);}
+}
+.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;}
+.hero-particles span{
+  position:absolute;width:3px;height:3px;background:var(--green);
+  border-radius:50%;opacity:0;
+  animation:particleFly var(--d,4s) var(--delay,0s) ease-in infinite;
+}
+@keyframes particleFly{
+  0%{opacity:0;transform:translateY(0) scale(0);}
+  20%{opacity:0.8;}
+  80%{opacity:0.4;}
+  100%{opacity:0;transform:translateY(-300px) scale(1.5);}
+}
+.hero-wave{z-index:3;
+  position:absolute;bottom:0;left:0;right:0;height:60px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,70 1080,10 1440,40 L1440,60 L0,60Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
+}
+.hero-content{position:relative;z-index:3;max-width:800px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(37,158,92,0.15);border:1px solid rgba(37,158,92,0.35);
+  color:var(--green);padding:5px 16px;border-radius:50px;
+  font-size:0.76rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:12px;
+  animation:fadeDown 0.6s ease both;
+}
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(1.9rem,4.3vw,3.1rem);
+  font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero h1 span{color:var(--green);}
+.hero-sub{
+  font-size:0.94rem;color:rgba(255,255,255,0.72);
+  margin-bottom:18px;line-height:1.6;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-pills{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:7px;
+  margin-bottom:20px;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.hero-pill{
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  color:rgba(255,255,255,0.85);padding:5px 13px;border-radius:50px;
+  font-size:0.78rem;font-weight:500;display:flex;align-items:center;gap:6px;
+}
+.hero-pill i{color:var(--green);}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green);color:#fff;
+  padding:11px 26px;border-radius:50px;
+  font-weight:700;font-size:0.94rem;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,158,92,0.35);
+  transition:transform 0.2s,box-shadow 0.2s,background 0.2s;
+  animation:fadeUp 0.7s 0.4s ease both;
+}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,158,92,0.45);background:var(--green-dark);}
 
-    /* ─── HERO ───────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 36vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        linear-gradient(160deg, rgba(26,92,46,0.93) 0%, rgba(45,138,78,0.82) 50%, rgba(26,92,46,0.96) 100%),
-        url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80') center/cover no-repeat;
-      padding: 2.2rem 1.5rem 2rem;
-      overflow: hidden;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201,151,58,0.13) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .hero-content { position: relative; z-index: 2; max-width: 700px; }
+/* STRIP */
+.strip{
+  background:var(--green);padding:14px 5%;
+  display:flex;justify-content:center;gap:36px;flex-wrap:wrap;
+}
+.strip-item{display:flex;align-items:center;gap:8px;color:#fff;}
+.strip-item i{font-size:1rem;opacity:0.85;}
+.strip-item strong{font-size:1.05rem;font-weight:700;}
+.strip-item span{font-size:0.9rem;opacity:0.75;display:block;}
 
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.28);
-      color: var(--gold-light);
-      font-size: 0.74rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; padding: 0.28rem 0.95rem;
-      border-radius: 50px; margin-bottom: 0.55rem;
-      backdrop-filter: blur(8px);
-    }
-    .hero-content h1 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.4rem, 3.8vw, 2.3rem);
-      color: var(--white); line-height: 1.15;
-      text-shadow: 0 3px 18px rgba(0,0,0,0.3);
-      margin-bottom: 0.25rem;
-    }
-    .hero-content h1 span { color: var(--gold-light); }
-    .hero-sub {
-      color: rgba(255,255,255,0.82); font-size: 0.84rem;
-      margin: 0.35rem 0 0.75rem; letter-spacing: 0.3px;
-    }
-    .hero-tags {
-      display: flex; gap: 0.4rem; justify-content: center;
-      flex-wrap: wrap; margin-bottom: 0.9rem;
-    }
-    .hero-tags span {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white; padding: 0.25rem 0.75rem;
-      border-radius: 50px; font-size: 0.77rem; font-weight: 600;
-      backdrop-filter: blur(6px);
-    }
+/* SECTION COMMON */
+section{padding:72px 6%;}
+.section-label{font-size:0.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.75rem,3.1vw,2.5rem);font-weight:800;color:var(--dark);margin-bottom:11px;line-height:1.2;}
+.section-desc{color:var(--text-light);font-size:0.98rem;line-height:1.7;max-width:1340px;margin-bottom:36px;}
+.tc{text-align:center;}.tc .section-desc{margin:0 auto 34px;}
 
-    /* ─── BUTTONS ────────────────────── */
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold) 0%, #e0a84a 100%);
-      color: #fff; font-family: 'Nunito', sans-serif;
-      font-size: 0.92rem; font-weight: 700;
-      padding: 0.65rem 1.9rem; border-radius: 50px; border: none;
-      cursor: pointer; text-decoration: none; letter-spacing: 0.5px;
-      box-shadow: 0 6px 24px rgba(201,151,58,0.35);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,151,58,0.5); }
-    .pulse { animation: pulseAnim 2.5s ease-in-out infinite; }
-    @keyframes pulseAnim {
-      0%,100% { box-shadow: 0 6px 24px rgba(201,151,58,0.35); }
-      50%      { box-shadow: 0 6px 40px rgba(201,151,58,0.70); }
-    }
+/* PACKAGES */
+.packages-bg{background:var(--grey);padding-top:18px;}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1340px;margin:0 auto;}
+.pkg-card{
+  background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform 0.3s,box-shadow 0.3s;position:relative;
+}
+.pkg-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);}
+.pkg-card.featured{border:2px solid var(--green);}
+.pkg-badge-tag{
+  position:absolute;top:12px;right:12px;
+  background:var(--green);color:#fff;
+  font-size:0.62rem;font-weight:700;letter-spacing:1px;
+  padding:3px 10px;border-radius:50px;text-transform:uppercase;
+}
+.pkg-head{
+  background:linear-gradient(135deg,var(--dark) 0%,#2d2d2d 100%);
+  padding:22px 20px 16px;color:#fff;
+}
+.pkg-type{font-size:0.76rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px;}
+.pkg-name{font-family:'Montserrat',sans-serif;font-size:1.35rem;font-weight:800;margin-bottom:5px;}
+.pkg-nights{font-size:0.84rem;color:rgba(255,255,255,0.6);}
+.pkg-price-row{display:flex;align-items:baseline;gap:6px;margin-top:9px;}
+.pkg-price{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:800;color:var(--green);}
+.pkg-per{font-size:0.86rem;color:rgba(255,255,255,0.55);}
+.pkg-body{padding:18px 20px;flex:1;display:flex;flex-direction:column;}
+.pkg-list{list-style:none;margin-bottom:16px;flex:1;}
+.pkg-list li{display:flex;align-items:flex-start;gap:9px;padding:8px 0;font-size:0.9rem;color:var(--text-mid);border-bottom:1px solid #f0f0f0;}
+.pkg-list li:last-child{border-bottom:none;}
+.pkg-list li i{color:var(--green);margin-top:3px;flex-shrink:0;font-size:0.74rem;}
+.pkg-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:12px;
+  background:var(--green);color:#fff;
+  border:none;border-radius:var(--radius-sm);
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:0.94rem;
+  cursor:pointer;text-decoration:none;
+  transition:background 0.2s,transform 0.15s;
+}
+.pkg-btn:hover{background:var(--green-dark);transform:scale(1.02);}
 
-    /* ─── LAYOUT ─────────────────────── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+/* ITINERARY */
+.itin-intro{
+  max-width:1340px;margin:0 auto 34px;
+  background:var(--green-light);border-left:4px solid var(--green);
+  border-radius:var(--radius);padding:18px 22px;
+  font-size:0.96rem;line-height:1.75;color:var(--text-mid);
+}
+.itin-download-wrap{text-align:center;margin-top:26px;}
+.itin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1340px;margin:0 auto;}
+.itin-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;}
+.itin-head{
+  background:linear-gradient(135deg,var(--dark),#2a2a2a);
+  padding:18px 20px;display:flex;align-items:center;gap:14px;color:#fff;
+}
+.itin-num{
+  background:var(--green);color:#fff;
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;flex-shrink:0;
+}
+.itin-head h3{font-size:1.08rem;font-weight:700;line-height:1.3;}
+.itin-head p{font-size:0.88rem;color:rgba(255,255,255,0.58);margin-top:4px;}
+.itin-chevron{margin-left:auto;color:rgba(255,255,255,0.5);font-size:0.82rem;display:none;transition:transform 0.3s;}
+.itin-body{background:#fff;}
+.itin-body-inner{padding:16px 20px;}
+.itin-body ul{list-style:none;}
+.itin-body ul li{
+  display:flex;gap:10px;padding:9px 0;
+  font-size:0.95rem;color:var(--text-mid);
+  border-bottom:1px dashed #eee;line-height:1.55;
+}
+.itin-body ul li:last-child{border-bottom:none;}
+.itin-body ul li i{color:var(--green);margin-top:4px;flex-shrink:0;font-size:0.9rem;}
 
-    .section-title { text-align: center; margin-bottom: 2.5rem; }
-    .section-title h2 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.55rem, 3.2vw, 2.2rem);
-      color: var(--green-dark); margin-bottom: 0.4rem;
-    }
-    .section-title h2 span { color: var(--green-mid); }
-    .section-title p { color: var(--text-light); font-size: 0.93rem; }
+/* GALLERY */
+.gallery-bg{background:var(--grey);}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;max-width:1340px;margin:0 auto 26px;
+}
+.gal-item{
+  border-radius:var(--radius-sm);overflow:hidden;
+  aspect-ratio:4/3;position:relative;cursor:pointer;
+  transition:transform 0.35s;
+}
+.gal-item:hover{transform:scale(1.03);}
+.gal-item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.4s;
+}
+.gal-item:hover img{transform:scale(1.07);}
+.gal-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.60),rgba(0,0,0,0.05));
+  opacity:0;transition:opacity 0.3s;
+  display:flex;align-items:flex-end;padding:11px;
+  color:#fff;font-size:0.78rem;font-weight:600;
+}
+.gal-item:hover .gal-overlay{opacity:1;}
+.gallery-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:0 auto;background:var(--dark);color:#fff;
+  border:none;border-radius:50px;padding:10px 26px;
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:0.94rem;cursor:pointer;
+  transition:background 0.2s,transform 0.2s;
+}
+.gallery-btn:hover{background:var(--green);transform:scale(1.03);}
+.gal-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.94);align-items:center;justify-content:center;padding:20px;}
+.gal-modal.open{display:flex;}
+.gal-modal-inner{max-width:800px;width:100%;position:relative;}
+.gal-modal-close{position:absolute;top:-42px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+.gal-modal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;width:42px;height:42px;border-radius:50%;font-size:0.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:2;}
+.gal-modal-nav:hover{background:var(--green);}
+.gal-prev{left:-54px;}.gal-next{right:-54px;}
+.gal-modal-img{width:100%;border-radius:12px;overflow:hidden;max-height:70vh;}
+.gal-modal-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;}
+.gal-modal-cap{color:rgba(255,255,255,0.65);text-align:center;margin-top:12px;font-size:0.86rem;}
 
-    /* ─── PRICE CARDS ────────────────── */
-    .price-section {
-      padding: 4rem 0 3rem; background: var(--white); position: relative;
-    }
-    .price-section::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--green-dark), var(--green-light), var(--gold));
-    }
+/* HOTELS */
+.hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1340px;margin:0 auto;}
+.hotel-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+.hotel-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.hotel-img{
+  height:175px;position:relative;overflow:hidden;
+}
+.hotel-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.4s;
+}
+.hotel-card:hover .hotel-img img{transform:scale(1.07);}
+.hotel-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.40));}
+.hotel-price-tag{
+  position:absolute;bottom:9px;left:9px;z-index:1;
+  background:var(--green);color:#fff;
+  padding:4px 12px;border-radius:50px;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.9rem;
+}
+.hotel-body{padding:14px 16px;}
+.hotel-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.02rem;margin-bottom:4px;color:var(--dark);}
+.hotel-type{font-size:0.82rem;color:var(--text-light);margin-bottom:9px;}
+.hotel-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.hotel-tag{background:var(--green-light);color:var(--green-dark);font-size:0.76rem;padding:4px 10px;border-radius:50px;font-weight:600;}
+.hotel-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:8px;background:var(--dark);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Poppins',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.hotel-btn:hover{background:var(--green);}
 
-    .price-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      align-items: start;
-    }
+/* INFO */
+.info-bg{background:var(--grey);}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1340px;margin:0 auto;}
+.info-box{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 28px;}
+.info-box-title{font-family:'Montserrat',sans-serif;font-size:1.12rem;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:9px;margin-bottom:16px;padding-bottom:11px;border-bottom:2px solid var(--grey2);}
+.info-box-title i{color:var(--green);}
+.info-list{list-style:none;}
+.info-list li{display:flex;gap:10px;padding:8px 0;font-size:0.92rem;color:var(--text-mid);border-bottom:1px dashed #eee;line-height:1.55;}
+.info-list li:last-child{border-bottom:none;}
+.excl-icon{color:#e74c3c;font-size:0.7rem;margin-top:4px;flex-shrink:0;}
+.pack-icon{color:var(--green);font-size:0.7rem;margin-top:4px;flex-shrink:0;}
 
-    .price-card {
-      background: var(--white); border: 2px solid #d4e8db;
-      border-radius: var(--radius); padding: 2rem 1.5rem;
-      text-align: center; position: relative;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      overflow: hidden;
-    }
-    .price-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--green-mid), var(--green-light));
-      transform: scaleX(0); transition: transform var(--transition);
-    }
-    .price-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--green-mid); }
-    .price-card:hover::after { transform: scaleX(1); }
+/* FAQ */
+.faq-wrap{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--grey2);}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;cursor:pointer;text-align:left;font-family:'Poppins',sans-serif;font-size:0.98rem;font-weight:600;color:var(--dark);transition:color 0.2s;}
+.faq-q:hover{color:var(--green);}
+.faq-icon{color:var(--green);transition:transform 0.3s;flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;font-size:0.92rem;color:var(--text-light);line-height:1.72;}
+.faq-item.open .faq-a{max-height:220px;padding-bottom:13px;}
 
-    .price-card.featured {
-      border-color: var(--green-mid);
-      background: linear-gradient(155deg, var(--green-dark) 0%, var(--green-mid) 100%);
-      color: white; transform: scale(1.04); box-shadow: var(--shadow-hover); z-index: 1;
-    }
-    .price-card.featured:hover { transform: scale(1.04) translateY(-8px); }
-    .price-card.featured::after { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+/* ROUTE BANNER */
+.route-bg{background:#0a0a0a;padding:64px 6%;}
+.route-bg .section-title{color:#fff;}
+.route-bg .section-desc{color:rgba(255,255,255,0.5);}
+.route-card{
+  max-width:1340px;margin:0 auto;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius);padding:36px 44px;
+}
+.route-stepper{display:flex;align-items:flex-start;gap:0;margin-bottom:40px;}
+.route-step{display:flex;flex-direction:column;align-items:center;gap:9px;flex-shrink:0;}
+.route-dot{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,0.05);border:2px solid rgba(37,158,92,0.45);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;
+}
+.route-step.is-end .route-dot{background:var(--green);border-color:var(--green);}
+.route-step-label{font-size:0.84rem;color:rgba(255,255,255,0.8);font-weight:600;text-align:center;white-space:nowrap;}
+.route-line{flex:1;height:2px;min-width:16px;background:linear-gradient(to right,rgba(37,158,92,0.5),rgba(37,158,92,0.15));margin-top:16px;}
+.route-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.route-stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:18px 14px;text-align:center;}
+.route-stat-card i{color:var(--green);font-size:1.15rem;margin-bottom:9px;display:block;}
+.route-stat-card strong{display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:3px;}
+.route-stat-card span{color:rgba(255,255,255,0.5);font-size:0.8rem;}
 
-    .price-card-badge {
-      display: inline-block; font-size: 0.7rem; font-weight: 800;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      padding: 0.22rem 0.85rem; border-radius: 50px; margin-bottom: 0.85rem;
-    }
-    .price-card:not(.featured) .price-card-badge { background: var(--green-pale); color: var(--green-dark); }
-    .price-card.featured .price-card-badge { background: var(--gold); color: white; }
+/* TESTIMONIALS */
+.testi-bg{background:var(--grey);}
+.testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1340px;margin:0 auto;}
+.testi-card{background:#fff;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform 0.3s,box-shadow 0.3s;}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.testi-stars{color:var(--green);font-size:0.96rem;margin-bottom:9px;}
+.testi-text{font-size:0.9rem;color:var(--text-mid);line-height:1.65;margin-bottom:13px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:0.88rem;flex-shrink:0;}
+.testi-name{font-weight:700;font-size:0.94rem;color:var(--dark);}
+.testi-loc{font-size:0.82rem;color:var(--text-light);}
 
-    .price-card-icon { font-size: 2.2rem; margin-bottom: 0.55rem; }
+/* FINAL CTA */
+.cta-bg{background:var(--green);padding:58px 6%;text-align:center;}
+.cta-bg h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.75rem,3.1vw,2.5rem);font-weight:800;color:#fff;margin-bottom:13px;}
+.cta-bg p{color:rgba(255,255,255,0.88);max-width:560px;margin:0 auto 26px;line-height:1.7;font-size:0.98rem;}
+.cta-btns{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:9px;
+  background:#fff;color:var(--green);
+  padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.9rem;
+  text-decoration:none;
+  box-shadow:0 4px 18px rgba(0,0,0,0.15);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
+.btn-call{
+  display:inline-flex;align-items:center;gap:9px;
+  background:transparent;color:#fff;
+  border:2px solid rgba(255,255,255,0.6);
+  padding:11px 24px;border-radius:50px;font-weight:600;font-size:0.9rem;
+  text-decoration:none;transition:border-color 0.2s,background 0.2s;
+}
+.btn-call:hover{border-color:#fff;background:rgba(255,255,255,0.15);}
 
-    .price-card h3 {
-      font-family: 'Cinzel', serif; font-size: 1.05rem;
-      margin-bottom: 0.25rem; color: var(--green-dark);
-    }
-    .price-card.featured h3 { color: white; }
+/* FOOTER */
+footer{background:#0a0a0a;padding:22px 5%;text-align:center;color:rgba(255,255,255,0.35);font-size:0.82rem;}
+footer a{color:var(--green);text-decoration:none;}
 
-    .subtitle { font-size: 0.8rem; color: var(--text-light); margin-bottom: 1.1rem; }
-    .price-card.featured .subtitle { color: rgba(255,255,255,0.72); }
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,158,92,0.4);}50%{box-shadow:0 0 0 12px rgba(37,158,92,0);}}
 
-    .price-amount {
-      font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700;
-      color: var(--green-dark); line-height: 1; margin-bottom: 0.2rem;
-    }
-    .price-card.featured .price-amount { color: var(--gold-light); }
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(0.92);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+.hero-btn{animation:pulse 2.5s 1.5s infinite;}
 
-    .price-per { font-size: 0.77rem; color: var(--text-light); margin-bottom: 1.2rem; }
-    .price-card.featured .price-per { color: rgba(255,255,255,0.62); }
-
-    .price-divider { height: 1px; background: #d4e8db; margin: 1.1rem 0; }
-    .price-card.featured .price-divider { background: rgba(255,255,255,0.18); }
-
-    .price-features {
-      list-style: none; display: flex; flex-direction: column;
-      gap: 0.55rem; margin-bottom: 1.6rem; text-align: left;
-    }
-    .price-features li {
-      font-size: 0.85rem; color: var(--text-mid);
-      display: flex; align-items: flex-start; gap: 0.45rem; line-height: 1.4;
-    }
-    .price-card.featured .price-features li { color: rgba(255,255,255,0.86); }
-    .price-features li::before { content: '✓'; color: var(--green-mid); font-weight: 800; font-size: 0.82rem; flex-shrink: 0; margin-top: 0.06rem; }
-    .price-card.featured .price-features li::before { color: var(--gold-light); }
-
-    .btn-outline {
-      display: inline-block; border: 2px solid var(--green-mid);
-      color: var(--green-mid); background: transparent;
-      font-family: 'Nunito', sans-serif; font-size: 0.86rem; font-weight: 700;
-      padding: 0.58rem 1.5rem; border-radius: 50px; cursor: pointer;
-      text-decoration: none; transition: background var(--transition), color var(--transition); width: 100%;
-    }
-    .btn-outline:hover { background: var(--green-mid); color: white; }
-    .price-card.featured .btn-outline { border-color: var(--gold-light); color: var(--gold-light); }
-    .price-card.featured .btn-outline:hover { background: var(--gold); border-color: var(--gold); color: white; }
-
-    .price-note { text-align: center; margin-top: 1.6rem; font-size: 0.86rem; color: var(--text-light); font-style: italic; }
-    .price-note strong { color: var(--green-dark); }
-
-    /* ─── BOOKING FORM ───────────────── */
-    .booking-section { padding: 4.5rem 0; background: var(--green-pale); }
-
-    .form-card {
-      background: var(--white); border-radius: var(--radius);
-      box-shadow: var(--shadow); padding: 2.5rem;
-      border: 1px solid rgba(26,92,46,0.08);
-    }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
-    .form-group.full-width { grid-column: 1 / -1; }
-    .form-group label { font-size: 0.84rem; font-weight: 700; color: var(--green-dark); }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 0.7rem 1rem; border: 2px solid #d4e8db;
-      border-radius: var(--radius-sm); font-family: 'Nunito', sans-serif;
-      font-size: 0.92rem; color: var(--text-dark); background: var(--off-white);
-      transition: border-color var(--transition), box-shadow var(--transition); outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--green-mid); box-shadow: 0 0 0 4px rgba(45,138,78,0.12); background: var(--white);
-    }
-    .form-group textarea { resize: vertical; min-height: 80px; }
-    .radio-group { display: flex; gap: 1.4rem; flex-wrap: wrap; }
-    .radio-label { display: flex; align-items: center; gap: 0.45rem; font-size: 0.91rem; color: var(--text-mid); cursor: pointer; font-weight: 600; }
-    .radio-label input[type="radio"] { accent-color: var(--green-mid); width: 15px; height: 15px; }
-    .form-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem;
-      padding-top: 1.4rem; border-top: 2px dashed #c8e6d0;
-    }
-    .note { font-size: 0.86rem; color: var(--text-light); font-style: italic; }
-    .form-success {
-      margin-top: 1.4rem; padding: 1rem 1.4rem;
-      background: var(--green-pale); border: 2px solid var(--green-light);
-      border-radius: var(--radius-sm); color: var(--green-dark); font-weight: 600; text-align: center;
-    }
-    .hidden { display: none; }
-
-    /* ─── PACKAGE ────────────────────── */
-    .package-section { padding: 4.5rem 0; background: var(--white); }
-    .package-card {
-      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
-      border-radius: var(--radius); padding: 2.4rem 2rem; text-align: center;
-      color: white; box-shadow: var(--shadow-hover); position: relative;
-      overflow: hidden; max-width: 580px; margin: 0 auto;
-    }
-    .package-card::before { content: '🕉️'; position: absolute; font-size: 9rem; opacity: 0.05; top: -0.8rem; right: -0.8rem; pointer-events: none; }
-    .package-badge { display: inline-block; background: var(--gold); color: white; font-size: 0.73rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 0.26rem 0.95rem; border-radius: 50px; margin-bottom: 0.85rem; }
-    .package-card h3 { font-family: 'Cinzel', serif; font-size: 1.75rem; margin-bottom: 0.85rem; }
-    .package-duration { display: flex; gap: 1.1rem; justify-content: center; margin-bottom: 1.2rem; }
-    .package-duration span { background: rgba(255,255,255,0.15); padding: 0.32rem 1rem; border-radius: 50px; font-size: 0.88rem; font-weight: 600; }
-    .package-highlights { display: flex; flex-direction: column; gap: 0.6rem; }
-    .highlight { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 0.62rem 1.4rem; border-radius: var(--radius-sm); font-size: 0.93rem; font-weight: 600; }
-
-    /* ─── ITINERARY ──────────────────── */
-    .itinerary { display: grid; gap: 0.8rem; }
-    .day-card {
-      display: flex; align-items: flex-start; gap: 1.1rem;
-      background: var(--white); border-radius: var(--radius-sm);
-      padding: 1.05rem 1.3rem; box-shadow: 0 4px 14px rgba(26,92,46,0.08);
-      border-left: 4px solid var(--green-mid);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .day-card:hover { transform: translateX(5px); box-shadow: var(--shadow); }
-    .day-num { background: linear-gradient(135deg, var(--green-dark), var(--green-mid)); color: white; font-family: 'Cinzel', serif; font-size: 0.73rem; font-weight: 700; padding: 0.32rem 0.78rem; border-radius: 50px; white-space: nowrap; flex-shrink: 0; align-self: center; }
-    .day-content h4 { font-size: 0.92rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.18rem; }
-    .day-content p { font-size: 0.83rem; color: var(--text-light); }
-
-    /* ─── ADD-ONS ────────────────────── */
-    .addons-section { padding: 4.5rem 0; background: var(--green-pale); }
-    .addons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 1.2rem; margin-bottom: 1.8rem; }
-    .addon-card { background: var(--white); border: 2px solid #d4e8db; border-radius: var(--radius); padding: 1.4rem 1.1rem; text-align: center; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
-    .addon-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--green-mid); }
-    .addon-icon { font-size: 1.9rem; margin-bottom: 0.55rem; }
-    .addon-card h4 { font-size: 0.92rem; font-weight: 800; color: var(--green-dark); margin-bottom: 0.4rem; }
-    .addon-price { font-family: 'Cinzel', serif; font-size: 1.25rem; color: var(--green-mid); font-weight: 700; margin-bottom: 0.35rem; }
-    .addon-price span { font-size: 0.76rem; color: var(--text-light); font-family: 'Nunito', sans-serif; }
-    .addon-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.5; }
-    .payment-note { display: flex; align-items: center; gap: 1rem; background: var(--gold-light); border: 2px solid var(--gold); border-radius: var(--radius-sm); padding: 1.05rem 1.35rem; max-width: 620px; margin: 0 auto; }
-    .payment-note span { font-size: 1.35rem; flex-shrink: 0; }
-    .payment-note p { font-size: 0.9rem; color: var(--text-dark); line-height: 1.6; }
-
-    /* ─── DATES ──────────────────────── */
-    .dates-section { padding: 4.5rem 0; background: var(--white); }
-    .dates-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
-    .dates-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .dates-header { background: linear-gradient(135deg, var(--green-dark), var(--green-mid)); color: white; padding: 1.05rem 1.35rem; font-size: 0.92rem; font-weight: 700; display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
-    .day-tag { background: rgba(255,255,255,0.2); font-size: 0.73rem; padding: 0.2rem 0.68rem; border-radius: 50px; font-weight: 600; }
-    .months-list { padding: 1.05rem 1.35rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .month-row { display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.52rem; border-bottom: 1px dashed #d4e8db; }
-    .month-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .month-name { font-weight: 700; color: var(--green-dark); font-size: 0.9rem; }
-    .month-dates { color: var(--text-mid); font-size: 0.86rem; }
-
-    /* ─── POLICY ─────────────────────── */
-    .policy-section { padding: 4.5rem 0 5.5rem; background: var(--green-pale); }
-    .policy-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.2rem; }
-    .policy-card { background: var(--white); border: 2px solid #d4e8db; border-radius: var(--radius); padding: 1.65rem 1.35rem; text-align: center; transition: transform var(--transition), border-color var(--transition); }
-    .policy-card:hover { transform: translateY(-4px); border-color: var(--green-mid); }
-    .policy-icon { font-size: 2.1rem; margin-bottom: 0.8rem; }
-    .policy-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
-
-    /* ─── ANIMATION ──────────────────── */
-    .fade-in-up { opacity: 0; transform: translateY(26px); transition: opacity 0.62s ease, transform 0.62s ease; }
-    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ─── RESPONSIVE ─────────────────── */
-    @media (max-width: 900px) {
-      .price-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-      .price-card.featured { transform: scale(1); }
-      .price-card.featured:hover { transform: translateY(-8px); }
-    }
-    @media (max-width: 768px) {
-      .form-grid { grid-template-columns: 1fr; }
-      .form-group.full-width { grid-column: 1; }
-      .dates-grid { grid-template-columns: 1fr; }
-      .form-footer { flex-direction: column; align-items: stretch; text-align: center; }
-      .addons-grid { grid-template-columns: 1fr 1fr; }
-      .payment-note { flex-direction: column; text-align: center; }
-      .form-card { padding: 1.4rem; }
-    }
-    @media (max-width: 480px) {
-      .addons-grid { grid-template-columns: 1fr; }
-      .hero-tags span { font-size: 0.72rem; padding: 0.22rem 0.6rem; }
-      .day-card { flex-direction: column; gap: 0.6rem; }
-      .price-grid { max-width: 100%; }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .packages-grid{grid-template-columns:repeat(2,1fr);}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .hotels-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:640px){
+  .packages-grid{grid-template-columns:1fr;}
+  .hotels-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  nav{padding:12px 5%;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:18px 5%;gap:14px;box-shadow:0 8px 24px rgba(0,0,0,0.1);border-top:1px solid #eee;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .hero{min-height:auto;}
+  section{padding:48px 6%;}
+  .info-grid{grid-template-columns:1fr;}
+  .hotels-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .route-card{padding:26px 20px;}
+  .route-stepper{flex-direction:column;align-items:flex-start;gap:0;margin-bottom:30px;}
+  .route-step{flex-direction:row;align-items:center;gap:14px;width:100%;}
+  .route-step-label{text-align:left;}
+  .route-line{flex:none;width:2px;height:22px;min-width:2px;margin:2px 0 2px 16px;background:linear-gradient(to bottom,rgba(37,158,92,0.5),rgba(37,158,92,0.15));}
+  .route-stats-grid{grid-template-columns:repeat(2,1fr);}
+  .itin-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
+  .itin-chevron{display:flex!important;}
+  .itin-head{cursor:pointer;}
+  .itin-body{max-height:0!important;overflow:hidden!important;transition:max-height 0.4s ease!important;}
+  .itin-card.mob-open .itin-body{max-height:480px!important;}
+  .itin-card.mob-open .itin-chevron{transform:rotate(180deg);}
+  .gal-prev{left:-8px;}.gal-next{right:-8px;}
+}
+@media(max-width:480px){
+  .testi-grid{grid-template-columns:1fr;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .strip{gap:14px;}
+}
+</style>
 </head>
 <body>
-
-  <nav class="navbar" id="navbar">
+<!-- ══════════════════════════════
+     NAVBAR
+══════════════════════════════ -->
+<nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <!-- Logo -->
-    <a href="/index.html" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
       <div class="nav-logo-text">
         <span class="nl-main">kafall</span>
@@ -357,17 +441,16 @@
       </div>
     </a>
 
-    <!-- Nav Links -->
     <ul class="nav-links" id="navLinks">
       <li><a href="/aboutus.html">About us</a></li>
       <li><a href="/packages.html">Packages</a></li>
       <li><a href="/chardham.html">Char Dham</a></li>
       <li><a href="/weakendtrip.html">Weekend Trips</a></li>
       <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/Taxi.html">Taxi Services</a></li>
       <li><a href="/contactus.html">Contact us</a></li>
     </ul>
 
-    <!-- Nav Right -->
     <div class="nav-right">
       <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
       <button class="hamburger" id="hamburger">
@@ -377,278 +460,462 @@
   </div>
 </nav>
 
-  <!-- ══ HERO ══════════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="particles"></div>
-    <div class="hero-content fade-in-up">
-      <span class="badge">🕉️ Char Dham Yatra 2025</span>
-      <h1>Kedarnath Yatra <span>3D / 4N</span></h1>
-      <p class="hero-sub">Ganga Aarti · Maa Dhari Devi Darshan · Kedarnath Temple</p>
-      <div class="hero-tags">
-        <span>Ganga Aarti</span>
-        <span>Maa Dhari Devi</span>
-        <span>Kedarnath</span>
-      </div>
-      <a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="btn-primary pulse">Book Your Seat</a>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-img-bg"></div>
+  <div class="hero-img-overlay"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-wave"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-om"></i> Char Dham · Land of Lord Shiva</div>
+    <h1>Kedarnath Trip<br><span>From Delhi</span></h1>
+    <p class="hero-sub">450 km from Delhi · 16 km sacred trek from Gaurikund · Mandakini valley<br>Walk to the abode of Shiva — Kedarnath awaits your darshan.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><i class="fas fa-calendar-alt"></i> 3 Nights · 4 Days</div>
+      <div class="hero-pill"><i class="fas fa-route"></i> 450 km from Delhi</div>
+      <div class="hero-pill"><i class="fas fa-mountain"></i> 3,584 m altitude</div>
+      <div class="hero-pill"><i class="fas fa-person-hiking"></i> 16 km Trek</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ PRICE CARDS ════════════════════════════════ -->
-  <section class="price-section" id="pricing">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Choose Your <span>Package</span></h2>
-        <p>Transparent pricing · No hidden charges</p>
+<!-- PACKAGES -->
+<section class="packages-bg" id="packages">
+  <div class="tc reveal">
+    <div class="section-label">Choose Your Plan</div>
+    <h2 class="section-title">Kedarnath Yatra Packages</h2>
+    <p class="section-desc">3 Nights · 4 Days from Delhi — cab, verified stay near base, trek support & 24/7 assistance. Zero surprise charges.</p>
+  </div>
+  <div class="packages-grid">
+    <div class="pkg-card reveal-scale">
+      <div class="pkg-head">
+        <div class="pkg-type">Basic Plan</div>
+        <div class="pkg-name">Pilgrim Package</div>
+        <div class="pkg-nights">3 Nights · 4 Days | Min 2 Persons</div>
+        <div class="pkg-price-row"><div class="pkg-price">₹8,000</div><div class="pkg-per">/person</div></div>
       </div>
-      <div class="price-grid">
-
-        <div class="price-card">
-          <div class="price-card-badge">Basic</div>
-          <div class="price-card-icon"></div>
-          <h3>Budget Plan</h3>
-          <p class="subtitle">Triple Sharing · Best for solo travellers</p>
-          <div class="price-amount">₹8,500</div>
-          <div class="price-per">per person (Triple Sharing)</div>
-          <div class="price-divider"></div>
-          <ul class="price-features">
-            <li>Delhi / Uttarakhand Pickup</li>
-            <li>Triple sharing rooms</li>
-            <li>Rishikesh Ganga Aarti</li>
-            <li>Maa Dhari Devi Darshan</li>
-            <li>Kedarnath Trek & Darshan</li>
-            <li>All Meals as per itinerary</li>
-            <li>3 Days · 4 Nights</li>
-            <li>Priority seat confirmation</li>
-          </ul>
-          <a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="btn-outline">Book Now</a>
-        </div>
-
-        <div class="price-card featured">
-          <div class="price-card-badge">⭐ Most Popular</div>
-          <div class="price-card-icon"></div>
-          <h3>Standard Plan</h3>
-          <p class="subtitle">Dual sharing · Best for couples & friends</p>
-          <div class="price-amount">₹9,500</div>
-          <div class="price-per">per person (Dual Sharing)</div>
-          <div class="price-divider"></div>
-          <ul class="price-features">
-            <li>Delhi / Uttarakhand Pickup</li>
-            <li>Dual sharing rooms</li>
-            <li>Rishikesh Ganga Aarti</li>
-            <li>Maa Dhari Devi Darshan</li>
-            <li>Kedarnath Trek & Darshan</li>
-            <li>All meals as per itinerary</li>
-            <li>3 Days · 4 Nights</li>
-            <li>Priority seat confirmation</li>
-          </ul>
-          <a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="btn-outline">Book Now</a>
-        </div>
-
-        <div class="price-card">
-          <div class="price-card-badge">Premium</div>
-          <div class="price-card-icon"></div>
-          <h3>Premium Plan</h3>
-          <p class="subtitle">Helicopter + Rishikesh stay included</p>
-          <div class="price-amount">₹24,000</div>
-          <div class="price-per">per person (All inclusive)</div>
-          <div class="price-divider"></div>
-          <ul class="price-features">
-            <li>Everything in Standard</li>
-            <li>Two-way Helicopter booking</li>
-            <li>Extra Rishikesh day stay</li>
-            <li>16 km White Water Rafting</li>
-            <li>Dinner & Breakfast Rishikesh</li>
-            <li>Delhi drop – Semi Sleeper Volvo</li>
-            <li>Dual sharing rooms</li>
-            <li>Priority seat confirmation</li>
-            
-          </ul>
-          <a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="btn-outline">Book Now</a>
-        </div>
-
-      </div>
-      <!-- <p class="price-note fade-in-up">💳 Pay <strong>60%</strong> to block your seat · Remaining due <strong>15 days before</strong> departure</p> -->
-    </div>
-  </section>
-
-  <!-- ══ BOOKING FORM ═══════════════════════════════ -->
-  <section class="booking-section" id="booking">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Book Your <span>Sacred Journey</span></h2>
-        <p>Fill in your details and we'll contact you within 24 hours</p>
-      </div>
-      <div class="form-card fade-in-up">
-        <div class="form-grid">
-          <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" id="name" placeholder="Your full name" />
-          </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" />
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" id="email" placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
-            <label>Departure City *</label>
-            <select id="city">
-              <option value="">Select City</option>
-              <option value="delhi">Delhi</option>
-              <option value="mumbai">Mumbai</option>
-              <option value="pune">Pune</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Departure Date *</label>
-            <select id="date">
-              <option value="">Select Date</option>
-              <optgroup label="April (Delhi – Friday)"><option>April 24</option></optgroup>
-              <optgroup label="May (Delhi – Friday)"><option>May 1</option><option>May 8</option><option>May 15</option><option>May 22</option><option>May 29</option></optgroup>
-              <optgroup label="June (Delhi – Friday)"><option>June 5</option><option>June 12</option><option>June 19</option></optgroup>
-              <optgroup label="October (Delhi – Friday)"><option>October 2</option><option>October 16</option><option>October 23</option><option>October 30</option></optgroup>
-              <optgroup label="November (Delhi – Friday)"><option>November 6</option></optgroup>
-              <optgroup label="April (Mumbai/Pune – Thursday)"><option>April 23</option><option>April 30</option></optgroup>
-              <optgroup label="May (Mumbai/Pune – Thursday)"><option>May 7</option><option>May 14</option><option>May 21</option><option>May 28</option></optgroup>
-              <optgroup label="June (Mumbai/Pune – Thursday)"><option>June 4</option><option>June 11</option><option>June 18</option></optgroup>
-              <optgroup label="October (Mumbai/Pune – Thursday)"><option>October 1</option><option>October 15</option><option>October 22</option><option>October 29</option></optgroup>
-              <optgroup label="November (Mumbai/Pune – Thursday)"><option>November 5</option></optgroup>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Number of Persons *</label>
-            <input type="number" id="persons" placeholder="e.g. 2" min="1" max="20" />
-          </div>
-          <div class="form-group full-width">
-            <label>Sharing Preference</label>
-            <div class="radio-group">
-              <label class="radio-label"><input type="radio" name="sharing" value="triple"/> Triple Sharing (₹1,500/person)</label>
-              <label class="radio-label"><input type="radio" name="sharing" value="dual"/> Dual Sharing (₹3,000/person)</label>
-            </div>
-          </div>
-          <div class="form-group full-width">
-            <label>Message / Special Requirements</label>
-            <textarea id="message" rows="3" placeholder="Any special requirements or questions..."></textarea>
-          </div>
-        </div>
-        <div class="form-footer">
-          <!-- <p class="note">💡 Pay 60% to block your seat · Remaining 15 days before departure</p> -->
-          <button href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="btn-primary" > Request Booking</button>
-        </div>
-        <div id="form-success" class="form-success hidden"> Thank you! We'll contact you within 24 hours to confirm your booking.</div>
+      <div class="pkg-body">
+        <ul class="pkg-list">
+          <li><i class="fas fa-car"></i> Private cab Delhi → Sonprayag → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights budget hotel / dharamshala-style stay</li>
+          <li><i class="fas fa-utensils"></i> Daily breakfast included</li>
+          <li><i class="fas fa-person-hiking"></i> Self-paced trek from Gaurikund (16 km)</li>
+          <li><i class="fas fa-route"></i> Detailed trip itinerary provided</li>
+          <li><i class="fas fa-headset"></i> 24/7 on-trip support</li>
+        </ul>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Basic%20Kedarnath%20Package%208000" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       </div>
     </div>
-  </section>
-
-  <!-- ══ PACKAGE ════════════════════════════════════ -->
-  <section class="package-section" id="package">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Our <span>Package</span></h2>
-        <p>Everything you need for a divine journey</p>
+    <div class="pkg-card featured reveal-scale">
+      <div class="pkg-badge-tag">Most Booked</div>
+      <div class="pkg-head">
+        <div class="pkg-type">Standard Plan</div>
+        <div class="pkg-name">Sacred Trek</div>
+        <div class="pkg-nights">3 Nights · 4 Days | Solo to Group</div>
+        <div class="pkg-price-row"><div class="pkg-price">₹10,000</div><div class="pkg-per">/person</div></div>
       </div>
-      <div class="package-card fade-in-up">
-        <div class="package-badge">Best Value</div>
-        <h3>Kedarnath Yatra</h3>
-        <div class="package-duration">
-          <span>3 Days</span>
-          <span>4 Nights</span>
-        </div>
-        <div class="package-highlights">
-          <div class="highlight">Ganga Aarti at Rishikesh</div>
-          <div class="highlight">Maa Dhari Devi Darshan</div>
-          <div class="highlight">Kedarnath Temple Darshan</div>
-        </div>
-      </div>
-
-      <div class="section-title fade-in-up" style="margin-top:3rem">
-        <h2>Brief <span>Itinerary</span></h2>
-      </div>
-      <div class="itinerary fade-in-up">
-        <div class="day-card"><div class="day-num">Day 01</div><div class="day-content"><h4>Delhi Departure</h4><p>Evening departure from Delhi · Overnight journey</p></div></div>
-        <div class="day-card"><div class="day-num">Day 02</div><div class="day-content"><h4>Rishikesh & Dhari Devi</h4><p>Ganga Aarti at Rishikesh. Darshan at Maa Dhari Devi Temple, Drive to Sonprayag / Phata · Overnight stay</p></div></div>
-        <div class="day-card"><div class="day-num">Day 03</div><div class="day-content"><h4>Kedarnath Trek</h4><p>Trek from Gaurikund to Kedarnath Temple 
-         Check-in & overnight stay</p></div></div>
-        <div class="day-card"><div class="day-num">Day 04</div><div class="day-content"><h4>Kedarnath Darshan</h4><p>Early morning Darshan · Trek down to Gaurikund
-         Drive to Sonprayag · Night departure for Delhi</p></div></div>
-        <!-- <div class="day-card"><div class="day-num">Day 05</div><div class="day-content"><h4>Drive to Badrinath</h4><p>Scenic drive through the Himalayas · Stay in Badrinath</p></div></div>
-        <div class="day-card"><div class="day-num">Day 06</div><div class="day-content"><h4>Badrinath Darshan</h4><p>Visit Mana Village · Drop at Haridwar / Rishikesh</p></div></div>
-        <div class="day-card"><div class="day-num">Day 07</div><div class="day-content"><h4>Arrive in Delhi</h4><p>Return home with divine blessings</p></div></div> -->
+      <div class="pkg-body">
+        <ul class="pkg-list">
+          <li><i class="fas fa-car"></i> Private cab Delhi → Sonprayag/Gaurikund → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights mid-range hotel near base camp</li>
+          <li><i class="fas fa-utensils"></i> Breakfast + dinner daily</li>
+          <li><i class="fas fa-person-hiking"></i> Guided trek + pony/palki assistance option</li>
+          <li><i class="fas fa-hands-praying"></i> Priority darshan queue assistance</li>
+          <li><i class="fas fa-user-tie"></i> Dedicated trip manager + 24/7 support</li>
+        </ul>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Standard%20Kedarnath%20Package%2010000" class="pkg-btn"><i class="fab fa-whatsapp"></i> Book This Package</a>
       </div>
     </div>
-  </section>
-
-  <!-- ══ ADD-ONS ════════════════════════════════════ -->
-  <section class="addons-section" id="addons">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Add-ons <span>Per Person</span></h2>
-        <p>Enhance your journey with these optional extras</p>
+    <div class="pkg-card reveal-scale">
+      <div class="pkg-head">
+        <div class="pkg-type">Premium Plan</div>
+        <div class="pkg-name">VIP Darshan</div>
+        <div class="pkg-nights">3 Nights · 4 Days | Couple / Group</div>
+        <div class="pkg-price-row"><div class="pkg-price">₹12,000</div><div class="pkg-per">/person</div></div>
       </div>
-      <div class="addons-grid fade-in-up">
-        <div class="addon-card"><div class="addon-icon">🏨</div><h4>Triple Sharing</h4><div class="addon-price">₹1,500<span>/person</span></div><p>Except Kedarnath stay</p></div>
-        <div class="addon-card"><div class="addon-icon">🛏️</div><h4>Dual Sharing</h4><div class="addon-price">₹3,000<span>/person</span></div><p>Except Kedarnath stay</p></div>
-        <div class="addon-card"><div class="addon-icon">🚤</div><h4>Rishikesh Day Stay</h4><div class="addon-price">₹4,000<span>/person</span></div><p>Dinner & Breakfast + 16 km White Water Rafting + Delhi drop by Semi Sleeper Volvo Bus</p></div>
-        <div class="addon-card"><div class="addon-icon">🚁</div><h4>Helicopter Booking</h4><div class="addon-price">₹10,000<span>/person</span></div><p>Two-way advance booking, subject to availability</p></div>
-        <div class="addon-card"><div class="addon-icon">🐴</div><h4>Horse / Porter</h4><div class="addon-price">₹1,200–3,000<span>/person</span></div><p>One-way assistance on trek</p></div>
+      <div class="pkg-body">
+        <ul class="pkg-list">
+          <li><i class="fas fa-car"></i> Premium cab — Innova Crysta or equivalent</li>
+          <li><i class="fas fa-bed"></i> Premium stay near Sonprayag / Gaurikund</li>
+          <li><i class="fas fa-utensils"></i> All meals: breakfast, lunch & dinner</li>
+          <li><i class="fas fa-person-hiking"></i> Pony/palki booking assist + porter for luggage</li>
+          <li><i class="fas fa-hands-praying"></i> VIP darshan pass assistance at temple</li>
+          <li><i class="fas fa-kit-medical"></i> Basic medical kit & oxygen cylinder on trek</li>
+        </ul>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Premium%20Kedarnath%20Package%2012000" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       </div>
-      <!-- <div class="payment-note fade-in-up">
-        <span>💳</span>
-        <p><strong>Payment Policy:</strong> Pay <strong>60%</strong> to block your seat and the remaining amount <strong>15 days before</strong> the event.</p>
-      </div> -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ DATES ══════════════════════════════════════ -->
-  <section class="dates-section" id="dates">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Departure <span>Dates</span></h2>
+<!-- ITINERARY -->
+<section id="itinerary">
+  <div class="tc reveal">
+    <div class="section-label">Day-by-Day Plan</div>
+    <h2 class="section-title">3N 4D Kedarnath Itinerary</h2>
+  </div>
+  <div class="itin-intro reveal">
+    <strong>Your Kedarnath yatra begins the moment we pick you up from Delhi.</strong> This is a fast-paced, express yatra — an overnight drive gets you to Sonprayag, then it's a 16 km trek to the temple, darshan, and back down, all within 4 days. It's physically demanding but deeply rewarding. Guests with limited time or fitness may want to consider our 4N/5D plan with a rest day — ask us on WhatsApp and we'll help you choose what's right for you.
+  </div>
+  <div class="itin-grid">
+    <div class="itin-card reveal-left">
+      <div class="itin-head">
+        <div class="itin-num">1</div>
+        <div><h3>Delhi → Rudraprayag → Sonprayag</h3><p>Departure · Overnight Drive · Arrival</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
-      <div class="dates-grid fade-in-up">
-        <div class="dates-card">
-          <div class="dates-header"> Delhi Dates <span class="day-tag">Every Friday</span></div>
-          <div class="months-list">
-            <div class="month-row"><span class="month-name">April</span><span class="month-dates">28</span></div>
-            <div class="month-row"><span class="month-name">May</span><span class="month-dates">1, 8, 15, 22, 29</span></div>
-            <div class="month-row"><span class="month-name">June</span><span class="month-dates">5, 12, 19</span></div>
-            <div class="month-row"><span class="month-name">October</span><span class="month-dates">2, 16, 23, 30</span></div>
-            <div class="month-row"><span class="month-name">November</span><span class="month-dates">6</span></div>
-          </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Evening pickup from Delhi (7–9 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Overnight drive via Rishikesh, Rudraprayag & Guptkashi</li>
+        <li><i class="fas fa-circle-dot"></i> Breakfast stop en route</li>
+        <li><i class="fas fa-circle-dot"></i> Arrive Sonprayag by afternoon; local transfer to Gaurikund</li>
+        <li><i class="fas fa-circle-dot"></i> Hotel check-in, rest & prepare gear for trek</li>
+        <li><i class="fas fa-circle-dot"></i> Early dinner, early sleep for next day's trek</li>
+      </ul></div></div>
+    </div>
+    <div class="itin-card reveal-right">
+      <div class="itin-head">
+        <div class="itin-num">2</div>
+        <div><h3>Gaurikund → Kedarnath Trek</h3><p>16 km Sacred Trek · Evening Darshan</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Early start (4–5 AM) from Gaurikund</li>
+        <li><i class="fas fa-circle-dot"></i> Trek via Jungle Chatti, Bheembali & Linchauli</li>
+        <li><i class="fas fa-circle-dot"></i> Pony/palki/helicopter option for those who need it</li>
+        <li><i class="fas fa-circle-dot"></i> Reach Kedarnath by afternoon; check-in at stay</li>
+        <li><i class="fas fa-circle-dot"></i> Evening aarti and darshan at the temple</li>
+        <li><i class="fas fa-circle-dot"></i> Overnight stay near the temple complex</li>
+      </ul></div></div>
+    </div>
+    <div class="itin-card reveal-left">
+      <div class="itin-head">
+        <div class="itin-num">3</div>
+        <div><h3>Kedarnath Darshan → Descend to Gaurikund</h3><p>Morning Aarti · Trek Back</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Attend early morning aarti & final darshan</li>
+        <li><i class="fas fa-circle-dot"></i> Optional visit to Bhairav Nath temple nearby</li>
+        <li><i class="fas fa-circle-dot"></i> Begin descent trek back to Gaurikund</li>
+        <li><i class="fas fa-circle-dot"></i> Lunch break at Rambara/Jungle Chatti point</li>
+        <li><i class="fas fa-circle-dot"></i> Arrive Gaurikund/Sonprayag by evening</li>
+        <li><i class="fas fa-circle-dot"></i> Hotel check-in, rest & dinner</li>
+      </ul></div></div>
+    </div>
+    <div class="itin-card reveal-right">
+      <div class="itin-head">
+        <div class="itin-num">4</div>
+        <div><h3>Sonprayag → Delhi Departure</h3><p>Check-out · Scenic Drive · Home</p></div>
+        <i class="fas fa-chevron-down itin-chevron"></i>
+      </div>
+      <div class="itin-body"><div class="itin-body-inner"><ul>
+        <li><i class="fas fa-circle-dot"></i> Early breakfast & hotel check-out</li>
+        <li><i class="fas fa-circle-dot"></i> Drive back via Rudraprayag & Rishikesh</li>
+        <li><i class="fas fa-circle-dot"></i> Optional stop at Devprayag sangam</li>
+        <li><i class="fas fa-circle-dot"></i> Roadside dinner stop en route</li>
+        <li><i class="fas fa-circle-dot"></i> Drop back at Delhi late night (10 PM–12 AM)</li>
+        <li><i class="fas fa-circle-dot"></i> A yatra you'll carry in your heart forever 🙏</li>
+      </ul></div></div>
+    </div>
+  </div>
+  <div class="itin-download-wrap reveal">
+    <a href="Kedarnath-Itinerary-Kafall.pdf" download="Kedarnath-Itinerary-Kafall.pdf" class="gallery-btn" style="text-decoration:none;display:inline-flex;"><i class="fas fa-file-pdf"></i> Download Itinerary (PDF)</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-bg" id="gallery">
+  <div class="tc reveal">
+    <div class="section-label">Visual Journey</div>
+    <h2 class="section-title">Kedarnath Gallery</h2>
+    <p class="section-desc">Glimpses from real Kafall yatras — the temple, the trek, and the Mandakini valley.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gal-item reveal-scale" onclick="openModal(0)">
+      <img src="https://images.unsplash.com/photo-1626016842882-1c6e6f7a5b6e?w=800&q=80&fit=crop" alt="Kedarnath Temple"/>
+      <div class="gal-overlay">Kedarnath Temple</div>
+    </div>
+    <div class="gal-item reveal-scale" onclick="openModal(1)">
+      <img src="https://images.unsplash.com/photo-1600100397608-f43f5c8a3b6a?w=800&q=80&fit=crop" alt="Trek route Gaurikund to Kedarnath"/>
+      <div class="gal-overlay">The 16 km Sacred Trek</div>
+    </div>
+    <div class="gal-item reveal-scale" onclick="openModal(2)">
+      <img src="https://images.unsplash.com/photo-1585504198199-20277592b6a1?w=800&q=80&fit=crop" alt="Mandakini River"/>
+      <div class="gal-overlay">Mandakini River Valley</div>
+    </div>
+    <div class="gal-item reveal-scale" onclick="openModal(3)">
+      <img src="https://images.unsplash.com/photo-1602005238587-2b8e0f01c8b0?w=800&q=80&fit=crop" alt="Snow peaks around Kedarnath"/>
+      <div class="gal-overlay">Snow-Capped Peaks</div>
+    </div>
+    <div class="gal-item reveal-scale" onclick="openModal(4)">
+      <img src="https://images.unsplash.com/photo-1601122470726-1e2b56f43ba0?w=800&q=80&fit=crop" alt="Pilgrims on trek"/>
+      <div class="gal-overlay">Pilgrims on the Path</div>
+    </div>
+    <div class="gal-item reveal-scale" onclick="openModal(5)">
+      <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80&fit=crop" alt="Evening aarti Kedarnath"/>
+      <div class="gal-overlay">Evening Aarti</div>
+    </div>
+  </div>
+  <button class="gallery-btn reveal" onclick="openModal(0)"><i class="fas fa-images"></i> View All Photos (+12)</button>
+</section>
+
+<!-- Gallery Modal -->
+<div class="gal-modal" id="galModal">
+  <div class="gal-modal-inner">
+    <button class="gal-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <button class="gal-modal-nav gal-prev" onclick="prevPhoto()"><i class="fas fa-chevron-left"></i></button>
+    <button class="gal-modal-nav gal-next" onclick="nextPhoto()"><i class="fas fa-chevron-right"></i></button>
+    <div class="gal-modal-img" id="modalImg">
+      <img id="modalImgTag" src="" alt=""/>
+    </div>
+    <div class="gal-modal-cap" id="modalCap"></div>
+  </div>
+</div>
+
+<!-- HOTELS -->
+<section id="hotels">
+  <div class="tc reveal">
+    <div class="section-label">Where You'll Stay</div>
+    <h2 class="section-title">Stays Near Kedarnath Base</h2>
+    <p class="section-desc">Kafall-verified stays in Sonprayag, Gaurikund & near the temple — for every budget.</p>
+  </div>
+  <div class="hotels-grid">
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&fit=crop" alt="Budget Guesthouse Sonprayag"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹1,200/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Budget Guesthouse</div><div class="hotel-type">Dharamshala-style · Sonprayag</div><div class="hotel-tags"><span class="hotel-tag">Shared Bath</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Budget+stay+Sonprayag" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&fit=crop" alt="Standard Hotel Gaurikund"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹1,800/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Standard Hotel</div><div class="hotel-type">Standard Rooms · Gaurikund</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Opt.</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Standard+hotel+Gaurikund" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80&fit=crop" alt="Family Hotel Sonprayag"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹2,200/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Family Hotel</div><div class="hotel-type">Mid-Range · River View</div><div class="hotel-tags"><span class="hotel-tag">River View</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Family Rooms</span></div><a href="https://wa.me/919810966202?text=Family+hotel+Sonprayag" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80&fit=crop" alt="Kedarnath base camp stay"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹1,500/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Kedarnath Base Stay</div><div class="hotel-type">GMVN / Registered Camp · Near Temple</div><div class="hotel-tags"><span class="hotel-tag">Near Temple</span><span class="hotel-tag">Basic Amenities</span><span class="hotel-tag">Blankets Provided</span></div><a href="https://wa.me/919810966202?text=Stay+near+Kedarnath+temple" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80&fit=crop" alt="Premium hotel Guptkashi"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹2,800/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Premium Comfort Stay</div><div class="hotel-type">Guptkashi / Sonprayag · Valley View</div><div class="hotel-tags"><span class="hotel-tag">Valley View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Hot Water 24x7</span></div><a href="https://wa.me/919810966202?text=Premium+stay+Guptkashi" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80&fit=crop" alt="Deluxe helipad-side stay"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹3,500+/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Deluxe Yatra Stay</div><div class="hotel-type">Premium · Near Helipad, Phata</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Premium Décor</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Deluxe+stay+Kedarnath+yatra" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCLUSIONS + PACK -->
+<section class="info-bg" id="info">
+  <div class="info-grid">
+    <div class="info-box reveal-left">
+      <div class="info-box-title"><i class="fas fa-times-circle"></i> Exclusions</div>
+      <ul class="info-list">
+        <li><i class="fas fa-xmark excl-icon"></i> 5% GST extra on all packages</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Pony, palki, helicopter or porter charges (booked separately)</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Extra food, tea & snacks beyond meal plan</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Travel insurance and other personal expenses</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Anything not mentioned in inclusions</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Cost escalation due to weather, road blockage or landslide</li>
+      </ul>
+    </div>
+    <div class="info-box reveal-right">
+      <div class="info-box-title"><i class="fas fa-backpack"></i> Things to Pack</div>
+      <ul class="info-list">
+        <li><i class="fas fa-check pack-icon"></i> Sturdy trekking shoes with good grip</li>
+        <li><i class="fas fa-check pack-icon"></i> Rain poncho / waterproof jacket</li>
+        <li><i class="fas fa-check pack-icon"></i> Heavy woolens & thermal wear (cold above 3,000 m)</li>
+        <li><i class="fas fa-check pack-icon"></i> Walking stick / trekking pole</li>
+        <li><i class="fas fa-check pack-icon"></i> Personal medical kit incl. Diamox (consult doctor)</li>
+        <li><i class="fas fa-check pack-icon"></i> Water bottle & energy snacks / dry fruits</li>
+        <li><i class="fas fa-check pack-icon"></i> Torch / headlamp with extra batteries</li>
+        <li><i class="fas fa-check pack-icon"></i> Original ID proof (mandatory for yatra registration)</li>
+        <li><i class="fas fa-check pack-icon"></i> Small backpack for trek essentials</li>
+        <li><i class="fas fa-check pack-icon"></i> Power bank (limited charging points en route)</li>
+        <li><i class="fas fa-check pack-icon"></i> Sunscreen, sunglasses & cap</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="tc reveal">
+    <div class="section-label">Got Questions?</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Where is Kedarnath located? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Kedarnath is a sacred Hindu temple town in Rudraprayag district, Uttarakhand, situated at an altitude of about 3,584 meters in the Garhwal Himalayas, on the banks of the Mandakini river. It's one of the twelve Jyotirlingas and part of the Char Dham circuit.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How far is Kedarnath from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Sonprayag (the last motorable point) is roughly 450 km from Delhi by road, taking around 12–14 hours. From Gaurikund, it's a further 16 km trek on foot, pony, palki or helicopter to reach the temple.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How difficult is the Kedarnath trek? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">The 16 km trek from Gaurikund is moderately challenging with a steady uphill climb, well-paved in most sections. It typically takes 6–9 hours on foot. Pony, palki, and helicopter services are available for those who prefer not to trek.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is 3N/4D enough for the Kedarnath yatra? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">3N/4D is a fast-paced express plan involving overnight travel both ways plus the trek. It works well for fit travellers on a tight schedule. If you'd prefer a more relaxed pace with a buffer day, we also offer a 4N/5D itinerary — just ask us.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">When does the Kedarnath temple open and close? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">The temple typically opens in late April/early May (Akshaya Tritiya) and closes around late October/early November (Bhai Dooj), based on the Hindu calendar. It remains closed through winter due to heavy snowfall. Exact dates vary yearly — we'll confirm current dates when you book.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is helicopter service available to Kedarnath? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes, helicopter services operate from Phata, Sersi and Guptkashi to Kedarnath, cutting travel time significantly. These are subject to weather, government allocation and availability — Kafall can assist with booking as an add-on to your package.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What documents are required for the yatra? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">A valid original photo ID (Aadhaar/passport/driving licence) is mandatory for yatra registration (biometric registration is required at Sonprayag). Kafall assists with the registration process on arrival.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Kedarnath suitable for elderly or first-time trekkers? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes, with the right preparation. Elderly travellers or those unable to trek often opt for pony, palki or helicopter. We recommend a basic fitness check and consulting a doctor beforehand, especially regarding altitude.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best time to visit Kedarnath? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">May–June and September–October are considered the best months — pleasant weather and clear trek conditions. Avoid the monsoon months (July–August) due to landslide risk on the route.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is mobile network available on the trek? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Network is patchy on the trek itself, with BSNL/Jio having partial coverage in some stretches. Connectivity is generally available at Sonprayag, Gaurikund and near the Kedarnath temple town.</div></div>
+  </div>
+</section>
+
+<!-- ROUTE BANNER — GREEN BACKGROUND -->
+<section class="route-bg" id="route">
+  <div class="tc reveal">
+    <div class="section-label">Getting There</div>
+    <h2 class="section-title">Delhi to Kedarnath Route</h2>
+    <p class="section-desc">A 450 km overnight drive followed by a 16 km sacred trek — the classic Kedarnath yatra route.</p>
+  </div>
+  <div class="route-card reveal">
+    <div class="route-stepper">
+      <div class="route-step is-end"><span class="route-dot">1</span><span class="route-step-label">Delhi</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">2</span><span class="route-step-label">Rishikesh</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">3</span><span class="route-step-label">Rudraprayag</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">4</span><span class="route-step-label">Guptkashi</span></div>
+      <div class="route-line"></div>
+      <div class="route-step"><span class="route-dot">5</span><span class="route-step-label">Sonprayag / Gaurikund</span></div>
+      <div class="route-line"></div>
+      <div class="route-step is-end"><span class="route-dot">6</span><span class="route-step-label">Kedarnath (16 km trek)</span></div>
+    </div>
+    <div class="route-stats-grid">
+      <div class="route-stat-card"><i class="fas fa-road"></i><strong>450 km</strong><span>Delhi to Sonprayag</span></div>
+      <div class="route-stat-card"><i class="fas fa-clock"></i><strong>12–14 hrs</strong><span>Drive Time</span></div>
+      <div class="route-stat-card"><i class="fas fa-person-hiking"></i><strong>16 km</strong><span>Trek from Gaurikund</span></div>
+      <div class="route-stat-card"><i class="fas fa-moon"></i><strong>Night</strong><span>Best Departure</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-bg" id="testimonials">
+  <div class="tc reveal">
+    <div class="section-label">Real Experiences</div>
+    <h2 class="section-title">What Pilgrims Say</h2>
+    <p class="section-desc">Hundreds of Kedarnath yatras — here's what our guests remember most.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"The trek was tough but Kafall's support made it manageable. Reaching the temple and hearing the evening aarti — an experience I'll never forget."</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rajesh Pandey</div><div class="testi-loc">Delhi · Solo Yatra</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Booked the pony assist for my parents through Kafall — everything was arranged smoothly. Truly grateful for the seamless coordination."</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Sunita & Family</div><div class="testi-loc">Ghaziabad · Family Yatra</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★☆</div><div class="testi-text">"Well-organised trip from pickup to darshan. The team briefed us clearly on what to pack and expect at altitude. Highly recommend for first-timers."</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Amit Joshi</div><div class="testi-loc">Noida · Group of 6</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Kafall handled our yatra registration and stay near the temple perfectly. The whole journey felt spiritual and stress-free."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Poonam Rawat</div><div class="testi-loc">Lucknow · Couple</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our office group did the yatra together. The dedicated trip manager kept everyone on schedule through the trek. Wonderful experience overall."</div><div class="testi-author"><div class="testi-av">V</div><div><div class="testi-name">Vinod Thakur</div><div class="testi-loc">Faridabad · Corporate Group</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"As a solo woman traveller, I felt safe and supported the entire way. Kafall's local contacts at Sonprayag were extremely helpful."</div><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Neha Kandari</div><div class="testi-loc">Meerut · Solo Female</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Transparent pricing, no hidden charges, and clear communication throughout. This yatra with Kafall exceeded our expectations."</div><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Kamal Bisht</div><div class="testi-loc">Jaipur · Family</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"My father is 65 and completed the yatra comfortably thanks to Kafall's pony arrangement and constant check-ins along the trek."</div><div class="testi-author"><div class="testi-av">D</div><div><div class="testi-name">Deepak Semwal</div><div class="testi-loc">Gurgaon · With Parents</div></div></div></div>
+  </div>
+</section>
+
+<!-- FINAL CTA — GREEN BACKGROUND -->
+<div class="cta-bg">
+  <div class="reveal">
+    <h2>Ready for Your Kedarnath Yatra?</h2>
+    <p>Chat with our Uttarakhand specialists. We'll plan every detail — trek, stay, darshan — so your journey stays focused on devotion.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Kedarnath%20Yatra%20please" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="tel:+919810966202" class="btn-call"><i class="fas fa-phone"></i> Call Us Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="wrap footer-grid">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
+          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
         </div>
-        <div class="dates-card">
-          <div class="dates-header">Uttrakhand Dates <span class="day-tag">Every Thursday</span></div>
-          <div class="months-list">
-            <div class="month-row"><span class="month-name">April</span><span class="month-dates">23, 30</span></div>
-            <div class="month-row"><span class="month-name">May</span><span class="month-dates">7, 14, 21, 28</span></div>
-            <div class="month-row"><span class="month-name">June</span><span class="month-dates">4, 11, 18</span></div>
-            <div class="month-row"><span class="month-name">October</span><span class="month-dates">1, 15, 22, 29</span></div>
-            <div class="month-row"><span class="month-name">November</span><span class="month-dates">5</span></div>
-          </div>
+        <p>India's trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
+        <div class="ft-socials">
+          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ══ POLICY ═════════════════════════════════════ -->
-  <section class="policy-section" id="policy">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Trekhievers <span>Policy</span></h2>
+      <div class="ft-col">
+        <h5>Uttarakhand</h5>
+        <ul>
+          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
+          <li><a href="/packages/rishikesh.html">Rishikesh & Haridwar</a></li>
+          <li><a href="/chardham.html">Char Dham Yatra</a></li>
+          <li><a href="/packages/munsyari.html">Munsyari</a></li>
+        </ul>
       </div>
-      <div class="policy-cards fade-in-up">
-        <div class="policy-card"><div class="policy-icon">📋</div><p>A complete schedule of the trek will be shared with registered participants <strong>12 hours prior</strong> on WhatsApp.</p></div>
-        <div class="policy-card"><div class="policy-icon">🔄</div><p>Organizers have the right to <strong>modify or change</strong> the schedule in case of any unavoidable circumstance.</p></div>
-        <div class="policy-card"><div class="policy-icon">🌤️</div><p>The tour is <strong>weather-based</strong>. There may be last-minute cancellations if weather conditions deteriorate.</p></div>
+
+      <div class="ft-col">
+        <h5>temples</h5>
+        <ul>
+          <li><a href="/packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
+          <li><a href="/packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
+          <li><a href="/packages/kartikswami.html">Kartik Swami Temple</a></li>
+          <li><a href="/packages/jagheshwar.html">Jageshwar</a></li>
+          <li><a href="/packages/surkandadevi.html">Surkanda Devi Temple</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="/aboutus.html">About Us</a></li>
+          <li><a href="/packages.html">All Packages</a></li>
+          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
+          <li><a href="/blog.html">Travel Blog</a></li>
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/t&c.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <ul class="ft-contact">
+          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
+          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="footer-bar">
+    <div class="wrap footer-bar-inner">
+      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
+      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
+    </div>
+  </div>
+</footer>
 
-  <!-- Scroll Top -->
+<!-- Scroll Top -->
 <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
 
 <!-- WhatsApp Float -->
@@ -656,114 +923,72 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-  <script>
-    // SCROLL REVEAL
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 100);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+});
 
-    // PARTICLES
-    (function() {
-      const container = document.getElementById('particles');
-      if (!container) return;
-      const symbols = ['🌿','✨','🕉️','🌸','❄️'];
-      const count = window.innerWidth < 600 ? 6 : 12;
-      for (let i = 0; i < count; i++) {
-        const p = document.createElement('div');
-        p.style.cssText = `position:absolute;font-size:${Math.random()*11+8}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:0;animation:floatP ${Math.random()*8+6}s ease-in-out ${Math.random()*5}s infinite;pointer-events:none;user-select:none;`;
-        p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-        container.appendChild(p);
-      }
-      const s = document.createElement('style');
-      s.textContent = `@keyframes floatP{0%{opacity:0;transform:translateY(0) rotate(0deg)}20%{opacity:0.4}80%{opacity:0.4}100%{opacity:0;transform:translateY(-65px) rotate(360deg)}}`;
-      document.head.appendChild(s);
-    })();
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 
-    // FORM SUBMIT
-    function submitForm() {
-      const v = id => document.getElementById(id).value.trim();
-      if (!v('name') || !v('phone') || !document.getElementById('city').value || !document.getElementById('date').value || !v('persons')) {
-        shakeForm(); alert('Please fill in all required fields (Name, Phone, City, Date, Persons).'); return;
-      }
-      if (!/^[\+]?[\d\s\-]{7,15}$/.test(v('phone'))) { alert('Please enter a valid phone number.'); return; }
-      const el = document.getElementById('form-success');
-      el.classList.remove('hidden');
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => {
-        el.classList.add('hidden');
-        ['name','phone','email','city','date','persons','message'].forEach(id => document.getElementById(id).value = '');
-        document.querySelectorAll('input[name="sharing"]').forEach(r => r.checked = false);
-      }, 6000);
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<28;i++){
+    const s=document.createElement('span');
+    s.style.cssText=`left:${Math.random()*100}%;top:${60+Math.random()*40}%;--d:${3+Math.random()*4}s;--delay:${Math.random()*4}s;`;
+    c.appendChild(s);
+  }
+})();
+
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+document.querySelectorAll('.itin-head').forEach(head=>{
+  head.addEventListener('click',()=>{
+    if(window.innerWidth<=768){
+      const card=head.closest('.itin-card');
+      const wasOpen=card.classList.contains('mob-open');
+      document.querySelectorAll('.itin-card').forEach(c=>c.classList.remove('mob-open'));
+      if(!wasOpen) card.classList.add('mob-open');
     }
+  });
+});
 
-    function shakeForm() {
-      const card = document.querySelector('.form-card');
-      const s = document.createElement('style');
-      s.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}`;
-      document.head.appendChild(s);
-      card.style.animation = 'shake 0.4s ease';
-      setTimeout(() => card.style.animation = '', 500);
-    }
+const galImgs=[
+  {src:'https://images.unsplash.com/photo-1626016842882-1c6e6f7a5b6e?w=1200&q=85&fit=crop',cap:'Kedarnath Temple — Jyotirlinga in the Himalayas'},
+  {src:'https://images.unsplash.com/photo-1600100397608-f43f5c8a3b6a?w=1200&q=85&fit=crop',cap:'The 16 km trek from Gaurikund'},
+  {src:'https://images.unsplash.com/photo-1585504198199-20277592b6a1?w=1200&q=85&fit=crop',cap:'Mandakini River Valley'},
+  {src:'https://images.unsplash.com/photo-1602005238587-2b8e0f01c8b0?w=1200&q=85&fit=crop',cap:'Snow-capped peaks around the temple'},
+  {src:'https://images.unsplash.com/photo-1601122470726-1e2b56f43ba0?w=1200&q=85&fit=crop',cap:'Pilgrims on the sacred path'},
+  {src:'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=85&fit=crop',cap:'Evening Aarti at Kedarnath'},
+];
+let curPhoto=0;
+function openModal(i){
+  curPhoto=i;
+  document.getElementById('galModal').classList.add('open');
+  document.getElementById('modalImgTag').src=galImgs[i].src;
+  document.getElementById('modalImgTag').alt=galImgs[i].cap;
+  document.getElementById('modalCap').textContent=galImgs[i].cap;
+}
+function closeModal(){document.getElementById('galModal').classList.remove('open');}
+function prevPhoto(){curPhoto=(curPhoto-1+galImgs.length)%galImgs.length;openModal(curPhoto);}
+function nextPhoto(){curPhoto=(curPhoto+1)%galImgs.length;openModal(curPhoto);}
+document.getElementById('galModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeModal();
+  if(e.key==='ArrowLeft')prevPhoto();
+  if(e.key==='ArrowRight')nextPhoto();
+});
 
-    // SMOOTH SCROLL
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        const t = document.querySelector(link.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      });
-    });
-
-    // STAGGER – Day Cards
-    const dayObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.querySelectorAll('.day-card').forEach((c, i) => {
-          c.style.opacity='0'; c.style.transform='translateX(-18px)';
-          setTimeout(() => { c.style.transition='opacity 0.48s ease,transform 0.48s ease'; c.style.opacity='1'; c.style.transform='translateX(0)'; }, i*85);
-        });
-        dayObs.unobserve(entry.target);
-      });
-    }, { threshold: 0.1 });
-    const itin = document.querySelector('.itinerary');
-    if (itin) dayObs.observe(itin);
-
-    // STAGGER – Addon Cards
-    const addObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.querySelectorAll('.addon-card').forEach((c, i) => {
-          c.style.opacity='0'; c.style.transform='translateY(18px)';
-          setTimeout(() => { c.style.transition='opacity 0.48s ease,transform 0.48s ease'; c.style.opacity='1'; c.style.transform='translateY(0)'; }, i*100);
-        });
-        addObs.unobserve(entry.target);
-      });
-    }, { threshold: 0.1 });
-    const addGrid = document.querySelector('.addons-grid');
-    if (addGrid) addObs.observe(addGrid);
-
-    // STAGGER – Price Cards
-    const priceObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.querySelectorAll('.price-card').forEach((c, i) => {
-          c.style.opacity='0'; c.style.transform='translateY(28px)';
-          setTimeout(() => {
-            c.style.transition='opacity 0.55s ease,transform 0.55s ease';
-            c.style.opacity='1';
-            c.style.transform = c.classList.contains('featured') ? 'scale(1.04) translateY(0)' : 'translateY(0)';
-          }, i*140);
-        });
-        priceObs.unobserve(entry.target);
-      });
-    }, { threshold: 0.08 });
-    const pGrid = document.querySelector('.price-grid');
-    if (pGrid) priceObs.observe(pGrid);
-  </script>
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*55);
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>

@@ -409,7 +409,7 @@ footer a{color:var(--green);text-decoration:none;}
 </style>
 </head>
 <body>
-
+<div id="header"></div>
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-img-bg"></div>
@@ -802,6 +802,9 @@ footer a{color:var(--green);text-decoration:none;}
     </div>
   </div>
 </div>
+
+<DIV id="footer"></DIV>
+
 <script>
 window.addEventListener('scroll',()=>{
   document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
@@ -869,5 +872,8 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
 </script>
+
+<script src="../assets/js/script.js"></script>
+
 </body>
 </html>

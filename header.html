@@ -1,6 +1,57 @@
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+
+const hamburger=document.getElementById("hamburger");
+const navLinks=document.getElementById("navLinks");
+
+if(hamburger){
+hamburger.addEventListener("click",function(){
+navLinks.classList.toggle("active");
+hamburger.classList.toggle("active");
+});
+}
+
+});
+</script>
+
+<style>
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:40px;
+    height:40px;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:#000;
+    border-radius:3px;
+    transition:0.3s ease;
+}
+
+/* Cross Animation */
+.hamburger.active span:nth-child(1){
+    transform:translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg);
+}
 
 
 
+</style>
 
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
@@ -80,12 +131,13 @@ hamburger.addEventListener("click", () => {
     .nav-links{
         display:none;
         position:absolute;
-        top:70px;
+        top:65px;
         left:0;
         width:100%;
         background:#fff;
         flex-direction:column;
-        padding:20px 0;
+        padding:0px 0;
+        gap: 0px;
         box-shadow:0 5px 10px rgba(0,0,0,.1);
     }
 
