@@ -887,7 +887,19 @@ const obs=new IntersectionObserver((entries)=>{
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
 </script>
 
-<script src="../assets/js/script.js"></script>
+<script>
+  fetch('/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      // header ke andar ka script (hamburger menu) manually run karwana padega
+      document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
 
 </body>
 </html>
