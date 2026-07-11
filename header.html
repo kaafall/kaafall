@@ -1,153 +1,189 @@
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-
-const hamburger=document.getElementById("hamburger");
-const navLinks=document.getElementById("navLinks");
-
-if(hamburger){
-hamburger.addEventListener("click",function(){
-navLinks.classList.toggle("active");
-hamburger.classList.toggle("active");
-});
-}
-
-});
-</script>
-
+<!-- ═══════════════════════════════════════════
+     KAFALL TRAVELS — HEADER (self-contained)
+     HTML + CSS + JS all in this one file.
+     Edit this file only — wherever it's
+     included, the change reflects everywhere.
+═══════════════════════════════════════════ -->
 <style>
-  .hamburger{
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-    width:40px;
-    height:40px;
-    background:none;
-    border:none;
-    cursor:pointer;
-}
+  .kf-navbar{
+    --green:#1a9e5c;
+    --green-d:#0e7a44;
+    --green-lt:#e8f7ef;
+    --dark:#1a1a2e;
+    --muted:#888;
+    --border:#e5e5e5;
+    --font:'Poppins',sans-serif;
+    --r:8px;
+    --shadow:0 2px 16px rgba(0,0,0,.09);
+    --shadow-h:0 6px 28px rgba(0,0,0,.15);
+    --t:.25s ease;
 
-.hamburger span{
-    width:28px;
-    height:3px;
-    background:#000;
-    border-radius:3px;
-    transition:0.3s ease;
-}
+    font-family:var(--font);
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:900;
+    transition:box-shadow var(--t);
+  }
+  .kf-navbar *{box-sizing:border-box;}
+  .kf-navbar.kf-stuck{box-shadow:var(--shadow);}
+  .kf-nav-inner{
+    max-width:1600px;margin:0 auto;padding:0 36px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:80px;gap:28px;
+  }
+  .kf-logo{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;}
+  .kf-logo-img{width:50px;height:50px;object-fit:contain;filter:invert(38%) sepia(70%) saturate(500%) hue-rotate(110deg) brightness(.85);}
+  .kf-logo-main{display:block;font-size:21px;font-weight:800;color:var(--green);line-height:1;}
+  .kf-logo-sub{display:block;font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
 
-/* Cross Animation */
-.hamburger.active span:nth-child(1){
-    transform:translateY(8px) rotate(45deg);
-}
+  .kf-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center;list-style:none;margin:0;padding:0;}
+  .kf-links>li>a{padding:8px 16px;border-radius:var(--r);font-size:15.5px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:6px;transition:var(--t);white-space:nowrap;text-decoration:none;}
+  .kf-links>li>a i{font-size:11px;color:var(--muted);transition:var(--t);}
+  .kf-links>li:hover>a{color:var(--green);background:var(--green-lt);}
+  .kf-links>li:hover>a i{transform:rotate(180deg);color:var(--green);}
 
-.hamburger.active span:nth-child(2){
-    opacity:0;
-}
+  .kf-has-mega{position:relative;}
+  .kf-mega{display:none;position:absolute;top:calc(100% + 8px);left:-20px;background:#fff;border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-h);min-width:380px;z-index:100;}
+  .kf-has-mega:hover .kf-mega{display:block;}
+  .kf-mega-inner{padding:22px;}
+  .kf-mega-inner h6{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:0 0 14px;}
+  .kf-mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+  .kf-mega-grid a{font-size:14.5px;color:var(--dark);padding:8px 12px;border-radius:6px;display:block;transition:var(--t);text-decoration:none;}
+  .kf-mega-grid a:hover{background:var(--green-lt);color:var(--green);}
 
-.hamburger.active span:nth-child(3){
-    transform:translateY(-8px) rotate(-45deg);
-}
+  .kf-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .kf-phone{font-size:15px;font-weight:600;color:var(--green);display:flex;align-items:center;gap:7px;white-space:nowrap;text-decoration:none;}
+  .kf-phone i{font-size:14px;}
+  .kf-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .kf-burger span{display:block;width:24px;height:2.5px;background:var(--dark);border-radius:2px;transition:var(--t);}
 
-
-
+  @media(max-width:900px){
+    .kf-links,.kf-phone{display:none;}
+    .kf-burger{display:flex;}
+    .kf-links.kf-open{
+      display:flex;flex-direction:column;gap:0;
+      position:absolute;top:80px;left:0;right:0;
+      background:#fff;border-top:1px solid var(--border);
+      box-shadow:var(--shadow-h);z-index:999;
+      max-height:80vh;overflow-y:auto;
+    }
+    .kf-links.kf-open>li>a{padding:16px 22px;border-bottom:1px solid var(--border);font-size:16px;border-radius:0;}
+    .kf-links.kf-open>li>a i{display:none;}
+    .kf-mega{position:static;display:block;box-shadow:none;border:none;border-radius:0;background:#f7f8fa;margin:0;padding:0;}
+    .kf-has-mega:hover .kf-mega{display:none;}
+    .kf-has-mega.kf-open .kf-mega{display:block;}
+    .kf-mega-inner{padding:12px 20px;}
+    .kf-mega-grid{grid-template-columns:repeat(2,1fr);}
+  }
 </style>
 
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <!-- Logo -->
-    <a href="/" class="nav-logo">
-      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
-      <div class="nav-logo-text">
-        <span class="nl-main">kafall</span>
-        <span class="nl-sub">presents</span>
-      </div>
+<nav class="kf-navbar" id="kfNavbar">
+  <div class="kf-nav-inner">
+
+    <a href="/index.html" class="kf-logo">
+      <img src="/images/Abstract Mountain Logo (1).png" alt="Kafall Travels" class="kf-logo-img"/>
+      <span>
+        <span class="kf-logo-main">Kafall</span>
+        <span class="kf-logo-sub">Travels</span>
+      </span>
     </a>
 
-    <!-- Nav Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/aboutus.html">About us</a></li>
-      <li><a href="/packages.html">Packages</a></li>
-      <li><a href="/chardham.html">Char Dham</a></li>
-      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
+    <ul class="kf-links" id="kfLinks">
+      <li><a href="/index.html">Home</a></li>
+
+      <li class="kf-has-mega">
+        <a href="#">Weekend Trips <i class="fas fa-chevron-down"></i></a>
+        <div class="kf-mega">
+          <div class="kf-mega-inner">
+            <h6>Popular Weekend Getaways</h6>
+            <div class="kf-mega-grid">
+              <a href="/packages/chopta-tungnath.html">Chopta</a>
+              <a href="/packages/chakrata-trip-from-delhi.html">Chakrata</a>
+              <a href="/packages/mussoorie.html">Mussoorie</a>
+              <a href="/packages/kanatal.html">Kanatal</a>
+              <a href="/packages/munsyari.html">Munsyari</a>
+              <a href="/packages/nanital.html">Nainital</a>
+              <a href="/packages/auli.html">Auli</a>
+              <a href="/packages/landour.html">Landour</a>
+              <a href="/packages/mukteshwar.html">Mukteshwar</a>
+              <a href="/packages/tehri-lake.html">Tehri Lake</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="kf-has-mega">
+        <a href="/chardham.html">Chardham <i class="fas fa-chevron-down"></i></a>
+        <div class="kf-mega">
+          <div class="kf-mega-inner">
+            <h6>Char Dham Yatra</h6>
+            <div class="kf-mega-grid">
+              <a href="/chardham.html">Char Dham Yatra</a>
+              <a href="/chardham.html">Do Dham Yatra</a>
+              <a href="/packages/kedarnath.html">Kedarnath</a>
+              <a href="/packages/badrinath.html">Badrinath</a>
+              <a href="/packages/gangotri.html">Gangotri</a>
+              <a href="/packages/yamunotri.html">Yamunotri</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="/index.html#packages">Packages</a></li>
+      <li><a href="/taxi.html">Taxi Services</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/index.html#contact">Contact Us</a></li>
       <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/Taxi.html">Taxi Services</a></li>
-      <li><a href="/contactus.html">Contact us</a></li>
     </ul>
 
-    <!-- Nav Right -->
-    <div class="nav-right">
-      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
-      <button class="hamburger" id="hamburger">
+    <div class="kf-right">
+      <a href="tel:+919810966202" class="kf-phone"><i class="fas fa-phone-alt"></i> +91 98109 66202</a>
+      <button class="kf-burger" id="kfBurger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
+
   </div>
 </nav>
 
 <script>
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+(function(){
+  var navbar = document.getElementById('kfNavbar');
+  var burger = document.getElementById('kfBurger');
+  var links  = document.getElementById('kfLinks');
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("active");
-});
+  window.addEventListener('scroll', function(){
+    navbar.classList.toggle('kf-stuck', window.scrollY > 10);
+  }, { passive:true });
+
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('kf-open');
+    var s = burger.querySelectorAll('span');
+    s[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+    s[1].style.opacity   = open ? '0' : '';
+    s[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+  });
+
+  document.querySelectorAll('.kf-has-mega > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        a.closest('.kf-has-mega').classList.toggle('kf-open');
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!navbar.contains(e.target)) {
+      links.classList.remove('kf-open');
+      burger.querySelectorAll('span').forEach(function(s){ s.style.transform=''; s.style.opacity=''; });
+    }
+  });
+
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 900) links.classList.remove('kf-open');
+  });
+})();
 </script>
-
-
-<style>
-    /* Desktop */
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-/* Hamburger hidden on desktop */
-.hamburger{
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    background:none;
-    border:none;
-    cursor:pointer;
-}
-
-.hamburger span{
-    width:25px;
-    height:3px;
-    background:#000;
-    display:block;
-}
-
-/* Mobile */
-@media(max-width:768px){
-
-    .hamburger{
-        display:flex;
-    }
-
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:65px;
-        left:0;
-        width:100%;
-        background:#fff;
-        flex-direction:column;
-        padding:0px 0;
-        gap: 0px;
-        box-shadow:0 5px 10px rgba(0,0,0,.1);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links li{
-        text-align:center;
-        padding:12px 0;
-    }
-}
-</style>

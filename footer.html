@@ -1,71 +1,164 @@
-<footer class="footer">
-  <div class="footer-top">
-    <div class="wrap footer-grid">
-      <div class="ft-brand">
-        <div class="ft-logo">
-          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
-          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
-        </div>
-        <p>India’s trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
-        <div class="ft-socials">
-          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <!-- <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a> -->
-          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <!-- <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a> -->
+<!-- ═══════════════════════════════════════════
+     KAFALL TRAVELS — FOOTER (self-contained)
+     HTML + CSS + JS all in this one file.
+     Edit this file only — wherever it's
+     included, the change reflects everywhere.
+═══════════════════════════════════════════ -->
+<style>
+  .kf-footer{
+    --green:#1a9e5c;
+    --font:'Poppins',sans-serif;
+    --t:.25s ease;
+    font-family:var(--font);
+    background:#111827;
+  }
+  .kf-footer *{box-sizing:border-box;}
+  .kf-footer a{text-decoration:none;color:inherit;}
+  .kf-footer ul{list-style:none;margin:0;padding:0;}
+  .kf-wrap{max-width:1240px;margin:0 auto;padding:0 20px;}
+
+  .kf-footer-top{padding:50px 0 36px;}
+  .kf-footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1.2fr;gap:36px;}
+
+  .kf-ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .kf-ft-logo-img{width:38px;height:38px;object-fit:contain;filter:invert(1) brightness(2);}
+  .kf-ftl-main{display:block;font-size:18px;font-weight:800;color:#fff;line-height:1;}
+  .kf-ftl-sub{display:block;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1px;}
+  .kf-ft-brand p{color:rgba(255,255,255,.45);font-size:13px;line-height:1.7;margin:0 0 20px;}
+
+  .kf-ft-socials{display:flex;gap:10px;}
+  .kf-ft-socials a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.55);display:grid;place-items:center;font-size:15px;transition:var(--t);}
+  .kf-ft-socials a:hover{background:var(--green);color:#fff;}
+
+  .kf-ft-col h5{font-size:13px;font-weight:700;color:#fff;margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .kf-ft-col ul li{margin-bottom:8px;}
+  .kf-ft-col ul li a{color:rgba(255,255,255,.45);font-size:13px;transition:var(--t);}
+  .kf-ft-col ul li a:hover{color:var(--green);}
+
+  .kf-ft-contact li{color:rgba(255,255,255,.45);font-size:13px;display:flex;align-items:flex-start;gap:8px;margin-bottom:9px;}
+  .kf-ft-contact li i{color:var(--green);margin-top:2px;flex-shrink:0;}
+
+  .kf-footer-bar{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;}
+  .kf-footer-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .kf-footer-bar-inner p{color:rgba(255,255,255,.3);font-size:12.5px;margin:0;}
+
+  .kf-scroll-top{
+    position:fixed;bottom:72px;right:20px;width:42px;height:42px;
+    background:var(--green);color:#fff;border:none;border-radius:8px;
+    font-size:16px;cursor:pointer;display:grid;place-items:center;
+    box-shadow:0 4px 16px rgba(26,158,92,.4);transition:var(--t);
+    opacity:0;pointer-events:none;z-index:800;
+  }
+  .kf-scroll-top.kf-show{opacity:1;pointer-events:all;}
+  .kf-scroll-top:hover{background:#0e7a44;transform:translateY(-3px);}
+
+  .kf-wa-float{
+    position:fixed;bottom:20px;right:20px;width:48px;height:48px;
+    background:#25d366;color:#fff;border-radius:50%;
+    display:grid;place-items:center;font-size:24px;
+    box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:800;transition:var(--t);
+  }
+  .kf-wa-float:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.55);}
+
+  @media(max-width:1100px){
+    .kf-footer-grid{grid-template-columns:1fr 1fr 1fr;gap:28px;}
+    .kf-ft-brand{grid-column:1/-1;}
+  }
+  @media(max-width:768px){
+    .kf-footer-grid{grid-template-columns:1fr 1fr;}
+    .kf-footer-bar-inner{flex-direction:column;text-align:center;gap:4px;}
+  }
+  @media(max-width:540px){
+    .kf-footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+
+<footer class="kf-footer">
+  <div class="kf-footer-top">
+    <div class="kf-wrap kf-footer-grid">
+
+      <div class="kf-ft-col kf-ft-brand">
+        <a href="/index.html" class="kf-ft-logo">
+          <img src="/images/Abstract Mountain Logo (1).png" alt="Kafall Travels" class="kf-ft-logo-img"/>
+          <span>
+            <span class="kf-ftl-main">Kafall Travels</span>
+            <span class="kf-ftl-sub">Land of Gods</span>
+          </span>
+        </a>
+        <p>Delhi-based travel agency crafting safe, memorable and affordable Uttarakhand holidays, weekend trips and Char Dham yatras for every kind of traveller.</p>
+        <div class="kf-ft-socials">
+          <a href="https://wa.me/919810966202" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="PASTE_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="PASTE_FACEBOOK_LINK_HERE" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
 
-      <div class="ft-col">
-        <h5>Uttarakhand</h5>
+      <div class="kf-ft-col">
+        <h5>Weekend Trips</h5>
         <ul>
-          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>            
-          <li><a href="/packages/rishikesh.html">Rishikesh & Haridwar</a></li>
-          <li><a href="/chardham.html">Char Dham Yatra</a></li>
+          <li><a href="/packages/chopta-tungnath.html">Chopta</a></li>
+          <li><a href="/packages/chakrata-trip-from-delhi.html">Chakrata</a></li>
+          <li><a href="/packages/mussoorie.html">Mussoorie</a></li>
+          <li><a href="/packages/kanatal.html">Kanatal</a></li>
           <li><a href="/packages/munsyari.html">Munsyari</a></li>
-          <!-- <li><a href="#">Valley of Flowers</a></li>
-          <li><a href="#">Jim Corbett</a></li>
-          <li><a href="#">Chopta & Tungnath</a></li>
-          <li><a href="#">Mussoorie & Nainital</a></li> -->
         </ul>
       </div>
 
-      <div class="ft-col">
-        <h5>temples</h5>
+      <div class="kf-ft-col">
+        <h5>Chardham</h5>
         <ul>
-          <li><a href="/packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
-          <li><a href="/packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
-          <li><a href="/packages/kartikswami.html">Kartik Swami Temple</a></li>
-          <li><a href="/packages/jagheshwar.html">Jageshwar</a></li>
-          <li><a href="/packages/surkandadevi.html">Surkanda Devi Temple</a></li>
+          <li><a href="/chardham.html">Char Dham Yatra</a></li>
+          <li><a href="/chardham.html">Do Dham Yatra</a></li>
+          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
+          <li><a href="/packages/badrinath.html">Badrinath</a></li>
+          <li><a href="/packages/gangotri.html">Gangotri</a></li>
+          <li><a href="/packages/yamunotri.html">Yamunotri</a></li>
         </ul>
       </div>
 
-      <div class="ft-col">
-        <h5>Quick Links</h5>
+      <div class="kf-ft-col">
+        <h5>Company</h5>
         <ul>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="/packages.html">All Packages</a></li>
-          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
-          <li><a href="/blog.html">Travel Blog</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/t&c.html">Terms & Conditions</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/index.html#contact">Contact Us</a></li>
+          <li><a href="/taxi.html">Taxi Services</a></li>
+          <li><a href="/blog.html">Blog</a></li>
         </ul>
       </div>
 
-      <div class="ft-col">
-        <h5>Contact</h5>
-        <ul class="ft-contact">
-          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
+      <div class="kf-ft-col">
+        <h5>Contact Us</h5>
+        <ul class="kf-ft-contact">
+          <li><i class="fas fa-phone-alt"></i> +91 98109 66202</li>
           <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
+          <li><i class="fas fa-map-marker-alt"></i> Delhi, India</li>
         </ul>
       </div>
+
     </div>
   </div>
-  <div class="footer-bar">
-    <div class="wrap footer-bar-inner">
-      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
-      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
+
+  <div class="kf-footer-bar">
+    <div class="kf-wrap kf-footer-bar-inner">
+      <p>&copy; 2026 Kafall Travels. All rights reserved.</p>
+      <p>Made with care for Uttarakhand travellers.</p>
     </div>
   </div>
 </footer>
+
+<button class="kf-scroll-top" id="kfScrollTop"><i class="fas fa-chevron-up"></i></button>
+<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="kf-wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+(function(){
+  var btn = document.getElementById('kfScrollTop');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('kf-show', window.scrollY > 400);
+  }, { passive:true });
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+})();
+</script>
