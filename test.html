@@ -124,22 +124,9 @@ a { text-decoration: none; color: inherit; }
 .hero-title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(36px, 5.5vw, 68px);
+  font-size: clamp(42px, 7vw, 84px);
   line-height: 1.05;
-  margin-bottom: 14px;
-}
-
-.hero-divider {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  height: 1px;
-  background: rgba(255,255,255,0.35);
-  margin-top: 18px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .hero-sub {
@@ -586,14 +573,18 @@ a { text-decoration: none; color: inherit; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .hero { height: 54vh; min-height: 360px; }
+  .section-para { display: none; }
 }
 
 @media (max-width: 520px) {
-  .card-row { grid-template-columns: repeat(1, 1fr); }
-  .card-grid { grid-template-columns: repeat(1, 1fr); }
-  .chardham-rows .card-row { grid-template-columns: repeat(1, 1fr); }
+  .card-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .chardham-rows .card-row { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
-  .dest-card { height: 260px; }
+  .dest-card { height: 200px; }
+  .dest-card-body { padding: 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .dest-card-name { font-size: 14.5px; }
+  .dest-card-btn { font-size: 11px; padding: 6px 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -624,7 +615,6 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-content">
     <span class="hero-eyebrow">Kafall Travels</span>
     <h1 class="hero-title">Explore Uttarakhand</h1>
-    <div class="hero-divider"></div>
     <p class="hero-sub">Handpicked journeys through the Himalayas — curated for comfort, built for memories.</p>
   </div>
 
