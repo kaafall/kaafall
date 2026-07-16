@@ -56,13 +56,14 @@ a { text-decoration: none; color: inherit; }
 
 /* ==========================================================
    HERO BANNER
+   (height reduced slightly per request)
 ========================================================== */
 
 .hero {
   position: relative;
-  height: 62vh;
-  min-height: 420px;
-  max-height: 640px;
+  height: 48vh;
+  min-height: 340px;
+  max-height: 520px;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -93,7 +94,9 @@ a { text-decoration: none; color: inherit; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(17,17,17,0.35) 0%, rgba(17,17,17,0.45) 55%, rgba(17,17,17,0.65) 100%);
+  /* darkened + slightly more contrast at the bottom so the heading
+     and subtext stay readable over bright snow / sky in the photos */
+  background: linear-gradient(180deg, rgba(10,15,12,0.50) 0%, rgba(10,15,12,0.42) 45%, rgba(8,12,10,0.72) 100%);
   z-index: 1;
 }
 
@@ -104,6 +107,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--white);
   padding: 0 24px;
   animation: heroFadeUp 1.1s var(--ease) both;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.35);
 }
 
 @keyframes heroFadeUp {
@@ -188,21 +192,47 @@ a { text-decoration: none; color: inherit; }
 }
 
 .section-eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12.5px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--gray-600);
+  font-weight: 700;
+  color: var(--green-dark);
   margin-bottom: 12px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green);
+  flex-shrink: 0;
 }
 
 .section-title {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(28px, 3.4vw, 42px);
-  color: var(--black);
+  /* brand green applied to all sub-headings across the page */
+  color: var(--green-dark);
   margin-bottom: 16px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--green), var(--green-dark));
+}
+
+.about-copy .section-title::after {
+  margin-left: 0;
 }
 
 .section-para {
@@ -322,33 +352,29 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ==========================================================
-   CHAR DHAM — 3-up / 3-down layout
+   CHAR DHAM — single 6-up grid that folds cleanly to 2-2-2
 ========================================================== */
 
 .chardham-section {
   background: var(--gray-100);
 }
 
-.chardham-rows {
-  display: flex;
-  flex-direction: column;
+.chardham-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
-.chardham-rows .card-row {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.chardham-rows .dest-card {
+.chardham-grid .dest-card {
   border: 1px solid var(--gray-300);
 }
 
-.chardham-rows .dest-card:hover {
+.chardham-grid .dest-card:hover {
   box-shadow: 0 22px 40px rgba(37,158,92,0.18);
   border-color: var(--green-dark);
 }
 
-.chardham-rows .dest-card:hover .dest-card-btn {
+.chardham-grid .dest-card:hover .dest-card-btn {
   background: var(--green-dark);
   border-color: var(--green-dark);
 }
@@ -378,7 +404,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .stars {
-  color: var(--black);
+  color: var(--green-dark);
   font-size: 14px;
   letter-spacing: 2px;
   margin-bottom: 14px;
@@ -551,15 +577,27 @@ a { text-decoration: none; color: inherit; }
 .card-grid .dest-card:nth-child(5) { transition-delay: 0.25s; }
 .card-grid .dest-card:nth-child(6) { transition-delay: 0.3s; }
 
+.chardham-grid .dest-card:nth-child(1) { transition-delay: 0.05s; }
+.chardham-grid .dest-card:nth-child(2) { transition-delay: 0.1s; }
+.chardham-grid .dest-card:nth-child(3) { transition-delay: 0.15s; }
+.chardham-grid .dest-card:nth-child(4) { transition-delay: 0.2s; }
+.chardham-grid .dest-card:nth-child(5) { transition-delay: 0.25s; }
+.chardham-grid .dest-card:nth-child(6) { transition-delay: 0.3s; }
+
 /* ==========================================================
    RESPONSIVE
+   Cards drop to a clean 2-column grid as soon as we leave desktop,
+   so 5 cards read as 2 / 2 / 1, 6 cards read as 2 / 2 / 2, and the
+   Char Dham grid (6 cards) also folds cleanly into 2 / 2 / 2 instead
+   of splitting unevenly.
 ========================================================== */
 
 @media (max-width: 1280px) {
-  .card-row { grid-template-columns: repeat(3, 1fr); }
-  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .card-row { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .chardham-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .about-img { height: 340px; }
 }
@@ -569,18 +607,18 @@ a { text-decoration: none; color: inherit; }
   .section { padding: 64px 0; }
   .card-row { grid-template-columns: repeat(2, 1fr); }
   .card-grid { grid-template-columns: repeat(2, 1fr); }
-  .chardham-rows .card-row { grid-template-columns: repeat(2, 1fr); }
+  .chardham-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero { height: 54vh; min-height: 360px; }
+  .hero { height: 42vh; min-height: 300px; }
   .section-para { display: none; }
 }
 
 @media (max-width: 520px) {
   .card-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .card-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .chardham-rows .card-row { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: 1fr; }
+  .chardham-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
   .dest-card { height: 200px; }
   .dest-card-body { padding: 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
   .dest-card-name { font-size: 14.5px; }
@@ -595,26 +633,28 @@ a { text-decoration: none; color: inherit; }
 </head>
 <body>
 
+ <div id="header"></div> 
+
 <!-- =========================================================
-     HERO BANNER — auto-rotating mountain photography
+     HERO BANNER — auto-rotating snow-capped Himalaya photography
      Replace each .hero-slide background-image via data-bg,
      or edit directly in style.css / inline style below.
 ========================================================= -->
 <section class="hero" id="hero">
   <div class="hero-slides">
     <!-- REPLACE data-bg with your own photo path/URL for each slide -->
-    <div class="hero-slide is-active" data-bg="https://picsum.photos/seed/kafall-hero-1/1920/1080"></div>
-    <div class="hero-slide" data-bg="https://picsum.photos/seed/kafall-hero-2/1920/1080"></div>
-    <div class="hero-slide" data-bg="https://picsum.photos/seed/kafall-hero-3/1920/1080"></div>
-    <div class="hero-slide" data-bg="https://picsum.photos/seed/kafall-hero-4/1920/1080"></div>
-    <div class="hero-slide" data-bg="https://picsum.photos/seed/kafall-hero-5/1920/1080"></div>
+    <div class="hero-slide is-active" data-bg="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4?fm=jpg&q=75&w=1920&auto=format&fit=crop"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=entropy"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=entropy"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=focalpoint&fp-y=0.3"></div>
   </div>
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
     <span class="hero-eyebrow">Kafall Travels</span>
-    <h1 class="hero-title">Explore Uttarakhand</h1>
+    <h1 class="hero-title">Uttarakhand Tour Packages from Delhi</h1>
     <p class="hero-sub">Handpicked journeys through the Himalayas — curated for comfort, built for memories.</p>
   </div>
 
@@ -692,7 +732,7 @@ a { text-decoration: none; color: inherit; }
 </section>
 
 <!-- =========================================================
-     CHAR DHAM YATRA — 3-up / 3-down layout, dark green texture
+     CHAR DHAM YATRA — single 6-card grid, folds cleanly to 2-2-2
 ========================================================= -->
 <section class="section chardham-section" id="chardham">
   <div class="container">
@@ -709,58 +749,54 @@ a { text-decoration: none; color: inherit; }
       </p>
     </div>
 
-    <div class="chardham-rows">
-      <div class="card-row">
-        <a class="dest-card" href="char-dham-yatra.html">
-          <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-chardham1/800/600')"></div>
-          <div class="dest-card-body">
-            <span class="dest-card-name">Char Dham Yatra</span>
-            <span class="dest-card-btn">Explore <i class="arrow"></i></span>
-          </div>
-        </a>
+    <div class="chardham-grid">
+      <a class="dest-card" href="char-dham-yatra.html">
+        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-chardham1/800/600')"></div>
+        <div class="dest-card-body">
+          <span class="dest-card-name">Char Dham Yatra</span>
+          <span class="dest-card-btn">Explore <i class="arrow"></i></span>
+        </div>
+      </a>
 
-        <a class="dest-card" href="do-dham-yatra.html">
-          <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-dodham/800/600')"></div>
-          <div class="dest-card-body">
-            <span class="dest-card-name">2 Dham Yatra</span>
-            <span class="dest-card-btn">Explore <i class="arrow"></i></span>
-          </div>
-        </a>
+      <a class="dest-card" href="do-dham-yatra.html">
+        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-dodham/800/600')"></div>
+        <div class="dest-card-body">
+          <span class="dest-card-name">2 Dham Yatra</span>
+          <span class="dest-card-btn">Explore <i class="arrow"></i></span>
+        </div>
+      </a>
 
-        <a class="dest-card" href="kedarnath.html">
-          <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-kedarnath1/800/600')"></div>
-          <div class="dest-card-body">
-            <span class="dest-card-name">Kedarnath</span>
-            <span class="dest-card-btn">Explore <i class="arrow"></i></span>
-          </div>
-        </a>
-      </div>
+      <a class="dest-card" href="kedarnath.html">
+        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-kedarnath1/800/600')"></div>
+        <div class="dest-card-body">
+          <span class="dest-card-name">Kedarnath</span>
+          <span class="dest-card-btn">Explore <i class="arrow"></i></span>
+        </div>
+      </a>
 
-      <div class="card-row">
-        <a class="dest-card" href="badrinath.html">
-          <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-badrinath/800/600')"></div>
-          <div class="dest-card-body">
-            <span class="dest-card-name">Badrinath</span>
-            <span class="dest-card-btn">Explore <i class="arrow"></i></span>
-          </div>
-        </a>
+      <a class="dest-card" href="badrinath.html">
+        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-badrinath/800/600')"></div>
+        <div class="dest-card-body">
+          <span class="dest-card-name">Badrinath</span>
+          <span class="dest-card-btn">Explore <i class="arrow"></i></span>
+        </div>
+      </a>
 
-        <a class="dest-card" href="gangotri.html">
-          <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-gangotri/800/600')"></div>
-          <div class="dest-card-body">
-            <span class="dest-card-name">Gangotri</span>
-            <span class="dest-card-btn">Explore <i class="arrow"></i></span>
-          </div>
-        </a>
+      <a class="dest-card" href="gangotri.html">
+        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-gangotri/800/600')"></div>
+        <div class="dest-card-body">
+          <span class="dest-card-name">Gangotri</span>
+          <span class="dest-card-btn">Explore <i class="arrow"></i></span>
+        </div>
+      </a>
 
-        <a class="dest-card" href="yamunotri.html">
-          <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-yamunotri/800/600')"></div>
-          <div class="dest-card-body">
-            <span class="dest-card-name">Yamunotri</span>
-            <span class="dest-card-btn">Explore <i class="arrow"></i></span>
-          </div>
-        </a>
-      </div>
+      <a class="dest-card" href="yamunotri.html">
+        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-yamunotri/800/600')"></div>
+        <div class="dest-card-body">
+          <span class="dest-card-name">Yamunotri</span>
+          <span class="dest-card-btn">Explore <i class="arrow"></i></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1053,6 +1089,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+</script>
+<script>
+  fetch('/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      // header ke andar ka script (hamburger menu) manually run karwana padega
+      document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
 </script>
 </body>
 </html>
