@@ -1,715 +1,477 @@
-<!-- ==========================================================
-     KAFALL TRAVELS — FOOTER (standalone fragment)
-     Usage: fetch this file and inject into <div id="footer"></div>
-     just like header.html is loaded.
-
-     <div id="footer"></div>
-     <script>
-       fetch('/footer.html')
-         .then(res => res.text())
-         .then(html => {
-           document.getElementById('footer').innerHTML = html;
-           document.getElementById('footer').querySelectorAll('script').forEach(oldScript => {
-             const newScript = document.createElement('script');
-             newScript.textContent = oldScript.textContent;
-             document.body.appendChild(newScript);
-           });
-         });
-     </script>
-
-     LOGO NOTE: replace the src on #footerLogoImg below
-     (currently /images/logo.png) with your real logo file.
-========================================================== -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kafall Travels — Footer</title>
 <style>
-/* Scoped footer styles — reuses the site's design tokens with
-   safe fallbacks so this fragment also works if injected on a
-   page before the main stylesheet variables are parsed. */
-
-.site-footer {
-  --f-green: var(--green, #259E5C);
-  --f-green-dark: var(--green-dark, #1b7a44);
-  --f-green-light: var(--green-light, #e8f7ef);
-  --f-black: var(--black, #111111);
-  --f-gray-900: var(--gray-900, #1a1a1a);
-  --f-gray-600: var(--gray-600, #5f6b66);
-  --f-gray-300: var(--gray-300, #d9e2dd);
-  --f-gray-100: var(--gray-100, #f5f8f6);
-  --f-white: var(--white, #ffffff);
-  --f-font-body: var(--font-body, 'Poppins', sans-serif);
-  --f-font-display: var(--font-display, 'Fraunces', serif);
-  --f-container-max: var(--container-max, 1800px);
-  --f-ease: var(--ease, cubic-bezier(0.22, 1, 0.36, 1));
-
-  font-family: var(--f-font-body);
-  background: var(--f-black);
-  color: rgba(255,255,255,0.72);
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.site-footer * { box-sizing: border-box; }
-.site-footer a { text-decoration: none; color: inherit; }
-.site-footer ul { list-style: none; }
-
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ---------- Animated top accent line ---------- */
-
-.footer-accent {
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(90deg, var(--f-green), var(--f-green-light), var(--f-green-dark), var(--f-green));
-  background-size: 300% 100%;
-  animation: footerAccentMove 6s linear infinite;
-}
-
-@keyframes footerAccentMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-
-.site-footer::before {
-  content: '';
-  position: absolute;
-  top: -160px;
-  right: -120px;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37,158,92,0.16) 0%, rgba(37,158,92,0) 70%);
-  pointer-events: none;
-  animation: footerGlowPulse 7s ease-in-out infinite;
-}
-
-.site-footer::after {
-  content: '';
-  position: absolute;
-  bottom: -180px;
-  left: -140px;
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37,158,92,0.10) 0%, rgba(37,158,92,0) 70%);
-  pointer-events: none;
-  animation: footerGlowPulse 8s ease-in-out infinite reverse;
-}
-
-@keyframes footerGlowPulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.12); }
-}
-
-.footer-container {
-  max-width: var(--f-container-max);
-  margin: 0 auto;
-  padding: 0 48px;
-  position: relative;
-  z-index: 1;
-}
-
-/* ---------- Destination marquee ticker ---------- */
-
-.footer-marquee-wrap {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  overflow: hidden;
-  padding: 14px 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.footer-marquee-track {
-  display: flex;
-  width: max-content;
-  gap: 0;
-  animation: footerMarquee 32s linear infinite;
-}
-
-.footer-marquee-wrap:hover .footer-marquee-track {
-  animation-play-state: paused;
-}
-
-.footer-marquee-track a {
-  display: inline-flex;
-  align-items: center;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.55);
-  padding: 0 22px;
-  white-space: nowrap;
-  transition: color 0.3s ease;
-}
-
-.footer-marquee-track a:hover { color: var(--f-green-light); }
-
-.footer-marquee-track span.dot {
-  color: var(--f-green);
-  padding: 0 4px;
-}
-
-@keyframes footerMarquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ---------- Top: newsletter / CTA strip ---------- */
-
-.footer-cta {
-  padding: 46px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.footer-cta-text h3 {
-  font-family: var(--f-font-display);
-  font-weight: 600;
-  font-size: clamp(20px, 2.4vw, 28px);
-  color: var(--f-white);
-  margin-bottom: 6px;
-}
-
-.footer-cta-text p {
-  font-size: 14.5px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-}
-
-.footer-cta-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.footer-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 26px;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: transform 0.35s var(--f-ease), background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-}
-
-.footer-btn-solid {
-  background: var(--f-green);
-  color: var(--f-white);
-  position: relative;
-  box-shadow: 0 0 0 0 rgba(37,158,92,0.55);
-  animation: footerBtnPulse 2.6s ease-in-out infinite;
-}
-
-@keyframes footerBtnPulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,158,92,0.45); }
-  70% { box-shadow: 0 0 0 12px rgba(37,158,92,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,158,92,0); }
-}
-
-.footer-btn-solid:hover {
-  background: var(--f-green-dark);
-  transform: translateY(-2px);
-}
-
-.footer-btn-outline {
-  border: 1.5px solid rgba(255,255,255,0.25);
-  color: var(--f-white);
-}
-
-.footer-btn-outline:hover {
-  border-color: var(--f-green);
-  color: var(--f-green-light);
-  transform: translateY(-2px);
-}
-
-/* ---------- Main grid ---------- */
-
-.footer-main {
-  padding: 56px 0 40px;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 40px;
-}
-
-.footer-col {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s var(--f-ease), transform 0.7s var(--f-ease);
-}
-
-.footer-col.is-visible { opacity: 1; transform: translateY(0); }
-
-.footer-col:nth-child(1) { transition-delay: 0.02s; }
-.footer-col:nth-child(2) { transition-delay: 0.1s; }
-.footer-col:nth-child(3) { transition-delay: 0.18s; }
-.footer-col:nth-child(4) { transition-delay: 0.26s; }
-
-.footer-brand-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.footer-brand-logo .mark {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: var(--f-green-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-  transition: transform 0.5s var(--f-ease);
-}
-
-.footer-brand-logo:hover .mark {
-  transform: rotate(-6deg) scale(1.06);
-}
-
-.footer-brand-logo .mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.footer-brand-logo span {
-  font-family: var(--f-font-display);
-  font-weight: 600;
-  font-size: 21px;
-  color: var(--f-white);
-}
-
-.footer-about-text {
-  font-size: 14.5px;
-  line-height: 1.75;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  max-width: 340px;
-  margin-bottom: 22px;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 10px;
-}
-
-.footer-socials a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s var(--f-ease);
-}
-
-.footer-socials a svg {
-  width: 16px;
-  height: 16px;
-  fill: rgba(255,255,255,0.85);
-}
-
-.footer-socials a:hover {
-  background: var(--f-green);
-  border-color: var(--f-green);
-  transform: translateY(-3px) rotate(-6deg);
-}
-
-.footer-col-title {
-  position: relative;
-  display: inline-block;
-  font-size: 14.5px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--f-white);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-
-.footer-col-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 28px;
-  background: var(--f-green);
-  border-radius: 2px;
-  transition: width 0.5s var(--f-ease);
-}
-
-.footer-col:hover .footer-col-title::after {
-  width: 100%;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links a {
-  font-size: 14.5px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  transition: color 0.3s ease, padding-left 0.3s var(--f-ease);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.footer-links a::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--f-green);
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.3s var(--f-ease), transform 0.3s var(--f-ease);
-  flex-shrink: 0;
-}
-
-.footer-links a:hover {
-  color: var(--f-green-light);
-  padding-left: 2px;
-}
-
-.footer-links a:hover::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.footer-contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-style: normal;
-}
-
-.footer-contact-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14.5px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.6;
-}
-
-.footer-contact-list svg {
-  width: 17px;
-  height: 17px;
-  stroke: var(--f-green);
-  fill: none;
-  stroke-width: 1.8;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.footer-contact-list a {
-  color: rgba(255,255,255,0.6);
-  transition: color 0.3s ease;
-}
-
-.footer-contact-list a:hover {
-  color: var(--f-green-light);
-}
-
-/* ---------- Bottom bar ---------- */
-
-.footer-bottom {
-  padding: 22px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-copy {
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.5);
-}
-
-.footer-bottom-right {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.footer-legal {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.footer-legal a {
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.5);
-  transition: color 0.3s ease;
-}
-
-.footer-legal a:hover {
-  color: var(--f-green-light);
-}
-
-.footer-totop {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  cursor: pointer;
-  transition: transform 0.4s var(--f-ease), background 0.35s ease, border-color 0.35s ease;
-}
-
-.footer-totop svg {
-  width: 15px;
-  height: 15px;
-  stroke: var(--f-white);
-  fill: none;
-  stroke-width: 2.2;
-  transition: transform 0.4s var(--f-ease);
-}
-
-.footer-totop:hover {
-  background: var(--f-green);
-  border-color: var(--f-green);
-  transform: translateY(-3px);
-}
-
-.footer-totop:hover svg {
-  transform: translateY(-2px);
-}
-
-/* ---------- Responsive ---------- */
-
-@media (max-width: 1180px) {
-  .footer-main { grid-template-columns: 1.2fr 1fr 1fr; }
-  .footer-main .footer-col:nth-child(1) { grid-column: 1 / -1; }
-}
-
-@media (max-width: 860px) {
-  .footer-container { padding: 0 22px; }
-  .footer-main { grid-template-columns: 1fr 1fr; gap: 32px 24px; padding: 44px 0 32px; }
-  .footer-main .footer-col:nth-child(1) { grid-column: 1 / -1; }
-  .footer-cta { padding: 36px 0; }
-  .footer-about-text { max-width: 100%; }
-}
-
-@media (max-width: 560px) {
-  .footer-main { grid-template-columns: 1fr; gap: 30px; }
-  .footer-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
-  .footer-cta-actions { width: 100%; }
-  .footer-btn { flex: 1; justify-content: center; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .footer-bottom-right { width: 100%; justify-content: space-between; }
-  .footer-marquee-track a { padding: 0 14px; font-size: 12.5px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .site-footer * { animation: none !important; transition: none !important; }
-}
+  :root{
+    --bg: #0a0f0d;
+    --bg-soft: #0d1310;
+    --green: #3fae6a;
+    --green-bright: #4ecb7d;
+    --text: #f2f4f2;
+    --text-muted: #b9c2bd;
+    --text-faint: #7d8a83;
+    --border: rgba(255,255,255,0.08);
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #06090a;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+  }
+
+  footer.site-footer{
+    position: relative;
+    background: var(--bg);
+    border-top: 3px solid var(--green-bright);
+    padding: 56px 6vw 0;
+    overflow: hidden;
+  }
+
+  /* soft ambient glow, subtle motion */
+  footer.site-footer::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    left:50%;
+    width:600px;
+    height:300px;
+    background: radial-gradient(circle, rgba(78,203,125,0.10), transparent 70%);
+    transform: translateX(-50%);
+    pointer-events:none;
+    animation: drift 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift{
+    from{ opacity:.6; transform: translateX(-52%) translateY(0); }
+    to{ opacity:1; transform: translateX(-48%) translateY(10px); }
+  }
+
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+  .brand-col .brand-row{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .brand-logo{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), #1f6b3f);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size: 14px;
+    color:#06110a;
+    flex-shrink:0;
+    box-shadow: 0 0 0 2px rgba(78,203,125,0.15);
+    transition: transform .35s ease, box-shadow .35s ease;
+    overflow: hidden;
+  }
+
+  /* If you link a real logo image, it will fill this circle nicely */
+  .brand-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+  }
+  .brand-row:hover .brand-logo{
+    transform: rotate(-8deg) scale(1.06);
+    box-shadow: 0 0 0 4px rgba(78,203,125,0.22);
+  }
+
+  .brand-name{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: .01em;
+    color: var(--text);
+  }
+
+  .brand-desc{
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.65;
+    max-width: 360px;
+    margin: 0 0 22px;
+  }
+
+  .socials{
+    display:flex;
+    gap: 12px;
+  }
+
+  .socials a{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--text);
+    text-decoration:none;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+
+  .socials a:hover{
+    background: var(--green-bright);
+    border-color: var(--green-bright);
+    color: #06110a;
+    transform: translateY(-3px);
+  }
+
+  .socials svg{ width:16px; height:16px; }
+
+  .col-title{
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--text);
+    margin: 0 0 20px;
+    text-transform: uppercase;
+  }
+
+  .footer-links{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap: 13px;
+  }
+
+  .footer-links a{
+    color: var(--text-muted);
+    text-decoration:none;
+    font-size: 14.5px;
+    position:relative;
+    display:inline-block;
+    transition: color .25s ease, transform .25s ease;
+  }
+
+  .footer-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0%;
+    height:1px;
+    background: var(--green-bright);
+    transition: width .3s ease;
+  }
+
+  .footer-links a:hover{
+    color: var(--text);
+    transform: translateX(3px);
+  }
+
+  .footer-links a:hover::after{
+    width:100%;
+  }
+
+  .contact-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap: 16px;
+  }
+
+  .contact-list li{
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .contact-list svg{
+    width: 18px;
+    height: 18px;
+    flex-shrink:0;
+    color: var(--green-bright);
+    margin-top: 2px;
+  }
+
+  .contact-list a{
+    color: var(--text-muted);
+    text-decoration:none;
+    transition: color .25s ease;
+  }
+  .contact-list a:hover{ color: var(--green-bright); }
+
+  .footer-bottom{
+    border-top: 1px solid var(--border);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 22px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .footer-bottom p{
+    margin:0;
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+
+  .legal-links{
+    display:flex;
+    gap: 26px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .legal-links a{
+    color: var(--text-faint);
+    font-size: 13.5px;
+    text-decoration:none;
+    transition: color .25s ease;
+  }
+
+  .legal-links a:hover{
+    color: var(--green-bright);
+  }
+
+  /* fade-in-up on load */
+  .fade-up{
+    opacity:0;
+    transform: translateY(18px);
+    animation: fadeUp .7s ease forwards;
+  }
+  @keyframes fadeUp{
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  /* ---------- WhatsApp Floating Button ---------- */
+  .whatsapp-float{
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 58px;
+    height: 58px;
+    z-index: 999;
+    text-decoration:none;
+  }
+
+  .whatsapp-float .btn-core{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25D366, #1fb355);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .whatsapp-float svg{
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .whatsapp-float:hover .btn-core{
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.1);
+  }
+
+  /* the smooth outward "wave"/ripple, looping gently */
+  .whatsapp-float .ripple{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.55);
+    z-index: 1;
+    animation: wave 2.4s ease-out infinite;
+  }
+
+  .whatsapp-float .ripple.delay{
+    animation-delay: 1.2s;
+  }
+
+  @keyframes wave{
+    0%   { transform: scale(1);   opacity: .55; }
+    70%  { transform: scale(1.9); opacity: 0; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+
+  @media (max-width: 620px){
+    .whatsapp-float{
+      bottom: 18px;
+      right: 18px;
+      width: 52px;
+      height: 52px;
+    }
+    .whatsapp-float svg{ width:25px; height:25px; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .footer-grid{
+      grid-template-columns: 1fr 1fr;
+      row-gap: 36px;
+    }
+    .brand-col{ grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 620px){
+    footer.site-footer{ padding: 44px 6vw 0; }
+    .footer-grid{
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .footer-bottom{
+      flex-direction: column;
+      align-items:flex-start;
+      text-align:left;
+    }
+    .legal-links{
+      flex-wrap: wrap;
+      gap: 16px 22px;
+    }
+    .brand-desc{ max-width: 100%; }
+  }
 </style>
+</head>
+<body>
 
-<footer class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/TravelAgency">
-  <span class="sr-only" itemprop="name">Kafall Travels</span>
-  <div class="footer-accent" aria-hidden="true"></div>
+<!-- WhatsApp floating button — fixed hone ki wajah se poore page/scroll pe same jagah rahega -->
+<a class="whatsapp-float"
+   href="https://wa.me/919354419499?text=Hi%20Kafall%20Travels%2C%20I%20want%20to%20know%20about%20the%20plan"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+  <span class="ripple"></span>
+  <span class="ripple delay"></span>
+  <span class="btn-core">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.4A9.9 9.9 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 20 12a8 8 0 0 1-8 8zm4.4-6c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.3-2.8-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+  </span>
+</a>
 
-  <!-- Animated destination ticker — reinforces internal links + keywords -->
-  <div class="footer-marquee-wrap" aria-hidden="true">
-    <div class="footer-marquee-track">
-      <a href="/char-dham-yatra.html">Char Dham Yatra</a><span class="dot">&bull;</span>
-      <a href="/kedarnath.html">Kedarnath</a><span class="dot">&bull;</span>
-      <a href="/badrinath.html">Badrinath</a><span class="dot">&bull;</span>
-      <a href="/packages/auli-tour-package.html">Auli</a><span class="dot">&bull;</span>
-      <a href="/packages/nainital-tour-package.html">Nainital</a><span class="dot">&bull;</span>
-      <a href="/rishikesh.html">Rishikesh</a><span class="dot">&bull;</span>
-      <a href="/packages/mussoorie-tour-package.html">Mussoorie</a><span class="dot">&bull;</span>
-      <a href="/packages/chopta-tungnath-tour-packages.html">Chopta</a><span class="dot">&bull;</span>
-      <a href="/packages/mukteshwar-tour-package.html">Mukteshwar</a><span class="dot">&bull;</span>
-      <a href="/packages/munsyari-tour-package.html">Munsyari</a><span class="dot">&bull;</span>
-      <!-- duplicated for seamless loop -->
-      <a href="/char-dham-yatra.html">Char Dham Yatra</a><span class="dot">&bull;</span>
-      <a href="/kedarnath.html">Kedarnath</a><span class="dot">&bull;</span>
-      <a href="/badrinath.html">Badrinath</a><span class="dot">&bull;</span>
-      <a href="/packages/auli-tour-package.html">Auli</a><span class="dot">&bull;</span>
-      <a href="/packages/nainital-tour-package.html">Nainital</a><span class="dot">&bull;</span>
-      <a href="/rishikesh.html">Rishikesh</a><span class="dot">&bull;</span>
-      <a href="/packages/mussoorie-tour-package.html">Mussoorie</a><span class="dot">&bull;</span>
-      <a href="/packages/chopta-tungnath-tour-packages.html">Chopta</a><span class="dot">&bull;</span>
-      <a href="/packages/mukteshwar-tour-package.html">Mukteshwar</a><span class="dot">&bull;</span>
-      <a href="/packages/munsyari-tour-package.html">Munsyari</a><span class="dot">&bull;</span>
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div class="brand-col fade-up" style="animation-delay:.05s">
+      <div class="brand-row">
+        <div class="brand-logo">
+          <!-- 👇 Apna logo image ka link/URL yaha "src" me daalein -->
+          <img src="PASTE-YOUR-LOGO-IMAGE-LINK-HERE.png" alt="Kafall Travels logo">
+        </div>
+        <span class="brand-name">Kafall Travels</span>
+      </div>
+      <p class="brand-desc">
+        A Delhi-based travel agency built entirely around Uttarakhand —
+        Char Dham Yatra, hill escapes and weekend getaways, planned with
+        honest itineraries and verified stays.
+      </p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.2c0-.87.24-1.46 1.5-1.46H16.5V4.14C16.16 4.1 15 4 13.66 4 10.85 4 9 5.66 9 8.7V10.5H6.5v3H9V21h4.5z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.5-.85-2.15c-.8-.85-1.7-.85-2.1-.9C15.9 4 12 4 12 4h-.02s-3.9 0-6.65.15c-.4.05-1.3.05-2.1.9C2.6 5.7 2.4 7.2 2.4 7.2S2.2 8.95 2.2 10.7v1.6c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.15c.8.85 1.85.82 2.3.92C7.1 19 12 19 12 19s3.9 0 6.65-.15c.4-.05 1.3-.05 2.1-.9.65-.65.85-2.15.85-2.15s.2-1.75.2-3.5v-1.6c0-1.75-.2-3.5-.2-3.5zM9.9 14.15V8.85l5.15 2.65-5.15 2.65z"/></svg>
+        </a>
+      </div>
     </div>
+
+    <div class="fade-up" style="animation-delay:.12s">
+      <h4 class="col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Char Dham Yatra</a></li>
+        <li><a href="#">Stranger Trips</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="fade-up" style="animation-delay:.19s">
+      <h4 class="col-title">Destinations</h4>
+      <ul class="footer-links">
+        <li><a href="#">Kedarnath</a></li>
+        <li><a href="#">Badrinath</a></li>
+        <li><a href="#">Mussoorie</a></li>
+        <li><a href="#">Nainital</a></li>
+        <li><a href="#">Auli</a></li>
+        <li><a href="#">Chopta</a></li>
+      </ul>
+    </div>
+
+    <div class="fade-up" style="animation-delay:.26s">
+      <h4 class="col-title">Get In Touch</h4>
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Your Office Address, Delhi, India</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.1z"/></svg>
+          <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 6 9-6"/></svg>
+          <a href="mailto:info@kafalltravels.com">info@kafalltravels.com</a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
-  <div class="footer-container">
-
-    <!-- CTA strip -->
-    <div class="footer-cta">
-      <div class="footer-cta-text">
-        <h3>Planning your next Uttarakhand trip?</h3>
-        <p>Talk to our travel experts and get an itinerary made just for you.</p>
-      </div>
-      <div class="footer-cta-actions">
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20an%20Uttarakhand%20tour%20package" target="_blank" rel="noopener" class="footer-btn footer-btn-solid">Chat on WhatsApp</a>
-        <a href="tel:+91XXXXXXXXXX" class="footer-btn footer-btn-outline">Call Us</a>
-      </div>
-    </div>
-
-    <!-- Main grid -->
-    <nav class="footer-main" aria-label="Footer navigation">
-
-      <!-- Brand -->
-      <div class="footer-col">
-        <a href="/index.html" class="footer-brand-logo" aria-label="Kafall Travels — Home">
-          <span class="mark">
-            <!-- Replace this src with your real logo file, e.g. /images/logo.png -->
-            <img id="footerLogoImg" src="/images/logo.png" alt="Kafall Travels logo" loading="lazy"
-                 onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{innerHTML:'&lt;svg viewBox=\'0 0 24 24\' width=\'22\' height=\'22\' fill=\'none\' stroke=\'%231b7a44\' stroke-width=\'2\'&gt;&lt;path d=\'M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z\'/&gt;&lt;/svg&gt;'}));">
-          </span>
-          <span itemprop="alternateName">Kafall Travels</span>
-        </a>
-        <p class="footer-about-text" itemprop="description">
-          A Delhi-based travel agency specialising in Uttarakhand holidays — Char Dham Yatra,
-          Kedarnath, Auli, Nainital, Rishikesh, weekend hill getaways and solo/stranger trips,
-          planned with verified stays and honest itineraries.
-        </p>
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/kafalltravels" target="_blank" rel="noopener" aria-label="Kafall Travels on Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.6 1.8c.46-.16 1.26-.35 2.43-.4C9.28 1.33 9.68 1.33 12 1.33Zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2Zm0 2.16a4.44 4.44 0 1 1 0 8.88 4.44 4.44 0 0 1 0-8.88Zm7.53-2.4a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0Z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/kafalltravels" target="_blank" rel="noopener" aria-label="Kafall Travels on Facebook">
-            <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@kafalltravels" target="_blank" rel="noopener" aria-label="Kafall Travels on YouTube">
-            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="footer-col">
-        <h4 class="footer-col-title">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="/index.html#chardham">Char Dham Yatra</a></li>
-          <li><a href="/index.html#weekend">Weekend Trips</a></li>
-          <li><a href="/index.html#stranger-trips">Stranger Trips</a></li>
-          <li><a href="/index.html#family">Family Packages</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Popular Destinations -->
-      <div class="footer-col">
-        <h4 class="footer-col-title">Popular Destinations</h4>
-        <ul class="footer-links">
-          <li><a href="/kedarnath.html">Kedarnath</a></li>
-          <li><a href="/badrinath.html">Badrinath</a></li>
-          <li><a href="/packages/auli-tour-package.html">Auli</a></li>
-          <li><a href="/packages/nainital-tour-package.html">Nainital</a></li>
-          <li><a href="/rishikesh.html">Rishikesh</a></li>
-          <li><a href="/packages/mukteshwar-tour-package.html">Mukteshwar</a></li>
-          <li><a href="/packages/munsyari-tour-package.html">Munsyari</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="footer-col">
-        <h4 class="footer-col-title">Get In Touch</h4>
-        <address class="footer-contact-list">
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span itemprop="address">Your Office Address Here, Delhi, DL 1100XX</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7 8.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
-            <a href="tel:+91XXXXXXXXXX" itemprop="telephone">+91-XXXXXXXXXX</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6 9-6"/></svg>
-            <a href="mailto:info@kafalltravels.com" itemprop="email">info@kafalltravels.com</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4M16 2.5v4"/></svg>
-            <span>Mon &ndash; Sun: 9:00 AM &ndash; 9:00 PM</span>
-          </li>
-        </address>
-      </div>
-
-    </nav>
-
-    <!-- Bottom bar -->
-    <div class="footer-bottom">
-      <span class="footer-copy">&copy; <span id="footerYear">2026</span> Kafall Travels. All rights reserved.</span>
-      <div class="footer-bottom-right">
-        <div class="footer-legal">
-          <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="/refund-policy.html">Refund Policy</a>
-        </div>
-        <button class="footer-totop" id="footerToTop" type="button" aria-label="Back to top">
-          <svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
-        </button>
-      </div>
-    </div>
-
+  <div class="footer-bottom">
+    <p id="copyright">© 2026 Kafall Travels. All rights reserved.</p>
+    <ul class="legal-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms &amp; Conditions</a></li>
+      <li><a href="#">Refund Policy</a></li>
+    </ul>
   </div>
 </footer>
 
 <script>
-(function () {
-  var yearEl = document.getElementById('footerYear');
-  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+  // year auto-update, so copyright never goes stale
+  document.getElementById('copyright').textContent =
+    `© ${new Date().getFullYear()} Kafall Travels. All rights reserved.`;
 
-  var toTopBtn = document.getElementById('footerToTop');
-  if (toTopBtn) {
-    toTopBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  var cols = document.querySelectorAll('.site-footer .footer-col');
-  if ('IntersectionObserver' in window && cols.length) {
-    var footerObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          footerObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    cols.forEach(function (col) { footerObserver.observe(col); });
-  } else {
-    cols.forEach(function (col) { col.classList.add('is-visible'); });
-  }
-})();
+  // smooth scroll for in-page anchor links (footer nav etc.)
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', e => e.preventDefault());
+  });
 </script>
+
+</body>
+</html>
