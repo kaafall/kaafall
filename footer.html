@@ -1,165 +1,715 @@
-<!-- ═══════════════════════════════════════════
-     KAFALL TRAVELS — FOOTER (self-contained)
-     HTML + CSS + JS all in this one file.
-     Edit this file only — wherever it's
-     included, the change reflects everywhere.
-═══════════════════════════════════════════ -->
+<!-- ==========================================================
+     KAFALL TRAVELS — FOOTER (standalone fragment)
+     Usage: fetch this file and inject into <div id="footer"></div>
+     just like header.html is loaded.
+
+     <div id="footer"></div>
+     <script>
+       fetch('/footer.html')
+         .then(res => res.text())
+         .then(html => {
+           document.getElementById('footer').innerHTML = html;
+           document.getElementById('footer').querySelectorAll('script').forEach(oldScript => {
+             const newScript = document.createElement('script');
+             newScript.textContent = oldScript.textContent;
+             document.body.appendChild(newScript);
+           });
+         });
+     </script>
+
+     LOGO NOTE: replace the src on #footerLogoImg below
+     (currently /images/logo.png) with your real logo file.
+========================================================== -->
+
 <style>
-  .kf-footer{
-    --green:#1a9e5c;
-    --font:'Poppins',sans-serif;
-    --t:.25s ease;
-    font-family:var(--font);
-    background:#111827;
-  }
-  .kf-footer *{box-sizing:border-box;}
-  .kf-footer a{text-decoration:none;color:inherit;}
-  .kf-footer ul{list-style:none;margin:0;padding:0;}
-  .kf-wrap{max-width:1600px;margin:0 auto;padding:0 36px;}
+/* Scoped footer styles — reuses the site's design tokens with
+   safe fallbacks so this fragment also works if injected on a
+   page before the main stylesheet variables are parsed. */
 
-  .kf-footer-top{padding:64px 0 44px;}
-  .kf-footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1.2fr;gap:44px;}
+.site-footer {
+  --f-green: var(--green, #259E5C);
+  --f-green-dark: var(--green-dark, #1b7a44);
+  --f-green-light: var(--green-light, #e8f7ef);
+  --f-black: var(--black, #111111);
+  --f-gray-900: var(--gray-900, #1a1a1a);
+  --f-gray-600: var(--gray-600, #5f6b66);
+  --f-gray-300: var(--gray-300, #d9e2dd);
+  --f-gray-100: var(--gray-100, #f5f8f6);
+  --f-white: var(--white, #ffffff);
+  --f-font-body: var(--font-body, 'Poppins', sans-serif);
+  --f-font-display: var(--font-display, 'Fraunces', serif);
+  --f-container-max: var(--container-max, 1800px);
+  --f-ease: var(--ease, cubic-bezier(0.22, 1, 0.36, 1));
 
-  .kf-ft-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .kf-ft-logo-img{width:46px;height:46px;object-fit:contain;filter:invert(1) brightness(2);}
-  .kf-ftl-main{display:block;font-size:21px;font-weight:800;color:#fff;line-height:1;}
-  .kf-ftl-sub{display:block;font-size:12px;color:rgba(255,255,255,.45);letter-spacing:1px;}
-  .kf-ft-brand p{color:rgba(255,255,255,.5);font-size:15px;line-height:1.75;margin:0 0 22px;}
+  font-family: var(--f-font-body);
+  background: var(--f-black);
+  color: rgba(255,255,255,0.72);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
 
-  .kf-ft-socials{display:flex;gap:12px;}
-  .kf-ft-socials a{width:42px;height:42px;border-radius:8px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.55);display:grid;place-items:center;font-size:17px;transition:var(--t);}
-  .kf-ft-socials a:hover{background:var(--green);color:#fff;}
+.site-footer * { box-sizing: border-box; }
+.site-footer a { text-decoration: none; color: inherit; }
+.site-footer ul { list-style: none; }
 
-  .kf-ft-col h5{font-size:15px;font-weight:700;color:#fff;margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);}
-  .kf-ft-col ul li{margin-bottom:10px;}
-  .kf-ft-col ul li a{color:rgba(255,255,255,.5);font-size:14.5px;transition:var(--t);}
-  .kf-ft-col ul li a:hover{color:var(--green);}
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 
-  .kf-ft-contact li{color:rgba(255,255,255,.5);font-size:14.5px;display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
-  .kf-ft-contact li i{color:var(--green);margin-top:2px;flex-shrink:0;font-size:16px;width:18px;text-align:center;}
+/* ---------- Animated top accent line ---------- */
 
-  .kf-footer-bar{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;}
-  .kf-footer-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-  .kf-footer-bar-inner p{color:rgba(255,255,255,.35);font-size:13.5px;margin:0;}
+.footer-accent {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--f-green), var(--f-green-light), var(--f-green-dark), var(--f-green));
+  background-size: 300% 100%;
+  animation: footerAccentMove 6s linear infinite;
+}
 
-  .kf-scroll-top{
-    position:fixed;bottom:72px;right:20px;width:42px;height:42px;
-    background:var(--green);color:#fff;border:none;border-radius:8px;
-    font-size:16px;cursor:pointer;display:grid;place-items:center;
-    box-shadow:0 4px 16px rgba(26,158,92,.4);transition:var(--t);
-    opacity:0;pointer-events:none;z-index:800;
-  }
-  .kf-scroll-top.kf-show{opacity:1;pointer-events:all;}
-  .kf-scroll-top:hover{background:#0e7a44;transform:translateY(-3px);}
+@keyframes footerAccentMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
 
-  .kf-wa-float{
-    position:fixed;bottom:20px;right:20px;width:48px;height:48px;
-    background:#25d366;color:#fff;border-radius:50%;
-    display:grid;place-items:center;font-size:24px;
-    box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:800;transition:var(--t);
-  }
-  .kf-wa-float:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.55);}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: -160px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,158,92,0.16) 0%, rgba(37,158,92,0) 70%);
+  pointer-events: none;
+  animation: footerGlowPulse 7s ease-in-out infinite;
+}
 
-  @media(max-width:1100px){
-    .kf-footer-grid{grid-template-columns:1fr 1fr 1fr;gap:28px;}
-    .kf-ft-brand{grid-column:1/-1;}
-  }
-  @media(max-width:768px){
-    .kf-footer-grid{grid-template-columns:1fr 1fr;}
-    .kf-footer-bar-inner{flex-direction:column;text-align:center;gap:4px;}
-  }
-  @media(max-width:540px){
-    .kf-footer-grid{grid-template-columns:1fr;}
-  }
+.site-footer::after {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  left: -140px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,158,92,0.10) 0%, rgba(37,158,92,0) 70%);
+  pointer-events: none;
+  animation: footerGlowPulse 8s ease-in-out infinite reverse;
+}
+
+@keyframes footerGlowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+.footer-container {
+  max-width: var(--f-container-max);
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Destination marquee ticker ---------- */
+
+.footer-marquee-wrap {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  padding: 14px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.footer-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: footerMarquee 32s linear infinite;
+}
+
+.footer-marquee-wrap:hover .footer-marquee-track {
+  animation-play-state: paused;
+}
+
+.footer-marquee-track a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  padding: 0 22px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.footer-marquee-track a:hover { color: var(--f-green-light); }
+
+.footer-marquee-track span.dot {
+  color: var(--f-green);
+  padding: 0 4px;
+}
+
+@keyframes footerMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Top: newsletter / CTA strip ---------- */
+
+.footer-cta {
+  padding: 46px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-cta-text h3 {
+  font-family: var(--f-font-display);
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: var(--f-white);
+  margin-bottom: 6px;
+}
+
+.footer-cta-text p {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform 0.35s var(--f-ease), background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.footer-btn-solid {
+  background: var(--f-green);
+  color: var(--f-white);
+  position: relative;
+  box-shadow: 0 0 0 0 rgba(37,158,92,0.55);
+  animation: footerBtnPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes footerBtnPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,158,92,0.45); }
+  70% { box-shadow: 0 0 0 12px rgba(37,158,92,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,158,92,0); }
+}
+
+.footer-btn-solid:hover {
+  background: var(--f-green-dark);
+  transform: translateY(-2px);
+}
+
+.footer-btn-outline {
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: var(--f-white);
+}
+
+.footer-btn-outline:hover {
+  border-color: var(--f-green);
+  color: var(--f-green-light);
+  transform: translateY(-2px);
+}
+
+/* ---------- Main grid ---------- */
+
+.footer-main {
+  padding: 56px 0 40px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+.footer-col {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--f-ease), transform 0.7s var(--f-ease);
+}
+
+.footer-col.is-visible { opacity: 1; transform: translateY(0); }
+
+.footer-col:nth-child(1) { transition-delay: 0.02s; }
+.footer-col:nth-child(2) { transition-delay: 0.1s; }
+.footer-col:nth-child(3) { transition-delay: 0.18s; }
+.footer-col:nth-child(4) { transition-delay: 0.26s; }
+
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-brand-logo .mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--f-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.5s var(--f-ease);
+}
+
+.footer-brand-logo:hover .mark {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.footer-brand-logo .mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-brand-logo span {
+  font-family: var(--f-font-display);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--f-white);
+}
+
+.footer-about-text {
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  max-width: 340px;
+  margin-bottom: 22px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s var(--f-ease);
+}
+
+.footer-socials a svg {
+  width: 16px;
+  height: 16px;
+  fill: rgba(255,255,255,0.85);
+}
+
+.footer-socials a:hover {
+  background: var(--f-green);
+  border-color: var(--f-green);
+  transform: translateY(-3px) rotate(-6deg);
+}
+
+.footer-col-title {
+  position: relative;
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--f-white);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 28px;
+  background: var(--f-green);
+  border-radius: 2px;
+  transition: width 0.5s var(--f-ease);
+}
+
+.footer-col:hover .footer-col-title::after {
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s ease, padding-left 0.3s var(--f-ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--f-green);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s var(--f-ease), transform 0.3s var(--f-ease);
+  flex-shrink: 0;
+}
+
+.footer-links a:hover {
+  color: var(--f-green-light);
+  padding-left: 2px;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-style: normal;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+.footer-contact-list svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--f-green);
+  fill: none;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-contact-list a {
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s ease;
+}
+
+.footer-contact-list a:hover {
+  color: var(--f-green-light);
+}
+
+/* ---------- Bottom bar ---------- */
+
+.footer-bottom {
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--f-green-light);
+}
+
+.footer-totop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  cursor: pointer;
+  transition: transform 0.4s var(--f-ease), background 0.35s ease, border-color 0.35s ease;
+}
+
+.footer-totop svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--f-white);
+  fill: none;
+  stroke-width: 2.2;
+  transition: transform 0.4s var(--f-ease);
+}
+
+.footer-totop:hover {
+  background: var(--f-green);
+  border-color: var(--f-green);
+  transform: translateY(-3px);
+}
+
+.footer-totop:hover svg {
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1180px) {
+  .footer-main { grid-template-columns: 1.2fr 1fr 1fr; }
+  .footer-main .footer-col:nth-child(1) { grid-column: 1 / -1; }
+}
+
+@media (max-width: 860px) {
+  .footer-container { padding: 0 22px; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 32px 24px; padding: 44px 0 32px; }
+  .footer-main .footer-col:nth-child(1) { grid-column: 1 / -1; }
+  .footer-cta { padding: 36px 0; }
+  .footer-about-text { max-width: 100%; }
+}
+
+@media (max-width: 560px) {
+  .footer-main { grid-template-columns: 1fr; gap: 30px; }
+  .footer-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .footer-cta-actions { width: 100%; }
+  .footer-btn { flex: 1; justify-content: center; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .footer-bottom-right { width: 100%; justify-content: space-between; }
+  .footer-marquee-track a { padding: 0 14px; font-size: 12.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer * { animation: none !important; transition: none !important; }
+}
 </style>
 
-<footer class="kf-footer">
-  <div class="kf-footer-top">
-    <div class="kf-wrap kf-footer-grid">
+<footer class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/TravelAgency">
+  <span class="sr-only" itemprop="name">Kafall Travels</span>
+  <div class="footer-accent" aria-hidden="true"></div>
 
-      <div class="kf-ft-col kf-ft-brand">
-        <a href="/index.html" class="kf-ft-logo">
-          <img src="/images/Abstract Mountain Logo (1).png" alt="Kafall Travels" class="kf-ft-logo-img"/>
-          <span>
-            <span class="kf-ftl-main">Kafall Travels</span>
-            <span class="kf-ftl-sub">Land of Gods</span>
+  <!-- Animated destination ticker — reinforces internal links + keywords -->
+  <div class="footer-marquee-wrap" aria-hidden="true">
+    <div class="footer-marquee-track">
+      <a href="/char-dham-yatra.html">Char Dham Yatra</a><span class="dot">&bull;</span>
+      <a href="/kedarnath.html">Kedarnath</a><span class="dot">&bull;</span>
+      <a href="/badrinath.html">Badrinath</a><span class="dot">&bull;</span>
+      <a href="/packages/auli-tour-package.html">Auli</a><span class="dot">&bull;</span>
+      <a href="/packages/nainital-tour-package.html">Nainital</a><span class="dot">&bull;</span>
+      <a href="/rishikesh.html">Rishikesh</a><span class="dot">&bull;</span>
+      <a href="/packages/mussoorie-tour-package.html">Mussoorie</a><span class="dot">&bull;</span>
+      <a href="/packages/chopta-tungnath-tour-packages.html">Chopta</a><span class="dot">&bull;</span>
+      <a href="/packages/mukteshwar-tour-package.html">Mukteshwar</a><span class="dot">&bull;</span>
+      <a href="/packages/munsyari-tour-package.html">Munsyari</a><span class="dot">&bull;</span>
+      <!-- duplicated for seamless loop -->
+      <a href="/char-dham-yatra.html">Char Dham Yatra</a><span class="dot">&bull;</span>
+      <a href="/kedarnath.html">Kedarnath</a><span class="dot">&bull;</span>
+      <a href="/badrinath.html">Badrinath</a><span class="dot">&bull;</span>
+      <a href="/packages/auli-tour-package.html">Auli</a><span class="dot">&bull;</span>
+      <a href="/packages/nainital-tour-package.html">Nainital</a><span class="dot">&bull;</span>
+      <a href="/rishikesh.html">Rishikesh</a><span class="dot">&bull;</span>
+      <a href="/packages/mussoorie-tour-package.html">Mussoorie</a><span class="dot">&bull;</span>
+      <a href="/packages/chopta-tungnath-tour-packages.html">Chopta</a><span class="dot">&bull;</span>
+      <a href="/packages/mukteshwar-tour-package.html">Mukteshwar</a><span class="dot">&bull;</span>
+      <a href="/packages/munsyari-tour-package.html">Munsyari</a><span class="dot">&bull;</span>
+    </div>
+  </div>
+
+  <div class="footer-container">
+
+    <!-- CTA strip -->
+    <div class="footer-cta">
+      <div class="footer-cta-text">
+        <h3>Planning your next Uttarakhand trip?</h3>
+        <p>Talk to our travel experts and get an itinerary made just for you.</p>
+      </div>
+      <div class="footer-cta-actions">
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20an%20Uttarakhand%20tour%20package" target="_blank" rel="noopener" class="footer-btn footer-btn-solid">Chat on WhatsApp</a>
+        <a href="tel:+91XXXXXXXXXX" class="footer-btn footer-btn-outline">Call Us</a>
+      </div>
+    </div>
+
+    <!-- Main grid -->
+    <nav class="footer-main" aria-label="Footer navigation">
+
+      <!-- Brand -->
+      <div class="footer-col">
+        <a href="/index.html" class="footer-brand-logo" aria-label="Kafall Travels — Home">
+          <span class="mark">
+            <!-- Replace this src with your real logo file, e.g. /images/logo.png -->
+            <img id="footerLogoImg" src="/images/logo.png" alt="Kafall Travels logo" loading="lazy"
+                 onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{innerHTML:'&lt;svg viewBox=\'0 0 24 24\' width=\'22\' height=\'22\' fill=\'none\' stroke=\'%231b7a44\' stroke-width=\'2\'&gt;&lt;path d=\'M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z\'/&gt;&lt;/svg&gt;'}));">
           </span>
+          <span itemprop="alternateName">Kafall Travels</span>
         </a>
-        <p>Delhi-based travel agency crafting safe, memorable and affordable Uttarakhand holidays, weekend trips and Char Dham yatras for every kind of traveller.</p>
-        <div class="kf-ft-socials">
-          <a href="https://wa.me/919810966202" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="PASTE_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="PASTE_FACEBOOK_LINK_HERE" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <p class="footer-about-text" itemprop="description">
+          A Delhi-based travel agency specialising in Uttarakhand holidays — Char Dham Yatra,
+          Kedarnath, Auli, Nainital, Rishikesh, weekend hill getaways and solo/stranger trips,
+          planned with verified stays and honest itineraries.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/kafalltravels" target="_blank" rel="noopener" aria-label="Kafall Travels on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.6 1.8c.46-.16 1.26-.35 2.43-.4C9.28 1.33 9.68 1.33 12 1.33Zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2Zm0 2.16a4.44 4.44 0 1 1 0 8.88 4.44 4.44 0 0 1 0-8.88Zm7.53-2.4a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/kafalltravels" target="_blank" rel="noopener" aria-label="Kafall Travels on Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@kafalltravels" target="_blank" rel="noopener" aria-label="Kafall Travels on YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg>
+          </a>
         </div>
       </div>
 
-      <div class="kf-ft-col">
-        <h5>Weekend Trips</h5>
-        <ul>
-          <li><a href="/packages/chopta-tungnath.html">Chopta</a></li>
-          <li><a href="/packages/chakrata-trip-from-delhi.html">Chakrata</a></li>
-          <li><a href="/packages/mussoorie.html">Mussoorie</a></li>
-          <li><a href="/packages/kanatal.html">Kanatal</a></li>
-          <li><a href="/packages/munsyari.html">Munsyari</a></li>
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/aboutus.html">About Us</a></li>
+          <li><a href="/index.html#chardham">Char Dham Yatra</a></li>
+          <li><a href="/index.html#weekend">Weekend Trips</a></li>
+          <li><a href="/index.html#stranger-trips">Stranger Trips</a></li>
+          <li><a href="/index.html#family">Family Packages</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
         </ul>
       </div>
 
-      <div class="kf-ft-col">
-        <h5>Chardham</h5>
-        <ul>
-          <li><a href="/chardham.html">Char Dham Yatra</a></li>
-          <li><a href="/chardham.html">Do Dham Yatra</a></li>
-          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
-          <li><a href="/packages/badrinath.html">Badrinath</a></li>
-          <li><a href="/packages/gangotri.html">Gangotri</a></li>
-          <li><a href="/packages/yamunotri.html">Yamunotri</a></li>
+      <!-- Popular Destinations -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Popular Destinations</h4>
+        <ul class="footer-links">
+          <li><a href="/kedarnath.html">Kedarnath</a></li>
+          <li><a href="/badrinath.html">Badrinath</a></li>
+          <li><a href="/packages/auli-tour-package.html">Auli</a></li>
+          <li><a href="/packages/nainital-tour-package.html">Nainital</a></li>
+          <li><a href="/rishikesh.html">Rishikesh</a></li>
+          <li><a href="/packages/mukteshwar-tour-package.html">Mukteshwar</a></li>
+          <li><a href="/packages/munsyari-tour-package.html">Munsyari</a></li>
         </ul>
       </div>
 
-      <div class="kf-ft-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/index.html#contact">Contact Us</a></li>
-          <li><a href="/taxi.html">Taxi Services</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-        </ul>
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Get In Touch</h4>
+        <address class="footer-contact-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span itemprop="address">Your Office Address Here, Delhi, DL 1100XX</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7 8.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <a href="tel:+91XXXXXXXXXX" itemprop="telephone">+91-XXXXXXXXXX</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6 9-6"/></svg>
+            <a href="mailto:info@kafalltravels.com" itemprop="email">info@kafalltravels.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4M16 2.5v4"/></svg>
+            <span>Mon &ndash; Sun: 9:00 AM &ndash; 9:00 PM</span>
+          </li>
+        </address>
       </div>
 
-      <div class="kf-ft-col">
-        <h5>Contact Us</h5>
-        <ul class="kf-ft-contact">
-          <li><i class="fas fa-phone-alt"></i> +91 98109 66202</li>
-          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
-          <li><i class="fas fa-globe"></i> www.kafall.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> Delhi, India</li>
-        </ul>
-      </div>
+    </nav>
 
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; <span id="footerYear">2026</span> Kafall Travels. All rights reserved.</span>
+      <div class="footer-bottom-right">
+        <div class="footer-legal">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+          <a href="/refund-policy.html">Refund Policy</a>
+        </div>
+        <button class="footer-totop" id="footerToTop" type="button" aria-label="Back to top">
+          <svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+        </button>
+      </div>
     </div>
-  </div>
 
-  <div class="kf-footer-bar">
-    <div class="kf-wrap kf-footer-bar-inner">
-      <p>&copy; 2026 Kafall Travels. All rights reserved.</p>
-      <p>Made with care for Uttarakhand travellers.</p>
-    </div>
   </div>
 </footer>
 
-<button class="kf-scroll-top" id="kfScrollTop"><i class="fas fa-chevron-up"></i></button>
-<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="kf-wa-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
 <script>
-(function(){
-  var btn = document.getElementById('kfScrollTop');
-  window.addEventListener('scroll', function(){
-    btn.classList.toggle('kf-show', window.scrollY > 400);
-  }, { passive:true });
-  btn.addEventListener('click', function(){
-    window.scrollTo({ top:0, behavior:'smooth' });
-  });
+(function () {
+  var yearEl = document.getElementById('footerYear');
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+  var toTopBtn = document.getElementById('footerToTop');
+  if (toTopBtn) {
+    toTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  var cols = document.querySelectorAll('.site-footer .footer-col');
+  if ('IntersectionObserver' in window && cols.length) {
+    var footerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          footerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    cols.forEach(function (col) { footerObserver.observe(col); });
+  } else {
+    cols.forEach(function (col) { col.classList.add('is-visible'); });
+  }
 })();
 </script>
