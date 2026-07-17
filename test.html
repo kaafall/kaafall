@@ -3,7 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kafall Travels | Uttarakhand Holiday Packages</title>
+<title>Kafall Travels | Uttarakhand Tour Packages from Delhi</title>
+<meta name="description" content="Kafall Travels is a Delhi-based agency specialising in Uttarakhand holidays — Char Dham Yatra, Kedarnath, Auli, Nainital, Rishikesh and weekend hill getaways. Book verified stays and honest itineraries.">
+<meta name="keywords" content="Uttarakhand tour packages, Char Dham Yatra package, Kedarnath package from Delhi, Uttarakhand travel agency, weekend trips from Delhi">
+<link rel="canonical" href="https://www.kafalltravels.com/">
+
+<!-- Open Graph / social sharing preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kafall Travels | Uttarakhand Tour Packages from Delhi">
+<meta property="og:description" content="Handpicked Uttarakhand holidays — Char Dham Yatra, Kedarnath, Auli, Nainital, Rishikesh and weekend hill getaways from Delhi.">
+<meta property="og:image" content="https://www.kafalltravels.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kafalltravels.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kafall Travels | Uttarakhand Tour Packages from Delhi">
+<meta name="twitter:description" content="Handpicked Uttarakhand holidays — Char Dham Yatra, Kedarnath, Auli, Nainital, Rishikesh and weekend hill getaways from Delhi.">
+<meta name="twitter:image" content="https://www.kafalltravels.com/assets/og-cover.jpg">
+
+<!-- Structured data: LocalBusiness / TravelAgency (fill in your real details) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Kafall Travels",
+  "image": "https://www.kafalltravels.com/assets/og-cover.jpg",
+  "url": "https://www.kafalltravels.com/",
+  "telephone": "+91-XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Your Office Address Here",
+    "addressLocality": "Delhi",
+    "addressRegion": "DL",
+    "postalCode": "1100XX",
+    "addressCountry": "IN"
+  },
+  "areaServed": "Uttarakhand, India",
+  "priceRange": "₹₹",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "150"
+  }
+}
+</script>
+
+<!-- Structured data: FAQ (matches the FAQ section on this page) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best time to visit Uttarakhand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "March to June and September to November are ideal for most hill stations, while the Char Dham Yatra season typically runs from late April to early November."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does the Char Dham Yatra package cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Char Dham Yatra packages start from around ₹18,999 per person, depending on group size, hotel category and number of days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you arrange pickup from Delhi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most Uttarakhand packages include pickup and drop from Delhi or nearby NCR locations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the packages customisable for families or small groups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every itinerary can be adjusted for your dates, budget, group size and pace."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -27,7 +111,7 @@
   --font-body: 'Poppins', sans-serif;
   --font-display: 'Fraunces', serif;
 
-  --container-max: 1600px;
+  --container-max: 1800px;
   --radius-lg: 22px;
   --radius-md: 14px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -44,6 +128,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-size: 17px;
 }
 
 .container {
@@ -56,7 +141,6 @@ a { text-decoration: none; color: inherit; }
 
 /* ==========================================================
    HERO BANNER
-   (height reduced slightly per request)
 ========================================================== */
 
 .hero {
@@ -79,11 +163,16 @@ a { text-decoration: none; color: inherit; }
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
   transform: scale(1.08);
   transition: opacity 1.6s var(--ease), transform 7s linear;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-slide.is-active {
@@ -94,8 +183,6 @@ a { text-decoration: none; color: inherit; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* darkened + slightly more contrast at the bottom so the heading
-     and subtext stay readable over bright snow / sky in the photos */
   background: linear-gradient(180deg, rgba(10,15,12,0.50) 0%, rgba(10,15,12,0.42) 45%, rgba(8,12,10,0.72) 100%);
   z-index: 1;
 }
@@ -134,7 +221,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-sub {
-  font-size: clamp(14px, 1.6vw, 18px);
+  font-size: clamp(16px, 1.8vw, 21px);
   font-weight: 300;
   color: rgba(255,255,255,0.9);
   max-width: 560px;
@@ -215,8 +302,7 @@ a { text-decoration: none; color: inherit; }
 .section-title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(28px, 3.4vw, 42px);
-  /* brand green applied to all sub-headings across the page */
+  font-size: clamp(32px, 3.8vw, 48px);
   color: var(--green-dark);
   margin-bottom: 16px;
 }
@@ -238,8 +324,8 @@ a { text-decoration: none; color: inherit; }
 .section-para {
   width: 100%;
   text-align: left;
-  font-size: 15.5px;
-  line-height: 1.75;
+  font-size: 17.5px;
+  line-height: 1.8;
   color: var(--gray-600);
   font-weight: 300;
 }
@@ -278,12 +364,18 @@ a { text-decoration: none; color: inherit; }
 .dest-card-img {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+
+.dest-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.8s var(--ease);
 }
 
-.dest-card:hover .dest-card-img {
+.dest-card:hover .dest-card-img img {
   transform: scale(1.12);
 }
 
@@ -310,9 +402,17 @@ a { text-decoration: none; color: inherit; }
 
 .dest-card-name {
   color: var(--white);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: 0.2px;
+}
+
+.dest-card-price {
+  display: block;
+  color: rgba(255,255,255,0.85);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 2px;
 }
 
 .dest-card-btn {
@@ -352,7 +452,205 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ==========================================================
-   CHAR DHAM — single 6-up grid that folds cleanly to 2-2-2
+   WEEKEND STRANGER TRIPS (new — solo/group-with-strangers concept)
+   Deliberately different card language from the plain destination
+   grids: batch date, avatar stack, seats-left urgency, solo badge.
+========================================================== */
+
+.stranger-section {
+  background: var(--gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.stranger-section::before {
+  content: '';
+  position: absolute;
+  top: -140px;
+  right: -140px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,158,92,0.14) 0%, rgba(37,158,92,0) 70%);
+  pointer-events: none;
+}
+
+.stranger-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.stranger-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(17,17,17,0.06);
+  transition: transform 0.5s var(--ease), border-color 0.4s ease, box-shadow 0.5s var(--ease);
+}
+
+.stranger-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--green-dark);
+  box-shadow: 0 22px 40px rgba(37,158,92,0.18);
+}
+
+.stranger-card-img {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+
+.stranger-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.stranger-card:hover .stranger-card-img img {
+  transform: scale(1.1);
+}
+
+.stranger-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.stranger-seats {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(17,17,17,0.55);
+  backdrop-filter: blur(4px);
+  color: #ffd166;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 100px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stranger-seats::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffd166;
+  flex-shrink: 0;
+}
+
+.stranger-card-body {
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.stranger-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.stranger-date {
+  font-size: 12.5px;
+  color: var(--gray-600);
+  font-weight: 400;
+}
+
+.stranger-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-300);
+}
+
+.stranger-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.stranger-avatars span {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.stranger-avatars span:first-child { margin-left: 0; }
+.stranger-avatars span:nth-child(1) { background: #F87171; }
+.stranger-avatars span:nth-child(2) { background: #60A5FA; }
+.stranger-avatars span:nth-child(3) { background: #34D399; }
+.stranger-avatars span:nth-child(4) { background: var(--green-dark); font-size: 9.5px; }
+
+.stranger-price {
+  text-align: right;
+}
+
+.stranger-price-val {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.stranger-price-tag {
+  font-size: 10.5px;
+  color: var(--gray-600);
+}
+
+.stranger-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 11px;
+  margin-top: 4px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 100px;
+  transition: background 0.35s ease, transform 0.35s var(--ease);
+}
+
+.stranger-card:hover .stranger-cta {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   CHAR DHAM
 ========================================================== */
 
 .chardham-section {
@@ -411,8 +709,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .testimonial-text {
-  font-size: 14.5px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--gray-900);
   font-weight: 300;
   margin-bottom: 18px;
@@ -447,9 +745,15 @@ a { text-decoration: none; color: inherit; }
 .about-img {
   height: 460px;
   border-radius: var(--radius-lg);
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   box-shadow: 0 20px 40px rgba(17,17,17,0.12);
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-copy .section-head {
@@ -459,8 +763,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .about-text {
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16.5px;
+  line-height: 1.85;
   color: var(--gray-600);
   font-weight: 300;
   margin-bottom: 28px;
@@ -481,6 +785,37 @@ a { text-decoration: none; color: inherit; }
   background: var(--green-dark);
   color: var(--white);
   transform: translateY(-2px);
+}
+
+/* ==========================================================
+   TRUST STATS STRIP (new)
+========================================================== */
+
+.stats-strip {
+  background: var(--green-dark);
+  padding: 42px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  color: var(--white);
+  display: block;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 /* ==========================================================
@@ -536,17 +871,104 @@ a { text-decoration: none; color: inherit; }
 }
 
 .why-title {
-  font-size: 16.5px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--black);
   margin-bottom: 10px;
 }
 
 .why-text {
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.65;
   color: var(--gray-600);
   font-weight: 300;
+}
+
+/* ==========================================================
+   FAQ (new)
+========================================================== */
+
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px 4px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--green-dark);
+  transition: transform 0.35s var(--ease);
+  flex-shrink: 0;
+}
+
+.faq-item.is-open .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+
+.faq-answer p {
+  padding: 0 4px 20px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--gray-600);
+  font-weight: 300;
+}
+
+/* ==========================================================
+   FLOATING WHATSAPP CTA (new)
+========================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+  transition: transform 0.35s var(--ease);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--white);
 }
 
 /* ==========================================================
@@ -586,10 +1008,6 @@ a { text-decoration: none; color: inherit; }
 
 /* ==========================================================
    RESPONSIVE
-   Cards drop to a clean 2-column grid as soon as we leave desktop,
-   so 5 cards read as 2 / 2 / 1, 6 cards read as 2 / 2 / 2, and the
-   Char Dham grid (6 cards) also folds cleanly into 2 / 2 / 2 instead
-   of splitting unevenly.
 ========================================================== */
 
 @media (max-width: 1280px) {
@@ -600,6 +1018,8 @@ a { text-decoration: none; color: inherit; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .about-img { height: 340px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stranger-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 860px) {
@@ -610,8 +1030,10 @@ a { text-decoration: none; color: inherit; }
   .chardham-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .stranger-grid { grid-template-columns: repeat(2, 1fr); }
   .hero { height: 42vh; min-height: 300px; }
-  .section-para { display: none; }
+  /* section-para now shown on mobile too (was hidden before) for SEO content depth */
+  .section-para { font-size: 14px; }
 }
 
 @media (max-width: 520px) {
@@ -619,10 +1041,12 @@ a { text-decoration: none; color: inherit; }
   .card-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .chardham-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .stranger-grid { grid-template-columns: 1fr; gap: 14px; }
   .dest-card { height: 200px; }
   .dest-card-body { padding: 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
   .dest-card-name { font-size: 14.5px; }
   .dest-card-btn { font-size: 11px; padding: 6px 12px; }
+  .whatsapp-float { width: 50px; height: 50px; bottom: 16px; right: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -636,18 +1060,18 @@ a { text-decoration: none; color: inherit; }
  <div id="header"></div> 
 
 <!-- =========================================================
-     HERO BANNER — auto-rotating snow-capped Himalaya photography
-     Replace each .hero-slide background-image via data-bg,
-     or edit directly in style.css / inline style below.
+     HERO BANNER
+     NOTE: Replace each <img src> below with your OWN real
+     Uttarakhand destination photography before going live.
+     alt text added for SEO / accessibility.
 ========================================================= -->
 <section class="hero" id="hero">
   <div class="hero-slides">
-    <!-- REPLACE data-bg with your own photo path/URL for each slide -->
-    <div class="hero-slide is-active" data-bg="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop"></div>
-    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4?fm=jpg&q=75&w=1920&auto=format&fit=crop"></div>
-    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=entropy"></div>
-    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=entropy"></div>
-    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=focalpoint&fp-y=0.3"></div>
+    <div class="hero-slide is-active"><img src="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop" alt="Snow-capped Himalayan peaks in Uttarakhand" loading="eager"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4?fm=jpg&q=75&w=1920&auto=format&fit=crop" alt="Uttarakhand mountain valley view" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=entropy" alt="Himalayan range scenic view Uttarakhand" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=entropy" alt="Uttarakhand hills and valley landscape" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1643263904933-2aa9fb29bd81?fm=jpg&q=75&w=1920&auto=format&fit=crop&crop=focalpoint&fp-y=0.3" alt="Uttarakhand Himalaya sunrise view" loading="lazy"></div>
   </div>
 
   <div class="hero-overlay"></div>
@@ -658,7 +1082,6 @@ a { text-decoration: none; color: inherit; }
     <p class="hero-sub">Handpicked journeys through the Himalayas — curated for comfort, built for memories.</p>
   </div>
 
-  <!-- animated progress dots, active dot grows -->
   <div class="hero-dots" id="heroDots">
     <span class="hero-dot is-active" data-index="0"></span>
     <span class="hero-dot" data-index="1"></span>
@@ -682,48 +1105,47 @@ a { text-decoration: none; color: inherit; }
         each with its own character: quiet pine forests, misty ridgelines, small-town markets and
         crisp mountain air. Whether it's a quick Saturday getaway with friends or a two-day family
         break, our weekend packages are built around easy travel, comfortable stays and just
-        enough sightseeing to feel like a real holiday, without needing extra leave from work.......
+        enough sightseeing to feel like a real holiday, without needing extra leave from work.
       </p>
     </div>
 
     <div class="card-row">
-      <!-- Each card links to its destination page — update href to actual page -->
       <a class="dest-card" href="chopta.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-chopta/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-chopta/800/600" alt="Chopta hill station Uttarakhand weekend trip" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Chopta</span>
+          <span class="dest-card-name">Chopta<span class="dest-card-price">From ₹4,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="mussoorie.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-mussoorie/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-mussoorie/800/600" alt="Mussoorie hill station Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Mussoorie</span>
+          <span class="dest-card-name">Mussoorie<span class="dest-card-price">From ₹4,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="chakrata.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-chakrata/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-chakrata/800/600" alt="Chakrata weekend getaway Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Chakrata</span>
+          <span class="dest-card-name">Chakrata<span class="dest-card-price">From ₹3,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="mukteshwar.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-mukteshwar/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-mukteshwar/800/600" alt="Mukteshwar hill town Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Mukteshwar</span>
+          <span class="dest-card-name">Mukteshwar<span class="dest-card-price">From ₹5,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="munsyari.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-munsyari/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-munsyari/800/600" alt="Munsyari Himalayan view Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Munsyari</span>
+          <span class="dest-card-name">Munsyari<span class="dest-card-price">From ₹6,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
@@ -732,7 +1154,119 @@ a { text-decoration: none; color: inherit; }
 </section>
 
 <!-- =========================================================
-     CHAR DHAM YATRA — single 6-card grid, folds cleanly to 2-2-2
+     WEEKEND STRANGER TRIPS (new — solo travelers, group with strangers)
+     NOTE: replace batch dates, seat counts and prices with real,
+     current data before going live — false urgency (fake seat counts)
+     should be avoided once real bookings are tracked.
+========================================================= -->
+<section class="section stranger-section" id="stranger-trips">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Solo? No Problem</span>
+      <h2 class="section-title">Weekend Stranger Trips from Delhi</h2>
+      <p class="section-para">
+        Go alone, come back with a group chat that won't stop buzzing. Our Stranger Trips put
+        solo travellers from Delhi into one small, curated batch — same bus, same campfire, same
+        stories by the end of day one. No awkward small talk required, just good company, fixed
+        departure dates and a trip planned so well that the "strangers" part barely lasts past
+        breakfast.
+      </p>
+    </div>
+
+    <div class="stranger-grid">
+      <div class="stranger-card">
+        <div class="stranger-card-img">
+          <span class="stranger-badge">Solo Friendly</span>
+          <span class="stranger-seats">6 seats left</span>
+          <img src="https://picsum.photos/seed/kafall-stranger-chopta/700/500" alt="Chopta weekend stranger trip from Delhi" loading="lazy">
+        </div>
+        <div class="stranger-card-body">
+          <span class="stranger-name">Chopta Squad</span>
+          <span class="stranger-date">Batch: Every alternate Friday · 2N/3D</span>
+          <div class="stranger-meta">
+            <div class="stranger-avatars">
+              <span>A</span><span>R</span><span>S</span><span>+9</span>
+            </div>
+            <div class="stranger-price">
+              <span class="stranger-price-val">₹5,499</span>
+              <span class="stranger-price-tag">per head</span>
+            </div>
+          </div>
+          <a href="chopta.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+        </div>
+      </div>
+
+      <div class="stranger-card">
+        <div class="stranger-card-img">
+          <span class="stranger-badge">Solo Friendly</span>
+          <span class="stranger-seats">4 seats left</span>
+          <img src="https://picsum.photos/seed/kafall-stranger-nainital/700/500" alt="Nainital weekend stranger trip from Delhi" loading="lazy">
+        </div>
+        <div class="stranger-card-body">
+          <span class="stranger-name">Nainital Nomads</span>
+          <span class="stranger-date">Batch: Every Saturday · 2N/3D</span>
+          <div class="stranger-meta">
+            <div class="stranger-avatars">
+              <span>P</span><span>V</span><span>K</span><span>+7</span>
+            </div>
+            <div class="stranger-price">
+              <span class="stranger-price-val">₹6,299</span>
+              <span class="stranger-price-tag">per head</span>
+            </div>
+          </div>
+          <a href="nainital.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+        </div>
+      </div>
+
+      <div class="stranger-card">
+        <div class="stranger-card-img">
+          <span class="stranger-badge">Solo Friendly</span>
+          <span class="stranger-seats">8 seats left</span>
+          <img src="https://picsum.photos/seed/kafall-stranger-rishikesh/700/500" alt="Rishikesh weekend stranger trip from Delhi" loading="lazy">
+        </div>
+        <div class="stranger-card-body">
+          <span class="stranger-name">Rishikesh Riverside</span>
+          <span class="stranger-date">Batch: Every Friday · 2N/3D</span>
+          <div class="stranger-meta">
+            <div class="stranger-avatars">
+              <span>N</span><span>D</span><span>M</span><span>+11</span>
+            </div>
+            <div class="stranger-price">
+              <span class="stranger-price-val">₹4,299</span>
+              <span class="stranger-price-tag">per head</span>
+            </div>
+          </div>
+          <a href="rishikesh.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+        </div>
+      </div>
+
+      <div class="stranger-card">
+        <div class="stranger-card-img">
+          <span class="stranger-badge">Solo Friendly</span>
+          <span class="stranger-seats">3 seats left</span>
+          <img src="https://picsum.photos/seed/kafall-stranger-mukteshwar/700/500" alt="Mukteshwar weekend stranger trip from Delhi" loading="lazy">
+        </div>
+        <div class="stranger-card-body">
+          <span class="stranger-name">Mukteshwar Wanderers</span>
+          <span class="stranger-date">Batch: Last weekend, monthly · 2N/3D</span>
+          <div class="stranger-meta">
+            <div class="stranger-avatars">
+              <span>S</span><span>T</span><span>J</span><span>+6</span>
+            </div>
+            <div class="stranger-price">
+              <span class="stranger-price-val">₹6,799</span>
+              <span class="stranger-price-tag">per head</span>
+            </div>
+          </div>
+          <a href="mukteshwar.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CHAR DHAM YATRA
 ========================================================= -->
 <section class="section chardham-section" id="chardham">
   <div class="container">
@@ -751,49 +1285,49 @@ a { text-decoration: none; color: inherit; }
 
     <div class="chardham-grid">
       <a class="dest-card" href="char-dham-yatra.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-chardham1/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-chardham1/800/600" alt="Char Dham Yatra package Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Char Dham Yatra</span>
+          <span class="dest-card-name">Char Dham Yatra<span class="dest-card-price">From ₹18,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="do-dham-yatra.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-dodham/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-dodham/800/600" alt="2 Dham Yatra package Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">2 Dham Yatra</span>
+          <span class="dest-card-name">2 Dham Yatra<span class="dest-card-price">From ₹12,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="kedarnath.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-kedarnath1/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-kedarnath1/800/600" alt="Kedarnath Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Kedarnath</span>
+          <span class="dest-card-name">Kedarnath<span class="dest-card-price">From ₹7,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="badrinath.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-badrinath/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-badrinath/800/600" alt="Badrinath Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Badrinath</span>
+          <span class="dest-card-name">Badrinath<span class="dest-card-price">From ₹8,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="gangotri.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-gangotri/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-gangotri/800/600" alt="Gangotri Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Gangotri</span>
+          <span class="dest-card-name">Gangotri<span class="dest-card-price">From ₹7,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="yamunotri.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-yamunotri/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-yamunotri/800/600" alt="Yamunotri Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Yamunotri</span>
+          <span class="dest-card-name">Yamunotri<span class="dest-card-price">From ₹6,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
@@ -821,49 +1355,49 @@ a { text-decoration: none; color: inherit; }
 
     <div class="card-grid">
       <a class="dest-card" href="kedarnath.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-kedarnath2/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-kedarnath2/800/600" alt="Kedarnath family tour package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Kedarnath</span>
+          <span class="dest-card-name">Kedarnath<span class="dest-card-price">From ₹7,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="rishikesh.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-rishikesh/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-rishikesh/800/600" alt="Rishikesh family tour package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Rishikesh</span>
+          <span class="dest-card-name">Rishikesh<span class="dest-card-price">From ₹3,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="nainital.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-nainital/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-nainital/800/600" alt="Nainital family tour package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Nainital</span>
+          <span class="dest-card-name">Nainital<span class="dest-card-price">From ₹5,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="auli.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-auli/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-auli/800/600" alt="Auli family tour package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Auli</span>
+          <span class="dest-card-name">Auli<span class="dest-card-price">From ₹6,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="lansdowne.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-lansdowne/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-lansdowne/800/600" alt="Lansdowne family tour package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Lansdowne</span>
+          <span class="dest-card-name">Lansdowne<span class="dest-card-price">From ₹5,499*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
 
       <a class="dest-card" href="tehri-lake.html">
-        <div class="dest-card-img" style="background-image:url('https://picsum.photos/seed/kafall-tehrilake/800/600')"></div>
+        <div class="dest-card-img"><img src="https://picsum.photos/seed/kafall-tehrilake/800/600" alt="Tehri Lake family tour package" loading="lazy"></div>
         <div class="dest-card-body">
-          <span class="dest-card-name">Tehri Lake</span>
+          <span class="dest-card-name">Tehri Lake<span class="dest-card-price">From ₹4,999*</span></span>
           <span class="dest-card-btn">Explore <i class="arrow"></i></span>
         </div>
       </a>
@@ -939,7 +1473,7 @@ a { text-decoration: none; color: inherit; }
 ========================================================= -->
 <section class="section" id="about-brand">
   <div class="container about-grid">
-    <div class="about-img" style="background-image:url('https://picsum.photos/seed/kafall-about/1200/800')"></div>
+    <div class="about-img"><img src="https://picsum.photos/seed/kafall-about/1200/800" alt="Kafall Travels team exploring Uttarakhand" loading="lazy"></div>
     <div class="about-copy">
       <span class="section-eyebrow">Delhi's Trusted Name</span>
       <h2 class="section-title">Best Travel Agency for Uttarakhand Holidays</h2>
@@ -954,6 +1488,30 @@ a { text-decoration: none; color: inherit; }
         exploring Uttarakhand.
       </p>
       <a href="about.html" class="btn-outline">More</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TRUST STATS STRIP (new — replace numbers with real ones)
+========================================================= -->
+<section class="stats-strip">
+  <div class="container stats-grid">
+    <div class="stat-block">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Happy Travellers</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">8+</span>
+      <span class="stat-label">Years of Experience</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">25+</span>
+      <span class="stat-label">Uttarakhand Destinations Covered</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">4.8/5</span>
+      <span class="stat-label">Average Guest Rating</span>
     </div>
   </div>
 </section>
@@ -1003,35 +1561,56 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<script>
-/* ==========================================================
-   KAFALL TRAVELS — Homepage Script
-   Handles: hero auto-slider with dots, scroll reveal animations
-========================================================== */
+<!-- =========================================================
+     FAQ (new — helps rank for long-tail / voice search queries)
+========================================================= -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Common Questions</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
 
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-question">What is the best time to visit Uttarakhand?</button>
+        <div class="faq-answer"><p>March to June and September to November are ideal for most hill stations, while the Char Dham Yatra season typically runs from late April to early November, depending on weather and shrine opening dates.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How much does the Char Dham Yatra package cost?</button>
+        <div class="faq-answer"><p>Our Char Dham Yatra packages start from around ₹18,999 per person, depending on group size, hotel category and number of days. Contact us for a customised quote based on your travel dates.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you arrange pickup from Delhi?</button>
+        <div class="faq-answer"><p>Yes, most of our Uttarakhand packages include pickup and drop from Delhi or nearby NCR locations. This can be confirmed at the time of booking.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Are the packages customisable for families or small groups?</button>
+        <div class="faq-answer"><p>Yes, every itinerary can be adjusted for your dates, budget, group size and pace, especially for family trips with children or elderly members.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating WhatsApp CTA — replace 91XXXXXXXXXX with your real WhatsApp business number -->
+<a class="whatsapp-float" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20an%20Uttarakhand%20tour%20package" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91S17.5 2 12.04 2Zm5.83 14.14c-.25.7-1.45 1.34-2 1.42-.53.09-1.15.13-1.86-.12-.43-.15-.98-.32-1.68-.63-2.96-1.28-4.89-4.26-5.04-4.46-.15-.2-1.21-1.61-1.21-3.08s.77-2.18 1.04-2.48c.27-.3.6-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.34 2.4 1.49.3.15.47.13.65-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.02.97.3.15.5.22.57.35.07.13.07.75-.18 1.45Z"/></svg>
+</a>
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- HERO SLIDER ---------- */
   var slides = document.querySelectorAll('.hero-slide');
   var dots = document.querySelectorAll('.hero-dot');
-
-  // apply each slide's data-bg as its background-image
-  slides.forEach(function (slide) {
-    var bg = slide.getAttribute('data-bg');
-    if (bg) {
-      slide.style.backgroundImage = "url('" + bg + "')";
-    }
-  });
   var current = 0;
-  var intervalTime = 3000; // change slide every 3 seconds
+  var intervalTime = 3000;
   var timer = null;
 
   function goToSlide(index) {
     slides[current].classList.remove('is-active');
     dots[current].classList.remove('is-active');
-
     current = index;
-
     slides[current].classList.add('is-active');
     dots[current].classList.add('is-active');
   }
@@ -1041,17 +1620,11 @@ document.addEventListener('DOMContentLoaded', function () {
     goToSlide(next);
   }
 
-  function startAutoplay() {
-    timer = setInterval(nextSlide, intervalTime);
-  }
-
-  function stopAutoplay() {
-    clearInterval(timer);
-  }
+  function startAutoplay() { timer = setInterval(nextSlide, intervalTime); }
+  function stopAutoplay() { clearInterval(timer); }
 
   if (slides.length) {
     startAutoplay();
-
     dots.forEach(function (dot) {
       dot.addEventListener('click', function () {
         var index = parseInt(dot.getAttribute('data-index'), 10);
@@ -1064,38 +1637,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- SCROLL REVEAL ---------- */
   var revealTargets = document.querySelectorAll(
-    '.section-head, .dest-card, .testimonial-card, .why-card, .about-img, .about-copy'
+    '.section-head, .dest-card, .stranger-card, .testimonial-card, .why-card, .about-img, .about-copy'
   );
+  revealTargets.forEach(function (el) { el.classList.add('reveal'); });
 
-  revealTargets.forEach(function (el) {
-    el.classList.add('reveal');
-  });
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+  revealTargets.forEach(function (el) { observer.observe(el); });
+
+  /* ---------- FAQ ACCORDION (new) ---------- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    question.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+      faqItems.forEach(function (other) {
+        other.classList.remove('is-open');
+        other.querySelector('.faq-answer').style.maxHeight = null;
       });
-    },
-    { threshold: 0.15 }
-  );
-
-  revealTargets.forEach(function (el) {
-    observer.observe(el);
+      if (!isOpen) {
+        item.classList.add('is-open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
   });
 
 });
-
 </script>
 <script>
   fetch('/header.html')
     .then(res => res.text())
     .then(html => {
       document.getElementById('header').innerHTML = html;
-      // header ke andar ka script (hamburger menu) manually run karwana padega
       document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
         const newScript = document.createElement('script');
         newScript.textContent = oldScript.textContent;
