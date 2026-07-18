@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kedarnath Trip From Delhi | 3N 4D Package | Kafall Travels</title>
+<title>Chopta Trip From Delhi | 3N 4D Package | Kafall Travels</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="/asstes/css/style.css"/>
-  <script src="/asstes/js/main.js" defer></script>
 <style>
 :root {
   --green: #259E5C;
@@ -33,6 +28,26 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;font-size:16px;}
 
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #e8e8e8;
+  padding:12px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:box-shadow 0.3s;
+}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.10);}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--dark);text-decoration:none;}
+.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:var(--text-mid);text-decoration:none;font-size:0.98rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--green);}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:8px 18px;border-radius:50px;font-weight:700!important;}
+.nav-cta:hover{background:var(--green-dark)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:0.3s;}
 
 /* HERO */
 .hero{
@@ -44,7 +59,7 @@ body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);
 }
 .hero-img-bg{
   position:absolute;inset:0;z-index:0;
-  background:url('https://images.unsplash.com/photo-1626016842882-1c6e6f7a5b6e?w=1600&q=80&fit=crop') center center/cover no-repeat;
+  background:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80&fit=crop') center center/cover no-repeat;
   animation:heroPan 20s ease-in-out infinite alternate;
   transform-origin:center center;
 }
@@ -221,10 +236,7 @@ section{padding:72px 6%;}
   transition:transform 0.35s;
 }
 .gal-item:hover{transform:scale(1.03);}
-.gal-item img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform 0.4s;
-}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
 .gal-item:hover img{transform:scale(1.07);}
 .gal-overlay{
   position:absolute;inset:0;
@@ -257,13 +269,8 @@ section{padding:72px 6%;}
 .hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1340px;margin:0 auto;}
 .hotel-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
 .hotel-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
-.hotel-img{
-  height:175px;position:relative;overflow:hidden;
-}
-.hotel-img img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform 0.4s;
-}
+.hotel-img{height:175px;position:relative;overflow:hidden;}
+.hotel-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
 .hotel-card:hover .hotel-img img{transform:scale(1.07);}
 .hotel-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.40));}
 .hotel-price-tag{
@@ -306,20 +313,10 @@ section{padding:72px 6%;}
 .route-bg{background:#0a0a0a;padding:64px 6%;}
 .route-bg .section-title{color:#fff;}
 .route-bg .section-desc{color:rgba(255,255,255,0.5);}
-.route-card{
-  max-width:1340px;margin:0 auto;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:var(--radius);padding:36px 44px;
-}
+.route-card{max-width:1340px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:36px 44px;}
 .route-stepper{display:flex;align-items:flex-start;gap:0;margin-bottom:40px;}
 .route-step{display:flex;flex-direction:column;align-items:center;gap:9px;flex-shrink:0;}
-.route-dot{
-  width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  background:rgba(255,255,255,0.05);border:2px solid rgba(37,158,92,0.45);
-  color:#fff;display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;
-}
+.route-dot{width:34px;height:34px;border-radius:50%;flex-shrink:0;background:rgba(255,255,255,0.05);border:2px solid rgba(37,158,92,0.45);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;}
 .route-step.is-end .route-dot{background:var(--green);border-color:var(--green);}
 .route-step-label{font-size:0.84rem;color:rgba(255,255,255,0.8);font-weight:600;text-align:center;white-space:nowrap;}
 .route-line{flex:1;height:2px;min-width:16px;background:linear-gradient(to right,rgba(37,158,92,0.5),rgba(37,158,92,0.15));margin-top:16px;}
@@ -346,22 +343,9 @@ section{padding:72px 6%;}
 .cta-bg h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.75rem,3.1vw,2.5rem);font-weight:800;color:#fff;margin-bottom:13px;}
 .cta-bg p{color:rgba(255,255,255,0.88);max-width:560px;margin:0 auto 26px;line-height:1.7;font-size:0.98rem;}
 .cta-btns{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;}
-.btn-wa{
-  display:inline-flex;align-items:center;gap:9px;
-  background:#fff;color:var(--green);
-  padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.9rem;
-  text-decoration:none;
-  box-shadow:0 4px 18px rgba(0,0,0,0.15);
-  transition:transform 0.2s,box-shadow 0.2s;
-}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--green);padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,0.15);transition:transform 0.2s,box-shadow 0.2s;}
 .btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
-.btn-call{
-  display:inline-flex;align-items:center;gap:9px;
-  background:transparent;color:#fff;
-  border:2px solid rgba(255,255,255,0.6);
-  padding:11px 24px;border-radius:50px;font-weight:600;font-size:0.9rem;
-  text-decoration:none;transition:border-color 0.2s,background 0.2s;
-}
+.btn-call{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.6);padding:11px 24px;border-radius:50px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:border-color 0.2s,background 0.2s;}
 .btn-call:hover{border-color:#fff;background:rgba(255,255,255,0.15);}
 
 /* FOOTER */
@@ -371,10 +355,7 @@ footer a{color:var(--green);text-decoration:none;}
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes scaleIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,158,92,0.4);}50%{box-shadow:0 0 0 12px rgba(37,158,92,0);}}
-
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 0.65s ease,transform 0.65s ease;}
@@ -428,38 +409,7 @@ footer a{color:var(--green);text-decoration:none;}
 </style>
 </head>
 <body>
-<!-- ══════════════════════════════
-     NAVBAR
-══════════════════════════════ -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
-      <div class="nav-logo-text">
-        <span class="nl-main">kafall</span>
-        <span class="nl-sub">presents</span>
-      </div>
-    </a>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/aboutus.html">About us</a></li>
-      <li><a href="/packages.html">Packages</a></li>
-      <li><a href="/chardham.html">Char Dham</a></li>
-      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/Taxi.html">Taxi Services</a></li>
-      <li><a href="/contactus.html">Contact us</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
+<div id="header"></div>
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-img-bg"></div>
@@ -467,82 +417,91 @@ footer a{color:var(--green);text-decoration:none;}
   <div class="hero-particles" id="particles"></div>
   <div class="hero-wave"></div>
   <div class="hero-content">
-    <div class="hero-badge"><i class="fas fa-om"></i> Char Dham · Land of Lord Shiva</div>
-    <h1>Kedarnath Trip<br><span>From Delhi</span></h1>
-    <p class="hero-sub">450 km from Delhi · 16 km sacred trek from Gaurikund · Mandakini valley<br>Walk to the abode of Shiva — Kedarnath awaits your darshan.</p>
+    <div class="hero-badge"><i class="fas fa-snowflake"></i> Uttarakhand's Mini Switzerland</div>
+    <h1>Chopta Trip<br><span>From Delhi</span></h1>
+    <p class="hero-sub">450 km from Delhi · Tungnath Temple · Chandrashila Peak · Deoria Tal<br>Chopta awaits — snow-covered meadows, dense rhododendron forests, Himalayan magic.</p>
     <div class="hero-pills">
       <div class="hero-pill"><i class="fas fa-calendar-alt"></i> 3 Nights · 4 Days</div>
       <div class="hero-pill"><i class="fas fa-route"></i> 450 km from Delhi</div>
-      <div class="hero-pill"><i class="fas fa-mountain"></i> 3,584 m altitude</div>
-      <div class="hero-pill"><i class="fas fa-person-hiking"></i> 16 km Trek</div>
+      <div class="hero-pill"><i class="fas fa-mountain"></i> 12,073 ft altitude</div>
+      <div class="hero-pill"><i class="fas fa-star"></i> 4.8 Avg Rating</div>
     </div>
   </div>
 </section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item"><i class="fas fa-check-circle"></i><div><strong>400+ Trips</strong><span>Completed</span></div></div>
+  <div class="strip-item"><i class="fas fa-star"></i><div><strong>4.8 / 5</strong><span>Avg Rating</span></div></div>
+  <div class="strip-item"><i class="fas fa-headset"></i><div><strong>24/7</strong><span>Support</span></div></div>
+  <div class="strip-item"><i class="fas fa-tag"></i><div><strong>No Hidden</strong><span>Charges</span></div></div>
+  <div class="strip-item"><i class="fas fa-shield-alt"></i><div><strong>Verified</strong><span>Hotels & Guides</span></div></div>
+</div>
 
 <!-- PACKAGES -->
 <section class="packages-bg" id="packages">
   <div class="tc reveal">
     <div class="section-label">Choose Your Plan</div>
-    <h2 class="section-title">Kedarnath Yatra Packages</h2>
-    <p class="section-desc">3 Nights · 4 Days from Delhi — cab, verified stay near base, trek support & 24/7 assistance. Zero surprise charges.</p>
+    <h2 class="section-title">Chopta Tour Packages</h2>
+    <p class="section-desc">3 Nights · 4 Days from Delhi — cab, verified stay, Tungnath trek & 24/7 support. Zero surprise charges.</p>
   </div>
   <div class="packages-grid">
     <div class="pkg-card reveal-scale">
       <div class="pkg-head">
         <div class="pkg-type">Basic Plan</div>
-        <div class="pkg-name">Pilgrim Package</div>
+        <div class="pkg-name">Meadow Escape</div>
         <div class="pkg-nights">3 Nights · 4 Days | Min 2 Persons</div>
-        <div class="pkg-price-row"><div class="pkg-price">₹8,000</div><div class="pkg-per">/person</div></div>
+        <div class="pkg-price-row"><div class="pkg-price">₹7,500</div><div class="pkg-per">/person</div></div>
       </div>
       <div class="pkg-body">
         <ul class="pkg-list">
-          <li><i class="fas fa-car"></i> Private cab Delhi → Sonprayag → Delhi</li>
-          <li><i class="fas fa-bed"></i> 3 nights budget hotel / dharamshala-style stay</li>
-          <li><i class="fas fa-utensils"></i> Daily breakfast included</li>
-          <li><i class="fas fa-person-hiking"></i> Self-paced trek from Gaurikund (16 km)</li>
+          <li><i class="fas fa-car"></i> Private cab Delhi → Chopta → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights budget camp / guesthouse</li>
+          <li><i class="fas fa-utensils"></i> Daily breakfast & dinner</li>
+          <li><i class="fas fa-map-marked-alt"></i> Tungnath Temple & Chandrashila trek</li>
           <li><i class="fas fa-route"></i> Detailed trip itinerary provided</li>
           <li><i class="fas fa-headset"></i> 24/7 on-trip support</li>
         </ul>
-        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Basic%20Kedarnath%20Package%208000" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chopta%20Basic%20Package%207500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       </div>
     </div>
     <div class="pkg-card featured reveal-scale">
       <div class="pkg-badge-tag">Most Booked</div>
       <div class="pkg-head">
         <div class="pkg-type">Standard Plan</div>
-        <div class="pkg-name">Sacred Trek</div>
+        <div class="pkg-name">Alpine Explorer</div>
         <div class="pkg-nights">3 Nights · 4 Days | Solo to Group</div>
-        <div class="pkg-price-row"><div class="pkg-price">₹10,000</div><div class="pkg-per">/person</div></div>
+        <div class="pkg-price-row"><div class="pkg-price">₹9,500</div><div class="pkg-per">/person</div></div>
       </div>
       <div class="pkg-body">
         <ul class="pkg-list">
-          <li><i class="fas fa-car"></i> Private cab Delhi → Sonprayag/Gaurikund → Delhi</li>
-          <li><i class="fas fa-bed"></i> 3 nights mid-range hotel near base camp</li>
-          <li><i class="fas fa-utensils"></i> Breakfast + dinner daily</li>
-          <li><i class="fas fa-person-hiking"></i> Guided trek + pony/palki assistance option</li>
-          <li><i class="fas fa-hands-praying"></i> Priority darshan queue assistance</li>
+          <li><i class="fas fa-car"></i> Private cab Delhi → Chopta → Deoria Tal → Delhi</li>
+          <li><i class="fas fa-bed"></i> 3 nights mid-range cottage / forest camp</li>
+          <li><i class="fas fa-utensils"></i> All meals: breakfast, lunch & dinner</li>
+          <li><i class="fas fa-map-marked-alt"></i> Tungnath, Chandrashila, Deoria Tal, Ukhimath</li>
+          <li><i class="fas fa-hiking"></i> Local trekking guide for all trails</li>
           <li><i class="fas fa-user-tie"></i> Dedicated trip manager + 24/7 support</li>
         </ul>
-        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Standard%20Kedarnath%20Package%2010000" class="pkg-btn"><i class="fab fa-whatsapp"></i> Book This Package</a>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chopta%20Standard%20Package%209500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Book This Package</a>
       </div>
     </div>
     <div class="pkg-card reveal-scale">
       <div class="pkg-head">
         <div class="pkg-type">Premium Plan</div>
-        <div class="pkg-name">VIP Darshan</div>
+        <div class="pkg-name">Himalayan Retreat</div>
         <div class="pkg-nights">3 Nights · 4 Days | Couple / Group</div>
-        <div class="pkg-price-row"><div class="pkg-price">₹12,000</div><div class="pkg-per">/person</div></div>
+        <div class="pkg-price-row"><div class="pkg-price">₹12,500</div><div class="pkg-per">/person</div></div>
       </div>
       <div class="pkg-body">
         <ul class="pkg-list">
-          <li><i class="fas fa-car"></i> Premium cab — Innova Crysta or equivalent</li>
-          <li><i class="fas fa-bed"></i> Premium stay near Sonprayag / Gaurikund</li>
-          <li><i class="fas fa-utensils"></i> All meals: breakfast, lunch & dinner</li>
-          <li><i class="fas fa-person-hiking"></i> Pony/palki booking assist + porter for luggage</li>
-          <li><i class="fas fa-hands-praying"></i> VIP darshan pass assistance at temple</li>
-          <li><i class="fas fa-kit-medical"></i> Basic medical kit & oxygen cylinder on trek</li>
+          <li><i class="fas fa-car"></i> Luxury cab — Innova Crysta or equivalent</li>
+          <li><i class="fas fa-bed"></i> Premium eco-resort / luxury camp with Himalayan views</li>
+          <li><i class="fas fa-utensils"></i> All meals with bonfire dinner</li>
+          <li><i class="fas fa-map-marked-alt"></i> Customised itinerary + private trek guide</li>
+          <li><i class="fas fa-fire"></i> Bonfire, stargazing session & welcome hamper</li>
+          <li><i class="fas fa-camera"></i> Photography session + all entry permits</li>
         </ul>
-        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Premium%20Kedarnath%20Package%2012000" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+        <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chopta%20Premium%20Package%2012500" class="pkg-btn"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -552,75 +511,75 @@ footer a{color:var(--green);text-decoration:none;}
 <section id="itinerary">
   <div class="tc reveal">
     <div class="section-label">Day-by-Day Plan</div>
-    <h2 class="section-title">3N 4D Kedarnath Itinerary</h2>
+    <h2 class="section-title">3N 4D Chopta Itinerary</h2>
   </div>
   <div class="itin-intro reveal">
-    <strong>Your Kedarnath yatra begins the moment we pick you up from Delhi.</strong> This is a fast-paced, express yatra — an overnight drive gets you to Sonprayag, then it's a 16 km trek to the temple, darshan, and back down, all within 4 days. It's physically demanding but deeply rewarding. Guests with limited time or fitness may want to consider our 4N/5D plan with a rest day — ask us on WhatsApp and we'll help you choose what's right for you.
+    <strong>Your Chopta journey begins the moment we pick you up from Delhi.</strong> Over 4 days you'll drive through the spiritual town of Haridwar, stay in the serene meadows of Chopta, trek to the world's highest Shiva temple at Tungnath (3,680m), summit Chandrashila Peak for jaw-dropping 360° Himalayan views, and visit the mirror-like Deoria Tal lake. Every detail is handled — you just need to show up.
   </div>
   <div class="itin-grid">
     <div class="itin-card reveal-left">
       <div class="itin-head">
         <div class="itin-num">1</div>
-        <div><h3>Delhi → Rudraprayag → Sonprayag</h3><p>Departure · Overnight Drive · Arrival</p></div>
+        <div><h3>Delhi → Haridwar → Chopta</h3><p>Departure · Overnight Drive · Mountain Arrival</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
         <li><i class="fas fa-circle-dot"></i> Evening pickup from Delhi (7–9 PM)</li>
-        <li><i class="fas fa-circle-dot"></i> Overnight drive via Rishikesh, Rudraprayag & Guptkashi</li>
-        <li><i class="fas fa-circle-dot"></i> Breakfast stop en route</li>
-        <li><i class="fas fa-circle-dot"></i> Arrive Sonprayag by afternoon; local transfer to Gaurikund</li>
-        <li><i class="fas fa-circle-dot"></i> Hotel check-in, rest & prepare gear for trek</li>
-        <li><i class="fas fa-circle-dot"></i> Early dinner, early sleep for next day's trek</li>
+        <li><i class="fas fa-circle-dot"></i> Drive via Haridwar → Devprayag → Rudraprayag</li>
+        <li><i class="fas fa-circle-dot"></i> Breakfast stop at Rudraprayag Sangam</li>
+        <li><i class="fas fa-circle-dot"></i> Arrive Chopta by late morning (10–12 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Camp / cottage check-in, freshen up & rest</li>
+        <li><i class="fas fa-circle-dot"></i> Evening stroll through Chopta meadows, bonfire</li>
       </ul></div></div>
     </div>
     <div class="itin-card reveal-right">
       <div class="itin-head">
         <div class="itin-num">2</div>
-        <div><h3>Gaurikund → Kedarnath Trek</h3><p>16 km Sacred Trek · Evening Darshan</p></div>
+        <div><h3>Tungnath Temple + Chandrashila Peak</h3><p>Highest Shiva Temple · 360° Himalayan Views</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Early start (4–5 AM) from Gaurikund</li>
-        <li><i class="fas fa-circle-dot"></i> Trek via Jungle Chatti, Bheembali & Linchauli</li>
-        <li><i class="fas fa-circle-dot"></i> Pony/palki/helicopter option for those who need it</li>
-        <li><i class="fas fa-circle-dot"></i> Reach Kedarnath by afternoon; check-in at stay</li>
-        <li><i class="fas fa-circle-dot"></i> Evening aarti and darshan at the temple</li>
-        <li><i class="fas fa-circle-dot"></i> Overnight stay near the temple complex</li>
+        <li><i class="fas fa-circle-dot"></i> Early start (5 AM) for sunrise trek</li>
+        <li><i class="fas fa-circle-dot"></i> Trek to Tungnath Temple (3,680m) — 3.5 km trail</li>
+        <li><i class="fas fa-circle-dot"></i> Darshan at world's highest Shiva temple</li>
+        <li><i class="fas fa-circle-dot"></i> Summit Chandrashila Peak (4,130m) — panoramic views</li>
+        <li><i class="fas fa-circle-dot"></i> Views of Nanda Devi, Trishul, Kedar range</li>
+        <li><i class="fas fa-circle-dot"></i> Descend by afternoon; rest & bonfire dinner</li>
       </ul></div></div>
     </div>
     <div class="itin-card reveal-left">
       <div class="itin-head">
         <div class="itin-num">3</div>
-        <div><h3>Kedarnath Darshan → Descend to Gaurikund</h3><p>Morning Aarti · Trek Back</p></div>
+        <div><h3>Deoria Tal + Ukhimath Village</h3><p>Mirror Lake · Ancient Temple Town</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Attend early morning aarti & final darshan</li>
-        <li><i class="fas fa-circle-dot"></i> Optional visit to Bhairav Nath temple nearby</li>
-        <li><i class="fas fa-circle-dot"></i> Begin descent trek back to Gaurikund</li>
-        <li><i class="fas fa-circle-dot"></i> Lunch break at Rambara/Jungle Chatti point</li>
-        <li><i class="fas fa-circle-dot"></i> Arrive Gaurikund/Sonprayag by evening</li>
-        <li><i class="fas fa-circle-dot"></i> Hotel check-in, rest & dinner</li>
+        <li><i class="fas fa-circle-dot"></i> Early breakfast; drive to Sari village</li>
+        <li><i class="fas fa-circle-dot"></i> Trek to Deoria Tal (2,438m) — 2 km through oak forest</li>
+        <li><i class="fas fa-circle-dot"></i> Crystal-clear lake reflecting Chaukhamba peaks</li>
+        <li><i class="fas fa-circle-dot"></i> Photography session at the lake</li>
+        <li><i class="fas fa-circle-dot"></i> Visit Ukhimath — ancient Kedarnath winter seat</li>
+        <li><i class="fas fa-circle-dot"></i> Return to Chopta; stargazing night</li>
       </ul></div></div>
     </div>
     <div class="itin-card reveal-right">
       <div class="itin-head">
         <div class="itin-num">4</div>
-        <div><h3>Sonprayag → Delhi Departure</h3><p>Check-out · Scenic Drive · Home</p></div>
+        <div><h3>Chopta → Delhi Departure</h3><p>Check-out · Scenic Drive · Home</p></div>
         <i class="fas fa-chevron-down itin-chevron"></i>
       </div>
       <div class="itin-body"><div class="itin-body-inner"><ul>
-        <li><i class="fas fa-circle-dot"></i> Early breakfast & hotel check-out</li>
-        <li><i class="fas fa-circle-dot"></i> Drive back via Rudraprayag & Rishikesh</li>
-        <li><i class="fas fa-circle-dot"></i> Optional stop at Devprayag sangam</li>
-        <li><i class="fas fa-circle-dot"></i> Roadside dinner stop en route</li>
-        <li><i class="fas fa-circle-dot"></i> Drop back at Delhi late night (10 PM–12 AM)</li>
-        <li><i class="fas fa-circle-dot"></i> A yatra you'll carry in your heart forever 🙏</li>
+        <li><i class="fas fa-circle-dot"></i> Early breakfast & camp check-out</li>
+        <li><i class="fas fa-circle-dot"></i> Optional quick visit to Dugalbitta meadow</li>
+        <li><i class="fas fa-circle-dot"></i> Drive back via Rudraprayag & Haridwar</li>
+        <li><i class="fas fa-circle-dot"></i> Optional Haridwar Ganga Aarti stop (evening)</li>
+        <li><i class="fas fa-circle-dot"></i> Drop back at Delhi by night (9–11 PM)</li>
+        <li><i class="fas fa-circle-dot"></i> Memories of Himalayas packed, soul refreshed 🏔️</li>
       </ul></div></div>
     </div>
   </div>
   <div class="itin-download-wrap reveal">
-    <a href="Kedarnath-Itinerary-Kafall.pdf" download="Kedarnath-Itinerary-Kafall.pdf" class="gallery-btn" style="text-decoration:none;display:inline-flex;"><i class="fas fa-file-pdf"></i> Download Itinerary (PDF)</a>
+    <a href="Chopta-Itinerary-Kafall.pdf" download="Chopta-Itinerary-Kafall.pdf" class="gallery-btn" style="text-decoration:none;display:inline-flex;"><i class="fas fa-file-pdf"></i> Download Itinerary (PDF)</a>
   </div>
 </section>
 
@@ -628,33 +587,33 @@ footer a{color:var(--green);text-decoration:none;}
 <section class="gallery-bg" id="gallery">
   <div class="tc reveal">
     <div class="section-label">Visual Journey</div>
-    <h2 class="section-title">Kedarnath Gallery</h2>
-    <p class="section-desc">Glimpses from real Kafall yatras — the temple, the trek, and the Mandakini valley.</p>
+    <h2 class="section-title">Chopta Gallery</h2>
+    <p class="section-desc">Glimpses from real Kafall trips — snow meadows, Tungnath temple, Chandrashila summit & more.</p>
   </div>
   <div class="gallery-grid">
     <div class="gal-item reveal-scale" onclick="openModal(0)">
-      <img src="https://images.unsplash.com/photo-1626016842882-1c6e6f7a5b6e?w=800&q=80&fit=crop" alt="Kedarnath Temple"/>
-      <div class="gal-overlay">Kedarnath Temple</div>
+      <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80&fit=crop" alt="Chopta Meadows Snow"/>
+      <div class="gal-overlay">Chopta — Mini Switzerland of India</div>
     </div>
     <div class="gal-item reveal-scale" onclick="openModal(1)">
-      <img src="https://images.unsplash.com/photo-1600100397608-f43f5c8a3b6a?w=800&q=80&fit=crop" alt="Trek route Gaurikund to Kedarnath"/>
-      <div class="gal-overlay">The 16 km Sacred Trek</div>
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&fit=crop" alt="Chandrashila Summit"/>
+      <div class="gal-overlay">Chandrashila Peak — 4,130m Summit</div>
     </div>
     <div class="gal-item reveal-scale" onclick="openModal(2)">
-      <img src="https://images.unsplash.com/photo-1585504198199-20277592b6a1?w=800&q=80&fit=crop" alt="Mandakini River"/>
-      <div class="gal-overlay">Mandakini River Valley</div>
+      <img src="https://images.unsplash.com/photo-1560185127-6a6a2e4a84b0?w=800&q=80&fit=crop" alt="Deoria Tal Lake"/>
+      <div class="gal-overlay">Deoria Tal — Mirror Lake</div>
     </div>
     <div class="gal-item reveal-scale" onclick="openModal(3)">
-      <img src="https://images.unsplash.com/photo-1602005238587-2b8e0f01c8b0?w=800&q=80&fit=crop" alt="Snow peaks around Kedarnath"/>
-      <div class="gal-overlay">Snow-Capped Peaks</div>
+      <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80&fit=crop" alt="Rhododendron Forest Chopta"/>
+      <div class="gal-overlay">Rhododendron Forest Trail</div>
     </div>
     <div class="gal-item reveal-scale" onclick="openModal(4)">
-      <img src="https://images.unsplash.com/photo-1601122470726-1e2b56f43ba0?w=800&q=80&fit=crop" alt="Pilgrims on trek"/>
-      <div class="gal-overlay">Pilgrims on the Path</div>
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&fit=crop" alt="Himalayan Sunset Chopta"/>
+      <div class="gal-overlay">Himalayan Sunset from Chopta</div>
     </div>
     <div class="gal-item reveal-scale" onclick="openModal(5)">
-      <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80&fit=crop" alt="Evening aarti Kedarnath"/>
-      <div class="gal-overlay">Evening Aarti</div>
+      <img src="https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?w=800&q=80&fit=crop" alt="Stargazing Bonfire Camp"/>
+      <div class="gal-overlay">Stargazing & Bonfire Camp Night</div>
     </div>
   </div>
   <button class="gallery-btn reveal" onclick="openModal(0)"><i class="fas fa-images"></i> View All Photos (+12)</button>
@@ -666,9 +625,7 @@ footer a{color:var(--green);text-decoration:none;}
     <button class="gal-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
     <button class="gal-modal-nav gal-prev" onclick="prevPhoto()"><i class="fas fa-chevron-left"></i></button>
     <button class="gal-modal-nav gal-next" onclick="nextPhoto()"><i class="fas fa-chevron-right"></i></button>
-    <div class="gal-modal-img" id="modalImg">
-      <img id="modalImgTag" src="" alt=""/>
-    </div>
+    <div class="gal-modal-img" id="modalImg"><img id="modalImgTag" src="" alt=""/></div>
     <div class="gal-modal-cap" id="modalCap"></div>
   </div>
 </div>
@@ -677,57 +634,57 @@ footer a{color:var(--green);text-decoration:none;}
 <section id="hotels">
   <div class="tc reveal">
     <div class="section-label">Where You'll Stay</div>
-    <h2 class="section-title">Stays Near Kedarnath Base</h2>
-    <p class="section-desc">Kafall-verified stays in Sonprayag, Gaurikund & near the temple — for every budget.</p>
+    <h2 class="section-title">Camps & Hotels in Chopta</h2>
+    <p class="section-desc">Kafall-verified stays — from cozy mountain camps to premium eco-resorts with Himalayan views.</p>
   </div>
   <div class="hotels-grid">
     <div class="hotel-card reveal-scale">
       <div class="hotel-img">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&fit=crop" alt="Budget Guesthouse Sonprayag"/>
-        <div class="hotel-img-ov"></div>
-        <div class="hotel-price-tag">₹1,200/night</div>
-      </div>
-      <div class="hotel-body"><div class="hotel-name">Budget Guesthouse</div><div class="hotel-type">Dharamshala-style · Sonprayag</div><div class="hotel-tags"><span class="hotel-tag">Shared Bath</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Budget+stay+Sonprayag" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
-    </div>
-    <div class="hotel-card reveal-scale">
-      <div class="hotel-img">
-        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&fit=crop" alt="Standard Hotel Gaurikund"/>
-        <div class="hotel-img-ov"></div>
-        <div class="hotel-price-tag">₹1,800/night</div>
-      </div>
-      <div class="hotel-body"><div class="hotel-name">Standard Hotel</div><div class="hotel-type">Standard Rooms · Gaurikund</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Opt.</span><span class="hotel-tag">Hot Water</span></div><a href="https://wa.me/919810966202?text=Standard+hotel+Gaurikund" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
-    </div>
-    <div class="hotel-card reveal-scale">
-      <div class="hotel-img">
-        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80&fit=crop" alt="Family Hotel Sonprayag"/>
-        <div class="hotel-img-ov"></div>
-        <div class="hotel-price-tag">₹2,200/night</div>
-      </div>
-      <div class="hotel-body"><div class="hotel-name">Family Hotel</div><div class="hotel-type">Mid-Range · River View</div><div class="hotel-tags"><span class="hotel-tag">River View</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Family Rooms</span></div><a href="https://wa.me/919810966202?text=Family+hotel+Sonprayag" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
-    </div>
-    <div class="hotel-card reveal-scale">
-      <div class="hotel-img">
-        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80&fit=crop" alt="Kedarnath base camp stay"/>
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80&fit=crop" alt="Budget Camp Chopta"/>
         <div class="hotel-img-ov"></div>
         <div class="hotel-price-tag">₹1,500/night</div>
       </div>
-      <div class="hotel-body"><div class="hotel-name">Kedarnath Base Stay</div><div class="hotel-type">GMVN / Registered Camp · Near Temple</div><div class="hotel-tags"><span class="hotel-tag">Near Temple</span><span class="hotel-tag">Basic Amenities</span><span class="hotel-tag">Blankets Provided</span></div><a href="https://wa.me/919810966202?text=Stay+near+Kedarnath+temple" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-body"><div class="hotel-name">Budget Camp</div><div class="hotel-type">Tent Camp · Chopta Meadows</div><div class="hotel-tags"><span class="hotel-tag">Bonfire</span><span class="hotel-tag">Meals Incl.</span><span class="hotel-tag">Sleeping Bag</span></div><a href="https://wa.me/919810966202?text=Budget+camp+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
       <div class="hotel-img">
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80&fit=crop" alt="Premium hotel Guptkashi"/>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&fit=crop" alt="Standard Guesthouse Chopta"/>
         <div class="hotel-img-ov"></div>
-        <div class="hotel-price-tag">₹2,800/night</div>
+        <div class="hotel-price-tag">₹2,000/night</div>
       </div>
-      <div class="hotel-body"><div class="hotel-name">Premium Comfort Stay</div><div class="hotel-type">Guptkashi / Sonprayag · Valley View</div><div class="hotel-tags"><span class="hotel-tag">Valley View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Hot Water 24x7</span></div><a href="https://wa.me/919810966202?text=Premium+stay+Guptkashi" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-body"><div class="hotel-name">Standard Guesthouse</div><div class="hotel-type">Basic Rooms · Chopta Village</div><div class="hotel-tags"><span class="hotel-tag">Hot Water</span><span class="hotel-tag">Meals on Request</span><span class="hotel-tag">Mountain View</span></div><a href="https://wa.me/919810966202?text=Standard+guesthouse+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
     <div class="hotel-card reveal-scale">
       <div class="hotel-img">
-        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80&fit=crop" alt="Deluxe helipad-side stay"/>
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&fit=crop" alt="Forest Cottage Chopta"/>
         <div class="hotel-img-ov"></div>
-        <div class="hotel-price-tag">₹3,500+/night</div>
+        <div class="hotel-price-tag">₹2,500/night</div>
       </div>
-      <div class="hotel-body"><div class="hotel-name">Deluxe Yatra Stay</div><div class="hotel-type">Premium · Near Helipad, Phata</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Premium Décor</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Deluxe+stay+Kedarnath+yatra" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+      <div class="hotel-body"><div class="hotel-name">Forest Cottage</div><div class="hotel-type">Wooden Cottage · Forest Edge</div><div class="hotel-tags"><span class="hotel-tag">Attached Bath</span><span class="hotel-tag">Breakfast Incl.</span><span class="hotel-tag">Bonfire</span></div><a href="https://wa.me/919810966202?text=Forest+cottage+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80&fit=crop" alt="Luxury Camp Chopta"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹3,000/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Luxury Swiss Camp</div><div class="hotel-type">Luxury Tents · Panoramic Views</div><div class="hotel-tags"><span class="hotel-tag">Valley View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Stargazing</span></div><a href="https://wa.me/919810966202?text=Luxury+camp+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80&fit=crop" alt="Eco Resort Chopta"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹3,500/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Eco Resort</div><div class="hotel-type">Resort · Himalayan Views</div><div class="hotel-tags"><span class="hotel-tag">Chaukhamba View</span><span class="hotel-tag">All Meals</span><span class="hotel-tag">Guided Treks</span></div><a href="https://wa.me/919810966202?text=Eco+resort+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
+    </div>
+    <div class="hotel-card reveal-scale">
+      <div class="hotel-img">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80&fit=crop" alt="Premium Mountain Resort"/>
+        <div class="hotel-img-ov"></div>
+        <div class="hotel-price-tag">₹4,500+/night</div>
+      </div>
+      <div class="hotel-body"><div class="hotel-name">Premium Mountain Resort</div><div class="hotel-type">Luxury Resort · Full Concierge</div><div class="hotel-tags"><span class="hotel-tag">Himalayan View</span><span class="hotel-tag">Spa</span><span class="hotel-tag">Concierge</span></div><a href="https://wa.me/919810966202?text=Premium+resort+Chopta" class="hotel-btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div>
     </div>
   </div>
 </section>
@@ -739,27 +696,27 @@ footer a{color:var(--green);text-decoration:none;}
       <div class="info-box-title"><i class="fas fa-times-circle"></i> Exclusions</div>
       <ul class="info-list">
         <li><i class="fas fa-xmark excl-icon"></i> 5% GST extra on all packages</li>
-        <li><i class="fas fa-xmark excl-icon"></i> Pony, palki, helicopter or porter charges (booked separately)</li>
-        <li><i class="fas fa-xmark excl-icon"></i> Extra food, tea & snacks beyond meal plan</li>
-        <li><i class="fas fa-xmark excl-icon"></i> Travel insurance and other personal expenses</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Extra drinks, food, tea & snacks</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Forest permits & entry tickets for sightseeing</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Travel insurance and personal benefits</li>
         <li><i class="fas fa-xmark excl-icon"></i> Anything not mentioned in inclusions</li>
-        <li><i class="fas fa-xmark excl-icon"></i> Cost escalation due to weather, road blockage or landslide</li>
+        <li><i class="fas fa-xmark excl-icon"></i> Cost escalation due to weather, road conditions, landslide etc.</li>
       </ul>
     </div>
     <div class="info-box reveal-right">
       <div class="info-box-title"><i class="fas fa-backpack"></i> Things to Pack</div>
       <ul class="info-list">
-        <li><i class="fas fa-check pack-icon"></i> Sturdy trekking shoes with good grip</li>
-        <li><i class="fas fa-check pack-icon"></i> Rain poncho / waterproof jacket</li>
-        <li><i class="fas fa-check pack-icon"></i> Heavy woolens & thermal wear (cold above 3,000 m)</li>
-        <li><i class="fas fa-check pack-icon"></i> Walking stick / trekking pole</li>
-        <li><i class="fas fa-check pack-icon"></i> Personal medical kit incl. Diamox (consult doctor)</li>
-        <li><i class="fas fa-check pack-icon"></i> Water bottle & energy snacks / dry fruits</li>
-        <li><i class="fas fa-check pack-icon"></i> Torch / headlamp with extra batteries</li>
-        <li><i class="fas fa-check pack-icon"></i> Original ID proof (mandatory for yatra registration)</li>
-        <li><i class="fas fa-check pack-icon"></i> Small backpack for trek essentials</li>
-        <li><i class="fas fa-check pack-icon"></i> Power bank (limited charging points en route)</li>
-        <li><i class="fas fa-check pack-icon"></i> Sunscreen, sunglasses & cap</li>
+        <li><i class="fas fa-check pack-icon"></i> Trekking backpack (30–40 ltr.)</li>
+        <li><i class="fas fa-check pack-icon"></i> Thermal innerwear (mandatory in winter)</li>
+        <li><i class="fas fa-check pack-icon"></i> Waterproof trekking shoes + gaiters</li>
+        <li><i class="fas fa-check pack-icon"></i> Water bottle 1 Ltr. + hydration snacks</li>
+        <li><i class="fas fa-check pack-icon"></i> Heavy down jacket + windproof layer</li>
+        <li><i class="fas fa-check pack-icon"></i> Trekking poles (especially in snow)</li>
+        <li><i class="fas fa-check pack-icon"></i> Sunscreen (SPF 50+), lip balm & sunglasses</li>
+        <li><i class="fas fa-check pack-icon"></i> Mobile charger / power bank</li>
+        <li><i class="fas fa-check pack-icon"></i> Personal medical kit + altitude sickness tabs</li>
+        <li><i class="fas fa-check pack-icon"></i> Camera, headlamp & extra batteries</li>
+        <li><i class="fas fa-check pack-icon"></i> Woollen cap, gloves & neck gaiter</li>
       </ul>
     </div>
   </div>
@@ -772,44 +729,44 @@ footer a{color:var(--green);text-decoration:none;}
     <h2 class="section-title">Frequently Asked Questions</h2>
   </div>
   <div class="faq-wrap">
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Where is Kedarnath located? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Kedarnath is a sacred Hindu temple town in Rudraprayag district, Uttarakhand, situated at an altitude of about 3,584 meters in the Garhwal Himalayas, on the banks of the Mandakini river. It's one of the twelve Jyotirlingas and part of the Char Dham circuit.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How far is Kedarnath from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Sonprayag (the last motorable point) is roughly 450 km from Delhi by road, taking around 12–14 hours. From Gaurikund, it's a further 16 km trek on foot, pony, palki or helicopter to reach the temple.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How difficult is the Kedarnath trek? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">The 16 km trek from Gaurikund is moderately challenging with a steady uphill climb, well-paved in most sections. It typically takes 6–9 hours on foot. Pony, palki, and helicopter services are available for those who prefer not to trek.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is 3N/4D enough for the Kedarnath yatra? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">3N/4D is a fast-paced express plan involving overnight travel both ways plus the trek. It works well for fit travellers on a tight schedule. If you'd prefer a more relaxed pace with a buffer day, we also offer a 4N/5D itinerary — just ask us.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">When does the Kedarnath temple open and close? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">The temple typically opens in late April/early May (Akshaya Tritiya) and closes around late October/early November (Bhai Dooj), based on the Hindu calendar. It remains closed through winter due to heavy snowfall. Exact dates vary yearly — we'll confirm current dates when you book.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is helicopter service available to Kedarnath? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes, helicopter services operate from Phata, Sersi and Guptkashi to Kedarnath, cutting travel time significantly. These are subject to weather, government allocation and availability — Kafall can assist with booking as an add-on to your package.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What documents are required for the yatra? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">A valid original photo ID (Aadhaar/passport/driving licence) is mandatory for yatra registration (biometric registration is required at Sonprayag). Kafall assists with the registration process on arrival.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Kedarnath suitable for elderly or first-time trekkers? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes, with the right preparation. Elderly travellers or those unable to trek often opt for pony, palki or helicopter. We recommend a basic fitness check and consulting a doctor beforehand, especially regarding altitude.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best time to visit Kedarnath? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">May–June and September–October are considered the best months — pleasant weather and clear trek conditions. Avoid the monsoon months (July–August) due to landslide risk on the route.</div></div>
-    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is mobile network available on the trek? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Network is patchy on the trek itself, with BSNL/Jio having partial coverage in some stretches. Connectivity is generally available at Sonprayag, Gaurikund and near the Kedarnath temple town.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Where is Chopta located? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is a small hamlet in the Rudraprayag district of Uttarakhand, situated at an altitude of about 2,680 meters (8,800 ft). It lies in the Kedarnath Wildlife Sanctuary and serves as the base camp for the famous Tungnath and Chandrashila trek.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How far is Chopta from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is approximately 450 km from Delhi by road. The journey takes around 10–12 hours. Most guests prefer an overnight departure from Delhi to arrive fresh in the morning.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best way to reach Chopta from Delhi? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">By road: Delhi → Haridwar → Devprayag → Rudraprayag → Ukhimath → Chopta. Kafall provides private cab transfers from Delhi. By train: Take a train to Haridwar or Rishikesh, then a cab to Chopta (~200 km).</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is the best time to visit Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is beautiful year-round. Summer (March–June) offers green meadows and clear views. Monsoon (July–Sept) brings lush greenery. Winter (Nov–Feb) brings heavy snowfall — ideal for snow lovers. Tungnath Temple remains open from May to November.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What is Chopta famous for? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Chopta is famous as the "Mini Switzerland of India" for its snow-covered meadows and rhododendron forests. It is the base for Tungnath — the world's highest Shiva temple — and Chandrashila Peak, offering panoramic views of Nanda Devi, Trishul, and the Kedarnath range.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chopta suitable for beginners and families? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! The Tungnath trek (3.5 km) is moderate and suitable for beginners and older trekkers. Deoria Tal (2 km) is even easier and perfect for families with children. We guide every group according to their fitness level.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What activities can I do in Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Trekking to Tungnath & Chandrashila, Deoria Tal lake visit, birdwatching (Monal pheasant, Himalayan Griffon), wildlife spotting in Kedarnath Sanctuary, photography, stargazing, bonfire evenings, and exploring Ukhimath village.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is snowfall available in Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes! From December to March, Chopta receives heavy snowfall and the entire meadow turns into a snow-white wonderland. The trek to Tungnath in snow is one of the most magical experiences in Uttarakhand. Ice axes and crampons are provided on request.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Are there good stays in Chopta? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">Yes — from basic tent camps (₹1,500/night) to premium eco-resorts with Himalayan views (₹4,500+/night). Facilities are basic compared to developed hill stations, which is exactly what makes Chopta special. Kafall partners only with verified, quality-checked properties.</div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is Chopta crowded like Mussoorie or Nainital? <i class="fas fa-plus faq-icon"></i></button><div class="faq-a">No! Chopta remains beautifully off the beaten path. It lies inside a wildlife sanctuary with restricted access, keeping tourist numbers low, nature pristine, and skies clear for stargazing. It's everything that crowded hill stations are not.</div></div>
   </div>
 </section>
 
-<!-- ROUTE BANNER — GREEN BACKGROUND -->
+<!-- ROUTE BANNER -->
 <section class="route-bg" id="route">
   <div class="tc reveal">
     <div class="section-label">Getting There</div>
-    <h2 class="section-title">Delhi to Kedarnath Route</h2>
-    <p class="section-desc">A 450 km overnight drive followed by a 16 km sacred trek — the classic Kedarnath yatra route.</p>
+    <h2 class="section-title">Delhi to Chopta Route</h2>
+    <p class="section-desc">A scenic 450 km drive through the Garhwal Himalayas — best covered overnight for a fresh mountain morning.</p>
   </div>
   <div class="route-card reveal">
     <div class="route-stepper">
       <div class="route-step is-end"><span class="route-dot">1</span><span class="route-step-label">Delhi</span></div>
       <div class="route-line"></div>
-      <div class="route-step"><span class="route-dot">2</span><span class="route-step-label">Rishikesh</span></div>
+      <div class="route-step"><span class="route-dot">2</span><span class="route-step-label">Haridwar</span></div>
       <div class="route-line"></div>
-      <div class="route-step"><span class="route-dot">3</span><span class="route-step-label">Rudraprayag</span></div>
+      <div class="route-step"><span class="route-dot">3</span><span class="route-step-label">Devprayag</span></div>
       <div class="route-line"></div>
-      <div class="route-step"><span class="route-dot">4</span><span class="route-step-label">Guptkashi</span></div>
+      <div class="route-step"><span class="route-dot">4</span><span class="route-step-label">Rudraprayag</span></div>
       <div class="route-line"></div>
-      <div class="route-step"><span class="route-dot">5</span><span class="route-step-label">Sonprayag / Gaurikund</span></div>
+      <div class="route-step"><span class="route-dot">5</span><span class="route-step-label">Ukhimath</span></div>
       <div class="route-line"></div>
-      <div class="route-step is-end"><span class="route-dot">6</span><span class="route-step-label">Kedarnath (16 km trek)</span></div>
+      <div class="route-step is-end"><span class="route-dot">6</span><span class="route-step-label">Chopta</span></div>
     </div>
     <div class="route-stats-grid">
-      <div class="route-stat-card"><i class="fas fa-road"></i><strong>450 km</strong><span>Delhi to Sonprayag</span></div>
-      <div class="route-stat-card"><i class="fas fa-clock"></i><strong>12–14 hrs</strong><span>Drive Time</span></div>
-      <div class="route-stat-card"><i class="fas fa-person-hiking"></i><strong>16 km</strong><span>Trek from Gaurikund</span></div>
+      <div class="route-stat-card"><i class="fas fa-road"></i><strong>450 km</strong><span>Total Distance</span></div>
+      <div class="route-stat-card"><i class="fas fa-clock"></i><strong>10–12 hrs</strong><span>Drive Time</span></div>
+      <div class="route-stat-card"><i class="fas fa-signs-post"></i><strong>NH-58</strong><span>Main Highway</span></div>
       <div class="route-stat-card"><i class="fas fa-moon"></i><strong>Night</strong><span>Best Departure</span></div>
     </div>
   </div>
@@ -819,109 +776,34 @@ footer a{color:var(--green);text-decoration:none;}
 <section class="testi-bg" id="testimonials">
   <div class="tc reveal">
     <div class="section-label">Real Experiences</div>
-    <h2 class="section-title">What Pilgrims Say</h2>
-    <p class="section-desc">Hundreds of Kedarnath yatras — here's what our guests remember most.</p>
+    <h2 class="section-title">What Travellers Say</h2>
+    <p class="section-desc">400+ Chopta trips — here's what our guests remember most.</p>
   </div>
   <div class="testi-grid">
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"The trek was tough but Kafall's support made it manageable. Reaching the temple and hearing the evening aarti — an experience I'll never forget."</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rajesh Pandey</div><div class="testi-loc">Delhi · Solo Yatra</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Booked the pony assist for my parents through Kafall — everything was arranged smoothly. Truly grateful for the seamless coordination."</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Sunita & Family</div><div class="testi-loc">Ghaziabad · Family Yatra</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★☆</div><div class="testi-text">"Well-organised trip from pickup to darshan. The team briefed us clearly on what to pack and expect at altitude. Highly recommend for first-timers."</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Amit Joshi</div><div class="testi-loc">Noida · Group of 6</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Kafall handled our yatra registration and stay near the temple perfectly. The whole journey felt spiritual and stress-free."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Poonam Rawat</div><div class="testi-loc">Lucknow · Couple</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Our office group did the yatra together. The dedicated trip manager kept everyone on schedule through the trek. Wonderful experience overall."</div><div class="testi-author"><div class="testi-av">V</div><div><div class="testi-name">Vinod Thakur</div><div class="testi-loc">Faridabad · Corporate Group</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"As a solo woman traveller, I felt safe and supported the entire way. Kafall's local contacts at Sonprayag were extremely helpful."</div><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Neha Kandari</div><div class="testi-loc">Meerut · Solo Female</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Transparent pricing, no hidden charges, and clear communication throughout. This yatra with Kafall exceeded our expectations."</div><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Kamal Bisht</div><div class="testi-loc">Jaipur · Family</div></div></div></div>
-    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"My father is 65 and completed the yatra comfortably thanks to Kafall's pony arrangement and constant check-ins along the trek."</div><div class="testi-author"><div class="testi-av">D</div><div><div class="testi-name">Deepak Semwal</div><div class="testi-loc">Gurgaon · With Parents</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Standing on Chandrashila at sunrise with the entire Himalayan range glowing — it was the most spiritual moment of my life. Kafall made it seamless!"</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Aryan Kapoor</div><div class="testi-loc">Delhi · Solo Trek</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Chopta in winter with snow everywhere — absolute paradise. The luxury camp was cozy and the bonfire dinner under stars was unforgettable. 10/10!"</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Sneha & Rohan</div><div class="testi-loc">Pune · Couple Trip</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★☆</div><div class="testi-text">"Deoria Tal reflecting the Chaukhamba peaks — I've never seen anything more beautiful. Guide was brilliant, trek was well-paced for our group."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Preethi Nair</div><div class="testi-loc">Bengaluru · Group of 6</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tungnath darshan at 3,680m — one of the most powerful spiritual experiences. Kafall's team arranged everything including the forest permits. Highly professional!"</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Ramesh Tiwari</div><div class="testi-loc">Lucknow · Family Pilgrimage</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"My kids trekked to Deoria Tal — they were amazed! Safe, well-organized, and the stay had great food. Chopta is ideal for families who want adventure without too much risk."</div><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Meena Sharma</div><div class="testi-loc">Noida · Family Trip</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Corporate offsite at Chopta — best decision ever! The team bonding over a Chandrashila summit was priceless. Kafall handled 20 people without a single hitch."</div><div class="testi-author"><div class="testi-av">V</div><div><div class="testi-name">Vivek Malhotra</div><div class="testi-loc">Gurgaon · Corporate Group</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"As a solo female trekker, safety was my main concern. Kafall's guide was extremely professional and the camp was safe. Chopta stole my heart — going back this winter!"</div><div class="testi-author"><div class="testi-av">N</div><div><div class="testi-name">Nikita Joshi</div><div class="testi-loc">Mumbai · Solo Female</div></div></div></div>
+    <div class="testi-card reveal-scale"><div class="testi-stars">★★★★★</div><div class="testi-text">"Stargazing at Chopta with zero light pollution — saw the Milky Way with naked eyes! Kafall's premium camp was worth every rupee. An experience I'll cherish forever."</div><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Karan Mehta</div><div class="testi-loc">Jaipur · Friends Group</div></div></div></div>
   </div>
 </section>
 
-<!-- FINAL CTA — GREEN BACKGROUND -->
+<!-- FINAL CTA -->
 <div class="cta-bg">
   <div class="reveal">
-    <h2>Ready for Your Kedarnath Yatra?</h2>
-    <p>Chat with our Uttarakhand specialists. We'll plan every detail — trek, stay, darshan — so your journey stays focused on devotion.</p>
+    <h2>Ready for Your Chopta Adventure?</h2>
+    <p>Chat with our Uttarakhand trek specialists. We'll plan every detail — permits, stays, guides — so you just show up and summit.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Kedarnath%20Yatra%20please" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="https://wa.me/919810966202?text=Hi%20Kafall%2C%20Chopta%20Trip%20please" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
       <a href="tel:+919810966202" class="btn-call"><i class="fas fa-phone"></i> Call Us Now</a>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     FOOTER
-══════════════════════════════ -->
-<footer class="footer">
-  <div class="footer-top">
-    <div class="wrap footer-grid">
-      <div class="ft-brand">
-        <div class="ft-logo">
-          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
-          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
-        </div>
-        <p>India's trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
-        <div class="ft-socials">
-          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <div class="ft-col">
-        <h5>Uttarakhand</h5>
-        <ul>
-          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
-          <li><a href="/packages/rishikesh.html">Rishikesh & Haridwar</a></li>
-          <li><a href="/chardham.html">Char Dham Yatra</a></li>
-          <li><a href="/packages/munsyari.html">Munsyari</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>temples</h5>
-        <ul>
-          <li><a href="/packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
-          <li><a href="/packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
-          <li><a href="/packages/kartikswami.html">Kartik Swami Temple</a></li>
-          <li><a href="/packages/jagheshwar.html">Jageshwar</a></li>
-          <li><a href="/packages/surkandadevi.html">Surkanda Devi Temple</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="/packages.html">All Packages</a></li>
-          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
-          <li><a href="/blog.html">Travel Blog</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/t&c.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Contact</h5>
-        <ul class="ft-contact">
-          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
-          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bar">
-    <div class="wrap footer-bar-inner">
-      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
-      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
-    </div>
-  </div>
-</footer>
-
-<!-- Scroll Top -->
-<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
-
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+<DIV id="footer"></DIV>
 
 <script>
 window.addEventListener('scroll',()=>{
@@ -958,12 +840,12 @@ document.querySelectorAll('.itin-head').forEach(head=>{
 });
 
 const galImgs=[
-  {src:'https://images.unsplash.com/photo-1626016842882-1c6e6f7a5b6e?w=1200&q=85&fit=crop',cap:'Kedarnath Temple — Jyotirlinga in the Himalayas'},
-  {src:'https://images.unsplash.com/photo-1600100397608-f43f5c8a3b6a?w=1200&q=85&fit=crop',cap:'The 16 km trek from Gaurikund'},
-  {src:'https://images.unsplash.com/photo-1585504198199-20277592b6a1?w=1200&q=85&fit=crop',cap:'Mandakini River Valley'},
-  {src:'https://images.unsplash.com/photo-1602005238587-2b8e0f01c8b0?w=1200&q=85&fit=crop',cap:'Snow-capped peaks around the temple'},
-  {src:'https://images.unsplash.com/photo-1601122470726-1e2b56f43ba0?w=1200&q=85&fit=crop',cap:'Pilgrims on the sacred path'},
-  {src:'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=85&fit=crop',cap:'Evening Aarti at Kedarnath'},
+  {src:'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=85&fit=crop',cap:'Chopta Meadows — Mini Switzerland of India'},
+  {src:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85&fit=crop',cap:'Chandrashila Peak — 4,130m Himalayan Summit'},
+  {src:'https://images.unsplash.com/photo-1560185127-6a6a2e4a84b0?w=1200&q=85&fit=crop',cap:'Deoria Tal — Mirror Lake reflecting Chaukhamba'},
+  {src:'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=85&fit=crop',cap:'Rhododendron Forest Trail to Tungnath'},
+  {src:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85&fit=crop',cap:'Himalayan Sunset from Chopta'},
+  {src:'https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?w=1200&q=85&fit=crop',cap:'Stargazing & Bonfire Camp Night'},
 ];
 let curPhoto=0;
 function openModal(i){
@@ -990,5 +872,8 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>obs.observe(el));
 </script>
+
+<script src="../assets/js/script.js"></script>
+
 </body>
 </html>
