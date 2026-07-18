@@ -1,477 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kafall Travels — Footer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --bg: #0a0f0d;
-    --bg-soft: #0d1310;
-    --green: #3fae6a;
-    --green-bright: #4ecb7d;
-    --text: #f2f4f2;
-    --text-muted: #b9c2bd;
-    --text-faint: #7d8a83;
-    --border: rgba(255,255,255,0.08);
-    --radius: 10px;
+  #kf-footer{
+    --bg-footer:#081a10;
+    --bg-footer-2:#0a2014;
+    --border-glow:#3ddc84;
+    --accent:#3ddc84;
+    --accent-brand:#259E5C;
+    --text-heading:#ffffff;
+    --text-body:#a9b3ac;
+    --text-muted:#7c8880;
+    --text-link:#e7ece8;
+    --divider:rgba(255,255,255,0.08);
+    --whatsapp:#25d366;
+    font-family:'Poppins',sans-serif;
   }
 
-  * { box-sizing: border-box; }
+  #kf-footer *{box-sizing:border-box;}
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: #06090a;
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--text);
+  /* ============ FOOTER ============ */
+  #kf-footer .kf-site-footer{
+    position:relative;
+    background:
+      radial-gradient(120% 180% at 15% -20%, rgba(61,220,132,0.20), transparent 55%),
+      radial-gradient(90% 140% at 100% 120%, rgba(37,158,92,0.16), transparent 60%),
+      linear-gradient(180deg, var(--bg-footer-2) 0%, var(--bg-footer) 100%);
+    padding:64px 60px 0;
+    overflow:hidden;
   }
 
-  footer.site-footer{
-    position: relative;
-    background: var(--bg);
-    border-top: 3px solid var(--green-bright);
-    padding: 56px 6vw 0;
-    overflow: hidden;
-  }
-
-  /* soft ambient glow, subtle motion */
-  footer.site-footer::before{
+  #kf-footer .kf-site-footer::after{
     content:"";
     position:absolute;
-    top:-120px;
-    left:50%;
-    width:600px;
-    height:300px;
-    background: radial-gradient(circle, rgba(78,203,125,0.10), transparent 70%);
-    transform: translateX(-50%);
+    inset:0;
     pointer-events:none;
-    animation: drift 10s ease-in-out infinite alternate;
+    opacity:0.5;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:180px 180px;
   }
 
-  @keyframes drift{
-    from{ opacity:.6; transform: translateX(-52%) translateY(0); }
-    to{ opacity:1; transform: translateX(-48%) translateY(10px); }
+  #kf-footer .kf-site-footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:5%;
+    right:5%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--border-glow) 20%, var(--border-glow) 80%, transparent);
+    box-shadow:0 0 20px 1px rgba(61,220,132,0.55);
+    border-radius:50%;
   }
 
-  .footer-grid{
+  #kf-footer .kf-footer-inner{
+    position:relative;
+    z-index:2;
+    max-width:1600px;
+    margin:0 auto;
     display:grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-    gap: 40px;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding-bottom: 40px;
+    grid-template-columns:1.4fr 1fr 1fr 1.15fr;
+    gap:40px;
+    animation:kf-fadeUp 0.9s ease both;
   }
 
-  .brand-col .brand-row{
-    display:flex;
-    align-items:center;
-    gap: 10px;
-    margin-bottom: 18px;
+  @keyframes kf-fadeUp{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
   }
 
-  .brand-logo{
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--green), #1f6b3f);
+  /* ---- Brand column ---- */
+  #kf-footer .kf-brand-block{padding-right:20px;}
+
+  #kf-footer .kf-brand-row{
     display:flex;
     align-items:center;
-    justify-content:center;
-    font-weight:700;
-    font-size: 14px;
-    color:#06110a;
+    gap:12px;
+    margin-bottom:18px;
+  }
+
+  #kf-footer .kf-brand-logo{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #6fe39a, #1f8f52 65%, #0b4a29);
     flex-shrink:0;
-    box-shadow: 0 0 0 2px rgba(78,203,125,0.15);
-    transition: transform .35s ease, box-shadow .35s ease;
-    overflow: hidden;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 4px 14px rgba(61,220,132,0.25);
   }
 
-  /* If you link a real logo image, it will fill this circle nicely */
-  .brand-logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display:block;
-  }
-  .brand-row:hover .brand-logo{
-    transform: rotate(-8deg) scale(1.06);
-    box-shadow: 0 0 0 4px rgba(78,203,125,0.22);
+  #kf-footer .kf-brand-name{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:22px;
+    color:var(--text-heading);
+    letter-spacing:0.2px;
   }
 
-  .brand-name{
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: .01em;
-    color: var(--text);
+  #kf-footer .kf-brand-desc{
+    font-size:14px;
+    line-height:1.75;
+    color:var(--text-body);
+    max-width:340px;
+    margin-bottom:26px;
   }
 
-  .brand-desc{
-    color: var(--text-muted);
-    font-size: 14.5px;
-    line-height: 1.65;
-    max-width: 360px;
-    margin: 0 0 22px;
-  }
-
-  .socials{
+  #kf-footer .kf-social-row{
     display:flex;
-    gap: 12px;
+    gap:12px;
   }
 
-  .socials a{
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
+  #kf-footer .kf-social-icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.10);
     display:flex;
     align-items:center;
     justify-content:center;
-    color: var(--text);
+    overflow:hidden;
     text-decoration:none;
-    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+    transition:transform 0.35s cubic-bezier(.34,1.56,.64,1), border-color 0.35s ease, box-shadow 0.35s ease;
   }
 
-  .socials a:hover{
-    background: var(--green-bright);
-    border-color: var(--green-bright);
-    color: #06110a;
-    transform: translateY(-3px);
+  #kf-footer .kf-social-icon svg{width:22px;height:22px;transition:transform .35s ease;}
+
+  #kf-footer .kf-social-icon:hover{
+    transform:translateY(-4px) scale(1.08);
+    border-color:rgba(255,255,255,0.25);
   }
 
-  .socials svg{ width:16px; height:16px; }
+  #kf-footer .kf-social-icon.kf-ig:hover{ box-shadow:0 8px 20px rgba(193,53,132,0.45); }
+  #kf-footer .kf-social-icon.kf-fb:hover{ box-shadow:0 8px 20px rgba(24,119,242,0.45); }
+  #kf-footer .kf-social-icon.kf-yt:hover{ box-shadow:0 8px 20px rgba(255,0,0,0.4); }
 
-  .col-title{
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    color: var(--text);
-    margin: 0 0 20px;
-    text-transform: uppercase;
+  #kf-footer .kf-social-icon:hover svg{ transform:scale(1.08); }
+
+  /* ---- Link columns ---- */
+  #kf-footer .kf-col-title{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1.6px;
+    color:var(--text-heading);
+    text-transform:uppercase;
+    margin-bottom:22px;
   }
 
-  .footer-links{
+  #kf-footer .kf-footer-col ul{
     list-style:none;
-    margin:0;
-    padding:0;
     display:flex;
     flex-direction:column;
-    gap: 13px;
+    gap:14px;
+    margin:0;
+    padding:0;
   }
 
-  .footer-links a{
-    color: var(--text-muted);
-    text-decoration:none;
-    font-size: 14.5px;
+  #kf-footer .kf-footer-col a{
     position:relative;
     display:inline-block;
-    transition: color .25s ease, transform .25s ease;
+    color:var(--text-link);
+    text-decoration:none;
+    font-size:14.5px;
+    font-weight:400;
+    letter-spacing:0.2px;
+    transition:color 0.3s ease, padding-left 0.3s ease;
+    padding-bottom:2px;
   }
 
-  .footer-links a::after{
+  #kf-footer .kf-footer-col a::after{
     content:"";
     position:absolute;
     left:0;
-    bottom:-3px;
+    bottom:-2px;
     width:0%;
-    height:1px;
-    background: var(--green-bright);
-    transition: width .3s ease;
+    height:1.5px;
+    background:linear-gradient(90deg, var(--accent-brand), var(--accent));
+    box-shadow:0 0 8px rgba(37,158,92,0.6);
+    transition:width 0.38s cubic-bezier(.65,.05,.36,1);
   }
 
-  .footer-links a:hover{
-    color: var(--text);
-    transform: translateX(3px);
+  #kf-footer .kf-footer-col a:hover{
+    color:var(--accent);
+    padding-left:4px;
   }
 
-  .footer-links a:hover::after{
-    width:100%;
-  }
+  #kf-footer .kf-footer-col a:hover::after{ width:100%; }
 
-  .contact-list{
-    list-style:none;
-    margin:0;
-    padding:0;
+  /* ---- Contact column ---- */
+  #kf-footer .kf-contact-list{
     display:flex;
     flex-direction:column;
-    gap: 16px;
+    gap:18px;
   }
 
-  .contact-list li{
+  #kf-footer .kf-contact-item{
     display:flex;
     align-items:flex-start;
-    gap: 12px;
-    font-size: 14.5px;
-    color: var(--text-muted);
-    line-height: 1.5;
+    gap:12px;
+    font-size:14.5px;
+    color:var(--text-link);
+    line-height:1.5;
+    transition:transform 0.3s ease;
   }
 
-  .contact-list svg{
-    width: 18px;
-    height: 18px;
+  #kf-footer .kf-contact-item:hover{ transform:translateX(3px); }
+
+  #kf-footer .kf-contact-icon{
+    width:18px;
+    height:18px;
     flex-shrink:0;
-    color: var(--green-bright);
-    margin-top: 2px;
+    margin-top:2px;
+    color:var(--accent);
   }
 
-  .contact-list a{
-    color: var(--text-muted);
+  #kf-footer .kf-contact-item a{
+    color:inherit;
     text-decoration:none;
-    transition: color .25s ease;
+    transition:color 0.3s ease;
   }
-  .contact-list a:hover{ color: var(--green-bright); }
+  #kf-footer .kf-contact-item a:hover{ color:var(--accent); }
 
-  .footer-bottom{
-    border-top: 1px solid var(--border);
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 22px 0;
+  /* ---- Bottom bar ---- */
+  #kf-footer .kf-footer-bottom{
+    position:relative;
+    z-index:2;
+    max-width:1600px;
+    margin:48px auto 0;
+    padding:24px 0 26px;
+    border-top:1px solid var(--divider);
     display:flex;
     align-items:center;
     justify-content:space-between;
-    flex-wrap: wrap;
-    gap: 14px;
+    flex-wrap:wrap;
+    gap:14px;
   }
 
-  .footer-bottom p{
+  #kf-footer .kf-copyright{
+    font-size:13px;
+    color:var(--text-muted);
     margin:0;
-    font-size: 13.5px;
-    color: var(--text-faint);
   }
 
-  .legal-links{
+  #kf-footer .kf-legal-links{
     display:flex;
-    gap: 26px;
-    list-style:none;
-    margin:0;
-    padding:0;
+    gap:34px;
   }
 
-  .legal-links a{
-    color: var(--text-faint);
-    font-size: 13.5px;
+  #kf-footer .kf-legal-links a{
+    position:relative;
+    font-size:13px;
+    color:#8ea8c9;
     text-decoration:none;
-    transition: color .25s ease;
+    transition:color 0.3s ease;
   }
 
-  .legal-links a:hover{
-    color: var(--green-bright);
+  #kf-footer .kf-legal-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0%;
+    height:1px;
+    background:#8ea8c9;
+    transition:width 0.35s cubic-bezier(.65,.05,.36,1);
   }
 
-  /* fade-in-up on load */
-  .fade-up{
-    opacity:0;
-    transform: translateY(18px);
-    animation: fadeUp .7s ease forwards;
-  }
-  @keyframes fadeUp{
-    to{ opacity:1; transform: translateY(0); }
-  }
+  #kf-footer .kf-legal-links a:hover{ color:#cfe3ff; }
+  #kf-footer .kf-legal-links a:hover::after{ width:100%; }
 
-  /* ---------- WhatsApp Floating Button ---------- */
-  .whatsapp-float{
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    width: 58px;
-    height: 58px;
-    z-index: 999;
-    text-decoration:none;
-  }
-
-  .whatsapp-float .btn-core{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #25D366, #1fb355);
+  /* ============ WhatsApp Fixed Icon (page-wide, fixed position) ============ */
+  #kf-whatsapp-fab{
+    position:fixed;
+    right:26px;
+    bottom:26px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06);
-    transition: transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 6px 18px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.6);
+    z-index:999;
+    text-decoration:none;
+    animation:kf-pulse 2.6s infinite;
+    transition:transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease;
   }
 
-  .whatsapp-float svg{
-    width: 28px;
-    height: 28px;
-    fill: #fff;
-    position: relative;
-    z-index: 2;
+  #kf-whatsapp-fab svg{
+    width:30px;
+    height:30px;
+    fill:#fff;
+    transition:transform 0.35s ease;
   }
 
-  .whatsapp-float:hover .btn-core{
-    transform: scale(1.08);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.1);
+  #kf-whatsapp-fab:hover{
+    transform:scale(1.1) rotate(6deg);
+    box-shadow:0 10px 26px rgba(37,211,102,0.6);
   }
 
-  /* the smooth outward "wave"/ripple, looping gently */
-  .whatsapp-float .ripple{
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: rgba(37, 211, 102, 0.55);
-    z-index: 1;
-    animation: wave 2.4s ease-out infinite;
+  #kf-whatsapp-fab:hover svg{ transform:scale(1.08); }
+
+  @keyframes kf-pulse{
+    0%{ box-shadow:0 6px 18px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.55); }
+    70%{ box-shadow:0 6px 18px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0); }
+    100%{ box-shadow:0 6px 18px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); }
   }
 
-  .whatsapp-float .ripple.delay{
-    animation-delay: 1.2s;
-  }
-
-  @keyframes wave{
-    0%   { transform: scale(1);   opacity: .55; }
-    70%  { transform: scale(1.9); opacity: 0; }
-    100% { transform: scale(1.9); opacity: 0; }
-  }
-
-  @media (max-width: 620px){
-    .whatsapp-float{
-      bottom: 18px;
-      right: 18px;
-      width: 52px;
-      height: 52px;
+  /* ============ Responsive ============ */
+  @media (max-width:980px){
+    #kf-footer .kf-footer-inner{
+      grid-template-columns:1fr 1fr;
+      row-gap:40px;
     }
-    .whatsapp-float svg{ width:25px; height:25px; }
+    #kf-footer .kf-site-footer{padding:52px 32px 0;}
   }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 980px){
-    .footer-grid{
-      grid-template-columns: 1fr 1fr;
-      row-gap: 36px;
-    }
-    .brand-col{ grid-column: 1 / -1; }
-  }
-
-  @media (max-width: 620px){
-    footer.site-footer{ padding: 44px 6vw 0; }
-    .footer-grid{
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-    .footer-bottom{
-      flex-direction: column;
+  @media (max-width:600px){
+    #kf-footer .kf-footer-inner{ grid-template-columns:1fr; }
+    #kf-footer .kf-site-footer{padding:44px 22px 0;}
+    #kf-footer .kf-footer-bottom{
+      flex-direction:column;
       align-items:flex-start;
-      text-align:left;
     }
-    .legal-links{
-      flex-wrap: wrap;
-      gap: 16px 22px;
-    }
-    .brand-desc{ max-width: 100%; }
+    #kf-footer .kf-legal-links{ flex-wrap:wrap; gap:20px; }
+    #kf-whatsapp-fab{ right:18px; bottom:18px; width:52px; height:52px; }
+    #kf-whatsapp-fab svg{ width:26px; height:26px; }
   }
 </style>
-</head>
-<body>
 
-<!-- WhatsApp floating button — fixed hone ki wajah se poore page/scroll pe same jagah rahega -->
-<a class="whatsapp-float"
-   href="https://wa.me/919354419499?text=Hi%20Kafall%20Travels%2C%20I%20want%20to%20know%20about%20the%20plan"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Chat on WhatsApp">
-  <span class="ripple"></span>
-  <span class="ripple delay"></span>
-  <span class="btn-core">
-    <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.4A9.9 9.9 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 20 12a8 8 0 0 1-8 8zm4.4-6c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.3-2.8-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
-  </span>
-</a>
+<!-- ================= FOOTER MARKUP ================= -->
+<footer id="kf-footer">
+  <div class="kf-site-footer">
+    <div class="kf-footer-inner">
 
-<footer class="site-footer">
-  <div class="footer-grid">
-
-    <div class="brand-col fade-up" style="animation-delay:.05s">
-      <div class="brand-row">
-        <div class="brand-logo">
-          <!-- 👇 Apna logo image ka link/URL yaha "src" me daalein -->
-          <img src="PASTE-YOUR-LOGO-IMAGE-LINK-HERE.png" alt="Kafall Travels logo">
+      <!-- Brand -->
+      <div class="kf-brand-block">
+        <div class="kf-brand-row">
+          <div class="kf-brand-logo"></div>
+          <span class="kf-brand-name">Kafall Travels</span>
         </div>
-        <span class="brand-name">Kafall Travels</span>
+        <p class="kf-brand-desc">
+          A Delhi-based travel agency built entirely around Uttarakhand — Char Dham Yatra, hill escapes and weekend getaways, planned with honest itineraries and verified stays.
+        </p>
+        <div class="kf-social-row">
+          <a href="#" class="kf-social-icon kf-ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="kf-igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FFDC80"/>
+                  <stop offset="25%" stop-color="#FCAF45"/>
+                  <stop offset="45%" stop-color="#F77737"/>
+                  <stop offset="60%" stop-color="#F56040"/>
+                  <stop offset="75%" stop-color="#C13584"/>
+                  <stop offset="90%" stop-color="#833AB4"/>
+                  <stop offset="100%" stop-color="#5851DB"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#kf-igGrad)"/>
+              <circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="1.6"/>
+              <circle cx="17.15" cy="6.85" r="1.15" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="#" class="kf-social-icon kf-fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+              <path d="M15.6 12.6h-2.05v7.35h-3.05v-7.35H9.05V9.9h1.45V8.2c0-1.68.72-3.15 3.34-3.15h2.16v2.62h-1.4c-.6 0-.75.34-.75.83v1.4h2.15l-.3 2.7Z" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="#" class="kf-social-icon kf-yt" aria-label="YouTube">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="4.8" width="22" height="14.4" rx="4.2" fill="#FF0000"/>
+              <path d="M10.2 8.9v6.2l5.6-3.1-5.6-3.1Z" fill="#fff"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <p class="brand-desc">
-        A Delhi-based travel agency built entirely around Uttarakhand —
-        Char Dham Yatra, hill escapes and weekend getaways, planned with
-        honest itineraries and verified stays.
-      </p>
-      <div class="socials">
-        <a href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.2c0-.87.24-1.46 1.5-1.46H16.5V4.14C16.16 4.1 15 4 13.66 4 10.85 4 9 5.66 9 8.7V10.5H6.5v3H9V21h4.5z"/></svg>
-        </a>
-        <a href="#" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.5-.85-2.15c-.8-.85-1.7-.85-2.1-.9C15.9 4 12 4 12 4h-.02s-3.9 0-6.65.15c-.4.05-1.3.05-2.1.9C2.6 5.7 2.4 7.2 2.4 7.2S2.2 8.95 2.2 10.7v1.6c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.15c.8.85 1.85.82 2.3.92C7.1 19 12 19 12 19s3.9 0 6.65-.15c.4-.05 1.3-.05 2.1-.9.65-.65.85-2.15.85-2.15s.2-1.75.2-3.5v-1.6c0-1.75-.2-3.5-.2-3.5zM9.9 14.15V8.85l5.15 2.65-5.15 2.65z"/></svg>
-        </a>
+
+      <!-- Quick Links -->
+      <div class="kf-footer-col">
+        <h4 class="kf-col-title">Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Char Dham Yatra</a></li>
+          <li><a href="#">Stranger Trips</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div class="kf-footer-col">
+        <h4 class="kf-col-title">Destinations</h4>
+        <ul>
+          <li><a href="#">Kedarnath</a></li>
+          <li><a href="#">Badrinath</a></li>
+          <li><a href="#">Mussoorie</a></li>
+          <li><a href="#">Nainital</a></li>
+          <li><a href="#">Auli</a></li>
+          <li><a href="#">Chopta</a></li>
+        </ul>
+      </div>
+
+      <!-- Get in Touch -->
+      <div class="kf-footer-col">
+        <h4 class="kf-col-title">Get In Touch</h4>
+        <div class="kf-contact-list">
+          <div class="kf-contact-item">
+            <svg class="kf-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <span>Your Office Address, Delhi, India</span>
+          </div>
+          <div class="kf-contact-item">
+            <svg class="kf-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 1-2Z"/></svg>
+            <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a>
+          </div>
+          <div class="kf-contact-item">
+            <svg class="kf-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <a href="mailto:info@kafalltravels.com">info@kafalltravels.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="kf-footer-bottom">
+      <p class="kf-copyright">© 2026 Kafall Travels. All rights reserved.</p>
+      <div class="kf-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Refund Policy</a>
       </div>
     </div>
-
-    <div class="fade-up" style="animation-delay:.12s">
-      <h4 class="col-title">Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Char Dham Yatra</a></li>
-        <li><a href="#">Stranger Trips</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <div class="fade-up" style="animation-delay:.19s">
-      <h4 class="col-title">Destinations</h4>
-      <ul class="footer-links">
-        <li><a href="#">Kedarnath</a></li>
-        <li><a href="#">Badrinath</a></li>
-        <li><a href="#">Mussoorie</a></li>
-        <li><a href="#">Nainital</a></li>
-        <li><a href="#">Auli</a></li>
-        <li><a href="#">Chopta</a></li>
-      </ul>
-    </div>
-
-    <div class="fade-up" style="animation-delay:.26s">
-      <h4 class="col-title">Get In Touch</h4>
-      <ul class="contact-list">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span>Your Office Address, Delhi, India</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.1z"/></svg>
-          <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 6 9-6"/></svg>
-          <a href="mailto:info@kafalltravels.com">info@kafalltravels.com</a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p id="copyright">© 2026 Kafall Travels. All rights reserved.</p>
-    <ul class="legal-links">
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms &amp; Conditions</a></li>
-      <li><a href="#">Refund Policy</a></li>
-    </ul>
   </div>
 </footer>
 
-<script>
-  // year auto-update, so copyright never goes stale
-  document.getElementById('copyright').textContent =
-    `© ${new Date().getFullYear()} Kafall Travels. All rights reserved.`;
-
-  // smooth scroll for in-page anchor links (footer nav etc.)
-  document.querySelectorAll('a[href="#"]').forEach(link => {
-    link.addEventListener('click', e => e.preventDefault());
-  });
-</script>
+<!-- ================= Fixed WhatsApp Icon (page-wide) ================= -->
+<a href="https://wa.me/91XXXXXXXXXX" target="_blank" id="kf-whatsapp-fab" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.25.62 4.42 1.8 6.32L4 29l7.86-1.75a12.9 12.9 0 0 0 4.15.69h.01c6.63 0 12.01-5.38 12.01-12.01C28.03 8.38 22.65 3 16.01 3Zm7.02 17.03c-.3.85-1.72 1.63-2.38 1.73-.6.09-1.36.13-2.2-.14-.5-.16-1.15-.37-1.98-.72-3.48-1.5-5.75-5-5.93-5.24-.17-.24-1.42-1.9-1.42-3.62 0-1.73.9-2.58 1.22-2.93.32-.35.7-.44.93-.44.24 0 .47 0 .68.01.22.01.51-.08.8.62.3.72 1.02 2.48 1.11 2.66.09.18.15.39.03.63-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.37-.16.73.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.09.99 2.45 1.17.36.18.6.27.69.42.09.15.09.85-.21 1.7Z"/></svg>
+</a>
 
 </body>
 </html>
