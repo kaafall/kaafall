@@ -93,8 +93,9 @@
     width:38px;
     height:38px;
     border-radius:50%;
-    background:radial-gradient(circle at 30% 30%, #6fe39a, #1f8f52 65%, #0b4a29);
+    object-fit:cover;
     flex-shrink:0;
+    background:radial-gradient(circle at 30% 30%, #6fe39a, #1f8f52 65%, #0b4a29);
     box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 4px 14px rgba(61,220,132,0.25);
   }
 
@@ -347,7 +348,8 @@
       <!-- Brand -->
       <div class="kf-brand-block">
         <div class="kf-brand-row">
-          <div class="kf-brand-logo"></div>
+          <!-- ⬇⬇ APNA LOGO LAGANE KE LIYE: neeche 'src' me apni image ka path daal dein -->
+          <img class="kf-brand-logo" src="/images/logo  white.png" alt="Kafall Travels Logo">
           <span class="kf-brand-name">Kafall Travels</span>
         </div>
         <p class="kf-brand-desc">
@@ -449,6 +451,7 @@
 <a href="https://wa.me/91XXXXXXXXXX" target="_blank" id="kf-whatsapp-fab" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.25.62 4.42 1.8 6.32L4 29l7.86-1.75a12.9 12.9 0 0 0 4.15.69h.01c6.63 0 12.01-5.38 12.01-12.01C28.03 8.38 22.65 3 16.01 3Zm7.02 17.03c-.3.85-1.72 1.63-2.38 1.73-.6.09-1.36.13-2.2-.14-.5-.16-1.15-.37-1.98-.72-3.48-1.5-5.75-5-5.93-5.24-.17-.24-1.42-1.9-1.42-3.62 0-1.73.9-2.58 1.22-2.93.32-.35.7-.44.93-.44.24 0 .47 0 .68.01.22.01.51-.08.8.62.3.72 1.02 2.48 1.11 2.66.09.18.15.39.03.63-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.37-.16.73.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.09.99 2.45 1.17.36.18.6.27.69.42.09.15.09.85-.21 1.7Z"/></svg>
 </a>
+
 
 </body>
 </html>
