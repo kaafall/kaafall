@@ -1415,7 +1415,7 @@ a { text-decoration: none; color: inherit; }
               <span class="stranger-price-tag">per head</span>
             </div>
           </div>
-          <a href="chopta.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+          <a href="/packages/Chopta-stranger-trip.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
         </div>
       </div>
 
@@ -1437,7 +1437,7 @@ a { text-decoration: none; color: inherit; }
               <span class="stranger-price-tag">per head</span>
             </div>
           </div>
-          <a href="nainital.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+          <a href="/packages/chakrata-stranger-trip.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
         </div>
       </div>
 
@@ -1459,7 +1459,7 @@ a { text-decoration: none; color: inherit; }
               <span class="stranger-price-tag">per head</span>
             </div>
           </div>
-          <a href="rishikesh.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+          <a href="/packages/rishikesh-stranger-trip.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
         </div>
       </div>
 
@@ -1481,7 +1481,7 @@ a { text-decoration: none; color: inherit; }
               <span class="stranger-price-tag">per head</span>
             </div>
           </div>
-          <a href="mukteshwar.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
+          <a href="/packages/munsyari-stranger-trip.html" class="stranger-cta">Join This Trip <i class="arrow"></i></a>
         </div>
       </div>
     </div>
@@ -1507,7 +1507,7 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <div class="chardham-grid">
-      <a class="dest-card" href="char-dham-yatra.html">
+      <a class="dest-card" href="/char-dham-yatra-package.html">
         <div class="dest-card-img"><img src="/images/chardham.png" alt="Char Dham Yatra package Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
           <span class="dest-card-name">Char Dham Yatra<span class="dest-card-price">From ₹18,999*</span></span>
@@ -1515,7 +1515,7 @@ a { text-decoration: none; color: inherit; }
         </div>
       </a>
 
-      <a class="dest-card" href="do-dham-yatra.html">
+      <a class="dest-card" href="/char-dham-yatra-package.html">
         <div class="dest-card-img"><img src="/images/2 Dham yatra.png" alt="2 Dham Yatra package Uttarakhand" loading="lazy"></div>
         <div class="dest-card-body">
           <span class="dest-card-name">2 Dham Yatra<span class="dest-card-price">From ₹12,999*</span></span>
@@ -1523,7 +1523,7 @@ a { text-decoration: none; color: inherit; }
         </div>
       </a>
 
-      <a class="dest-card" href="kedarnath.html">
+      <a class="dest-card" href="/packages/kedarnath-yatra-package.html">
         <div class="dest-card-img"><img src="/images/kedarnath1.jfif" alt="Kedarnath Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
           <span class="dest-card-name">Kedarnath<span class="dest-card-price">From ₹7,999*</span></span>
@@ -1531,7 +1531,7 @@ a { text-decoration: none; color: inherit; }
         </div>
       </a>
 
-      <a class="dest-card" href="badrinath.html">
+      <a class="dest-card" href="/packages/badrinath-yatra-package.html">
         <div class="dest-card-img"><img src="/images/Badrinath2 (2).png" alt="Badrinath Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
           <span class="dest-card-name">Badrinath<span class="dest-card-price">From ₹8,499*</span></span>
@@ -1539,7 +1539,7 @@ a { text-decoration: none; color: inherit; }
         </div>
       </a>
 
-      <a class="dest-card" href="gangotri.html">
+      <a class="dest-card" href="/char-dham-yatra-package.html">
         <div class="dest-card-img"><img src="/images/gangotri2.png" alt="Gangotri Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
           <span class="dest-card-name">Gangotri<span class="dest-card-price">From ₹7,499*</span></span>
@@ -1547,7 +1547,7 @@ a { text-decoration: none; color: inherit; }
         </div>
       </a>
 
-      <a class="dest-card" href="yamunotri.html">
+      <a class="dest-card" href="/char-dham-yatra-package.html">
         <div class="dest-card-img"><img src="/images/yamunotri1.jpg" alt="Yamunotri Yatra package" loading="lazy"></div>
         <div class="dest-card-body">
           <span class="dest-card-name">Yamunotri<span class="dest-card-price">From ₹6,999*</span></span>
@@ -1829,6 +1829,18 @@ a { text-decoration: none; color: inherit; }
     .catch(err => console.error('Footer load nahi hua:', err));
 </script>
 <script>
+  fetch('/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- HERO SLIDER ---------- */
@@ -1920,18 +1932,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-</script>
-<script>
-  fetch('/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
-        const newScript = document.createElement('script');
-        newScript.textContent = oldScript.textContent;
-        document.body.appendChild(newScript);
-      });
-    });
 </script>
 </body>
 </html>

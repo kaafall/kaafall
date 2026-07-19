@@ -572,7 +572,7 @@ footer a{color:var(--green);text-decoration:none;}
 </script>
 </head>
 <body>
-<div id="header"></div>
+<div id="header"></div> 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-img-bg"></div>
@@ -966,7 +966,27 @@ footer a{color:var(--green);text-decoration:none;}
   </div>
 </div>
 
-<DIV id="footer"></DIV>
+<div id="kf-footer-placeholder"></div>
+<script>
+  fetch('/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('kf-footer-placeholder').innerHTML = html;
+    })
+    .catch(err => console.error('Footer load nahi hua:', err));
+</script>
+<script>
+  fetch('/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
 
 <script>
 window.addEventListener('scroll',()=>{
