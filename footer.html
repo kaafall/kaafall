@@ -12,6 +12,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* ===== FIX: force full-width + reset any host-page generic `footer{...}` rule ===== */
+  #kf-footer{
+    display:block;
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:left !important;
+    font-size:inherit !important;
+    color:inherit !important;
+    box-sizing:border-box;
+  }
+
   #kf-footer{
     --bg-footer:#081a10;
     --bg-footer-2:#0a2014;
@@ -32,6 +45,7 @@
   /* ============ FOOTER ============ */
   #kf-footer .kf-site-footer{
     position:relative;
+    width:100%;
     background:
       radial-gradient(120% 180% at 15% -20%, rgba(61,220,132,0.20), transparent 55%),
       radial-gradient(90% 140% at 100% 120%, rgba(37,158,92,0.16), transparent 60%),
@@ -421,7 +435,7 @@
         <div class="kf-contact-list">
           <div class="kf-contact-item">
             <svg class="kf-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
-            <span>Your Office Address, Delhi, India</span>
+            <span>Burari, Delhi, India</span>
           </div>
           <div class="kf-contact-item">
             <svg class="kf-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 1-2Z"/></svg>

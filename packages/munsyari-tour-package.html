@@ -984,7 +984,7 @@ footer a{color:var(--green);text-decoration:none;}
 
 <div id="kf-footer-placeholder"></div>
 <script>
-  fetch('footer.html')
+  fetch('/footer.html')
     .then(res => res.text())
     .then(html => {
       document.getElementById('kf-footer-placeholder').innerHTML = html;

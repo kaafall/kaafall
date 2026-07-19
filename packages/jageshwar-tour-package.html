@@ -651,14 +651,7 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 <div id="kf-footer-placeholder"></div>
-<script>
-  fetch('footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('kf-footer-placeholder').innerHTML = html;
-    })
-    .catch(err => console.error('Footer load nahi hua:', err));
-</script>
+
   <script>
     // SCROLL REVEAL
     const observer = new IntersectionObserver((entries) => {
