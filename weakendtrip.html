@@ -120,7 +120,8 @@ section{padding:88px 0;}
 .eyebrow .dots span{width:5px;height:5px;border-radius:50%;background:var(--green);opacity:0.35;}
 .eyebrow .dots span:nth-child(3){opacity:1;}
 .sec-title{font-family:var(--ff-display);font-weight:800;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.14;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em;}
-.sec-desc{color:var(--text-mid);font-size:1.12rem;line-height:1.8;max-width:700px;}
+.sec-desc{color:var(--text-mid);font-size:1.08rem;line-height:1.85;max-width:100%;}
+.sec-desc.wide{max-width:1100px;}
 .tc{text-align:center;}
 .tc .sec-desc{margin:0 auto;}
 .sec-head{margin-bottom:52px;}
@@ -153,11 +154,11 @@ section{padding:88px 0;}
 }
 .hero h1{
   font-family:var(--ff-display);color:#fff;font-weight:900;
-  font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1.08;letter-spacing:-0.015em;
-  margin-bottom:18px;animation:riseIn 0.7s 0.08s ease both;
+  font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.15;letter-spacing:-0.01em;
+  margin-bottom:16px;animation:riseIn 0.7s 0.08s ease both;
 }
 .hero h1 em{font-style:normal;color:var(--green);}
-.hero p{color:rgba(255,255,255,0.85);font-size:1.15rem;line-height:1.75;max-width:680px;margin:0 auto 28px;animation:riseIn 0.7s 0.16s ease both;}
+.hero p{color:rgba(255,255,255,0.85);font-size:1rem;line-height:1.75;max-width:600px;margin:0 auto 26px;animation:riseIn 0.7s 0.16s ease both;}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;animation:riseIn 0.7s 0.24s ease both;}
 .btn-primary{
   display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;
@@ -193,10 +194,6 @@ section{padding:88px 0;}
 .dest-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(.2,.8,.2,1);}
 .dest-card:hover .dest-img img{transform:scale(1.12) rotate(0.3deg);}
 .dest-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,12,9,0.55) 0%,rgba(10,12,9,0) 55%);}
-.dest-price-chip{
-  position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.94);color:var(--ink);
-  padding:6px 14px;border-radius:50px;font-family:var(--ff-display);font-weight:800;font-size:0.92rem;
-}
 .dest-days-chip{
   position:absolute;bottom:13px;left:14px;color:#fff;
   display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:600;
@@ -207,18 +204,21 @@ section{padding:88px 0;}
 .dest-line{font-size:0.98rem;color:var(--text-mid);line-height:1.65;margin-bottom:16px;min-height:52px;}
 .dest-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;}
 .dest-tag{background:var(--green-light);color:var(--green-dark);font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:50px;}
+.dest-card-link{position:absolute;inset:0;z-index:5;}
 .dest-bottom-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:16px;margin-top:auto;border-top:1px solid rgba(18,20,15,0.08);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding-top:18px;margin-top:auto;border-top:1px solid rgba(18,20,15,0.08);
+  position:relative;z-index:6;pointer-events:none;
 }
-.dest-bottom-row .dbr-price{font-family:var(--ff-display);font-weight:800;font-size:1.1rem;color:var(--ink);}
-.dest-bottom-row .dbr-price span{display:block;font-family:var(--ff-body);font-weight:500;font-size:0.76rem;color:var(--text-light);}
+.dest-bottom-row .dbr-price{font-family:var(--ff-display);font-weight:800;font-size:1.15rem;color:var(--ink);}
+.dest-bottom-row .dbr-price span{display:block;font-family:var(--ff-body);font-weight:500;font-size:0.78rem;color:var(--text-light);}
 .dest-explore{
-  display:inline-flex;align-items:center;gap:7px;color:var(--green-dark);
-  font-weight:700;font-size:0.98rem;text-decoration:none;transition:gap 0.25s,color 0.25s;
+  display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;
+  font-weight:700;font-size:0.94rem;text-decoration:none;padding:11px 20px;border-radius:50px;
+  transition:gap 0.25s,background 0.25s,transform 0.25s;pointer-events:none;
 }
 .dest-explore i{transition:transform 0.3s;}
-.dest-card:hover .dest-explore{gap:11px;color:var(--green);}
+.dest-card:hover .dest-explore{gap:12px;background:var(--green-dark);transform:translateY(-2px);}
 .dest-card:hover .dest-explore i{transform:translateX(3px);}
 
 /* FEATURED */
@@ -238,11 +238,11 @@ section{padding:88px 0;}
   padding:8px 17px;border-radius:50px;font-family:var(--ff-display);font-size:0.84rem;font-weight:800;letter-spacing:0.5px;
 }
 .feat-text .weekend-strip{margin-bottom:18px;}
-.feat-text h3{font-family:var(--ff-display);font-weight:800;font-size:2.3rem;color:var(--ink);margin-bottom:16px;line-height:1.15;}
-.feat-text p{color:var(--text-mid);line-height:1.85;font-size:1.14rem;margin-bottom:24px;}
-.feat-meta{display:flex;gap:26px;margin-bottom:28px;flex-wrap:wrap;}
-.feat-meta div{display:flex;align-items:center;gap:9px;font-size:1rem;color:var(--text-mid);font-weight:500;}
-.feat-meta i{color:var(--green);font-size:1.05rem;}
+.feat-text h3{font-family:var(--ff-display);font-weight:800;font-size:1.7rem;color:var(--ink);margin-bottom:14px;line-height:1.2;}
+.feat-text p{color:var(--text-mid);line-height:1.8;font-size:0.99rem;margin-bottom:20px;}
+.feat-meta{display:flex;gap:22px;margin-bottom:24px;flex-wrap:wrap;}
+.feat-meta div{display:flex;align-items:center;gap:8px;font-size:0.88rem;color:var(--text-mid);font-weight:500;}
+.feat-meta i{color:var(--green);font-size:0.92rem;}
 
 /* GALLERY */
 .gal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
@@ -263,6 +263,38 @@ section{padding:88px 0;}
 .gal-view-btn:hover{background:var(--green);transform:translateY(-2px);}
 .gal-view-btn i{transition:transform 0.3s;}
 .gal-view-btn.open i{transform:rotate(180deg);}
+
+/* LIGHTBOX */
+.gal-modal{
+  display:none;position:fixed;inset:0;z-index:999;background:rgba(8,9,7,0.95);
+  align-items:center;justify-content:center;padding:20px;touch-action:pan-y;
+}
+.gal-modal.open{display:flex;}
+.gal-modal-inner{max-width:920px;width:100%;position:relative;}
+.gal-modal-img{width:100%;border-radius:14px;overflow:hidden;max-height:74vh;background:#111;}
+.gal-modal-img img{width:100%;height:100%;object-fit:contain;display:block;max-height:74vh;margin:0 auto;
+  animation:galFade 0.25s ease;}
+@keyframes galFade{from{opacity:0;transform:scale(0.98);}to{opacity:1;transform:scale(1);}}
+.gal-modal-cap{color:rgba(255,255,255,0.7);text-align:center;margin-top:16px;font-size:0.96rem;font-weight:500;}
+.gal-modal-close{
+  position:absolute;top:22px;right:22px;background:rgba(255,255,255,0.1);border:none;color:#fff;
+  width:42px;height:42px;border-radius:50%;font-size:1.1rem;cursor:pointer;z-index:2;
+  display:flex;align-items:center;justify-content:center;transition:background 0.2s;
+}
+.gal-modal-close:hover{background:var(--green);}
+.gal-modal-nav{
+  position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;
+  width:48px;height:48px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:background 0.2s;z-index:2;
+}
+.gal-modal-nav:hover{background:var(--green);}
+.gal-prev{left:24px;}
+.gal-next{right:24px;}
+@media(max-width:640px){
+  .gal-prev{left:8px;width:40px;height:40px;}
+  .gal-next{right:8px;width:40px;height:40px;}
+  .gal-modal-close{top:12px;right:12px;}
+}
 
 /* FAQ */
 .faq-bg{background:var(--paper-mid);}
@@ -344,7 +376,7 @@ footer .fnav a:hover{color:var(--green);}
     <div class="sec-head tc reveal">
       <div class="eyebrow"><span class="dots"><span></span><span></span><span></span></span> Pick Your Escape</div>
       <h2 class="sec-title">10 Weekend Trips From Delhi</h2>
-      <p class="sec-desc">Every trip below runs 3 Days / 2 Nights, Friday to Sunday, at ₹5,500 per person — pick a vibe and we'll handle the rest.</p>
+      <p class="sec-desc wide">Every trip below is built the same way — 3 Days, 2 Nights, leaving Delhi on Friday and back home by Sunday, so your work week never takes the hit. What changes is the terrain: a 312-foot waterfall in Chakrata, river rapids in Rishikesh, snow meadows in Chopta, a tiger safari in Corbett. Each package includes a private cab both ways, a verified stay, breakfast, sightseeing and round-the-clock support, all starting at ₹5,500 per person. Pick the version of a weekend that sounds right to you, and we'll take care of the rest.</p>
     </div>
     <div class="dest-grid" id="destGrid"></div>
   </div>
@@ -356,7 +388,7 @@ footer .fnav a:hover{color:var(--green);}
     <div class="sec-head tc reveal">
       <div class="eyebrow"><span class="dots"><span></span><span></span><span></span></span> Most Booked</div>
       <h2 class="sec-title">The Four Everyone Asks For</h2>
-      <p class="sec-desc">If you're deciding between destinations, start here — these four account for most of our weekend bookings.</p>
+      <p class="sec-desc wide">If you're stuck choosing between ten good options, start here. Rishikesh, Nainital, Chopta and Jim Corbett are the four destinations our travellers ask for most, and each one leads with a completely different kind of weekend — white-water rapids and riverside camps, a lake town built for slow evenings, a meadow trek up to the Chandrashila summit, or a jeep safari through sal forest in search of a wild tiger. Read through what each one actually involves below, and message us directly once you've found the one that fits your weekend.</p>
     </div>
     <div id="featuredWrap"></div>
   </div>
@@ -368,7 +400,7 @@ footer .fnav a:hover{color:var(--green);}
     <div class="sec-head tc reveal">
       <div class="eyebrow"><span class="dots"><span></span><span></span><span></span></span> Visual Journey</div>
       <h2 class="sec-title">Weekend Trip Gallery</h2>
-      <p class="sec-desc">A look across all ten destinations — waterfalls, ridgelines, riversides and everything between.</p>
+      <p class="sec-desc wide">A look across all ten destinations before you decide where to go — Tiger Falls dropping through the Chakrata forest, the meadow trail up to Tungnath in Chopta, the ghats of Rishikesh at dusk, Naina Lake ringed by seven hills, and the quieter corners of Kanatal, Lansdowne, Tehri, Jageshwar and Mukteshwar in between. These are real frames from real trips, not stock scenery, so what you see here is close to what you'll actually wake up to on the other end of the drive. Tap any photo to view it larger, and use view more for the full set.</p>
     </div>
     <div class="gal-grid" id="galGrid"></div>
     <div class="gal-more" id="galMore"></div>
@@ -377,6 +409,17 @@ footer .fnav a:hover{color:var(--green);}
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="gal-modal" id="galModal">
+  <button class="gal-modal-close" id="galClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  <button class="gal-modal-nav gal-prev" id="galPrev" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
+  <button class="gal-modal-nav gal-next" id="galNext" aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>
+  <div class="gal-modal-inner">
+    <div class="gal-modal-img"><img id="galModalImg" src="" alt=""></div>
+    <div class="gal-modal-cap" id="galModalCap"></div>
+  </div>
+</div>
 
 <!-- FAQ -->
 <section class="faq-bg" id="faq">
@@ -420,11 +463,12 @@ const destGrid = document.getElementById('destGrid');
 destinations.forEach(d=>{
   const card = document.createElement('div');
   card.className = 'dest-card reveal';
+  const waHref = `https://wa.me/${WA}?text=Hi%20Kafall%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(d.name)}%20weekend%20trip`;
   card.innerHTML = `
+    <a class="dest-card-link" href="${waHref}" target="_blank" rel="noopener" aria-label="Book ${d.name} weekend trip on WhatsApp"></a>
     <div class="dest-img">
       <img src="${d.img}" alt="${d.name} weekend trip from Delhi" loading="lazy">
       <div class="dest-img-ov"></div>
-      <div class="dest-price-chip">₹5,500</div>
       <div class="dest-days-chip"><i class="fas fa-calendar-alt"></i> 3D/2N · Fri–Sun</div>
     </div>
     <div class="dest-body">
@@ -433,7 +477,7 @@ destinations.forEach(d=>{
       <div class="dest-tags">${d.tags.map(t=>`<span class="dest-tag">${t}</span>`).join('')}</div>
       <div class="dest-bottom-row">
         <div class="dbr-price">₹5,500<span>per person</span></div>
-        <a class="dest-explore" href="https://wa.me/${WA}?text=Hi%20Kafall%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(d.name)}%20weekend%20trip" target="_blank" rel="noopener">Explore <i class="fas fa-arrow-right"></i></a>
+        <span class="dest-explore">Explore <i class="fas fa-arrow-right"></i></span>
       </div>
     </div>`;
   destGrid.appendChild(card);
@@ -443,25 +487,25 @@ const featured = [
   {
     name:"Rishikesh", tag:"River & Adventure",
     img:"https://images.unsplash.com/photo-1591018835973-6dec96b12ee6?w=900&q=80&fit=crop",
-    text:"The Ganga sets the pace here. Mornings start with rafting through grade-II and III rapids, afternoons are for riverside cafés, and evenings end at the Triveni Ghat aarti as hundreds of diyas drift downstream. Stay in a camp right on the riverbank and fall asleep to the sound of the current.",
+    text:"The Ganga sets the pace here. Mornings start with rafting through grade-II and III rapids, afternoons are for riverside cafés and hammock naps by the water, and evenings end at the Triveni Ghat aarti as hundreds of diyas drift downstream in the dark. You'll stay in a camp pitched right on the riverbank, with the sound of the current running through the night. It's the one weekend trip on this list built entirely around the water — pick it if you want your weekend to have an adrenaline spike in the middle of it.",
     meta:[["fa-water","Rafting included"],["fa-campground","Riverside camp stay"],["fa-fire","Evening bonfire"]]
   },
   {
     name:"Nainital", tag:"Lake & Family",
     img:"https://images.unsplash.com/photo-1626016464392-4a2fdb63fd85?w=900&q=80&fit=crop",
-    text:"Built around a natural lake ringed by seven hills, Nainital is the easiest hill station to fall for — a boat ride at sunset, a cable car up to Snow View, and Mall Road lit up by evening. It's the one destination on this list that works equally well for toddlers and grandparents.",
+    text:"Built around a natural lake ringed by seven forested hills, Nainital is the easiest hill station to fall for on a first visit — a boat ride at sunset, a cable car up to Snow View for a panoramic Himalayan look, and Mall Road lighting up as evening sets in. Everything here is walkable, every viewpoint is a short drive away, and the pace never asks too much of anyone in the group. It's the one destination on this list that genuinely works for toddlers, teenagers and grandparents in the same car.",
     meta:[["fa-water","Boating on Naina Lake"],["fa-cable-car","Snow View ropeway"],["fa-store","Mall Road shopping"]]
   },
   {
     name:"Chopta", tag:"Trek & Meadows",
     img:"https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=900&q=80&fit=crop",
-    text:"Called the 'Mini Switzerland of Uttarakhand' for a reason — rolling meadows lead straight up to Tungnath, the highest Shiva temple in the world, and further on to the Chandrashila summit for a 360° Himalayan panorama. This is the pick for anyone who wants a real trek inside a weekend.",
+    text:"Called the 'Mini Switzerland of Uttarakhand' for a reason — rolling meadows lead straight up to Tungnath, the highest Shiva temple in the world, and further on to the Chandrashila summit for a full 360° Himalayan panorama at sunrise. The final stretch is a proper trek, not a drive-up viewpoint, so you earn the view before you get it. Camps here sit right at the meadow's edge, cold air and clear skies included. This is the pick for anyone who wants a real trek folded into a normal weekend.",
     meta:[["fa-mountain","Tungnath trek"],["fa-tents","Meadow camping"],["fa-sun","Sunrise summit view"]]
   },
   {
     name:"Jim Corbett", tag:"Wildlife & Safari",
     img:"https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=900&q=80&fit=crop",
-    text:"India's first national park, and still one of its best odds for a wild tiger sighting. Two open-jeep safaris through sal forest and grassland are built into the plan, alongside riverside resort stays right at the park's edge — built for families and first-time safari-goers alike.",
+    text:"India's first national park, and still one of the country's best odds for a genuine wild tiger sighting. Two open-jeep safaris through sal forest and open grassland are built directly into the plan, timed for the early morning and late afternoon windows when the park is most active. Stays sit right at the park's edge, usually riverside, with enough downtime between safaris to actually rest. It's built for families and first-time safari-goers who want the experience without figuring out logistics themselves.",
     meta:[["fa-paw","2 jeep safaris"],["fa-tree","Sal forest zones"],["fa-hotel","Riverside resort"]]
   }
 ];
@@ -514,16 +558,19 @@ const galleryMore = [
   ["https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&q=80&fit=crop","Family stay in the hills"]
 ];
 
-function buildGalItem(p){
+const allGalleryPhotos = galleryPhotos.concat(galleryMore);
+
+function buildGalItem(p, index){
   const el = document.createElement('div');
   el.className = 'gal-item reveal';
   el.innerHTML = `<img src="${p[0]}" alt="${p[1]}" loading="lazy"><div class="gal-cap">${p[1]}</div>`;
+  el.addEventListener('click', ()=>openGalModal(index));
   return el;
 }
 const galGrid = document.getElementById('galGrid');
-galleryPhotos.forEach(p=>galGrid.appendChild(buildGalItem(p)));
+galleryPhotos.forEach((p,i)=>galGrid.appendChild(buildGalItem(p, i)));
 const galMore = document.getElementById('galMore');
-galleryMore.forEach(p=>galMore.appendChild(buildGalItem(p)));
+galleryMore.forEach((p,i)=>galMore.appendChild(buildGalItem(p, galleryPhotos.length + i)));
 
 function toggleGallery(){
   const box = document.getElementById('galMore');
@@ -536,6 +583,56 @@ function toggleGallery(){
     box.querySelectorAll('.gal-item').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'), i*60));
   }
 }
+
+/* Lightbox: click a photo to open, arrows/keys/swipe to navigate */
+let galCurrent = 0;
+const galModal = document.getElementById('galModal');
+const galModalImg = document.getElementById('galModalImg');
+const galModalCap = document.getElementById('galModalCap');
+
+function openGalModal(index){
+  galCurrent = index;
+  renderGalModal();
+  galModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGalModal(){
+  galModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function renderGalModal(){
+  const p = allGalleryPhotos[galCurrent];
+  galModalImg.src = p[0].replace('w=500','w=1400');
+  galModalImg.alt = p[1];
+  galModalCap.textContent = p[1];
+}
+function galPrevPhoto(){
+  galCurrent = (galCurrent - 1 + allGalleryPhotos.length) % allGalleryPhotos.length;
+  renderGalModal();
+}
+function galNextPhoto(){
+  galCurrent = (galCurrent + 1) % allGalleryPhotos.length;
+  renderGalModal();
+}
+
+document.getElementById('galClose').addEventListener('click', closeGalModal);
+document.getElementById('galPrev').addEventListener('click', galPrevPhoto);
+document.getElementById('galNext').addEventListener('click', galNextPhoto);
+galModal.addEventListener('click', (e)=>{ if(e.target === galModal) closeGalModal(); });
+document.addEventListener('keydown', (e)=>{
+  if(!galModal.classList.contains('open')) return;
+  if(e.key === 'Escape') closeGalModal();
+  if(e.key === 'ArrowLeft') galPrevPhoto();
+  if(e.key === 'ArrowRight') galNextPhoto();
+});
+
+/* touch swipe for mobile */
+let galTouchStartX = 0;
+galModal.addEventListener('touchstart', (e)=>{ galTouchStartX = e.changedTouches[0].screenX; }, {passive:true});
+galModal.addEventListener('touchend', (e)=>{
+  const dx = e.changedTouches[0].screenX - galTouchStartX;
+  if(Math.abs(dx) > 40){ dx > 0 ? galPrevPhoto() : galNextPhoto(); }
+}, {passive:true});
 
 const faqs = [
   ["Which is the best weekend trip from Delhi?","Chakrata, Rishikesh, Nainital and Chopta are our most-booked weekend trips — each built around a different experience: waterfalls, river rafting, a lake town, and a high-altitude meadow trek, all reachable within a Friday-to-Sunday window."],
