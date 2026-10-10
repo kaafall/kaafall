@@ -31,8 +31,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<!-- gaadi ki photo jis site se aa rahi hai uska preconnect (apni image host ka daal dena) -->
+<link rel="preconnect" href="https://assets.tractorjunction.com">
+<link rel="preconnect" href="https://stimg.cardekho.com">
+<link rel="preload" href="/header.html" as="fetch" crossorigin>
+<!-- fonts aur icons ab page ko block nahi karte -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap"></noscript>
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script src="/assets/js/main.js" defer></script>
 
@@ -46,6 +54,7 @@
   --hero-img:none;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+i.fas,i.fab{display:inline-block;min-width:1em;text-align:center}  /* icon font late aaye to layout na hile */
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Poppins',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;font-size:16px;line-height:1.6}
 a{text-decoration:none;color:inherit}
@@ -57,7 +66,7 @@ section[id]{scroll-margin-top:70px}
 /* ---------- SCROLL ROAD + CAR (sirf desktop/tablet, phone par hidden) ---------- */
 .broad{position:fixed;left:0;right:0;bottom:0;height:54px;z-index:20;pointer-events:none}
 .broad::before{content:"";position:absolute;left:0;right:0;bottom:6px;border-top:2px dashed rgba(37,158,92,.55)}
-.broad svg{position:absolute;left:0;bottom:5px;width:104px;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));will-change:transform}
+.broad svg{position:absolute;left:0;bottom:5px;width:104px;height:auto;will-change:transform}
 
 /* ---------- BUTTONS (sab ki height ek jaisi: 44px) ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 16px;border-radius:10px;font:600 .92rem 'Poppins',sans-serif;border:1.5px solid var(--green);cursor:pointer;white-space:nowrap;transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s}
@@ -83,9 +92,9 @@ section[id]{scroll-margin-top:70px}
 .pills span{display:inline-flex;align-items:center;gap:8px;font-size:.92rem;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:50px}
 .pills i{color:var(--gold)}
 .hero-cta{display:flex;gap:10px}
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero h1,.hero p,.hero .pills,.hero-cta{animation:up .75s cubic-bezier(.2,.7,.2,1) both}
-.hero p{animation-delay:.1s}.hero .pills{animation-delay:.2s}.hero-cta{animation-delay:.3s}
+@keyframes up{from{transform:translateY(14px)}to{transform:none}}
+.hero h1,.hero p,.hero .pills,.hero-cta{animation:up .5s cubic-bezier(.2,.7,.2,1) both}
+.hero p{animation-delay:.05s}.hero .pills{animation-delay:.1s}.hero-cta{animation-delay:.15s}
 .hero .btn-call{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 .hero .btn-call:hover{background:#d6b570;border-color:#d6b570}
 .hero .btn-wa{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
@@ -445,7 +454,8 @@ td:last-child{font-weight:700;color:var(--green-dark)}
 <div id="kf-footer-placeholder"></div>
 
 <script>
-fetch('/footer.html').then(r=>r.text()).then(h=>{document.getElementById('kf-footer-placeholder').innerHTML=h}).catch(e=>console.error(e));
+var loadFooter=function(){fetch('/footer.html').then(r=>r.text()).then(h=>{document.getElementById('kf-footer-placeholder').innerHTML=h}).catch(e=>console.error(e))};
+'requestIdleCallback' in window?requestIdleCallback(loadFooter,{timeout:2500}):setTimeout(loadFooter,1200);
 fetch('/header.html').then(r=>r.text()).then(h=>{var el=document.getElementById('header');el.innerHTML=h;el.querySelectorAll('script').forEach(o=>{var s=document.createElement('script');s.textContent=o.textContent;document.body.appendChild(s)})});
 </script>
 <script>
@@ -457,17 +467,17 @@ var PH='919810966202';
    Example: 'traveller-12':['/images/fleet/traveller-12-1.jpg','/images/fleet/traveller-12-2.jpg','/images/fleet/traveller-12-3.jpg'],
    Jis gadi ka link nahi hoga uska placeholder dikhega. */
 var PHOTOS={
- 'traveller-9':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=800&height=600'],
- 'traveller-12':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600'],
- 'traveller-16':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600'],
- 'traveller-17':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600'],
- 'traveller-18':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600'],
- 'traveller-20':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=800&height=600'],
- 'traveller-24':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=800&height=600'],
- 'traveller-26':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=800&height=600'],
- 'urbania-9':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600'],
- 'urbania-12':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600'],
- 'urbania-16':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=800&height=600'],
+ 'traveller-9':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=640&height=480'],
+ 'traveller-12':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480'],
+ 'traveller-16':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480'],
+ 'traveller-17':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480'],
+ 'traveller-18':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3350-1660808913.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480'],
+ 'traveller-20':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=640&height=480'],
+ 'traveller-24':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=640&height=480'],
+ 'traveller-26':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-4020-1660816571.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/tempo-traveller-3050-1632120806.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/traveller-3700-1660814995.webp?width=640&height=480'],
+ 'urbania-9':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480'],
+ 'urbania-12':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480'],
+ 'urbania-16':['https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480','https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp?width=640&height=480'],
  'innova':['https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Innova-Crysta/9612/1697698611076/front-left-side-47.jpg','https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Innova-Crysta/9612/1697698611076/front-left-side-47.jpg','https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Innova-Crysta/9612/1697698611076/front-left-side-47.jpg'],
  'ertiga':['https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga/10288/1755776579514/front-left-side-47.jpg','https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga/10288/1778825523598/rear-left-view-121.jpg','https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga/10288/1753866143239/front-right-view-120.jpg'],
  'dzire':['https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift-Dzire/10243/1686044076724/front-left-side-47.jpg','https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift-Dzire/10243/1686044076724/front-left-side-47.jpg','https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift-Dzire/10243/1686044076724/front-left-side-47.jpg']
@@ -500,13 +510,13 @@ var photo=function(v,i){
  return 'https://placehold.co/800x600/'+bg+'/ffffff/png?text='+encodeURIComponent(title(v)+' - Photo '+(i+1));
 };
 
-V.forEach(function(v){
+V.forEach(function(v,idx){
  var ic=v.g==='car'?'fa-car-side':'fa-van-shuttle';
  var msg='Hi Kafall, I want to book '+title(v)+' at ₹'+fmt(v.p)+'/day. Please share availability and details. (From: '+location.href+')';
  var c=document.createElement('article');
  c.className='card'+(v.g==='urb'?' pr':'');
  c.innerHTML='<div class="gal" data-i="0"><i class="fas '+ic+'"></i>'+
- [0,1,2].map(function(i){return '<img class="'+(i?'':'on')+'" referrerpolicy="no-referrer" src="'+photo(v,i)+'" alt="'+alts(v,i)+'" loading="lazy" onerror="this.style.display=\'none\'">'}).join('')+
+ [0,1,2].map(function(i){return '<img class="'+(i?'':'on')+'" referrerpolicy="no-referrer" '+(i?'data-src':'src')+'="'+photo(v,i)+'" alt="'+alts(v,i)+'" decoding="async"'+(i||idx>3?' loading="lazy"':'')+(!i&&idx<2?' fetchpriority="high"':'')+' onerror="this.style.display=\'none\'">'}).join('')+
  '<span class="seats"><i class="fas fa-user-group"></i>'+v.s+' seats</span>'+
  '<button class="nav p" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button><button class="nav n" aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>'+
  '<div class="dots">'+[0,1,2].map(function(i){return '<button class="'+(i?'':'on')+'" aria-label="Photo '+(i+1)+'"></button>'}).join('')+'</div></div>'+
@@ -517,6 +527,11 @@ V.forEach(function(v){
  grids[v.g].appendChild(c);
 });
 
+/* gallery: baaki 2 photo tabhi load hoti hain jab user card par hover/tap kare */
+function loadAll(g){
+ if(!g||g.dataset.l)return;g.dataset.l=1;
+ g.querySelectorAll('img[data-src]').forEach(function(m){m.src=m.dataset.src;m.removeAttribute('data-src')});
+}
 /* gallery: arrows, dots aur phone par swipe */
 function show(card,i){
  var g=card.querySelector('.gal');i=(i+3)%3;g.dataset.i=i;
@@ -524,8 +539,11 @@ function show(card,i){
  g.querySelectorAll('.dots button').forEach(function(d,k){d.classList.toggle('on',k===i)});
 }
 document.querySelectorAll('.grid').forEach(function(grid){
+ grid.addEventListener('pointerover',function(e){if(!matchMedia('(max-width:760px)').matches)loadAll(e.target.closest('.gal'))});
+ grid.addEventListener('focusin',function(e){loadAll(e.target.closest('.gal'))});
  grid.addEventListener('click',function(e){
   var card=e.target.closest('.card');if(!card)return;
+  loadAll(card.querySelector('.gal'));
   var cur=+card.querySelector('.gal').dataset.i;
   if(e.target.closest('.nav.n'))show(card,cur+1);
   else if(e.target.closest('.nav.p'))show(card,cur-1);
@@ -571,9 +589,10 @@ document.getElementById('ldFaq').textContent=JSON.stringify({"@context":"https:/
 (function(){
  var car=document.getElementById('broadCar');if(!car)return;
  var cur=0,tgt=0,lastY=window.scrollY,dir=1,raf=null;
+ var max=0,vis=false;
+ function measure(){vis=!!car.parentNode.offsetHeight;max=document.documentElement.scrollHeight-window.innerHeight;calc()}
  function calc(){
-  if(!car.parentNode.offsetHeight)return;
-  var max=document.documentElement.scrollHeight-window.innerHeight;
+  if(!vis)return;
   var pr=max>0?window.scrollY/max:0;
   tgt=pr*(window.innerWidth-104);
   if(window.scrollY>lastY+1)dir=1;else if(window.scrollY<lastY-1)dir=-1;
@@ -586,8 +605,10 @@ document.getElementById('ldFaq').textContent=JSON.stringify({"@context":"https:/
   if(Math.abs(tgt-cur)>.4)raf=requestAnimationFrame(tick);else raf=null;
  }
  window.addEventListener('scroll',calc,{passive:true});
- window.addEventListener('resize',calc);
- calc();
+ window.addEventListener('resize',measure);
+ window.addEventListener('load',measure);
+ if('ResizeObserver' in window)new ResizeObserver(measure).observe(document.body);
+ measure();
 })();
 </script>
 <script>
