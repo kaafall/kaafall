@@ -31,6 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/png" href="/images/iconfav.png">
 
 <script type="application/ld+json">
 {
@@ -103,9 +104,10 @@
   --ff-display:'Montserrat',sans-serif;
   --ff-body:'Poppins',sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--ff-body);color:var(--text);background:var(--paper);overflow-x:hidden;font-size:17px;}
+body{font-family:var(--ff-body);color:var(--text);background:var(--paper);overflow-x:hidden;width:100%;font-size:17px;}
+button,a{touch-action:manipulation;}
 img{max-width:100%;display:block;}
 a{color:inherit;}
 .wrap{max-width:1680px;margin:0 auto;padding:0 4%;}
@@ -138,7 +140,7 @@ section{padding:88px 0;}
 
 /* HERO - compact banner, centered full-width content */
 .hero{
-  position:relative;min-height:58vh;display:flex;align-items:center;justify-content:center;
+  position:relative;min-height:58vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:80px 6%;overflow:hidden;text-align:center;
 }
 .hero-bg{position:absolute;inset:0;z-index:0;}
@@ -377,17 +379,126 @@ footer .fnav a:hover{color:var(--green);}
   .gal-grid,.gal-more.shown{grid-template-columns:repeat(3,1fr);}
 }
 @media(max-width:640px){
-  section{padding:56px 0;}
-  .dest-grid{grid-template-columns:1fr;}
-  .gal-grid,.gal-more.shown{grid-template-columns:repeat(2,1fr);}
+  body{font-size:16px;}
+  section{padding:48px 0;}
+  .wrap{padding:0 5.5%;}
+  .dest-grid{grid-template-columns:1fr;gap:20px;}
+  .gal-grid,.gal-more.shown{grid-template-columns:repeat(2,1fr);gap:9px;}
   .price-strip{gap:18px;}
-  .hero{min-height:auto;padding:56px 6%;}
+  .hero{min-height:0;padding:44px 6% 32px;}
+  .hero-badges{display:none;} /* keep the phone header to eyebrow + heading + CTA only; price-strip below repeats the numbers */
+  .hero-bg img{animation:none;}
   .cta-btns{flex-direction:column;align-items:stretch;}
   .cta-btns a{justify-content:center;}
+}
+
+/* ===== MOBILE POLISH (phones, <=520px) ===== */
+@media(max-width:520px){
+  /* base rhythm */
+  body{font-size:15.5px;}
+  section{padding:44px 0;}
+  .wrap{padding:0 20px;}
+  .sec-head{margin-bottom:34px;}
+  .sec-title{font-size:1.6rem;line-height:1.2;margin-bottom:10px;}
+  .sec-desc{font-size:0.96rem;line-height:1.7;}
+  .eyebrow{font-size:0.66rem;letter-spacing:2px;margin-bottom:10px;}
+
+  /* hero: short and calm on phones — badges dropped entirely (price-strip below
+     already covers the same numbers), so the header is just eyebrow + heading + CTA */
+  .hero{
+    min-height:0;padding:36px 20px 30px;text-align:center;
+  }
+  .hero-bg{position:absolute;inset:0;}
+  .hero-bg img{animation:none;} /* no drift animation on phones: steadier, less jumpy */
+  .hero-badges{display:none;}
+  .hero-eyebrow{font-size:0.66rem;padding:6px 13px;letter-spacing:1.2px;margin-bottom:12px;}
+  .hero h1{font-size:1.75rem;line-height:1.22;margin-bottom:10px;}
+  .hero p{font-size:0.92rem;line-height:1.6;margin-bottom:20px;padding:0 2px;}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px;width:100%;}
+  .hero-actions a{width:100%;padding:13px 18px;font-size:0.9rem;}
+
+  /* price strip: a tidy 2x2 grid instead of centered flex-wrap that reflows unevenly */
+  .price-strip{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;
+    padding:18px 20px;text-align:left;
+  }
+  .ps-item{gap:9px;}
+  .ps-item i{font-size:0.92rem;margin-top:2px;}
+  .ps-item strong{font-size:0.88rem;display:block;}
+  .ps-item span{font-size:0.72rem;line-height:1.3;}
+
+  /* destination cards: shorter image, tighter body padding, full-width CTA already stacked */
+  .dest-img{height:190px;}
+  .dest-body{padding:16px 16px 18px;}
+  .dest-name{font-size:1.18rem;margin-bottom:6px;}
+  .dest-line{font-size:0.9rem;min-height:0;margin-bottom:12px;}
+  .dest-tags{margin-bottom:14px;}
+  .dest-tag{font-size:0.72rem;padding:4px 10px;}
+  .dest-explore{padding:11px 18px;font-size:0.88rem;}
+  .dest-days-chip{font-size:0.72rem;padding:4px 11px;bottom:10px;left:10px;}
+
+  /* featured rows: image shorter, copy tightened for one-thumb reading */
+  .feat-row{gap:18px;margin-bottom:46px;}
+  .feat-media{aspect-ratio:4/3;border-radius:14px;}
+  .feat-tag{font-size:0.72rem;padding:6px 13px;top:12px;left:12px;}
+  .feat-text h3{font-size:1.22rem;margin-bottom:9px;}
+  .feat-text p{font-size:0.9rem;line-height:1.7;margin-bottom:14px;}
+  .feat-meta{gap:12px 16px;margin-bottom:18px;}
+  .feat-meta div{font-size:0.84rem;}
+  .feat-text .btn-primary{width:100%;justify-content:center;padding:13px 20px;}
+
+  /* gallery: 2-up stays, but tighten captions/buttons for touch */
+  .gal-grid,.gal-more.shown{gap:8px;}
+  .gal-cap{font-size:0.68rem;padding:8px;opacity:1;background:linear-gradient(to top,rgba(10,12,9,0.72),rgba(10,12,9,0) 65%);}
+  .gal-more-wrap{margin-top:20px;}
+  .gal-view-btn{width:100%;justify-content:center;padding:13px 24px;}
+  .gal-modal{padding:14px;}
+  .gal-modal-cap{font-size:0.86rem;margin-top:12px;}
+
+  /* faq: bigger tap targets, readable line length */
+  .faq-q{padding:16px 2px;font-size:0.94rem;gap:12px;}
+  .faq-a{font-size:0.88rem;line-height:1.65;}
+  .faq-item.open .faq-a{max-height:320px;padding-bottom:16px;}
+
+  /* footer cta */
+  .cta-bg{padding:48px 20px;}
+  .cta-bg h2{font-size:1.5rem;}
+  .cta-bg p{font-size:0.92rem;padding:0 4px;}
+  .cta-btns a{padding:14px 20px;font-size:0.92rem;}
+
+  footer{padding:26px 20px 18px;}
+  footer .fnav{gap:14px 18px;font-size:0.8rem;}
+}
+
+/* very small phones */
+@media(max-width:360px){
+  .hero h1{font-size:1.65rem;}
+  .sec-title{font-size:1.42rem;}
+  .hero-badges{grid-template-columns:1fr 1fr;}
+  .dest-img{height:170px;}
+}
+
+/* respect reduced-motion users */
+@media(prefers-reduced-motion:reduce){
+  .hero-bg img,.hero-badge,.reveal,.dest-card,.gal-item{animation:none !important;transition:none !important;}
 }
 </style>
 </head>
 <body>
+
+<div id="header"></div>
+<script>
+  fetch('/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      document.getElementById('header').querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
 
 <!-- HERO: compact banner, centered full-width content -->
 <header class="hero">
@@ -735,5 +846,16 @@ const obs = new IntersectionObserver(entries=>{
 },{threshold:0.12});
 document.querySelectorAll('.reveal, .dest-card, .gal-item').forEach(el=>obs.observe(el));
 </script>
+
+<div id="kf-footer-placeholder"></div>
+<script>
+  fetch('/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('kf-footer-placeholder').innerHTML = html;
+    })
+    .catch(err => console.error('Footer load nahi hua:', err));
+</script>
+
 </body>
 </html>
