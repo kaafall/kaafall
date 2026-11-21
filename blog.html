@@ -1,420 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Blog – Kafall Travels</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/asstes/css/blog.css"/>
-  <link rel="stylesheet" href="/asstes/css/style.css"/>
-  <script src="/asstes/js/blog.js" defer></script>
-  <script src="/asstes/js/main.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Blog – Munsiyari, Kumaon & Uttarakhand Guides | Kafall Travels</title>
+  <meta name="description" content="Read Kafall Travels' blog for Munsiyari (Munsyari) tour guides, Khaliya Top trek tips, best time to visit, itineraries, budgets and offbeat Uttarakhand travel ideas.">
+  <meta name="keywords" content="Kafall Travels blog, Munsiyari travel blog, Munsyari tour guide, Munsiyari tour package, Khaliya Top trek guide, Uttarakhand travel blog, Kumaon travel guide, offbeat Uttarakhand, best time to visit Munsiyari, Delhi to Munsiyari">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Kafall Travels">
+  <link rel="canonical" href="https://kafall.com/blog/">
   <link rel="icon" type="image/png" href="/images/iconfav.png">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kafall Travels Blog – Munsiyari & Uttarakhand Travel Guides">
+  <meta property="og:description" content="Itineraries, trek guides, budgets and tips for Munsiyari, Kumaon and offbeat Uttarakhand.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&fit=crop">
+  <meta property="og:url" content="https://kafall.com/blog/">
+  <meta property="og:site_name" content="Kafall Travels">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kafall Travels Blog – Munsiyari & Uttarakhand Guides">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&fit=crop">
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ========== 1. VARIABLES & RESET ========== */
+    :root {
+      --green: #259E5C;
+      --green-dark: #1b7a44;
+      --dark: #1a1a1a;
+      --grey: #f5f5f5;
+      --grey2: #eee;
+      --text: #222;
+      --text-mid: #444;
+      --text-light: #777;
+      --shadow: 0 4px 24px rgba(0, 0, 0, .08);
+      --shadow-md: 0 14px 40px rgba(0, 0, 0, .14);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: var(--text); background: #fff; overflow-x: hidden; font-size: 16px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ========== 2. NAVBAR (injected from /header.html) ========== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(255, 255, 255, .97); backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e8e8e8; padding: 12px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0, 0, 0, .1); }
+    .nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--dark); }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text-mid); font-weight: 500; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--green) !important; color: #fff !important; padding: 8px 18px; border-radius: 50px; font-weight: 700 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); }
+
+    /* ========== 3. HERO ========== */
+    .hero {
+      min-height: 38vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 90px 6% 40px; position: relative; overflow: hidden; background: #000;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&fit=crop') center/cover no-repeat;
+      animation: pan 20s ease-in-out infinite alternate;
+    }
+    .hero-ov { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.65), rgba(0,0,0,.4) 50%, rgba(0,0,0,.6)); }
+    .hero-wave {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 60px; z-index: 3;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,70 1080,10 1440,40 L1440,60 L0,60Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
+    }
+    .hero-c { position: relative; z-index: 3; max-width: 820px; }
+    .badge {
+      display: inline-flex; gap: 8px; align-items: center;
+      background: rgba(37,158,92,.15); border: 1px solid rgba(37,158,92,.35); color: var(--green);
+      padding: 5px 16px; border-radius: 50px; font-size: .76rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; animation: fu .6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif; font-size: clamp(1.9rem, 4.3vw, 3.1rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 10px; animation: fu .7s .1s ease both;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero-sub { color: rgba(255,255,255,.82); font-size: 1rem; line-height: 1.6; max-width: 640px; margin: 0 auto 16px; animation: fu .7s .2s ease both; }
+    .pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; animation: fu .7s .3s ease both; }
+    .pills span { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.88); padding: 5px 14px; border-radius: 50px; font-size: .8rem; }
+    .pills i { color: var(--green); margin-right: 6px; }
+
+    @keyframes pan { 0% { transform: scale(1.08); } 100% { transform: scale(1.08) translateX(-3%); } }
+    @keyframes fu { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+    /* ========== 4. BREADCRUMB & SECTION HEADING ========== */
+    .crumb { max-width: 1600px; margin: 16px auto 0; padding: 0 3%; font-size: .88rem; color: var(--text-light); }
+    .crumb a:hover { color: var(--green); }
+    .blog { padding: 30px 3%; scroll-margin-top: 80px; }
+    .head { text-align: center; margin-bottom: 34px; }
+    .label { font-size: .82rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.7rem, 3.1vw, 2.5rem); font-weight: 800; color: var(--dark); line-height: 1.2; }
+
+    /* ========== 5. BLOG CARDS ========== */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 1600px; margin: 0 auto; }
+    .bcard {
+      background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+      display: flex; flex-direction: column; border: 2px solid transparent;
+      transition: transform .55s var(--ease), box-shadow .55s var(--ease), border-color .55s var(--ease);
+    }
+    .bcard[hidden] { display: none; }
+    .bcard.in { animation: cardIn .7s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); }
+    .bcard:hover { transform: translateY(-10px); border-color: var(--green); box-shadow: 0 20px 46px rgba(37,158,92,.28); }
+    @keyframes cardIn { from { opacity: 0; transform: translateY(34px) scale(.97); } to { opacity: 1; transform: none; } }
+
+    /* Card image */
+    .bimg { position: relative; display: block; height: 220px; overflow: hidden; background: var(--grey); }
+    .bimg img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s var(--ease); }
+    .bcard:hover .bimg img { transform: scale(1.1); }
+    .bimg:after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.45), transparent 55%); opacity: .7; transition: opacity .5s; }
+    .bcard:hover .bimg:after { opacity: 1; background: linear-gradient(to top, rgba(27,122,68,.65), transparent 65%); }
+    /* shine sweep on hover */
+    .bimg:before {
+      content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; z-index: 1;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.4), transparent); transform: skewX(-20deg);
+    }
+    .bcard:hover .bimg:before { left: 140%; transition: left 1s var(--ease); }
+    .bcat { position: absolute; top: 14px; left: 14px; z-index: 2; background: var(--green); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 12px; border-radius: 50px; }
+    .bov {
+      position: absolute; right: 14px; bottom: 14px; z-index: 2; width: 42px; height: 42px; border-radius: 50%;
+      background: #fff; color: var(--green); display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(14px) scale(.8); transition: .5s var(--ease);
+    }
+    .bcard:hover .bov { opacity: 1; transform: none; }
+
+    /* Card text */
+    .bbody { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+    .bmeta {
+      display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: rgba(255,255,255,.78);
+      background: linear-gradient(135deg, var(--dark), #2d2d2d); margin: -20px -22px 14px; padding: 11px 22px;
+    }
+    .bmeta i { color: var(--green); margin-right: 5px; }
+    .bbody h2 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 800; line-height: 1.35; color: var(--dark); margin-bottom: 8px; transition: color .4s; }
+    .bcard:hover h2 { color: var(--green-dark); }
+    .bbody p {
+      font-size: .92rem; line-height: 1.65; color: var(--text-mid); margin-bottom: 18px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .bcard .bmore {
+      margin-top: auto; display: flex; justify-content: center; align-items: center; gap: 8px; align-self: stretch;
+      background: var(--green); color: #fff; font-weight: 700; font-size: .92rem; padding: 12px; border-radius: var(--radius-sm);
+      transition: background .45s var(--ease), gap .45s var(--ease), transform .45s var(--ease);
+    }
+    .bcard:hover .bmore { background: var(--green-dark); gap: 13px; }
+    .bcard .bmore:hover { transform: scale(1.02); }
+
+    /* ========== 6. PAGINATION ========== */
+    .pager { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 46px 0 10px; }
+    .pg { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .pg button {
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .95rem; min-width: 44px; height: 44px;
+      border-radius: 50px; border: 2px solid var(--grey2); background: #fff; color: var(--text-mid); cursor: pointer;
+      padding: 0 14px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all .4s var(--ease);
+    }
+    .pg button:hover:not(:disabled) { border-color: var(--green); color: var(--green); transform: translateY(-3px); box-shadow: 0 8px 18px rgba(37,158,92,.2); }
+    .pg button.on { background: var(--green); border-color: var(--green); color: #fff; box-shadow: 0 8px 18px rgba(37,158,92,.3); }
+    .pg button:disabled { opacity: .4; cursor: not-allowed; }
+    .dots { display: flex; gap: 9px; }
+    .dots i { width: 9px; height: 9px; border-radius: 50px; background: #d5d5d5; cursor: pointer; transition: all .4s var(--ease); }
+    .dots i.on { width: 28px; background: var(--green); }
+    .pinfo { font-size: .85rem; color: var(--text-light); }
+
+    /* ========== 7. PACKAGES ========== */
+    .tc { text-align: center; }
+    .section-label { font-size: .82rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .section-title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 3.1vw, 2.5rem); font-weight: 800; color: var(--dark); margin-bottom: 11px; line-height: 1.2; }
+    .section-desc { color: var(--text-light); font-size: .98rem; line-height: 1.7; max-width: 1340px; margin: 0 auto 34px; }
+    .packages-bg { background: var(--grey); padding: 56px 3% 64px; margin-top: 40px; }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1600px; margin: 0 auto; }
+    .pkg-card {
+      background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+      display: flex; flex-direction: column; position: relative; transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+    }
+    .pkg-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+    .pkg-card.featured { border: 2px solid var(--green); }
+    .pkg-badge-tag { position: absolute; top: 12px; right: 12px; background: var(--green); color: #fff; font-size: .62rem; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 50px; text-transform: uppercase; }
+    .pkg-head { background: linear-gradient(135deg, var(--dark), #2d2d2d); padding: 22px 20px 16px; color: #fff; }
+    .pkg-type { font-size: .76rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 5px; }
+    .pkg-name { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 800; margin-bottom: 5px; }
+    .pkg-nights { font-size: .84rem; color: rgba(255,255,255,.6); }
+    .pkg-price-row { display: flex; align-items: baseline; gap: 6px; margin-top: 9px; }
+    .pkg-price { font-family: 'Montserrat', sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--green); }
+    .pkg-per { font-size: .86rem; color: rgba(255,255,255,.55); }
+    .pkg-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
+    .pkg-list { list-style: none; margin-bottom: 16px; flex: 1; }
+    .pkg-list li { display: flex; align-items: flex-start; gap: 9px; padding: 8px 0; font-size: .9rem; color: var(--text-mid); border-bottom: 1px solid #f0f0f0; }
+    .pkg-list li:last-child { border-bottom: none; }
+    .pkg-list li i { color: var(--green); margin-top: 3px; flex-shrink: 0; font-size: .74rem; }
+    .pkg-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background: var(--green); color: #fff; border-radius: var(--radius-sm); font-weight: 600; font-size: .94rem; transition: background .3s, transform .3s; }
+    .pkg-btn:hover { background: var(--green-dark); transform: scale(1.02); }
+
+    /* scroll-reveal helpers */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal-scale { opacity: 0; transform: scale(.92); transition: opacity .55s ease, transform .55s var(--ease), box-shadow .4s var(--ease); }
+    .reveal.visible, .reveal-scale.visible { opacity: 1; transform: none; }
+
+    /* ========== 8. RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .grid, .packages-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 18px 5%; gap: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .hero { padding: 80px 5% 42px; min-height: auto; }
+      .hero-sub { font-size: .92rem; }
+      .pills span { font-size: .72rem; padding: 4px 11px; }
+      .crumb { padding: 0 5%; font-size: .78rem; }
+      .blog { padding: 22px 4% 20px; }
+      .head { margin-bottom: 24px; }
+      .packages-bg { padding: 44px 5% 50px; }
+    }
+    @media (max-width: 640px) {
+      .packages-grid { grid-template-columns: 1fr; }
+      .bmeta { margin: -16px -18px 12px; padding: 10px 18px; }
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; gap: 18px; }
+      .bimg { height: 200px; }
+      .bbody { padding: 16px 18px 18px; }
+      .bbody h2 { font-size: 1.06rem; }
+      .pg button { min-width: 40px; height: 40px; font-size: .88rem; }
+      .bcard:hover { transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+
+  <!-- SEO structured data (blog list) -->
+  <script type="application/ld+json" id="ld-list"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kafall.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog" }
+    ]
+  }
+  </script>
 </head>
+
 <body>
-    <nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <!-- Logo -->
-    <a href="/" class="nav-logo">
-      <img src="/images/Abstract Mountain Logo (1).png" alt="kaafall" class="nav-logo-img"/>
-      <div class="nav-logo-text">
-        <span class="nl-main">kafall</span>
-        <span class="nl-sub">presents</span>
-      </div>
-    </a>
+  <div id="header"></div>
 
-    <!-- Nav Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/aboutus.html">About us</a></li>
-      <li><a href="/packages.html">Packages</a></li>
-      <li><a href="/chardham.html">Char Dham</a></li>
-      <li><a href="/weakendtrip.html">Weekend Trips</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/Taxi.html">Taxi Services</a></li>
-      <li><a href="/contactus.html">Contact us</a></li>
-    </ul>
-
-    <!-- Nav Right -->
-    <div class="nav-right">
-      <a href="tel:+919810966202" class="nr-phone"><i class="fas fa-phone-alt"></i> +91 919810966202</a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-  <!-- SCROLL PROGRESS -->
-  <div class="progress-bar" id="progressBar"></div>
-
-  <!-- HERO BANNER -->
+  <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-chip">📖 Kafall Travel Blog</span>
-      <h1>Stories from <em>Devbhoomi</em></h1>
-      <p class="hero-sub">Travel guides and temple tales, trek diaries and hidden gems of Uttarakhand</p>
+    <div class="hero-bg" role="img" aria-label="Himalayan peaks in Uttarakhand"></div>
+    <div class="hero-ov"></div>
+    <div class="hero-wave"></div>
+    <div class="hero-c">
+      <div class="badge"><i class="fas fa-book-open"></i> Kafall Travel Blog</div>
+      <h1>Travel Guides & <span>Himalayan Stories</span></h1>
+      <p class="hero-sub">Itineraries, trek guides, budgets and tips for Munsiyari, Kumaon and offbeat Uttarakhand.</p>
+      <div class="pills">
+        <span><i class="fas fa-newspaper"></i> 24 Guides</span>
+        <span><i class="fas fa-mountain"></i> Uttarakhand</span>
+        <span><i class="fas fa-rotate"></i> Updated Regularly</span>
+      </div>
     </div>
   </section>
 
-  <!-- MAIN -->
-  <main>
+  <div class="crumb"><a href="/">Home</a> › Blog</div>
 
-    <!-- SEARCH + FILTER -->
-    <div class="toolbar">
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Search blogs — Kedarnath, trek, Mussoorie…" />
-      </div>
-      <div class="filters" id="filters">
-        <button class="filter-btn active" data-cat="all">All</button>
-        <button class="filter-btn" data-cat="char-dham">Char Dham</button>
-        <button class="filter-btn" data-cat="trek">Trekking</button>
-        <button class="filter-btn" data-cat="temple">Temples</button>
-        <button class="filter-btn" data-cat="hill">Hill Stations</button>
-        <button class="filter-btn" data-cat="tips">Travel Tips</button>
-      </div>
+  <!-- ========== BLOG GRID (cards are built by JS from the POSTS list below) ========== -->
+  <main class="blog" id="posts">
+    <div class="head">
+      <div class="label">Latest Articles</div>
+      <h2 class="title">Explore Our Travel Blog</h2>
     </div>
-
-    <!-- FEATURED POST -->
-    <div class="featured reveal" data-cat="char-dham">
-      <div class="featured-img">
-        <img src="https://images.unsplash.com/photo-1523895665936-7bfe172b757d?w=1000&q=85" alt="Char Dham Yatra" loading="lazy" />
-        <div class="featured-badge">⭐ Featured</div>
-      </div>
-      <div class="featured-body">
-        <div class="post-meta">
-          <span class="post-cat char-dham">Char Dham</span>
-          <span class="post-date">🗓️ March 10, 2026</span>
-          <span class="post-read">⏱️ 8 min read</span>
-        </div>
-        <h2 class="featured-title">Complete Char Dham Yatra Guide 2026 — Everything You Need to Know</h2>
-        <p class="featured-desc">From registration to route planning, best time to visit, what to carry and how to prepare — the ultimate guide to Uttarakhand's holiest pilgrimage circuit covering Yamunotri, Gangotri, Kedarnath and Badrinath.</p>
-        <div class="post-footer">
-          <div class="author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=70" alt="Author" />
-            <span>Rahul Sharma</span>
-          </div>
-          <a href="/asstes/Blogs/Blog1.html" class="btn-read">Read More →</a>
-        </div>
-      </div>
+    <div class="grid" id="grid"></div>
+    <div class="pager" role="navigation" aria-label="Blog pages">
+      <div class="pg" id="pg"></div>
+      <div class="dots" id="dots"></div>
+      <div class="pinfo" id="pinfo"></div>
     </div>
-
-    <!-- BLOG GRID -->
-    <div class="blog-grid" id="blogGrid">
-
-      <!-- POST 1 -->
-      <article class="post-card reveal" data-cat="trek">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Kedarkantha Trek" loading="lazy" />
-          <span class="post-cat-badge trek">Trekking</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Feb 28, 2026</span>
-            <span class="post-read">⏱️ 6 min read</span>
-          </div>
-          <h3 class="post-title">Kedarkantha Trek — A Beginner's Winter Wonderland</h3>
-          <p class="post-excerpt">Snow-covered meadows, dense pine forests and a summit sunrise that will stay with you forever — here's why Kedarkantha is the best beginner trek in India.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=70" alt="Author" />
-              <span>Priya Negi</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 2 -->
-      <article class="post-card reveal" data-cat="temple">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Kedarnath Temple" loading="lazy" />
-          <span class="post-cat-badge temple">Temples</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Feb 18, 2026</span>
-            <span class="post-read">⏱️ 5 min read</span>
-          </div>
-          <h3 class="post-title">Kedarnath Temple — History, Mythology & Visiting Guide</h3>
-          <p class="post-excerpt">At 3,583 metres, Kedarnath is not just a destination — it is a spiritual transformation. Discover the legend, the architecture and everything you need to plan your visit.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=70" alt="Author" />
-              <span>Amit Rawat</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 3 -->
-      <article class="post-card reveal" data-cat="hill">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1477587458883-47145ed31459?w=600&q=80" alt="Mussoorie" loading="lazy" />
-          <span class="post-cat-badge hill">Hill Stations</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Feb 10, 2026</span>
-            <span class="post-read">⏱️ 4 min read</span>
-          </div>
-          <h3 class="post-title">Mussoorie in 3 Days — The Perfect Itinerary for Families</h3>
-          <p class="post-excerpt">Mall Road, Kempty Falls, Lal Tibba, Camel's Back Road — plan the perfect 3-day Mussoorie trip with our detailed day-by-day itinerary for families and couples.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&q=70" alt="Author" />
-              <span>Sneha Bisht</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 4 -->
-      <article class="post-card reveal" data-cat="tips">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80" alt="Travel Tips" loading="lazy" />
-          <span class="post-cat-badge tips">Travel Tips</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Jan 30, 2026</span>
-            <span class="post-read">⏱️ 7 min read</span>
-          </div>
-          <h3 class="post-title">10 Things to Know Before Visiting Uttarakhand in Monsoon</h3>
-          <p class="post-excerpt">Landslides, road closures, leeches and hidden beauty — everything you must know before planning a trip to Uttarakhand during the monsoon season from July to September.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=70" alt="Author" />
-              <span>Rahul Sharma</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 5 -->
-      <article class="post-card reveal" data-cat="trek">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Tungnath Trek" loading="lazy" />
-          <span class="post-cat-badge trek">Trekking</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Jan 20, 2026</span>
-            <span class="post-read">⏱️ 5 min read</span>
-          </div>
-          <h3 class="post-title">Tungnath & Chandrashila — World's Highest Shiva Temple Trek</h3>
-          <p class="post-excerpt">A 4 km trek from Chopta takes you to the world's highest Shiva temple at 3,680m. Here's our complete guide with tips, routes and the best season to go.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=70" alt="Author" />
-              <span>Priya Negi</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 6 -->
-      <article class="post-card reveal" data-cat="temple">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Valley of Flowers" loading="lazy" />
-          <span class="post-cat-badge temple">Temples</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Jan 8, 2026</span>
-            <span class="post-read">⏱️ 4 min read</span>
-          </div>
-          <h3 class="post-title">Maa Dhari Devi — The Guardian Goddess of Uttarakhand</h3>
-          <p class="post-excerpt">Perched on the banks of Alaknanda, the temple of Maa Dhari Devi holds a powerful legend — discover the mythology, history and how to visit this sacred shrine.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=70" alt="Author" />
-              <span>Amit Rawat</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 7 -->
-      <article class="post-card reveal" data-cat="char-dham">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Badrinath" loading="lazy" />
-          <span class="post-cat-badge char-dham">Char Dham</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Dec 22, 2025</span>
-            <span class="post-read">⏱️ 6 min read</span>
-          </div>
-          <h3 class="post-title">Badrinath Dham — Opening Date, Route & Darshan Tips 2026</h3>
-          <p class="post-excerpt">Lord Vishnu's abode in the Himalayas — everything about Badrinath temple opening dates, how to reach, best time to visit and must-know darshan tips for 2026.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&q=70" alt="Author" />
-              <span>Sneha Bisht</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 8 -->
-      <article class="post-card reveal" data-cat="tips">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=600&q=80" alt="Travel Packing" loading="lazy" />
-          <span class="post-cat-badge tips">Travel Tips</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Dec 10, 2025</span>
-            <span class="post-read">⏱️ 5 min read</span>
-          </div>
-          <h3 class="post-title">Ultimate Packing List for a Himalayan Pilgrimage or Trek</h3>
-          <p class="post-excerpt">Clothes, medicines, permits, shoes, snacks — our comprehensive packing checklist for anyone heading to the high-altitude temples and trails of Uttarakhand.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=70" alt="Author" />
-              <span>Rahul Sharma</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST 9 -->
-      <article class="post-card reveal" data-cat="hill">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=600&q=80" alt="Dhanaulti" loading="lazy" />
-          <span class="post-cat-badge hill">Hill Stations</span>
-        </div>
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="post-date">🗓️ Nov 25, 2025</span>
-            <span class="post-read">⏱️ 4 min read</span>
-          </div>
-          <h3 class="post-title">Dhanaulti — Uttarakhand's Best Kept Secret Hill Station</h3>
-          <p class="post-excerpt">Just 24 km from Mussoorie, Dhanaulti is quieter, greener and more peaceful — cedar forests, eco-parks and snow views without the crowd. Here's why you should go.</p>
-          <div class="post-footer">
-            <div class="author">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&q=70" alt="Author" />
-              <span>Priya Negi</span>
-            </div>
-            <a href="#" class="btn-read">Read →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- NO RESULTS -->
-    <div class="no-results" id="noResults">
-      <p>🔍 No blogs found. Try a different keyword or category.</p>
-    </div>
-
-    <!-- NEWSLETTER STRIP -->
-    <div class="newsletter reveal">
-      <div class="newsletter-inner">
-        <h2>Get Uttarakhand Travel Stories in Your Inbox</h2>
-        <p>New blogs, seasonal guides and exclusive travel tips — delivered free every week.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="Enter your email address" />
-          <button type="button">Subscribe →</button>
-        </div>
-      </div>
-    </div>
-    
-
   </main>
 
-  <footer class="footer">
-  <div class="footer-top">
-    <div class="wrap footer-grid">
-      <div class="ft-brand">
-        <div class="ft-logo">
-          <img src="/images/logo  white.png" alt="DevBhoomi" class="ft-logo-img"/>
-          <div><span class="ftl-main">kafall</span><span class="ftl-sub">Travels</span></div>
+  <!-- ========== PACKAGES ========== -->
+  <section class="packages-bg" id="packages">
+    <div class="tc reveal">
+      <div class="section-label">Choose Your Plan</div>
+      <h2 class="section-title">Munsyari Tour Packages</h2>
+      <p class="section-desc">4 Nights · 5 Days from Delhi — cab, verified stay, Khaliya Top trek & 24/7 support. Zero surprise charges.</p>
+    </div>
+
+    <div class="packages-grid">
+      <!-- Basic -->
+      <div class="pkg-card reveal-scale">
+        <div class="pkg-head">
+          <div class="pkg-type">Basic Plan</div>
+          <h3 class="pkg-name">Johar Valley Escape</h3>
+          <div class="pkg-nights">4 Nights · 5 Days | Min 2 Persons</div>
+          <div class="pkg-price-row"><div class="pkg-price">₹8,499</div><div class="pkg-per">/person</div></div>
         </div>
-        <p>India’s trusted Uttarakhand travel brand. Designed by locals to deliver seamless journeys at the best prices.</p>
-        <div class="ft-socials">
-          <a href="https://www.instagram.com/uk.kafall?igsh=OWdkYjhlejcyNXM4" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <!-- <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a> -->
-          <a href="https://wa.me/919810966202" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <!-- <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a> -->
+        <div class="pkg-body">
+          <ul class="pkg-list">
+            <li><i class="fas fa-car"></i> Private cab Delhi → Munsyari → Delhi</li>
+            <li><i class="fas fa-bed"></i> 4 nights budget guesthouse / homestay</li>
+            <li><i class="fas fa-utensils"></i> Daily breakfast & dinner</li>
+            <li><i class="fas fa-map-marked-alt"></i> Panchachuli viewpoint & Birthi Falls</li>
+            <li><i class="fas fa-route"></i> Detailed trip itinerary provided</li>
+            <li><i class="fas fa-headset"></i> 24/7 on-trip support</li>
+          </ul>
+          <a href="https://wa.me/919810966202?text=%20Hi%20Kafall%2C%20Munsyari%20Basic%20Package%208,499" class="pkg-btn" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+          </a>
         </div>
       </div>
 
-      <div class="ft-col">
-        <h5>Uttarakhand</h5>
-        <ul>
-          <li><a href="/packages/kedarnath.html">Kedarnath</a></li>
-          <li><a href="/packages/rishikesh.html">Rishikesh & Haridwar</a></li>
-          <li><a href="/chardham.html">Char Dham Yatra</a></li>
-          <li><a href="/packages/munsyari.html">Munsyari</a></li>
-          <!-- <li><a href="#">Valley of Flowers</a></li>
-          <li><a href="#">Jim Corbett</a></li>
-          <li><a href="#">Chopta & Tungnath</a></li>
-          <li><a href="#">Mussoorie & Nainital</a></li> -->
-        </ul>
+      <!-- Standard (featured) -->
+      <div class="pkg-card featured reveal-scale">
+        <div class="pkg-badge-tag">Most Booked</div>
+        <div class="pkg-head">
+          <div class="pkg-type">Standard Plan</div>
+          <h3 class="pkg-name">Panchachuli Explorer</h3>
+          <div class="pkg-nights">4 Nights · 5 Days | Solo to Group</div>
+          <div class="pkg-price-row"><div class="pkg-price">₹10,499</div><div class="pkg-per">/person</div></div>
+        </div>
+        <div class="pkg-body">
+          <ul class="pkg-list">
+            <li><i class="fas fa-car"></i> Private cab Delhi → Kausani → Munsyari → Delhi</li>
+            <li><i class="fas fa-bed"></i> 4 nights mid-range guesthouse with valley view</li>
+            <li><i class="fas fa-utensils"></i> All meals: breakfast, lunch & dinner</li>
+            <li><i class="fas fa-map-marked-alt"></i> Khaliya Top trek, Birthi Falls, Thamri Kund, Tribal Museum</li>
+            <li><i class="fas fa-hiking"></i> Local trekking guide for Khaliya Top</li>
+            <li><i class="fas fa-user-tie"></i> Dedicated trip manager + 24/7 support</li>
+          </ul>
+          <a href="https://wa.me/919810966202?text=%20Hi%20Kafall%2C%20Munsyari%20Standard%20Package%2010,499" class="pkg-btn" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Book This Package
+          </a>
+        </div>
       </div>
 
-      <div class="ft-col">
-        <h5>temples</h5>
-        <ul>
-          <li><a href="/packages/dharidevi.html">Shree Dhari Devi maa Temple</a></li>
-          <li><a href="/packages/neemkaroli.html"> Kainchi Dham Temple</a></li>
-          <li><a href="/packages/kartikswami.html">Kartik Swami Temple</a></li>
-          <li><a href="/packages/jagheshwar.html">Jageshwar</a></li>
-          <li><a href="/packages/surkandadevi.html">Surkanda Devi Temple</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="/aboutus.html">About Us</a></li>
-          <li><a href="/packages.html">All Packages</a></li>
-          <li><a href="/weakendtrip.html">Weekend Getaways</a></li>
-          <li><a href="/blog.html">Travel Blog</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/t&c.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div class="ft-col">
-        <h5>Contact</h5>
-        <ul class="ft-contact">
-          <li><i class="fas fa-phone-alt"></i>+91 98109 66202</li>
-          <li><i class="fas fa-envelope"></i> uk.kafall@gmail.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> HN-850, B- Block, Gurudwara Rd, Keshav Nagar, New Delhi, Delhi 110036</li>
-        </ul>
+      <!-- Premium -->
+      <div class="pkg-card reveal-scale">
+        <div class="pkg-head">
+          <div class="pkg-type">Premium Plan</div>
+          <h3 class="pkg-name">Himalayan Wilderness</h3>
+          <div class="pkg-nights">4 Nights · 5 Days | Couple / Group</div>
+          <div class="pkg-price-row"><div class="pkg-price">₹15,499</div><div class="pkg-per">/person</div></div>
+        </div>
+        <div class="pkg-body">
+          <ul class="pkg-list">
+            <li><i class="fas fa-car"></i> Luxury cab — Innova Crysta or equivalent</li>
+            <li><i class="fas fa-bed"></i> Premium guesthouse with direct Panchachuli views</li>
+            <li><i class="fas fa-utensils"></i> All meals with bonfire dinner</li>
+            <li><i class="fas fa-map-marked-alt"></i> Customised itinerary + private trek guide to Khaliya Top</li>
+            <li><i class="fas fa-fire"></i> Bonfire, stargazing session & welcome hamper</li>
+            <li><i class="fas fa-camera"></i> Photography session + all permits and entry fees</li>
+          </ul>
+          <a href="https://wa.me/919810966202?text=%20Hi%20Kafall%2C%20Munsyari%20Premium%20Package%2015,499" class="pkg-btn" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer-bar">
-    <div class="wrap footer-bar-inner">
-      <p>© 2026 Kafall Travels Pvt. Ltd. – All Rights Reserved</p>
-      <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> in Uttarakhand</p>
-    </div>
-  </div>
-</footer>
+  </section>
 
-  <script src="blog-script.js"></script>
+  <div id="kf-footer-placeholder"></div>
 
-<!-- Scroll Top -->
-<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <script>
+    /* =====================================================
+       1. BLOG POSTS DATA  — naya post add karna ho to bas ek line add karo
+       s = slug (URL + local image name), t = title, c = category,
+       d = date, m = read minutes, p = page number, desc = short text,
+       fb = fallback image key (see FALLBACK_IMAGES)
+       ===================================================== */
+    const POSTS = [
+      { s: "munsiyari-tour-package-from-delhi",  t: "Munsiyari Tour Package from Delhi – Complete Travel & Khaliya Top Guide", c: "Munsiyari",    d: "21 Nov 2026", m: 5, p: 1, fb: "hero",   desc: "Route, cost, sightseeing, Khaliya Top trek and camping for your Delhi to Munsiyari trip." },
+      { s: "khaliya-top-trek-guide",             t: "Khaliya Top Trek: Distance, Difficulty & Best Season",                    c: "Trekking",     d: "18 Nov 2026", m: 6, p: 1, fb: "trek",   desc: "Everything to know before trekking to Khaliya Top, from trail details to what to pack." },
+      { s: "best-time-to-visit-munsyari",        t: "Best Time to Visit Munsiyari: Month-by-Month Guide",                      c: "Munsiyari",    d: "15 Nov 2026", m: 7, p: 1, fb: "mtn",    desc: "Summer, monsoon, winter and snow – pick the right month for your Munsiyari holiday." },
+      { s: "offbeat-uttarakhand-destinations",   t: "Top Offbeat Places in Uttarakhand to Visit",                              c: "Offbeat",      d: "12 Nov 2026", m: 8, p: 1, fb: "forest", desc: "Quiet Himalayan towns and hidden valleys beyond the usual crowded hill stations." },
+      { s: "kainchi-dham-jageshwar-guide",       t: "Kainchi Dham & Jageshwar Dham: Kumaon Temple Trail",                      c: "Spiritual",    d: "09 Nov 2026", m: 5, p: 1, fb: "forest", desc: "Plan a peaceful spiritual route through the temples of the Kumaon hills." },
+      { s: "how-to-reach-munsiyari-from-delhi",  t: "How to Reach Munsiyari from Delhi: Road, Train & Cab",                    c: "Travel Tips",  d: "06 Nov 2026", m: 6, p: 1, fb: "peak",   desc: "Distances, drive time, halts and the smartest way to reach Munsiyari." },
+      { s: "birthi-falls-munsiyari",             t: "Birthi Falls: Timings, Best Season & Photography Tips",                   c: "Munsiyari",    d: "03 Nov 2026", m: 7, p: 1, fb: "hero",   desc: "A quick guide to one of the most scenic waterfall stops on the Munsiyari road." },
+      { s: "munsiyari-camping-guide",            t: "Munsiyari Camping: What to Expect at Khaliya Top",                        c: "Trekking",     d: "31 Oct 2026", m: 8, p: 1, fb: "trek",   desc: "Campsite setup, meals, weather and rules for camping near Khaliya Top." },
+      { s: "munsiyari-snow-trip",                t: "Munsiyari Snow Trip: Is It Worth Visiting in Winter?",                    c: "Winter",       d: "28 Oct 2026", m: 5, p: 1, fb: "trek",   desc: "Snowfall chances, road conditions and tips for a winter Himalayan holiday." },
+      { s: "munsiyari-packing-list",             t: "Munsiyari Packing List: What to Carry in Every Season",                   c: "Packing",      d: "25 Oct 2026", m: 6, p: 1, fb: "trek",   desc: "A simple checklist for clothes, shoes, medicines and trek essentials." },
+      { s: "panchachuli-viewpoints-munsiyari",   t: "Panchachuli Peaks: Best Viewpoints in Munsiyari",                         c: "Munsiyari",    d: "22 Oct 2026", m: 7, p: 1, fb: "peak",   desc: "Where to watch the five snow summits at sunrise and sunset." },
+      { s: "munsiyari-family-trip",              t: "Munsiyari for Families: Easy Sightseeing Without Trekking",               c: "Families",     d: "19 Oct 2026", m: 8, p: 1, fb: "stay",   desc: "A relaxed plan for parents, kids and senior travellers." },
 
+      { s: "munsiyari-honeymoon-guide",          t: "Munsiyari Honeymoon Guide: Quiet Stays & Mountain Views",                 c: "Couples",      d: "16 Oct 2026", m: 5, p: 2, fb: "hero",   desc: "Romantic offbeat stays, bonfire evenings and peaceful Himalayan walks." },
+      { s: "munsiyari-trip-cost",                t: "Munsiyari Trip Cost from Delhi: Full Budget Breakdown",                   c: "Budget",       d: "13 Oct 2026", m: 6, p: 2, fb: "trek",   desc: "What a Delhi to Munsiyari trip really costs for cab, stay and meals." },
+      { s: "johar-valley-milam-glacier",         t: "Johar Valley & Milam Glacier: A Beginner's Overview",                     c: "Johar Valley", d: "10 Oct 2026", m: 7, p: 2, fb: "hero",   desc: "History, trekking routes and permits for the high-Himalayan Johar region." },
+      { s: "munsiyari-tribal-museum-shauka-culture", t: "Tribal Heritage Museum & Shauka Culture in Munsiyari",                c: "Culture",      d: "07 Oct 2026", m: 8, p: 2, fb: "forest", desc: "Discover local history, woollens and traditions of the Johar Valley." },
+      { s: "delhi-to-kumaon-road-trip",          t: "Delhi to Kumaon Road Trip: Best Halts & Stops",                           c: "Travel Tips",  d: "04 Oct 2026", m: 5, p: 2, fb: "peak",   desc: "Where to stop, eat and rest on the long mountain drive." },
+      { s: "munsiyari-group-tour-tempo-traveller", t: "Munsiyari Group Tour by Tempo Traveller: Complete Guide",               c: "Groups",       d: "01 Oct 2026", m: 6, p: 2, fb: "stay",   desc: "Planning a friends, family or corporate group trip with a tempo traveller." },
+      { s: "best-places-to-stay-munsiyari",      t: "Best Places to Stay in Munsiyari: Homestays to Retreats",                 c: "Stays",        d: "28 Sep 2026", m: 7, p: 2, fb: "stay",   desc: "Compare homestays, guesthouses and premium stays with Panchachuli views." },
+      { s: "thamri-kund-maheshwari-kund",        t: "Thamri Kund & Maheshwari Kund: Hidden Nature Spots",                      c: "Offbeat",      d: "25 Sep 2026", m: 8, p: 2, fb: "forest", desc: "Short forest walks and peaceful lakes around Munsiyari." },
+      { s: "beginner-treks-uttarakhand",         t: "Beginner Himalayan Treks in Uttarakhand",                                 c: "Trekking",     d: "22 Sep 2026", m: 5, p: 2, fb: "trek",   desc: "Easy-to-moderate treks that first-time trekkers can enjoy." },
+      { s: "munsiyari-photography-guide",        t: "Munsiyari Photography Guide: Sunrise, Peaks & Villages",                  c: "Photography",  d: "19 Sep 2026", m: 6, p: 2, fb: "hero",   desc: "Best spots, timings and tips for photographing the Himalayas." },
+      { s: "munsiyari-weather-by-month",         t: "Munsiyari Weather by Month: Temperature & Rainfall",                      c: "Weather",      d: "16 Sep 2026", m: 7, p: 2, fb: "peak",   desc: "Know what weather to expect before finalising your travel dates." },
+      { s: "munsiyari-travel-safety-tips",       t: "Munsiyari Travel Safety Tips for Families & Solo Travellers",             c: "Travel Tips",  d: "13 Sep 2026", m: 8, p: 2, fb: "peak",   desc: "Road, altitude and weather precautions for a safe mountain trip." }
+    ];
 
-  <!-- WhatsApp Float -->
-<a href="https://wa.me/919810966202?text=Hi%20Kafall%F0%9F%91%8B" class="wa-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+    /* =====================================================
+       2. FALLBACK IMAGES
+       Agar /images/blog/<slug>.jpg nahi mili to ye Unsplash image dikhegi.
+       ⚠️ Unsplash URL me poori photo ID honi chahiye (number + hash).
+       "trek" aur "stay" ki poori ID mere paas verified nahi hai —
+       unsplash.com se apni pasand ki photo ka poora URL yahan paste karo.
+       ===================================================== */
+    const unsplash = (id) => `https://images.unsplash.com/${id}?w=600&q=75&fit=crop`;
+    const FALLBACK_IMAGES = {
+      hero:   unsplash("photo-1506905925346-21bda4d32df4"),
+      mtn:    unsplash("photo-1454496522488-7a8e488e8606"),
+      forest: unsplash("photo-1448375240586-882707db888b"),
+      peak:   unsplash("photo-1464822759023-fed622ff2c3b"),
+      trek:   unsplash("photo-1506905925346-21bda4d32df4"),  // TODO: replace with full ID of 1626621341517-...
+      stay:   unsplash("photo-1506905925346-21bda4d32df4")   // TODO: replace with full ID of 1510672981848-...
+    };
+    // Last resort: grey mountain icon (never a broken image)
+    const PLACEHOLDER = "data:image/svg+xml;utf8," + encodeURIComponent(
+      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect width='600' height='400' fill='#e8f7ef'/>" +
+      "<path d='M0 330 L190 140 L290 250 L390 160 L600 330Z' fill='#259E5C' opacity='.45'/></svg>"
+    );
+
+    // Called by <img onerror>: local → Unsplash → placeholder
+    function imgFallback(img) {
+      const step = +img.dataset.step || 0;
+      img.dataset.step = step + 1;
+      img.src = step === 0 ? FALLBACK_IMAGES[img.dataset.fb] : PLACEHOLDER;
+      if (step > 0) img.onerror = null;
+    }
+
+    /* =====================================================
+       3. BUILD CARDS + SEO JSON-LD
+       ===================================================== */
+    const BASE = "https://kafall.com/blog/";
+
+    document.getElementById("grid").innerHTML = POSTS.map((x) => {
+      const url = `${BASE}${x.s}.html`;
+      return `
+      <article class="bcard" data-p="${x.p}">
+        <a class="bimg" href="${url}" tabindex="-1" aria-hidden="true">
+          <img loading="lazy" width="600" height="400" src="/images/blog/${x.s}.jpg"
+               data-fb="${x.fb}" onerror="imgFallback(this)" alt="${x.t}">
+          <span class="bcat">${x.c}</span>
+          <span class="bov"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <div class="bbody">
+          <div class="bmeta">
+            <span><i class="far fa-calendar"></i> ${x.d}</span>
+            <span><i class="far fa-clock"></i> ${x.m} min read</span>
+          </div>
+          <h2><a href="${url}">${x.t}</a></h2>
+          <p>${x.desc}</p>
+          <a class="bmore" href="${url}" aria-label="Read more: ${x.t}">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>`;
+    }).join("");
+
+    document.getElementById("ld-list").textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Kafall Travels Blog – Uttarakhand & Munsiyari Travel Guides",
+      url: BASE,
+      description: "Travel guides, itineraries, trek guides and tips for Munsiyari, Kumaon and Uttarakhand by Kafall Travels.",
+      publisher: { "@type": "Organization", name: "Kafall Travels", logo: { "@type": "ImageObject", url: "https://kafall.com/logo.png" } },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: POSTS.map((x, i) => ({ "@type": "ListItem", position: i + 1, url: `${BASE}${x.s}.html`, name: x.t }))
+      }
+    });
+
+    /* =====================================================
+       4. HEADER / FOOTER LOADER + NAV
+       ===================================================== */
+    fetch("/footer.html")
+      .then((r) => r.text())
+      .then((html) => { document.getElementById("kf-footer-placeholder").innerHTML = html; })
+      .catch(console.error);
+
+    fetch("/header.html")
+      .then((r) => r.text())
+      .then((html) => {
+        const header = document.getElementById("header");
+        header.innerHTML = html;
+        // innerHTML doesn't run <script>, so re-create them
+        header.querySelectorAll("script").forEach((old) => {
+          const s = document.createElement("script");
+          s.textContent = old.textContent;
+          document.body.appendChild(s);
+        });
+      })
+      .catch(console.error);
+
+    window.addEventListener("scroll", () => {
+      const nav = document.getElementById("mainNav");
+      if (nav) nav.classList.toggle("scrolled", scrollY > 20);
+    });
+    function toggleNav() {
+      const links = document.getElementById("navLinks");
+      if (links) links.classList.toggle("open");
+    }
+
+    /* =====================================================
+       5. PAGINATION (12 cards per page)
+       ===================================================== */
+    (function () {
+      const cards = [...document.querySelectorAll(".bcard")];
+      const perPage = 12;
+      const total = Math.ceil(cards.length / perPage);
+      const pg = document.getElementById("pg");
+      const dots = document.getElementById("dots");
+      const info = document.getElementById("pinfo");
+      let current = 1;
+
+      const button = (html, label, onClick, disabled) => {
+        const b = document.createElement("button");
+        b.innerHTML = html;
+        b.setAttribute("aria-label", label);
+        b.disabled = !!disabled;
+        b.onclick = onClick;
+        return b;
+      };
+
+      function buildPager() {
+        pg.innerHTML = "";
+        dots.innerHTML = "";
+        pg.appendChild(button('<i class="fas fa-chevron-left"></i>', "Previous page", () => show(current - 1, true), current === 1));
+        for (let i = 1; i <= total; i++) {
+          const b = button(i, "Page " + i, () => show(i, true));
+          if (i === current) { b.className = "on"; b.setAttribute("aria-current", "page"); }
+          pg.appendChild(b);
+
+          const d = document.createElement("i");
+          d.className = i === current ? "on" : "";
+          d.onclick = () => show(i, true);
+          dots.appendChild(d);
+        }
+        pg.appendChild(button('<i class="fas fa-chevron-right"></i>', "Next page", () => show(current + 1, true), current === total));
+        const shown = cards.filter((c) => +c.dataset.p === current).length;
+        info.textContent = `Page ${current} of ${total} · Showing ${shown} of ${cards.length} articles`;
+      }
+
+      function show(page, scroll) {
+        if (page < 1 || page > total) return;
+        current = page;
+        let order = 0;
+        cards.forEach((c) => {
+          const visible = +c.dataset.p === page;
+          c.hidden = !visible;
+          c.classList.remove("in");
+          if (visible) {
+            c.style.setProperty("--i", order++);
+            void c.offsetWidth;            // restart animation
+            c.classList.add("in");
+          }
+        });
+        buildPager();
+        history.replaceState(null, "", page === 1 ? location.pathname : "#page-" + page);
+        if (scroll) document.getElementById("posts").scrollIntoView({ behavior: "smooth" });
+      }
+
+      // scroll-reveal for package cards
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add("visible"), i * 80);
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll(".reveal, .reveal-scale").forEach((el) => observer.observe(el));
+
+      // open the right page if URL has #page-2
+      const hash = location.hash.match(/page-(\d+)/);
+      show(hash ? Math.min(+hash[1], total) : 1, false);
+    })();
+  </script>
 </body>
 </html>
