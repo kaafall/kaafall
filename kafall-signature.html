@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pankaj Durgapal | Kafall Travels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#259E5C; --green-dark:#1b7a44; --green-light:#e8f7ef;
+  --black:#111; --gray-600:#5f6b66; --gray-300:#d9e2dd; --gray-100:#f5f8f6;
+  --font-body:'Poppins',sans-serif; --font-display:'Fraunces',serif;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);background:var(--gray-100);color:var(--black);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+
+/* soft background: drifting glow + mountain silhouette */
+body::before{content:'';position:fixed;top:-160px;right:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(37,158,92,.16),rgba(37,158,92,0) 70%);animation:drift 12s ease-in-out infinite alternate;pointer-events:none}
+.bg-mtn{position:fixed;left:0;right:0;bottom:0;height:34vh;min-height:160px;width:100%;pointer-events:none;opacity:.9}
+.bg-mtn path{fill:var(--green-light)}
+.bg-mtn .back{opacity:.6;animation:rise 1.8s var(--ease) both .2s}
+.bg-mtn .front{animation:rise 1.8s var(--ease) both .4s}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-40px,50px)}}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:translateY(0)}}
+
+/* ---------- CARD ---------- */
+.stage{perspective:1000px;width:100%;max-width:640px;position:relative;z-index:1}
+.sig{display:flex;align-items:center;gap:24px;background:#fff;border:1px solid var(--gray-300);border-radius:20px;padding:28px 32px;width:100%;box-shadow:0 14px 34px rgba(17,17,17,.07);transition:box-shadow .5s var(--ease),border-color .4s ease;transform-style:preserve-3d;will-change:transform;animation:cardIn 1s var(--ease) both}
+.sig:hover{box-shadow:0 26px 54px rgba(37,158,92,.18);border-color:var(--green)}
+@keyframes cardIn{from{opacity:0;transform:translateY(34px) scale(.97)}to{opacity:1;transform:none}}
+
+/* logo with soft pulse ring */
+.sig-logo{flex-shrink:0;position:relative}
+.sig-logo a{display:block;border-radius:50%;animation:pulse 3s ease-out infinite 1.4s}
+.sig-logo img{width:96px;height:96px;border-radius:50%;display:block;animation:logoIn 1s var(--ease) both .25s;transition:transform .7s var(--ease)}
+.sig-logo a:hover img{transform:rotate(-8deg) scale(1.07)}
+@keyframes logoIn{from{opacity:0;transform:scale(.6) rotate(-25deg)}to{opacity:1;transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,158,92,.35)}70%,100%{box-shadow:0 0 0 18px rgba(37,158,92,0)}}
+
+/* body: accent line grows */
+.sig-body{position:relative;padding-left:24px;min-width:0;flex:1}
+.sig-body::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--green),var(--green-dark));transform-origin:top;animation:grow .9s var(--ease) both .5s}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+.rise{opacity:0;transform:translateY(14px);animation:fadeUp .7s var(--ease) forwards;animation-delay:calc(.55s + var(--i,0) * .09s)}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+.sig-name{font-family:var(--font-display);font-size:26px;font-weight:600;line-height:1.2}
+.sig-role{font-size:12px;letter-spacing:1.7px;text-transform:uppercase;font-weight:600;color:var(--green-dark);margin-top:3px}
+
+.sig-list{list-style:none;margin:14px 0 8px;padding-top:12px;border-top:1px solid var(--gray-300)}
+.sig-list li{position:relative;display:flex;align-items:center;gap:8px;padding-left:18px;font-size:14px;line-height:2}
+.sig-list li::before{content:'';position:absolute;left:2px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--green);transition:transform .4s var(--ease),box-shadow .4s ease}
+.sig-list li:hover::before{transform:scale(1.5);box-shadow:0 0 0 4px rgba(37,158,92,.18)}
+.sig-list a{position:relative;color:#333;text-decoration:none;word-break:break-word;transition:color .3s ease,transform .4s var(--ease);display:inline-block}
+.sig-list a::after{content:'';position:absolute;left:0;bottom:2px;height:1.5px;width:100%;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.sig-list li:hover a{color:var(--green-dark);transform:translateX(4px)}
+.sig-list li:hover a::after{transform:scaleX(1)}
+
+/* copy buttons */
+.copy{flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1px solid var(--gray-300);background:#fff;color:var(--gray-600);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.85);transition:opacity .3s ease,transform .3s var(--ease),background .3s,color .3s,border-color .3s}
+.copy svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sig-list li:hover .copy,.copy:focus-visible{opacity:1;transform:scale(1)}
+.copy:hover{background:var(--green-light);color:var(--green-dark);border-color:var(--green)}
+@media (hover:none){.copy{opacity:1;transform:none}}
+
+.sig-loc{font-size:13px;color:var(--gray-600);font-weight:300;display:flex;align-items:center;gap:6px}
+.sig-loc svg{width:14px;height:14px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* buttons */
+.sig-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:100px;font-size:12.5px;font-weight:600;text-decoration:none;border:1.5px solid var(--green);transition:background .35s var(--ease),color .35s ease,transform .35s var(--ease),box-shadow .35s ease}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(37,158,92,.25)}
+.btn:active{transform:translateY(-1px) scale(.97)}
+.btn-fill{background:var(--green);color:#fff}
+.btn-fill svg{fill:#fff}
+.btn-fill:hover{background:var(--green-dark);border-color:var(--green-dark)}
+.btn-line{background:#fff;color:var(--green-dark)}
+.btn-line svg{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-line:hover{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+.btn::after{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .8s var(--ease)}
+.btn:hover::after{left:130%}
+.sig-tag{font-size:12px;font-style:italic;color:var(--gray-600);font-weight:300}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:var(--green-dark);color:#fff;font-size:13px;font-weight:500;padding:10px 20px;border-radius:100px;box-shadow:0 12px 26px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .4s ease,transform .5s var(--ease);z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:520px){
+  .sig{flex-direction:column;align-items:flex-start;padding:24px 20px;gap:18px}
+  .sig-logo img{width:76px;height:76px}
+  .sig-body{padding:18px 0 0}
+  .sig-body::before{width:100%;height:3px;bottom:auto;transform-origin:left;animation-name:growX}
+  .sig-name{font-size:22px}
+}
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rise{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg class="bg-mtn" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+  <path class="back" d="M0 320V170l140-70 120 80 160-120 180 130 150-90 190 110 170-140 180 120 150-60v230z"/>
+  <path class="front" d="M0 320V230l180-90 140 70 200-110 200 130 170-80 210 100 140-90 200 90v140z"/>
+</svg>
+
+<div class="stage" id="stage">
+  <div class="sig" id="sig">
+    <div class="sig-logo"><a href="https://www.kafall.com" target="_blank" rel="noopener" aria-label="Kafall Travels"><img src="/images/iconfav.png" alt="Kafall Travels"></a></div>
+    <div class="sig-body">
+      <div class="sig-name rise" style="--i:0">Pankaj Durgapal</div>
+      <div class="sig-role rise" style="--i:1">Founder &nbsp;|&nbsp; Kafall Travels</div>
+      <ul class="sig-list rise" style="--i:2" id="sigList"></ul>
+      <div class="sig-loc rise" style="--i:6">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Dehradun, Uttarakhand, India
+      </div>
+      <div class="sig-actions rise" style="--i:7" id="sigActions"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* Saari details yahin se aati hain — sirf is object ko edit karna hai */
+var KAFALL = {
+  phone: "+919810966202",
+  phoneText: "+91 98109 66202",
+  email: "support.kafalltravels@gmail.com",
+  website: "https://www.kafall.com",
+  websiteText: "www.kafall.com",
+  whatsapp: "919810966202",
+  instagram: "https://www.instagram.com/kafalltravels",
+  tagline: "Journeys Across Uttarakhand."
+};
+
+var items = [
+  { href: "tel:" + KAFALL.phone,    text: KAFALL.phoneText, copy: KAFALL.phoneText },
+  { href: "mailto:" + KAFALL.email, text: KAFALL.email,     copy: KAFALL.email },
+  { href: KAFALL.website,           text: KAFALL.websiteText, copy: KAFALL.website, external: true }
+];
+
+var COPY_ICON = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
+var toast = document.getElementById("toast"), toastTimer;
+
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 1800);
+}
+
+function copyText(text){
+  function fallback(){
+    var t = document.createElement("textarea");
+    t.value = text; document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); showToast("Copied: " + text); } catch(e){ showToast("Copy nahi hua"); }
+    document.body.removeChild(t);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){ showToast("Copied: " + text); }, fallback);
+  } else { fallback(); }
+}
+
+/* Bullet list + copy buttons */
+var list = document.getElementById("sigList");
+items.forEach(function (it) {
+  var li = document.createElement("li");
+  var a = document.createElement("a");
+  a.href = it.href; a.textContent = it.text;
+  if (it.external) { a.target = "_blank"; a.rel = "noopener"; }
+  var b = document.createElement("button");
+  b.className = "copy"; b.type = "button";
+  b.setAttribute("aria-label", "Copy " + it.text);
+  b.innerHTML = COPY_ICON;
+  b.addEventListener("click", function(){ copyText(it.copy); });
+  li.appendChild(a); li.appendChild(b);
+  list.appendChild(li);
+});
+
+/* Buttons + tagline */
+document.getElementById("sigActions").innerHTML =
+  '<a class="btn btn-fill" href="https://wa.me/' + KAFALL.whatsapp + '" target="_blank" rel="noopener">' +
+    '<svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91S17.5 2 12.04 2Zm5.83 14.14c-.25.7-1.45 1.34-2 1.42-.53.09-1.15.13-1.86-.12-.43-.15-.98-.32-1.68-.63-2.96-1.28-4.89-4.26-5.04-4.46-.15-.2-1.21-1.61-1.21-3.08s.77-2.18 1.04-2.48c.27-.3.6-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.34 2.4 1.49.3.15.47.13.65-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.02.97.3.15.5.22.57.35.07.13.07.75-.18 1.45Z"/></svg>WhatsApp</a>' +
+  '<a class="btn btn-line" href="' + KAFALL.instagram + '" target="_blank" rel="noopener">' +
+    '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>' +
+  '<span class="sig-tag">' + KAFALL.tagline + '</span>';
+
+/* Subtle 3D tilt (desktop only) */
+var sig = document.getElementById("sig"), stage = document.getElementById("stage");
+var canTilt = window.matchMedia("(hover:hover) and (pointer:fine)").matches &&
+              !window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+if (canTilt) {
+  setTimeout(function(){ sig.style.animation = "none"; }, 1100);
+  stage.addEventListener("pointermove", function(e){
+    var r = sig.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width - .5;
+    var y = (e.clientY - r.top) / r.height - .5;
+    sig.style.transition = "box-shadow .5s, border-color .4s";
+    sig.style.transform = "rotateY(" + (x * 5) + "deg) rotateX(" + (-y * 5) + "deg) translateY(-3px)";
+  });
+  stage.addEventListener("pointerleave", function(){
+    sig.style.transition = "transform .7s cubic-bezier(0.22,1,0.36,1), box-shadow .5s, border-color .4s";
+    sig.style.transform = "";
+  });
+}
+</script>
+</body>
+</html>
